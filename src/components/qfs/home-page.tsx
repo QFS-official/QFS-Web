@@ -4,10 +4,9 @@ import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import {
   Atom, Shield, Zap, Eye, Network, Cpu, CreditCard, Wallet,
-  ArrowRightLeft, Landmark, Globe, Bot, Link2, Boxes, Building2, Users,
-  Handshake, ChevronRight, Lock, Gauge, BarChart3, Layers, Lightbulb,
-  Star
+  ArrowRightLeft, Landmark, Globe, Bot, ChevronRight, Lock,
 } from 'lucide-react';
+import { ecosystemCards, pillars, securityFeatures, walletFeatures, faqItems } from './home-data';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -262,7 +261,7 @@ export function HomePage() {
             </motion.h2>
           </motion.div>
 
-          {/* Wallet */}
+          {/* Wallet - Featured Product */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -401,7 +400,6 @@ export function HomePage() {
 
           {/* Quantum Cards & AI */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Quantum Cards */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -421,7 +419,7 @@ export function HomePage() {
               <motion.p variants={fadeUp} className="text-sm text-slate-400 mb-4 leading-relaxed">
                 Conecta el ecosistema digital QFS con soluciones de pago físicas y digitales del mundo real.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex items-center gap-2 text-xs font-mono text-slate-500 py-3">
+              <motion.div variants={fadeUp} className="flex items-center gap-2 text-xs font-mono text-slate-500 py-3 flex-wrap">
                 <span className="px-2 py-1 rounded bg-[rgba(0,240,255,0.05)] border border-[rgba(0,240,255,0.1)] text-[#00f0ff]">Wallet</span>
                 <ChevronRight className="w-3 h-3" />
                 <span className="px-2 py-1 rounded bg-[rgba(139,92,246,0.05)] border border-[rgba(139,92,246,0.1)] text-[#8b5cf6]">QFSPay</span>
@@ -432,7 +430,6 @@ export function HomePage() {
               </motion.div>
             </motion.div>
 
-            {/* AI */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -473,3 +470,53 @@ export function HomePage() {
       </section>
 
       <div className="section-divider max-w-5xl mx-auto" />
+
+      {/* ===== FAQ ===== */}
+      <section className="py-24 px-4">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={stagger}
+            className="text-center mb-12"
+          >
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#00f0ff]/60 uppercase">
+              Preguntas Frecuentes
+            </motion.span>
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              <span className="gradient-text">FAQ</span>
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={stagger}
+          >
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqItems.map((item, i) => (
+                <motion.div
+                  key={i}
+                  custom={i}
+                  variants={fadeUp}
+                  className="glass-card rounded-xl overflow-hidden"
+                >
+                  <AccordionItem value={`faq-${i}`} className="border-none">
+                    <AccordionTrigger className="px-6 py-4 text-left text-sm font-medium text-white hover:no-underline hover:text-[#00f0ff] transition-colors [&[data-state=open]]:text-[#00f0ff]">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-4 text-sm text-slate-400 leading-relaxed">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}
