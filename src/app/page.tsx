@@ -11,6 +11,18 @@ import { RoadmapPage } from '@/components/qfs/roadmap-page';
 import { PortalPage } from '@/components/qfs/portal-page';
 import { Footer } from '@/components/qfs/footer';
 
+const pageVariants = {
+  initial: { opacity: 0, y: 20, filter: 'blur(6px)', scale: 0.98 },
+  animate: {
+    opacity: 1, y: 0, filter: 'blur(0px)', scale: 1,
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+  exit: {
+    opacity: 0, y: -20, filter: 'blur(6px)', scale: 1.01,
+    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
 export default function Home() {
   const { currentPage } = usePageStore();
 
@@ -24,10 +36,10 @@ export default function Home() {
           {currentPage === 'home' && (
             <motion.div
               key="home"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
             >
               <HomePage />
               <HomePagePart2 />
@@ -36,10 +48,10 @@ export default function Home() {
           {currentPage === 'whitepaper' && (
             <motion.div
               key="whitepaper"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
             >
               <WhitePaperPage />
             </motion.div>
@@ -47,10 +59,10 @@ export default function Home() {
           {currentPage === 'roadmap' && (
             <motion.div
               key="roadmap"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
             >
               <RoadmapPage />
             </motion.div>
@@ -58,10 +70,10 @@ export default function Home() {
           {currentPage === 'portal' && (
             <motion.div
               key="portal"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
             >
               <PortalPage />
             </motion.div>

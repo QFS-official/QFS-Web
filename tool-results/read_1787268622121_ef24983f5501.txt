@@ -1,0 +1,527 @@
+     1→'use client';
+     2→
+     3→import { motion } from 'framer-motion';
+     4→import {
+     5→  Landmark, Shield, Globe, Zap, Lock, GitBranch, CreditCard,
+     6→  Coins, Handshake, ArrowRight, ExternalLink, ShieldCheck,
+     7→  Building2, Cpu, Network, Download, Key, Flag
+     8→} from 'lucide-react';
+     9→
+    10→const fadeUp = {
+    11→  hidden: { opacity: 0, y: 30 },
+    12→  visible: (i: number) => ({
+    13→    opacity: 1, y: 0,
+    14→    transition: { delay: i * 0.06, duration: 0.6, ease: 'easeOut' },
+    15→  }),
+    16→};
+    17→
+    18→const stagger = {
+    19→  visible: { transition: { staggerChildren: 0.06 } },
+    20→};
+    21→
+    22→const currencies = [
+    23→  {
+    24→    name: 'QFS Digital Currency',
+    25→    subtitle: 'Quantum Financial System Standard',
+    26→    desc: 'La moneda digital cuántica primaria del nuevo sistema financiero, respaldada por activos soberanos e integrada con todas las monedas nacionales. Totalmente compatible con QFSpay.',
+    27→    logo: 'https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png',
+    28→    color: '#2563eb',
+    29→  },
+    30→  {
+    31→    name: 'GCR',
+    32→    subtitle: 'Global Currency Reset',
+    33→    desc: 'La moneda oficial del Reset Financiero Global, respaldada por oro y recursos naturales. Apoyada por naciones G20 como nuevo estándar internacional. Disponible en QFSpay.',
+    34→    logo: 'https://gcr.social/images/logo-s2-white.png',
+    35→    color: '#d97706',
+    36→  },
+    37→  {
+    38→    name: 'Al Arab',
+    39→    subtitle: 'Official Arab Currency',
+    40→    desc: 'La primera moneda árabe respaldada por oro, establecida como referencia para el comercio soberano entre mercados de Medio Oriente, África y Asia.',
+    41→    logo: 'https://alarab.io/images/logo.png',
+    42→    color: '#7c3aed',
+    43→  },
+    44→  {
+    45→    name: 'Monedas Soberanas',
+    46→    subtitle: 'National Digital Currencies',
+    47→    desc: 'Todas las monedas digitales nacionales del G20 incluyendo Digital Dollar, Digital Yuan, Digital Euro y otras, totalmente interoperables a través de QFS y QFSpay.',
+    48→    logo: '',
+    49→    color: '#0d9488',
+    50→  },
+    51→];
+    52→
+    53→const partners = [
+    54→  { name: 'United States', org: 'Department of the Treasury', desc: 'Líder en protocolos de encriptación cuántica', flag: '🇺🇸' },
+    55→  { name: 'China', org: "People's Bank of China", desc: 'Líder en integración del Digital Yuan', flag: '🇨🇳' },
+    56→  { name: 'European Union', org: 'European Central Bank', desc: 'Desarrollo del Digital Euro', flag: '🇪🇺' },
+    57→  { name: 'UAE', org: 'Central Bank of the UAE', desc: 'Líder de implementación en Medio Oriente', flag: '🇦🇪' },
+    58→  { name: 'IBM', org: 'Quantum Computing', desc: 'Proveedor de hardware cuántico', flag: '' },
+    59→  { name: 'OpenAI', org: 'AI Security', desc: 'Detección de amenazas con IA', flag: '' },
+    60→];
+    61→
+    62→export function PortalPage() {
+    63→  return (
+    64→    <div className="relative z-10">
+    65→      {/* Header */}
+    66→      <section className="pt-28 pb-16 px-4">
+    67→        <div className="max-w-4xl mx-auto text-center">
+    68→          <motion.div
+    69→            initial={{ opacity: 0, scale: 0.9 }}
+    70→            animate={{ opacity: 1, scale: 1 }}
+    71→            transition={{ duration: 0.6 }}
+    72→            className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#d97706] border border-amber-200 bg-amber-50/80"
+    73→          >
+    74→            <Landmark className="w-3.5 h-3.5" />
+    75→            GOVERNMENT PORTAL
+    76→          </motion.div>
+    77→          <motion.h1
+    78→            initial={{ opacity: 0, y: 20 }}
+    79→            animate={{ opacity: 1, y: 0 }}
+    80→            transition={{ delay: 0.15, duration: 0.7 }}
+    81→            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+    82→          >
+    83→            <span className="gradient-text">Quantum Financial System</span>
+    84→          </motion.h1>
+    85→          <motion.p
+    86→            initial={{ opacity: 0, y: 20 }}
+    87→            animate={{ opacity: 1, y: 0 }}
+    88→            transition={{ delay: 0.3, duration: 0.7 }}
+    89→            className="text-slate-500 max-w-2xl mx-auto leading-relaxed"
+    90→          >
+    91→            The official government portal for the next-generation financial infrastructure and QFSpay.
+    92→          </motion.p>
+    93→        </div>
+    94→      </section>
+    95→
+    96→      {/* Government Vision */}
+    97→      <section className="py-12 px-4">
+    98→        <div className="max-w-6xl mx-auto">
+    99→          <motion.div
+   100→            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+   101→            className="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden"
+   102→          >
+   103→            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#d97706] via-[#2563eb] to-[#7c3aed]" />
+   104→            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
+   105→              <div
+   106→                className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center"
+   107→                style={{ boxShadow: '0 2px 8px rgba(217,119,6,0.08)' }}
+   108→              >
+   109→                <Flag className="w-5 h-5" style={{ color: '#d97706' }} />
+   110→              </div>
+   111→              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+   112→                <span style={{ color: '#d97706' }}>Government Vision</span>
+   113→              </h2>
+   114→            </motion.div>
+   115→            <motion.p variants={fadeUp} className="text-slate-600 leading-relaxed mb-6">
+   116→              The Quantum Financial System (QFS) represents a revolutionary leap in financial technology,
+   117→              providing a secure, transparent, and efficient platform for global transactions. As part of
+   118→              the NESARA/GESARA economic reforms, QFS establishes a new standard for financial sovereignty
+   119→              and integrity, with QFSpay as its official payment solution.
+   120→            </motion.p>
+   121→            <motion.div variants={fadeUp} className="bg-amber-50/50 rounded-xl p-5 border border-amber-100/50">
+   122→              <h3 className="text-sm font-semibold mb-3 flex items-center gap-2 text-slate-800" style={{ color: '#d97706' }}>
+   123→                <Key className="w-4 h-4" /> Key Features:
+   124→              </h3>
+   125→              <div className="grid sm:grid-cols-2 gap-2">
+   126→                {[
+   127→                  'Quantum-secured financial transactions',
+   128→                  'QFSpay - Official government payment solution',
+   129→                  'Instant settlement across borders',
+   130→                  'Complete transparency and auditability',
+   131→                  'Integration with sovereign digital currencies',
+   132→                ].map((feat) => (
+   133→                  <div key={feat} className="flex items-center gap-2 text-sm text-slate-600">
+   134→                    <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#d97706' }} />
+   135→                    {feat}
+   136→                  </div>
+   137→                ))}
+   138→              </div>
+   139→            </motion.div>
+   140→            <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-6">
+   141→              <button className="quantum-btn-solid px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
+   142→                <ShieldCheck className="w-4 h-4" /> Learn More
+   143→              </button>
+   144→              <button className="quantum-btn px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 cursor-pointer" style={{ color: '#7c3aed', borderColor: 'rgba(124,58,237,0.2)' }}>
+   145→                <CreditCard className="w-4 h-4" /> QFSpay
+   146→              </button>
+   147→              <button className="quantum-btn px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
+   148→                <Cpu className="w-4 h-4" /> Technology
+   149→              </button>
+   150→            </motion.div>
+   151→          </motion.div>
+   152→        </div>
+   153→      </section>
+   154→
+   155→      {/* G20 Banner */}
+   156→      <section className="py-8 px-4">
+   157→        <div className="max-w-6xl mx-auto">
+   158→          <motion.div
+   159→            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+   160→            className="bg-white rounded-2xl p-8 md:p-10 text-center border border-gray-100"
+   161→            style={{ boxShadow: '0 4px 24px rgba(37,99,235,0.06)' }}
+   162→          >
+   163→            <motion.h2 variants={fadeUp} className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
+   164→              Official Financial Infrastructure of the G20 Nations
+   165→            </motion.h2>
+   166→            <motion.p variants={fadeUp} className="text-slate-500">
+   167→              Supporting the transition to a new era of financial transparency and sovereignty with QFSpay integration
+   168→            </motion.p>
+   169→          </motion.div>
+   170→        </div>
+   171→      </section>
+   172→
+   173→      {/* About QFS */}
+   174→      <section className="py-16 px-4">
+   175→        <div className="max-w-5xl mx-auto">
+   176→          <motion.div
+   177→            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   178→            className="glass-card rounded-3xl p-8 md:p-12"
+   179→          >
+   180→            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
+   181→              <div
+   182→                className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#2563eb]"
+   183→                style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.08)' }}
+   184→              >
+   185→                <Shield className="w-5 h-5" />
+   186→              </div>
+   187→              <div>
+   188→                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50">ABOUT</span>
+   189→                <h2 className="text-xl font-bold text-slate-900">About the Quantum Financial System</h2>
+   190→              </div>
+   191→            </motion.div>
+   192→
+   193→            <motion.p variants={fadeUp} className="text-slate-600 leading-relaxed mb-8">
+   194→              The Quantum Financial System (QFS) is a government-backed financial infrastructure that utilizes
+   195→              quantum computing and blockchain technologies to create an unhackable, transparent financial
+   196→              network. It serves as the foundation for the new global financial architecture, with QFSpay
+   197→              as its official payment solution.
+   198→            </motion.p>
+   199→
+   200→            {/* Document Block */}
+   201→            <motion.div variants={fadeUp} className="bg-white rounded-2xl p-6 md:p-8 border border-amber-100/50" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.03)' }}>
+   202→              <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+   203→                <div>
+   204→                  <h3 className="text-lg font-bold text-slate-900" style={{ color: '#d97706' }}>QFS Implementation Directive</h3>
+   205→                  <span className="text-xs font-mono text-slate-400">Document H. Rept. 115-950</span>
+   206→                </div>
+   207→                <div className="w-12 h-12 rounded-full bg-amber-50 border-2 border-amber-200 flex items-center justify-center animate-pulse-glow">
+   208→                  <Landmark className="w-5 h-5" style={{ color: '#d97706' }} />
+   209→                </div>
+   210→              </div>
+   211→              <div className="space-y-3 text-sm text-slate-600 leading-relaxed">
+   212→                <p>
+   213→                  Pursuant to the NESARA/GESARA economic reforms, all government financial institutions
+   214→                  are hereby directed to implement QFS protocols and QFSpay solutions for all sovereign
+   215→                  transactions effective January 1, 2026.
+   216→                </p>
+   217→                <p>The QFS provides:</p>
+   218→                <ul className="space-y-1.5 ml-4">
+   219→                  {[
+   220→                    'Quantum-resistant encryption for all transactions',
+   221→                    'QFSpay integration for seamless payments',
+   222→                    'Real-time settlement without intermediary banks',
+   223→                    'Complete transaction transparency with privacy protections',
+   224→                    'Integration with asset-backed sovereign currencies',
+   225→                  ].map((item) => (
+   226→                    <li key={item} className="flex items-center gap-2">
+   227→                      <div className="w-1.5 h-1.5 rounded-full bg-[#2563eb] shrink-0" />
+   228→                      {item}
+   229→                    </li>
+   230→                  ))}
+   231→                </ul>
+   232→              </div>
+   233→              <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+   234→                <div>
+   235→                  <span className="text-xs text-slate-400">Authorized by:</span>
+   236→                  <div className="text-sm font-medium text-slate-800">Global Financial Oversight Committee</div>
+   237→                </div>
+   238→                <div className="w-16 h-16 rounded-full bg-amber-50 border-2 border-amber-200 flex items-center justify-center">
+   239→                  <span className="text-[10px] font-bold text-center leading-tight" style={{ color: '#d97706' }}>
+   240→                    QFS<br/>SEAL
+   241→                  </span>
+   242→                </div>
+   243→              </div>
+   244→            </motion.div>
+   245→          </motion.div>
+   246→        </div>
+   247→      </section>
+   248→
+   249→      <div className="section-divider max-w-5xl mx-auto" />
+   250→
+   251→      {/* QFSpay Section */}
+   252→      <section className="py-16 px-4">
+   253→        <div className="max-w-6xl mx-auto">
+   254→          <motion.div
+   255→            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   256→          >
+   257→            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
+   258→              <div
+   259→                className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-50 to-indigo-50 flex items-center justify-center"
+   260→                style={{ boxShadow: '0 2px 8px rgba(124,58,237,0.08)' }}
+   261→              >
+   262→                <CreditCard className="w-5 h-5 text-[#7c3aed]" />
+   263→              </div>
+   264→              <div>
+   265→                <span className="text-xs font-mono tracking-widest text-[#7c3aed]/50">PAYMENT SOLUTION</span>
+   266→                <h2 className="text-xl font-bold text-slate-900">QFSpay</h2>
+   267→              </div>
+   268→            </motion.div>
+   269→
+   270→            <motion.div variants={fadeUp} className="gradient-border rounded-3xl p-8 md:p-12">
+   271→              <div className="grid md:grid-cols-2 gap-10 items-center">
+   272→                <div className="space-y-6">
+   273→                  <div>
+   274→                    <h3 className="text-2xl font-bold text-slate-900 mb-2">The Official Payment Solution</h3>
+   275→                    <p className="text-slate-500 text-sm leading-relaxed">
+   276→                      of the Quantum Financial System
+   277→                    </p>
+   278→                  </div>
+   279→                  <div className="space-y-4">
+   280→                    {[
+   281→                      { icon: <Shield className="w-5 h-5" />, title: 'Quantum Security', desc: 'Military-grade quantum encryption protects every transaction from hacking and fraud.', color: '#2563eb' },
+   282→                      { icon: <Globe className="w-5 h-5" />, title: 'Global Acceptance', desc: 'Accepted by all G20 nations and participating merchants worldwide.', color: '#7c3aed' },
+   283→                      { icon: <Zap className="w-5 h-5" />, title: 'Instant Settlement', desc: 'Transactions complete in quantum time with no banking delays.', color: '#d97706' },
+   284→                      { icon: <ArrowRight className="w-5 h-5" />, title: 'Multi-Currency', desc: 'Supports all QFS-backed currencies with automatic conversion.', color: '#0d9488' },
+   285→                    ].map((feat) => (
+   286→                      <div key={feat.title} className="flex items-start gap-4">
+   287→                        <div className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center" style={{ background: `${feat.color}0d`, color: feat.color, boxShadow: `0 2px 6px ${feat.color}10` }}>
+   288→                          {feat.icon}
+   289→                        </div>
+   290→                        <div>
+   291→                          <div className="text-sm font-semibold text-slate-800">{feat.title}</div>
+   292→                          <div className="text-xs text-slate-500 leading-relaxed">{feat.desc}</div>
+   293→                        </div>
+   294→                      </div>
+   295→                    ))}
+   296→                  </div>
+   297→                  <button className="quantum-btn-solid px-6 py-3 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
+   298→                    <Download className="w-4 h-4" /> Download QFSpay App
+   299→                  </button>
+   300→                </div>
+   301→                <div className="flex justify-center">
+   302→                  <div className="relative">
+   303→                    <div className="bg-white rounded-2xl p-4 border border-gray-100" style={{ boxShadow: '0 4px 24px rgba(124,58,237,0.08)' }}>
+   304→                      <img
+   305→                        src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png"
+   306→                        alt="QFSpay Card"
+   307→                        className="rounded-xl max-w-full h-auto"
+   308→                        style={{ maxHeight: '360px' }}
+   309→                      />
+   310→                    </div>
+   311→                    <div className="absolute -inset-4 bg-gradient-to-br from-violet-100/30 to-transparent rounded-3xl -z-10 blur-xl" />
+   312→                  </div>
+   313→                </div>
+   314→              </div>
+   315→            </motion.div>
+   316→          </motion.div>
+   317→        </div>
+   318→      </section>
+   319→
+   320→      <div className="section-divider max-w-5xl mx-auto" />
+   321→
+   322→      {/* Technology Section */}
+   323→      <section className="py-16 px-4">
+   324→        <div className="max-w-6xl mx-auto">
+   325→          <motion.div
+   326→            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   327→            className="text-center mb-12"
+   328→          >
+   329→            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+   330→              Technology
+   331→            </motion.span>
+   332→            <motion.h2 variants={fadeUp} className="text-3xl font-bold mt-3 mb-4">
+   333→              <span className="gradient-text">QFS Technology</span>
+   334→            </motion.h2>
+   335→            <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mx-auto">
+   336→              The QFS combines cutting-edge quantum computing with advanced blockchain technology to create
+   337→              a financial system that is secure, efficient, and transparent, with QFSpay as its consumer-facing
+   338→              payment solution.
+   339→            </motion.p>
+   340→          </motion.div>
+   341→
+   342→          <motion.div
+   343→            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   344→            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+   345→          >
+   346→            {[
+   347→              { icon: <Lock className="w-6 h-6" />, title: 'Quantum Encryption', desc: 'Unbreakable quantum key distribution ensures complete security for all transactions', color: '#2563eb', btn: 'Technical Details' },
+   348→              { icon: <GitBranch className="w-6 h-6" />, title: 'Decentralized Network', desc: 'Distributed across government nodes worldwide with no single point of failure', color: '#7c3aed', btn: 'Network Map' },
+   349→              { icon: <Zap className="w-6 h-6" />, title: 'Instant Settlement', desc: 'Transactions settle in quantum time without traditional banking delays', color: '#d97706', btn: 'Performance Data' },
+   350→              { icon: <Shield className="w-6 h-6" />, title: 'Sovereign Security', desc: 'Government-controlled access with military-grade protection', color: '#0d9488', btn: 'Security Protocols' },
+   351→            ].map((tech, i) => (
+   352→              <motion.div
+   353→                key={tech.title}
+   354→                custom={i}
+   355→                variants={fadeUp}
+   356→                className="glass-card-hover rounded-2xl p-6 group"
+   357→              >
+   358→                <div
+   359→                  className="w-14 h-14 rounded-2xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform"
+   360→                  style={{ background: `${tech.color}0d`, color: tech.color, boxShadow: `0 4px 12px ${tech.color}10` }}
+   361→                >
+   362→                  {tech.icon}
+   363→                </div>
+   364→                <h3 className="text-slate-900 font-semibold mb-2">{tech.title}</h3>
+   365→                <p className="text-sm text-slate-500 leading-relaxed mb-4">{tech.desc}</p>
+   366→                <button
+   367→                  className="quantum-btn px-4 py-2 rounded-lg text-xs cursor-pointer"
+   368→                  style={{ color: tech.color, borderColor: `${tech.color}25` }}
+   369→                >
+   370→                  {tech.btn}
+   371→                </button>
+   372→              </motion.div>
+   373→            ))}
+   374→          </motion.div>
+   375→        </div>
+   376→      </section>
+   377→
+   378→      <div className="section-divider max-w-5xl mx-auto" />
+   379→
+   380→      {/* Supported Sovereign Currencies */}
+   381→      <section className="py-16 px-4">
+   382→        <div className="max-w-6xl mx-auto">
+   383→          <motion.div
+   384→            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   385→          >
+   386→            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
+   387→              <div
+   388→                className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center"
+   389→                style={{ boxShadow: '0 2px 8px rgba(217,119,6,0.08)' }}
+   390→              >
+   391→                <Coins className="w-5 h-5" style={{ color: '#d97706' }} />
+   392→              </div>
+   393→              <div>
+   394→                <span className="text-xs font-mono tracking-widest text-[#d97706]/50">
+   395→                  CURRENCIES
+   396→                </span>
+   397→                <h2 className="text-xl font-bold text-slate-900">Supported Sovereign Currencies</h2>
+   398→              </div>
+   399→            </motion.div>
+   400→
+   401→            <motion.p variants={fadeUp} className="text-slate-500 mb-8 max-w-3xl leading-relaxed">
+   402→              QFS provides the infrastructure for the following institutional currencies backed by tangible
+   403→              assets and sovereign agreements, all compatible with QFSpay.
+   404→            </motion.p>
+   405→
+   406→            <div className="grid sm:grid-cols-2 gap-4">
+   407→              {currencies.map((curr, i) => (
+   408→                <motion.div
+   409→                  key={curr.name}
+   410→                  custom={i}
+   411→                  variants={fadeUp}
+   412→                  className="bg-white rounded-2xl p-6 relative overflow-hidden group border border-gray-100 hover:border-blue-200/50 transition-colors"
+   413→                  style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.02)' }}
+   414→                >
+   415→                  <div
+   416→                    className="absolute top-0 left-0 right-0 h-0.5"
+   417→                    style={{ background: `linear-gradient(90deg, ${curr.color}, transparent)` }}
+   418→                  />
+   419→                  <div className="flex items-center gap-3 mb-4">
+   420→                    {curr.logo ? (
+   421→                      <img src={curr.logo} alt={curr.name} className="h-10 rounded-lg object-contain bg-slate-50 p-1" />
+   422→                    ) : (
+   423→                      <div
+   424→                        className="w-10 h-10 rounded-lg flex items-center justify-center"
+   425→                        style={{ background: `${curr.color}0d`, color: curr.color }}
+   426→                      >
+   427→                        <Coins className="w-5 h-5" />
+   428→                      </div>
+   429→                    )}
+   430→                    <div>
+   431→                      <h3 className="font-bold text-slate-800" style={{ color: curr.color }}>{curr.name}</h3>
+   432→                      <span className="text-xs text-slate-400">{curr.subtitle}</span>
+   433→                    </div>
+   434→                  </div>
+   435→                  <p className="text-sm text-slate-500 leading-relaxed">{curr.desc}</p>
+   436→                </motion.div>
+   437→              ))}
+   438→            </div>
+   439→          </motion.div>
+   440→        </div>
+   441→      </section>
+   442→
+   443→      <div className="section-divider max-w-5xl mx-auto" />
+   444→
+   445→      {/* Government Partners */}
+   446→      <section className="py-16 px-4">
+   447→        <div className="max-w-6xl mx-auto">
+   448→          <motion.div
+   449→            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   450→          >
+   451→            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
+   452→              <div
+   453→                className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#2563eb]"
+   454→                style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.08)' }}
+   455→              >
+   456→                <Handshake className="w-5 h-5" />
+   457→              </div>
+   458→              <div>
+   459→                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50">PARTNERS</span>
+   460→                <h2 className="text-xl font-bold text-slate-900">Government Partners</h2>
+   461→              </div>
+   462→            </motion.div>
+   463→
+   464→            <motion.p variants={fadeUp} className="text-slate-500 mb-8 max-w-3xl leading-relaxed">
+   465→              QFS and QFSpay are developed and maintained through international cooperation between
+   466→              sovereign governments and leading technology institutions.
+   467→            </motion.p>
+   468→
+   469→            <motion.div
+   470→              initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   471→              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"
+   472→            >
+   473→              {partners.map((p, i) => (
+   474→                <motion.div
+   475→                  key={p.name}
+   476→                  custom={i}
+   477→                  variants={fadeUp}
+   478→                  className="bg-white rounded-2xl p-4 text-center group border border-gray-100 hover:border-blue-200/50 transition-colors"
+   479→                  style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}
+   480→                >
+   481→                  <div className="text-3xl mb-2">{p.flag || '🏢'}</div>
+   482→                  <h3 className="text-xs font-bold text-slate-800 mb-0.5">{p.name}</h3>
+   483→                  <p className="text-[10px] text-slate-400 mb-1.5">{p.org}</p>
+   484→                  <p className="text-[10px] text-slate-500 leading-relaxed">{p.desc}</p>
+   485→                </motion.div>
+   486→              ))}
+   487→            </motion.div>
+   488→          </motion.div>
+   489→        </div>
+   490→      </section>
+   491→
+   492→      <div className="section-divider max-w-5xl mx-auto" />
+   493→
+   494→      {/* Final CTA */}
+   495→      <section className="py-16 px-4">
+   496→        <div className="max-w-4xl mx-auto">
+   497→          <motion.div
+   498→            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+   499→            className="relative bg-white rounded-3xl p-8 md:p-12 text-center overflow-hidden"
+   500→            style={{ boxShadow: '0 4px 32px rgba(37, 99, 235, 0.08)' }}
+   501→          >
+   502→            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2563eb] via-[#7c3aed] to-[#db2777]" />
+   503→            <motion.div variants={fadeUp} className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-violet-50 flex items-center justify-center mx-auto mb-4" style={{ boxShadow: '0 4px 16px rgba(37,99,235,0.1)' }}>
+   504→              <Landmark className="w-7 h-7 text-[#2563eb]" />
+   505→            </motion.div>
+   506→            <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mb-4">
+   507→              <span className="gradient-text">QFS & QFSpay</span>{' '}
+   508→              <span className="text-slate-900">are the future of sovereign finance</span>
+   509→            </motion.h2>
+   510→            <motion.p variants={fadeUp} className="text-slate-500 max-w-xl mx-auto mb-8 leading-relaxed">
+   511→              Secure, transparent, and efficient financial infrastructure for governments
+   512→              and citizens worldwide.
+   513→            </motion.p>
+   514→            <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
+   515→              <button className="quantum-btn-solid px-8 py-3.5 rounded-xl text-sm font-semibold flex items-center gap-2 cursor-pointer">
+   516→                <ShieldCheck className="w-4 h-4" /> Government Portal Login
+   517→              </button>
+   518→              <button className="quantum-btn px-8 py-3.5 rounded-xl text-sm font-medium flex items-center gap-2 cursor-pointer" style={{ color: '#7c3aed', borderColor: 'rgba(124,58,237,0.2)' }}>
+   519→                <Download className="w-4 h-4" /> Get QFSpay App
+   520→              </button>
+   521→            </motion.div>
+   522→          </motion.div>
+   523→        </div>
+   524→      </section>
+   525→    </div>
+   526→  );
+   527→}

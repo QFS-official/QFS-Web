@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Globe, Building2, Users, Handshake, Star } from 'lucide-react';
+import { QFSCoin } from './qfs-coin';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -18,19 +19,19 @@ const stagger = {
 const alliances = [
   {
     name: 'Alianza GCRM',
-    desc: 'Alianza estratégica con GCRM para la integración de servicios financieros digitales, facilitando la conectividad entre economías regionales y el ecosistema QFS mediante soluciones de pago y transferencias transfronterizas.',
+    desc: 'Alianza estrategica con GCRM para la integracion de servicios financieros digitales, facilitando la conectividad entre economias regionales y el ecosistema QFS mediante soluciones de pago y transferencias transfronterizas.',
     color: '#2563eb',
-    tag: 'Socio Estratégico',
+    tag: 'Socio Estrategico',
   },
   {
     name: 'Al Arab',
-    desc: 'Colaboración con Al Arab para expandir la infraestructura financiera digital en mercados de Medio Oriente y Norte de África, integrando activos digitales con sistemas financieros regionales existentes.',
+    desc: 'Colaboracion con Al Arab para expandir la infraestructura financiera digital en mercados de Medio Oriente y Norte de Africa, integrando activos digitales con sistemas financieros regionales existentes.',
     color: '#d97706',
-    tag: 'Expansión Regional',
+    tag: 'Expansion Regional',
   },
   {
     name: 'Monedas de Gobiernos',
-    desc: 'Integración progresiva con monedas digitales de bancos centrales (CBDCs) y activos digitales gubernamentales para establecer puentes entre la finanzas tradicionales y el ecosistema descentralizado.',
+    desc: 'Integracion progresiva con monedas digitales de bancos centrales (CBDCs) y activos digitales gubernamentales para establecer puentes entre la finanzas tradicionales y el ecosistema descentralizado.',
     color: '#7c3aed',
     tag: 'Gobierno Digital',
   },
@@ -50,13 +51,13 @@ export function HomePagePart2() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#d97706]/50 uppercase">
-              Alianzas Estratégicas
+              Alianzas Estrategicas
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
               <span className="gradient-text">Alianzas</span> Globales
             </motion.h2>
             <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mx-auto">
-              QFS construye puentes de colaboración con organizaciones y gobiernos para una infraestructura financiera verdaderamente global.
+              QFS construye puentes de colaboracion con organizaciones y gobiernos para una infraestructura financiera verdaderamente global.
             </motion.p>
           </motion.div>
 
@@ -72,6 +73,7 @@ export function HomePagePart2() {
                 key={a.name}
                 custom={i}
                 variants={fadeUp}
+                whileHover={{ y: -6, transition: { duration: 0.3 } }}
                 className="bg-white rounded-3xl p-8 relative overflow-hidden group border border-gray-100 hover:border-blue-200/50 transition-all duration-300"
                 style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.02)' }}
               >
@@ -79,31 +81,46 @@ export function HomePagePart2() {
                   className="absolute top-0 left-0 right-0 h-1"
                   style={{ background: `linear-gradient(90deg, ${a.color}, ${a.color}40)` }}
                 />
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                  style={{ background: `${a.color}0d`, boxShadow: `0 4px 12px ${a.color}10` }}
-                >
-                  <Handshake className="w-6 h-6" style={{ color: a.color }} />
-                </div>
-                <span
-                  className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+                {/* Quantum shimmer on hover */}
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    color: a.color,
-                    background: `${a.color}0a`,
-                    border: `1px solid ${a.color}15`,
+                    background: `radial-gradient(circle at 50% 0%, ${a.color}08, transparent 60%)`,
                   }}
-                >
-                  {a.tag}
-                </span>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{a.name}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{a.desc}</p>
+                />
+                <div className="relative">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ background: `${a.color}0d`, boxShadow: `0 4px 12px ${a.color}10` }}
+                  >
+                    <Handshake className="w-6 h-6" style={{ color: a.color }} />
+                  </div>
+                  <span
+                    className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+                    style={{
+                      color: a.color,
+                      background: `${a.color}0a`,
+                      border: `1px solid ${a.color}15`,
+                    }}
+                  >
+                    {a.tag}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-900 mb-3">{a.name}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{a.desc}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      <div className="section-divider max-w-5xl mx-auto" />
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="section-divider max-w-5xl mx-auto origin-left"
+      />
 
       {/* ===== WHY QFS ===== */}
       <section className="py-24 px-4">
@@ -116,10 +133,10 @@ export function HomePagePart2() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
-              Por qué QFS
+              Por que QFS
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              ¿Por qué <span className="gradient-text">QFS</span>?
+              Por que <span className="gradient-text">QFS</span>?
             </motion.h2>
           </motion.div>
 
@@ -135,10 +152,11 @@ export function HomePagePart2() {
                 key={item.title}
                 custom={i}
                 variants={fadeUp}
+                whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3 } }}
                 className="glass-card-hover rounded-2xl p-6 text-center group"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-[#2563eb] group-hover:scale-110 transition-transform bg-gradient-to-br from-blue-50 to-violet-50"
+                  className="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-[#2563eb] group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br from-blue-50 to-violet-50"
                   style={{ boxShadow: `0 4px 12px ${item.color}10` }}
                 >
                   {item.icon}
@@ -151,16 +169,22 @@ export function HomePagePart2() {
         </div>
       </section>
 
-      <div className="section-divider max-w-5xl mx-auto" />
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="section-divider max-w-5xl mx-auto origin-left"
+      />
 
-      {/* ===== CTA ===== */}
+      {/* ===== CTA with QFS Coin ===== */}
       <section className="py-24 px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={stagger}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-5xl mx-auto"
         >
           <motion.div
             variants={fadeUp}
@@ -172,30 +196,55 @@ export function HomePagePart2() {
             {/* Gradient top border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2563eb] via-[#7c3aed] to-[#db2777]" />
             {/* Subtle glow */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-80 h-40 bg-gradient-to-b from-blue-100/40 to-transparent rounded-full blur-2xl" />
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-48 bg-gradient-to-b from-blue-100/40 to-transparent rounded-full blur-2xl" />
 
-            <div className="relative">
-              <motion.div variants={fadeUp} className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-violet-50 flex items-center justify-center mx-auto mb-6"
-                style={{ boxShadow: '0 4px 16px rgba(37,99,235,0.1)' }}
+            <div className="relative grid md:grid-cols-2 gap-12 items-center">
+              {/* Text side */}
+              <div>
+                <motion.div
+                  variants={fadeUp}
+                  className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-violet-50 flex items-center justify-center mb-6"
+                  style={{ boxShadow: '0 4px 16px rgba(37,99,235,0.1)' }}
+                >
+                  <AtomIcon className="w-8 h-8 text-[#2563eb]" />
+                </motion.div>
+                <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                  <span className="gradient-text">Construyendo el Futuro</span>
+                  <br />
+                  <span className="text-slate-900">de las Finanzas Digitales</span>
+                </motion.h2>
+                <motion.p variants={fadeUp} className="text-slate-500 max-w-xl mb-10 leading-relaxed">
+                  QFS es mas que una wallet, mas que pagos, mas que un exchange. Es un ecosistema financiero
+                  digital integrado disenado para la proxima generacion de la economia global.
+                </motion.p>
+                <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
+                  <motion.button
+                    whileHover={{ y: -2, boxShadow: '0 8px 32px rgba(37,99,235,0.3), 0 4px 8px rgba(124,58,237,0.2)' }}
+                    whileTap={{ y: 0 }}
+                    className="quantum-btn-solid px-8 py-3.5 rounded-2xl text-sm font-semibold cursor-pointer"
+                  >
+                    Explorar QFS
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ y: -2 }}
+                    whileTap={{ y: 0 }}
+                    className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium cursor-pointer"
+                    style={{ borderColor: 'rgba(124,58,237,0.2)', color: '#7c3aed' }}
+                  >
+                    Unirse a la Comunidad
+                  </motion.button>
+                </motion.div>
+              </div>
+
+              {/* Coin side */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1, transition: { delay: 0.3, duration: 0.8 } },
+                }}
+                className="flex justify-center"
               >
-                <AtomIcon className="w-8 h-8 text-[#2563eb]" />
-              </motion.div>
-              <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-                <span className="gradient-text">Construyendo el Futuro</span>
-                <br />
-                <span className="text-slate-900">de las Finanzas Digitales</span>
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                QFS es más que una wallet, más que pagos, más que un exchange. Es un ecosistema financiero
-                digital integrado diseñado para la próxima generación de la economía global.
-              </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
-                <button className="quantum-btn-solid px-8 py-3.5 rounded-2xl text-sm font-semibold cursor-pointer">
-                  Explorar QFS
-                </button>
-                <button className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium cursor-pointer" style={{ borderColor: 'rgba(124,58,237,0.2)', color: '#7c3aed' }}>
-                  Unirse a la Comunidad
-                </button>
+                <QFSCoin size={240} />
               </motion.div>
             </div>
           </motion.div>
@@ -206,15 +255,14 @@ export function HomePagePart2() {
 }
 
 const whyQFS = [
-  { title: 'Seguridad', desc: 'Infraestructura diseñada con seguridad como prioridad absoluta.', icon: <Star className="w-6 h-6" />, color: '#2563eb' },
+  { title: 'Seguridad', desc: 'Infraestructura disenada con seguridad como prioridad absoluta.', icon: <Star className="w-6 h-6" />, color: '#2563eb' },
   { title: 'Velocidad', desc: 'Procesamiento digital eficiente y escalable.', icon: <Globe className="w-6 h-6" />, color: '#0d9488' },
-  { title: 'Transparencia', desc: 'Tecnología blockchain y registros verificables.', icon: <Building2 className="w-6 h-6" />, color: '#7c3aed' },
+  { title: 'Transparencia', desc: 'Tecnologia blockchain y registros verificables.', icon: <Building2 className="w-6 h-6" />, color: '#7c3aed' },
   { title: 'Acceso', desc: 'Servicios financieros accesibles desde una plataforma integrada.', icon: <Users className="w-6 h-6" />, color: '#db2777' },
-  { title: 'Interoperabilidad', desc: 'Conexión entre diferentes redes y activos.', icon: <Handshake className="w-6 h-6" />, color: '#d97706' },
-  { title: 'Innovación', desc: 'Blockchain + IA + Criptografía + Finanzas Digitales.', icon: <Star className="w-6 h-6" />, color: '#2563eb' },
+  { title: 'Interoperabilidad', desc: 'Conexion entre diferentes redes y activos.', icon: <Handshake className="w-6 h-6" />, color: '#d97706' },
+  { title: 'Innovacion', desc: 'Blockchain + IA + Criptografia + Finanzas Digitales.', icon: <Star className="w-6 h-6" />, color: '#2563eb' },
 ];
 
-// Simple atom SVG icon inline for the CTA section
 function AtomIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
