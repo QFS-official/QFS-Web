@@ -15,7 +15,7 @@ export default function Home() {
   const { currentPage } = usePageStore();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#030712]">
+    <div className="min-h-screen flex flex-col bg-[#f8fafc]">
       <QuantumBackground />
       <Navigation />
 
