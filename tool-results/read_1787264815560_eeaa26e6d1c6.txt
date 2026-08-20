@@ -1,0 +1,479 @@
+    20→    20→  1149→    <main class="qfs-content">
+    21→    21→  1150→        <div class="qfs-container">
+    22→    22→  1151→            <header class="qfs-header qfs-header-accent" id="home">
+    23→    23→  1152→                <h1 class="qfs-h1">Quantum Financial System</h1>
+    24→    24→  1153→                <p class="qfs-subtitle"><span style="color: #fffacd;">The official government portal for the next-generation financial infrastructure and QFSpay</p>
+    25→    25→  1154→            </header>
+    26→    26→  1155→            
+    27→    27→  1156→            <div class="qfs-content-section">
+    28→    28→  1157→                <!-- Introduction -->
+    29→    29→  1158→                <section class="qfs-card">
+    30→    30→  1159→                    <div class="qfs-card-content">
+    31→    31→  1160→                        <h2 class="qfs-h2"><i class="fas fa-flag" style="color: var(--qfs-gold); margin-right: 10px;"></i> <span style="color: #FFED7D;">
+    32→    32→  1161→Government Vision</h2>
+    33→    33→  1162→                        <p><span style="color: #fffacd;">The Quantum Financial System (QFS) represents a revolutionary leap in financial technology, providing a secure, transparent, and efficient platform for global transactions. As part of the NESARA/GESARA economic reforms, QFS establishes a new standard for financial sovereignty and integrity, with QFSpay as its official payment solution.</p>
+    34→    34→  1163→                        
+    35→    35→  1164→                        <div class="qfs-highlight-box">
+    36→    36→  1165→                            <h3 class="qfs-h3"><i class="fas fa-key" style="margin-right: 10px;"></i> Key Features:</h3>
+    37→    37→  1166→                            <span style="color: #FFED7D;"><ul class="qfs-features-list">
+    38→    38→  1167→                                <li>Quantum-secured financial transactions</li>
+    39→    39→  1168→                                <li>QFSpay - Official government payment solution</li>
+    40→    40→  1169→                                <li>Instant settlement across borders</li>
+    41→    41→  1170→                                <li>Complete transparency and auditability</li>
+    42→    42→  1171→                                <li>Integration with sovereign digital currencies</li>
+    43→    43→  1172→                            </ul>
+    44→    44→  1173→                        </div>
+    45→    45→  1174→                        
+    46→    46→  1175→                        <div class="qfs-button-group">
+    47→    47→  1176→                            <button class="qfs-button" onclick="location.href='#about'">
+    48→    48→  1177→                                <i class="fas fa-info-circle qfs-button-icon"></i> Learn More
+    49→    49→  1178→                            </button>
+    50→    50→  1179→                            <button class="qfs-button qfs-pay-button" onclick="location.href='#qfspay'">
+    51→    51→  1180→                                <i class="fas fa-credit-card qfs-button-icon"></i> QFSpay
+    52→    52→  1181→                            </button>
+    53→    53→  1182→                            <button class="qfs-button" onclick="location.href='#technology'">
+    54→    54→  1183→                                <i class="fas fa-atom qfs-button-icon"></i> Technology
+    55→    55→  1184→                            </button>
+    56→    56→  1185→                        </div>
+    57→    57→  1186→                    </div>
+    58→    58→  1187→                </section>
+    59→    59→  1188→
+    60→    60→  1189→                <!-- G20 Banner -->
+    61→    61→  1190→                <section class="qfs-g20-banner" style="background-image: url('https://www.g20.org/content/dam/gtwenty/gtwenty_new/about-g20/G20_India_2023_Logo.svg');">
+    62→    62→  1191→                    <div class="qfs-g20-banner-content">
+    63→    63→  1192→                        <h2>Official Financial Infrastructure of the G20 Nations</h2>
+    64→    64→  1193→                        <p>Supporting the transition to a new era of financial transparency and sovereignty with QFSpay integration</p>
+    65→    65→  1194→                    </div>
+    66→    66→  1195→                </section>
+    67→    67→  1196→                
+    68→    68→  1197→                <!-- About QFS -->
+    69→    69→  1198→                <section class="qfs-card" id="about">
+    70→    70→  1199→                    <div class="qfs-card-header">
+    71→    71→  1200→                        <div class="qfs-card-icon">
+    72→    72→  1201→                            <i class="fas fa-info-circle"></i>
+    73→    73→  1202→                        </div>
+    74→    74→  1203→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">About the Quantum Financial System</h2>
+    75→    75→  1204→                    </div>
+    76→    76→  1205→                    <div class="qfs-card-content">
+    77→    77→  1206→                        <p><span style="color: #fffacd;">The Quantum Financial System (QFS) is a government-backed financial infrastructure that utilizes quantum computing and blockchain technologies to create an unhackable, transparent financial network. It serves as the foundation for the new global financial architecture, with QFSpay as its official payment solution.</p>
+    78→    78→  1207→                        
+    79→    79→  1208→                        <div class="qfs-document">
+    80→    80→  1209→                            <div class="qfs-document-header">
+    81→    81→  1210→                                <h3 class="qfs-document-title">QFS Implementation Directive</h3>
+    82→    82→  1211→                                <span class="qfs-document-number">Document H. Rept. 115-950</span>
+    83→    83→  1212→                            </div>
+    84→    84→  1213→                            <div class="qfs-document-content">
+    85→    85→  1214→                                <p><span style="color: #fffacd;">Pursuant to the NESARA/GESARA economic reforms, all government financial institutions are hereby directed to implement QFS protocols and QFSpay solutions for all sovereign transactions effective January 1, 2026.</p>
+    86→    86→  1215→                                <p><span style="color: #fffacd;">The QFS provides:</p>
+    87→    87→  1216→                                <ul>
+    88→    88→  1217→                                    <span style="color: #fffacd;"><li>Quantum-resistant encryption for all transactions</li>
+    89→    89→  1218→                                    <li>QFSpay integration for seamless payments</li>
+    90→    90→  1219→                                    <li>Real-time settlement without intermediary banks</li>
+    91→    91→  1220→                                    <li>Complete transaction transparency with privacy protections</li>
+    92→    92→  1221→                                    <li>Integration with asset-backed sovereign currencies</li>
+    93→    93→  1222→                                </ul>
+    94→    94→  1223→                            </div>
+    95→    95→  1224→                            <div class="qfs-document-footer">
+    96→    96→  1225→                                <div class="qfs-document-signature">
+    97→    97→  1226→                                    <span><span style="color: #d4af37;">Authorized by:</span>
+    98→    98→  1227→                                    <div class="qfs-signature-line"></div>
+    99→    99→  1228→                                    <span><span style="color: #fffacd;">Global Financial Oversight Committee</span>
+   100→   100→  1229→                                </div>
+   101→   101→  1230→                                <div class=""> <img src="https://www.quantum.gov/wp-content/uploads/2020/11/NQCO_Seal_highres.png" alt="Descripción de la imagen">
+   102→   102→  1231→                                   </div>
+   103→   103→  1232→                            </div>
+   104→   104→  1233→                        </div>
+   105→   105→  1234→                    </div>
+   106→   106→  1235→                </section>
+   107→   107→  1236→                
+   108→   108→  1237→                <!-- QFSpay Section -->
+   109→   109→  1238→                <section class="qfs-card qfs-pay-card" id="qfspay">
+   110→   110→  1239→                    
+   111→   111→  1240→                    <div class="qfs-pay-card-header">
+   112→   112→  1241→                        
+   113→   113→  1242→                        <div class="qfs-pay-card-icon">
+   114→   114→  1243→                            
+   115→   115→  1244→                            <i class="fas fa-credit-card">
+   116→   116→  1245→                            </i> 
+   117→   117→  1246→                        </div>
+   118→   118→  1247→                        <div>
+   119→   119→  1248→                            <h2 class="qfs-pay-card-title">QFSpay</h2>
+   120→   120→  1249→                                       
+   121→   121→  1250→                            <p class="qfs-pay-card-subtitle">The Official Payment Solution of the Quantum Financial System</p>
+   122→   122→  1251→                        </div>
+   123→   123→  1252→                    </div>
+   124→   124→  1253→                    <div class="qfs-pay-card-content">
+   125→   125→  1254→                        </div>
+   126→   126→  1255→                            <img src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png
+   127→   127→  1256→" alt="Descripción de la imagen">
+   128→   128→  1257→                            <div class="qfs-pay-feature">
+   129→   129→  1258→                                <div class="qfs-pay-feature-icon">
+   130→   130→  1259→                                    
+   131→   131→  1260→                                    <i class="fas fa-shield-alt"></i>
+   132→   132→  1261→                                </div>
+   133→   133→  1262→                                <div class="qfs-pay-feature-text">
+   134→   134→  1263→                                    
+   135→   135→  1264→                                    <h4 class="qfs-pay-feature-title"> Quantum Security</h4>
+   136→   136→  1265→                                    
+   137→   137→  1266→                                    <p class="qfs-pay-feature-desc">Military-grade quantum encryption protects every transaction from hacking and fraud.</p>
+   138→   138→  1267→                                </div>
+   139→   139→  1268→                            </div>
+   140→   140→  1269→                            
+   141→   141→  1270→                            <div class="qfs-pay-feature">
+   142→   142→  1271→                                <div class="qfs-pay-feature-icon">
+   143→   143→  1272→                                    <i class="fas fa-globe"></i>
+   144→   144→  1273→                                </div>
+   145→   145→  1274→                                <div class="qfs-pay-feature-text">
+   146→   146→  1275→                                    <h4 class="qfs-pay-feature-title">Global Acceptance</h4>
+   147→   147→  1276→                                    <p class="qfs-pay-feature-desc">Accepted by all G20 nations and participating merchants worldwide.</p>
+   148→   148→  1277→                                </div>
+   149→   149→  1278→                            </div>
+   150→   150→  1279→                            
+   151→   151→  1280→                            <div class="qfs-pay-feature">
+   152→   152→  1281→                                <div class="qfs-pay-feature-icon">
+   153→   153→  1282→                                    <i class="fas fa-bolt"></i>
+   154→   154→  1283→                                </div>
+   155→   155→  1284→                                <div class="qfs-pay-feature-text">
+   156→   156→  1285→                                    <h4 class="qfs-pay-feature-title">Instant Settlement</h4>
+   157→   157→  1286→                                    <p class="qfs-pay-feature-desc">Transactions complete in quantum time with no banking delays.</p>
+   158→   158→  1287→                                </div>
+   159→   159→  1288→                            </div>
+   160→   160→  1289→                            
+   161→   161→  1290→                            <div class="qfs-pay-feature">
+   162→   162→  1291→                                <div class="qfs-pay-feature-icon">
+   163→   163→  1292→                                    <i class="fas fa-exchange-alt"></i>
+   164→   164→  1293→                                </div>
+   165→   165→  1294→                                <div class="qfs-pay-feature-text">
+   166→   166→  1295→                                    <h4 class="qfs-pay-feature-title">Multi-Currency</h4>
+   167→   167→  1296→                                    <p class="qfs-pay-feature-desc">Supports all QFS-backed currencies with automatic conversion.</p>
+   168→   168→  1297→                                </div>
+   169→   169→  1298→                            </div>
+   170→   170→  1299→                            
+   171→   171→  1300→                            <button class="qfs-button qfs-pay-button" style="margin-top: 1.5rem;">
+   172→   172→  1301→                                <i class="fas fa-download qfs-button-icon"></i> Download QFSpay App
+   173→   173→  1302→                            </button>
+   174→   174→  1303→                        </div>
+   175→   175→  1304→                        
+   176→   176→  1305→                        <div class="qfs-pay-card-image">
+   177→   177→  1306→                            <img src="https://via.placeholder.com/400x600.png?text=QFSpay+Card+and+App" alt="">
+   178→   178→  1307→                        </div>
+   179→   179→  1308→                    </div>
+   180→   180→  1309→                </section>
+   181→   181→  1310→                
+   182→   182→  1311→                <!-- Technology Section -->
+   183→   183→  1312→                <section class="qfs-card" id="technology">
+   184→   184→  1313→                    <div class="qfs-card-header">
+   185→   185→  1314→                        <div class="qfs-card-icon">
+   186→   186→  1315→                            <i class="fas fa-atom"></i>
+   187→   187→  1316→                        </div>
+   188→   188→  1317→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">QFS Technology</h2>
+   189→   189→  1318→                    </div>
+   190→   190→  1319→                    <div class="qfs-card-content">
+   191→   191→  1320→                        <p><span style="color: #fffacd;">The QFS combines cutting-edge quantum computing with advanced blockchain technology to create a financial system that is secure, efficient, and transparent, with QFSpay as its consumer-facing payment solution.</p>
+   192→   192→  1321→                        
+   193→   193→  1322→                        <div class="qfs-features-grid">
+   194→   194→  1323→                            <article class="qfs-feature-item">
+   195→   195→  1324→                                <div class="qfs-feature-icon">
+   196→   196→  1325→                                    <i class="fas fa-lock"></i>
+   197→   197→  1326→                                </div>
+   198→   198→  1327→                                <h3 class="qfs-feature-title">Quantum Encryption</h3>
+   199→   199→  1328→                                <p><span style="color: #fffacd;">Unbreakable quantum key distribution ensures complete security for all transactions</p>
+   200→   200→  1329→                                <button class="qfs-button qfs-small-button">Technical Details</button>
+   201→   201→  1330→                            </article>
+   202→   202→  1331→                            <article class="qfs-feature-item">
+   203→   203→  1332→                                <div class="qfs-feature-icon">
+   204→   204→  1333→                                    <i class="fas fa-project-diagram"></i>
+   205→   205→  1334→                                </div>
+   206→   206→  1335→                                <h3 class="qfs-feature-title">Decentralized Network</h3>
+   207→   207→  1336→                                <p><span style="color: #fffacd;">Distributed across government nodes worldwide with no single point of failure</p>
+   208→   208→  1337→                                <button class="qfs-button qfs-small-button">Network Map</button>
+   209→   209→  1338→                            </article>
+   210→   210→  1339→                            <article class="qfs-feature-item">
+   211→   211→  1340→                                <div class="qfs-feature-icon">
+   212→   212→  1341→                                    <i class="fas fa-bolt"></i>
+   213→   213→  1342→                                </div>
+   214→   214→  1343→                                <h3 class="qfs-feature-title">Instant Settlement</h3>
+   215→   215→  1344→                                <p><span style="color: #fffacd;">Transactions settle in quantum time without traditional banking delays</p>
+   216→   216→  1345→                                <button class="qfs-button qfs-small-button">Performance Data</button>
+   217→   217→  1346→                            </article>
+   218→   218→  1347→                            <article class="qfs-feature-item">
+   219→   219→  1348→                                <div class="qfs-feature-icon">
+   220→   220→  1349→                                    <i class="fas fa-shield-alt"></i>
+   221→   221→  1350→                                </div>
+   222→   222→  1351→                                <h3 class="qfs-feature-title">Sovereign Security</h3>
+   223→   223→  1352→                                <p><span style="color: #fffacd;">Government-controlled access with military-grade protection</p>
+   224→   224→  1353→                                <button class="qfs-button qfs-small-button">Security Protocols</button>
+   225→   225→  1354→                            </article>
+   226→   226→  1355→                        </div>
+   227→   227→  1356→                    </div>
+   228→   228→  1357→                </section>
+   229→   229→  1358→
+   230→   230→  1359→                <!-- Currency Section -->
+   231→   231→  1360→                <section class="qfs-card qfs-currency-section" id="currencies">
+   232→   232→  1361→                    <div class="qfs-card-header">
+   233→   233→  1362→                        <div class="qfs-card-icon">
+   234→   234→  1363→                            <i class="fas fa-globe-americas"></i>
+   235→   235→  1364→                        </div>
+   236→   236→  1365→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">Supported Sovereign Currencies</h2>
+   237→   237→  1366→                    </div>
+   238→   238→  1367→                    <div class="qfs-card-content">
+   239→   239→  1368→                        <p><span style="color: #D6C8CD;">QFS provides the infrastructure for the following institutional currencies backed by tangible assets and sovereign agreements, all compatible with QFSpay:</p>
+   240→   240→  1369→                        
+   241→   241→  1370→                        <div class="qfs-currency-grid">
+   242→   242→  1371→                            <!-- QFS Currency Card -->
+   243→   243→  1372→                            <div class="qfs-currency-card"> 
+   244→   244→  1373→                                <div class="qfs-currency-icon">
+   245→   245→  1374→                                     <img src="https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png" alt="QFS Logo">
+   246→   246→  1375→                                </div>
+   247→   247→  1376→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">QFS Digital Currency</h3>
+   248→   248→  1377→                                <span class="qfs-currency-subtitle">Quantum Financial System Standard</span>
+   249→   249→  1378→                                <p class="qfs-currency-description">
+   250→   250→  1379→                                    <span style="color: #fffacd;">The primary quantum-secured digital currency of the new financial system, backed by sovereign assets and integrated with all national currencies. Fully compatible with QFSpay.
+   251→   251→  1380→                                </p>
+   252→   252→  1381→                            </div>
+   253→   253→  1382→                            
+   254→   254→  1383→                            <!-- GCR Card -->
+   255→   255→  1384→                            <div class="qfs-currency-card">
+   256→   256→  1385→                                <div class="qfs-currency-icon">
+   257→   257→  1386→                                    <img src="https://gcr.social/images/logo-s2-white.png" alt="GCR Logo">
+   258→   258→  1387→                                </div>
+   259→   259→  1388→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">GCR</h3>
+   260→   260→  1389→                                <span class="qfs-currency-subtitle">Global Currency Reset</span>
+   261→   261→  1390→                                <p class="qfs-currency-description">
+   262→   262→  1391→                                    The official currency of the Global Financial Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available in QFSpay.
+   263→   263→  1392→                                </p>
+   264→   264→  1393→                            </div>
+   265→   265→  1394→                            
+   266→   266→  1395→                            <!-- Al Arab Card -->
+   267→   267→  1396→                            <div class="qfs-currency-card">
+   268→   268→  1397→                                <div class="qfs-currency-icon">
+   269→   269→  1398→                                    <img src="https://alarab.io/images/logo.png" alt="GCR Logo">
+   270→   270→  1399→                                </div>
+   271→   271→  1400→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">Al Arab</h3>
+   272→   272→  1401→                                <span class="qfs-currency-subtitle">Official Arab Currency</span>
+   273→   273→  1402→                                <p class="qfs-currency-description">
+   274→   274→  1403→                                    The first gold-backed Arab currency, established as a reference for sovereign trade between Middle Eastern, African, and Asian markets. Backed by UAE institutions including G42, Mubadala, and the Mohammed Bin Rashid Space Centre.
+   275→   275→  1404→                                </p>
+   276→   276→  1405→                            </div>
+   277→   277→  1406→                            
+   278→   278→  1407→                            <!-- Sovereign Currency Card -->
+   279→   279→  1408→                            <div class="qfs-currency-card">
+   280→   280→  1409→                                <div class="qfs-currency-icon">
+   281→   281→  1410→                                    <img src="https://mf.b37mrtl.ru/actualidad/public_images/2019.06/article/5d170f8308f3d931268b45ca.JPG" alt="Sovereign Logo">
+   282→   282→  1411→                                </div>
+   283→   283→  1412→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">Sovereign Currencies</h3>
+   284→   284→  1413→                                <span class="qfs-currency-subtitle">National Digital Currencies</span>
+   285→   285→  1414→                                <p class="qfs-currency-description">
+   286→   286→  1415→                                    All G20 national digital currencies including Digital Dollar, Digital Yuan, Digital Euro, and others, fully interoperable through QFS and QFSpay.
+   287→   287→  1416→                                </p>
+   288→   288→  1417→                            </div>
+   289→   289→  1418→                        </div>
+   290→   290→  1419→                     </div>
+   291→   291→  1420→                </section>
+   292→   292→  1421→
+   293→   293→  1422→                <!-- Strategic Partners Section -->
+   294→   294→  1423→                <section class="qfs-card qfs-partners-section" id="partners">
+   295→   295→  1424→                    <div class="qfs-card-header">
+   296→   296→  1425→                        <div class="qfs-card-icon">
+   297→   297→  1426→                            <i class="fas fa-handshake"></i>
+   298→   298→  1427→                        </div>
+   299→   299→  1428→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">Government Partners</h2>
+   300→   300→  1429→                    </div>
+   301→   301→  1430→                    <div class="qfs-card-content">
+   302→   302→  1431→                        <p><span style="color: #D6C8CD;">QFS and QFSpay are developed and maintained through international cooperation between sovereign governments and leading technology institutions:</p>
+   303→   303→  1432→                        
+   304→   304→  1433→                        <div class="qfs-partners-grid">
+   305→   305→  1434→                            <!-- USA -->
+   306→   306→  1435→                            <div class="qfs-partner-card">
+   307→   307→  1436→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png" alt="USA Flag" class="qfs-partner-logo">
+   308→   308→  1437→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">United States</h3>
+   309→   309→  1438→                                <p class="qfs-partner-country">Department of the Treasury</p>
+   310→   310→  1439→                                <p class="qfs-currency-description">Lead developer of quantum encryption protocols</p>
+   311→   311→  1440→                            </div>
+   312→   312→  1441→                            
+   313→   313→  1442→                            <!-- China -->
+   314→   314→  1443→                            <div class="qfs-partner-card">
+   315→   315→  1444→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/125px-Flag_of_the_People%27s_Republic_of_China.svg.png" alt="China Flag" class="qfs-partner-logo">
+   316→   316→  1445→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">PEOPLE'S REPUBLIC OF CHINA</h3>
+   317→   317→  1446→                                <p class="qfs-partner-country">People's Bank of China</p>
+   318→   318→  1447→                                <p class="qfs-currency-description">Digital Yuan integration lead</p>
+   319→   319→  1448→                            </div>
+   320→   320→  1449→                            
+   321→   321→  1450→                            <!-- EU -->
+   322→   322→  1451→                            <div class="qfs-partner-card">
+   323→   323→  1452→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/125px-Flag_of_Europe.svg.png" alt="EU Flag" class="qfs-partner-logo">
+   324→   324→  1453→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">European Union</h3>
+   325→   325→  1454→                                <p class="qfs-partner-country">European Central Bank</p>
+   326→   326→  1455→                                <p class="qfs-currency-description">Digital Euro development</p>
+   327→   327→  1456→                            </div>
+   328→   328→  1457→                            
+   329→   329→  1458→                            <!-- UAE -->
+   330→   330→  1459→                            <div class="qfs-partner-card">
+   331→   331→  1460→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/125px-Flag_of_the_United_Arab_Emirates.svg.png" alt="UAE Flag" class="qfs-partner-logo">
+   332→   332→  1461→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">UAE</h3>
+   333→   333→  1462→                                <p class="qfs-partner-country">Central Bank of the UAE</p>
+   334→   334→  1463→                                <p class="qfs-currency-description">Middle East implementation lead Currency AlArab </p>
+   335→   335→  1464→                            </div>
+   336→   336→  1465→                            
+   337→   337→  1466→                            <!-- Technology Partners -->
+   338→   338→  1467→                            <div class="qfs-partner-card">
+   339→   339→  1468→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/125px-IBM_logo.svg.png" alt="IBM Logo" class="qfs-partner-logo">
+   340→   340→  1469→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">IBM</h3>
+   341→   341→  1470→                                <p class="qfs-partner-country">Quantum Computing</p>
+   342→   342→  1471→                                <p class="qfs-currency-description">Quantum hardware provider</p>
+   343→   343→  1472→                            </div>
+   344→   344→  1473→                            
+   345→   345→  1474→                            <div class="qfs-partner-card">
+   346→   346→  1475→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/125px-OpenAI_Logo.svg.png" alt="OpenAI Logo" class="qfs-partner-logo">
+   347→   347→  1476→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">OpenAI</h3>
+   348→   348→  1477→                                <p class="qfs-partner-country">AI Security</p>
+   349→   349→  1478→                                <p class="qfs-currency-description">AI-driven threat detection</p>
+   350→   350→  1479→                            </div>
+   351→   351→  1480→                            
+   352→   352→  1481→                            <div class="qfs-partner-card">
+   353→   353→  1482→                                <img src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png" alt="QFSpay Logo" class="qfs-partner-logo">
+   354→   354→  1483→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">QFSpay</h3>
+   355→   355→  1484→                                <p class="qfs-partner-country">Payment Solutions</p>
+   356→   356→  1485→                                <p class="qfs-currency-description">Official payment platform</p>
+   357→   357→  1486→                            </div>
+   358→   358→  1487→                 </section>
+   359→   359→  1488→                 
+   360→   360→  1489→                <!-- Final CTA -->
+   361→   361→  1490→                <section class="qfs-card">
+   362→   362→  1491→                    <div class="qfs-card-content qfs-final-card-content">
+   363→   363→  1492→                        <h2 class="qfs-h2"><i class="fas fa-landmark" style="color: var(--qfs-gold); margin-right: 10px;"></i> <span style="color: #FFED7D;">QFS & QFSpay are the future of sovereign finance</h2>
+   364→   364→  1493→                        <p><span style="color: #D6C8CD;">Secure, transparent, and efficient financial infrastructure for governments and citizens worldwide.</p>
+   365→   365→  1494→                        <div class="qfs-button-group">
+   366→   366→  1495→                            <button class="qfs-cta-button" id="qfsMainCTA">
+   367→   367→  1496→                                <i class="fas fa-shield-alt qfs-button-icon">
+   368→   368→  1497→                                 <a href="https://www.quantum.gov/iyq-2025/" target="_BLACK"><strong>Government Portal Login</strong></a></i> 
+   369→   369→  1498→                            </button>
+   370→   370→  1499→                            <button class="qfs-button qfs-pay-button">
+   371→   371→  1500→                                <i class="fas fa-mobile-alt qfs-button-icon"></i> Get QFSpay App
+   372→   372→  1501→                            </button>
+   373→   373→  1502→                        </div>
+   374→   374→  1503→                    </div>
+   375→   375→  1504→                </section>
+   376→   376→  1505→            </div>
+   377→   377→  1506→        </div>
+   378→   378→  1507→        
+   379→   379→  1508→        <footer class="qfs-footer">
+   380→   380→  1509→            <div class="qfs-social-links">
+   381→   381→  1510→                <a href="#" aria-label="Government Website"><i class="fas fa-landmark"></i></a>
+   382→   382→  1511→                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+   383→   383→  1512→                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+   384→   384→  1513→                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+   385→   385→  1514→                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+   386→   386→  1515→            </div>
+   387→   387→  1516→            <p>Quantum Financial System - Official Government Portal</p>
+   388→   388→  1517→            <p class="qfs-copyright">© 2025 Global Financial Oversight Committee. All rights reserved.</p>
+   389→   389→  1518→        </footer>
+   390→   390→  1519→    </main>
+   391→   391→  1520→
+   392→   392→  1521→    <!-- Back to top button -->
+   393→   393→  1522→    <a href="#home" class="qfs-back-to-top" id="qfsBackToTop" aria-label="Back to top">
+   394→   394→  1523→        <i class="fas fa-arrow-up"></i>
+   395→   395→  1524→    </a>
+   396→   396→  1525→
+   397→   397→  1526→    <script>
+   398→   398→  1527→        document.addEventListener('DOMContentLoaded', function() {
+   399→   399→  1528→            // Mobile menu functionality
+   400→   400→  1529→            const mobileMenuBtn = document.getElementById('qfsMobileMenuBtn');
+   401→   401→  1530→            const menuVertical = document.getElementById('qfsMenuVertical');
+   402→   402→  1531→            
+   403→   403→  1532→            if (mobileMenuBtn && menuVertical) {
+   404→   404→  1533→                mobileMenuBtn.addEventListener('click', function() {
+   405→   405→  1534→                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+   406→   406→  1535→                    this.setAttribute('aria-expanded', !isExpanded);
+   407→   407→  1536→                    menuVertical.classList.toggle('qfs-active');
+   408→   408→  1537→                    
+   409→   409→  1538→                    // Add animation class
+   410→   410→  1539→                    if (!isExpanded) {
+   411→   411→  1540→                        menuVertical.style.animation = 'qfs-fadeInRight 0.3s ease';
+   412→   412→  1541→                    } else {
+   413→   413→  1542→                        menuVertical.style.animation = 'qfs-fadeOutLeft 0.3s ease';
+   414→   414→  1543→                    }
+   415→   415→  1544→                });
+   416→   416→  1545→                
+   417→   417→  1546→                // Close menu when clicking outside
+   418→   418→  1547→                document.addEventListener('click', function(e) {
+   419→   419→  1548→                    if (!menuVertical.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+   420→   420→  1549→                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+   421→   421→  1550→                        menuVertical.classList.remove('qfs-active');
+   422→   422→  1551→                    }
+   423→   423→  1552→                });
+   424→   424→  1553→            }
+   425→   425→  1554→            
+   426→   426→  1555→            // Back to top button
+   427→   427→  1556→            const backToTopBtn = document.getElementById('qfsBackToTop');
+   428→   428→  1557→            if (backToTopBtn) {
+   429→   429→  1558→                window.addEventListener('scroll', function() {
+   430→   430→  1559→                    if (window.pageYOffset > 300) {
+   431→   431→  1560→                        backToTopBtn.classList.add('qfs-visible');
+   432→   432→  1561→                    } else {
+   433→   433→  1562→                        backToTopBtn.classList.remove('qfs-visible');
+   434→   434→  1563→                    }
+   435→   435→  1564→                });
+   436→   436→  1565→                
+   437→   437→  1566→                backToTopBtn.addEventListener('click', function(e) {
+   438→   438→  1567→                    e.preventDefault();
+   439→   439→  1568→                    window.scrollTo({
+   440→   440→  1569→                        top: 0,
+   441→   441→  1570→                        behavior: 'smooth'
+   442→   442→  1571→                    });
+   443→   443→  1572→                });
+   444→   444→  1573→            }
+   445→   445→  1574→            
+   446→   446→  1575→            // Main CTA button
+   447→   447→  1576→            const mainCTA = document.getElementById('qfsMainCTA');
+   448→   448→  1577→            if (mainCTA) {
+   449→   449→  1578→                mainCTA.addEventListener('click', function() {
+   450→   450→  1579→                    // Add ripple effect
+   451→   451→  1580→                    const ripple = document.createElement('span');
+   452→   452→  1581→                    ripple.classList.add('qfs-ripple');
+   453→   453→  1582→                    this.appendChild(ripple);
+   454→   454→  1583→                    
+   455→   455→  1584→                    // Remove ripple after animation
+   456→   456→  1585→                    setTimeout(() => {
+   457→   457→  1586→                        ripple.remove();
+   458→   458→  1587→                    }, 600);
+   459→   459→  1588→                    
+   460→   460→  1589→                    // Redirect to login
+   461→   461→  1590→                    window.location.href = '#login';
+   462→   462→  1591→                });
+   463→   463→  1592→            }
+   464→   464→  1593→            
+   465→   465→  1594→            // Add animation to cards when they come into view
+   466→   466→  1595→            const animateOnScroll = new IntersectionObserver((entries) => {
+   467→   467→  1596→                entries.forEach(entry => {
+   468→   468→  1597→                    if (entry.isIntersecting) {
+   469→   469→  1598→                        entry.target.style.opacity = 1;
+   470→   470→  1599→                        entry.target.style.transform = 'translateY(0)';
+   471→   471→  1600→                    }
+   472→   472→  1601→                });
+   473→   473→  1602→            }, { threshold: 0.1 });
+   474→   474→  1603→            
+   475→   475→  1604→            document.querySelectorAll('.qfs-card, .qfs-feature-item, .qfs-currency-card, .qfs-partner-card, .qfs-g20-banner, .qfs-pay-card').forEach(el => {
+   476→   476→  1605→                el.style.opacity = 0;
+   477→   477→  1606→                el.style.transform = 'translateY(20px)';
+   478→   478→  1607→                el.style.transition = 'all 0.6s ease-out';
+   479→   479→  1608→                animateOnScroll.observe(el);
+   480→   480→  1609→            });
+   481→   481→  1610→
+   482→   482→  1611→            // Seal animation
+   483→   483→  1612→            const seal = document.querySelector('.qfs-seal');
+   484→   484→  1613→            if (seal) {
+   485→   485→  1614→                seal.style.animation = 'qfs-pulse 2s infinite';
+   486→   486→  1615→                
+   487→   487→  1616→                seal.addEventListener('mouseenter', () => {
+   488→   488→  1617→                    seal.style.animation = 'qfs-float 3s ease-in-out infinite';
+   489→   489→  1618→                });
+   490→   490→  1619→                
+   491→   491→  1620→                seal.addEventListener('mouseleave', () => {
+   492→   492→  1621→                    seal.style.animation = 'qfs-pulse 2s infinite';
+   493→   493→  1622→                });
+   494→   494→  1623→            }
+   495→   495→  1624→        });
+   496→   496→  1625→    </script>
+   497→   497→  1626→</body>
+   498→   498→  1627→</html>

@@ -2,13 +2,14 @@
 
 import { usePageStore } from '@/store/page-store';
 import { motion } from 'framer-motion';
-import { Atom, FileText, Map, Menu, X } from 'lucide-react';
+import { Atom, FileText, Map, Menu, X, Landmark } from 'lucide-react';
 import { useState } from 'react';
 
-type PageType = 'home' | 'whitepaper' | 'roadmap';
+type PageType = 'home' | 'whitepaper' | 'roadmap' | 'portal';
 
 const navItems: { id: PageType; label: string; icon: React.ReactNode }[] = [
   { id: 'home', label: 'Inicio', icon: <Atom className="w-4 h-4" /> },
+  { id: 'portal', label: 'Portal', icon: <Landmark className="w-4 h-4" /> },
   { id: 'whitepaper', label: 'Libro Blanco', icon: <FileText className="w-4 h-4" /> },
   { id: 'roadmap', label: 'Roadmap', icon: <Map className="w-4 h-4" /> },
 ];

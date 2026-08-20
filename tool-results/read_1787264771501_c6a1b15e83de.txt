@@ -1,0 +1,1427 @@
+     1→   201→   201→        }
+     2→   202→   202→        
+     3→   203→   203→        .qfs-h1 {
+     4→   204→   204→            font-family: 'Orbitron', sans-serif;
+     5→   205→   205→            font-size: clamp(2rem, 5vw, 3.2rem);
+     6→   206→   206→            margin-bottom: 0.5rem;
+     7→   207→   207→            background: linear-gradient(90deg, var(--qfs-accent), var(--qfs-blue));
+     8→   208→   208→            -webkit-background-clip: text;
+     9→   209→   209→            -webkit-text-fill-color: transparent;
+    10→   210→   210→            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    11→   211→   211→            letter-spacing: 1px;
+    12→   212→   212→            position: relative;
+    13→   213→   213→            display: inline-block;
+    14→   214→   214→            line-height: 1.2;
+    15→   215→   215→            padding-bottom: 15px;
+    16→   216→   216→        }
+    17→   217→   217→
+    18→   218→   218→        .qfs-h1:after {
+    19→   219→   219→            content: '';
+    20→   220→   220→            position: absolute;
+    21→   221→   221→            bottom: 0;
+    22→   222→   222→            left: 50%;
+    23→   223→   223→            transform: translateX(-50%);
+    24→   224→   224→            width: 80px;
+    25→   225→   225→            height: 3px;
+    26→   226→   226→            background: linear-gradient(90deg, var(--qfs-red), var(--qfs-blue), var(--qfs-gold));
+    27→   227→   227→            border-radius: 3px;
+    28→   228→   228→        }
+    29→   229→   229→        
+    30→   230→   230→        /* Government-style cards */
+    31→   231→   231→        .qfs-card {
+    32→   232→   232→            background: rgba(13, 27, 42, 0.7);
+    33→   233→   233→            border-radius: 8px;
+    34→   234→   234→            padding: 2rem;
+    35→   235→   235→            margin-bottom: 2rem;
+    36→   236→   236→            border: 1px solid rgba(212, 175, 55, 0.3);
+    37→   237→   237→            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    38→   238→   238→            backdrop-filter: blur(5px);
+    39→   239→   239→            transition: all 0.3s ease;
+    40→   240→   240→        }
+    41→   241→   241→
+    42→   242→   242→        .qfs-card:hover {
+    43→   243→   243→            border-color: var(--qfs-gold);
+    44→   244→   244→            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    45→   245→   245→            transform: translateY(-5px);
+    46→   246→   246→        }
+    47→   247→   247→
+    48→   248→   248→        .qfs-card-header {
+    49→   249→   249→            display: flex;
+    50→   250→   250→            align-items: center;
+    51→   251→   251→            margin-bottom: 1.5rem;
+    52→   252→   252→            padding-bottom: 1rem;
+    53→   253→   253→            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    54→   254→   254→        }
+    55→   255→   255→
+    56→   256→   256→        .qfs-card-icon {
+    57→   257→   257→            width: 50px;
+    58→   258→   258→            height: 50px;
+    59→   259→   259→            background: rgba(212, 175, 55, 0.1);
+    60→   260→   260→            border-radius: 50%;
+    61→   261→   261→            display: flex;
+    62→   262→   262→            align-items: center;
+    63→   263→   263→            justify-content: center;
+    64→   264→   264→            margin-right: 1rem;
+    65→   265→   265→            color: var(--qfs-gold);
+    66→   266→   266→            font-size: 1.5rem;
+    67→   267→   267→            border: 1px solid rgba(212, 175, 55, 0.3);
+    68→   268→   268→        }
+    69→   269→   269→
+    70→   270→   270→        .qfs-card-title {
+    71→   271→   271→            font-size: 1.5rem;
+    72→   272→   272→            color: var(--qfs-accent);
+    73→   273→   273→            margin: 0;
+    74→   274→   274→            font-weight: 600;
+    75→   275→   275→        }
+    76→   276→   276→        
+    77→   277→   277→        /* Improved buttons - Official style */
+    78→   278→   278→        .qfs-button {
+    79→   279→   279→            display: inline-flex;
+    80→   280→   280→            align-items: center;
+    81→   281→   281→            justify-content: center;
+    82→   282→   282→            background: linear-gradient(135deg, var(--qfs-primary), var(--qfs-blue));
+    83→   283→   283→            color: white;
+    84→   284→   284→            padding: 0.9rem 1.8rem;
+    85→   285→   285→            border-radius: 4px;
+    86→   286→   286→            text-decoration: none;
+    87→   287→   287→            font-weight: 600;
+    88→   288→   288→            margin: 0.5rem 0.5rem 0.5rem 0;
+    89→   289→   289→            border: none;
+    90→   290→   290→            cursor: pointer;
+    91→   291→   291→            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    92→   292→   292→            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    93→   293→   293→            text-align: center;
+    94→   294→   294→            font-size: 1rem;
+    95→   295→   295→            border: 1px solid rgba(212, 175, 55, 0.5);
+    96→   296→   296→            position: relative;
+    97→   297→   297→            overflow: hidden;
+    98→   298→   298→            text-transform: uppercase;
+    99→   299→   299→            letter-spacing: 0.5px;
+   100→   300→   300→        }
+   101→   301→   301→        
+   102→   302→   302→        .qfs-button:hover {
+   103→   303→   303→            transform: translateY(-3px);
+   104→   304→   304→            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3);
+   105→   305→   305→            color: var(--qfs-accent);
+   106→   306→   306→            background: linear-gradient(135deg, var(--qfs-blue), var(--qfs-primary));
+   107→   307→   307→        }
+   108→   308→   308→        
+   109→   309→   309→        .qfs-button:active {
+   110→   310→   310→            transform: translateY(1px);
+   111→   311→   311→            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+   112→   312→   312→        }
+   113→   313→   313→        
+   114→   314→   314→        .qfs-button::before {
+   115→   315→   315→            content: '';
+   116→   316→   316→            position: absolute;
+   117→   317→   317→            top: 0;
+   118→   318→   318→            left: -100%;
+   119→   319→   319→            width: 100%;
+   120→   320→   320→            height: 100%;
+   121→   321→   321→            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+   122→   322→   322→            transition: 0.5s;
+   123→   323→   323→        }
+   124→   324→   324→        
+   125→   325→   325→        .qfs-button:hover::before {
+   126→   326→   326→            left: 100%;
+   127→   327→   327→        }
+   128→   328→   328→        
+   129→   329→   329→        .qfs-button .qfs-button-icon {
+   130→   330→   330→            margin-right: 10px;
+   131→   331→   331→            font-size: 1.1em;
+   132→   332→   332→        }
+   133→   333→   333→        
+   134→   334→   334→        /* QFSpay Button Style */
+   135→   335→   335→        .qfs-pay-button {
+   136→   336→   336→            background: linear-gradient(135deg, var(--qfs-pay), #003366);
+   137→   337→   337→            color: white;
+   138→   338→   338→        }
+   139→   339→   339→        
+   140→   340→   340→        .qfs-pay-button:hover {
+   141→   341→   341→            background: linear-gradient(135deg, #003366, var(--qfs-pay));
+   142→   342→   342→            color: var(--qfs-accent);
+   143→   343→   343→        }
+   144→   344→   344→        
+   145→   345→   345→        /* CTA Button - Government seal style */
+   146→   346→   346→        .qfs-cta-button {
+   147→   347→   347→            padding: 1.2rem 2.5rem;
+   148→   348→   348→            font-size: 1.2rem;
+   149→   349→   349→            background: linear-gradient(135deg, var(--qfs-gold), #FFBF00);
+   150→   350→   350→            color: var(--qfs-dark);
+   151→   351→   351→            font-weight: 700;
+   152→   352→   352→            border: none;
+   153→   353→   353→            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+   154→   354→   354→            text-transform: uppercase;
+   155→   355→   355→            letter-spacing: 1px;
+   156→   356→   356→            border-radius: 4px;
+   157→   357→   357→            position: relative;
+   158→   358→   358→            overflow: hidden;
+   159→   359→   359→            border: 1px solid rgba(212, 175, 55, 0.7);
+   160→   360→   360→        }
+   161→   361→   361→        
+   162→   362→   362→        .qfs-cta-button:hover {
+   163→   363→   363→            background: linear-gradient(135deg, #FFBF00, var(--qfs-gold));
+   164→   364→   364→            color: var(--qfs-dark);
+   165→   365→   365→            box-shadow: 0 7px 20px rgba(212, 175, 55, 0.5);
+   166→   366→   366→            transform: translateY(-3px);
+   167→   367→   367→        }
+   168→   368→   368→
+   169→   369→   369→        .qfs-cta-button:active {
+   170→   370→   370→            transform: translateY(1px);
+   171→   371→   371→        }
+   172→   372→   372→        
+   173→   373→   373→        /* Mobile menu button - Official style */
+   174→   374→   374→        .qfs-mobile-menu-btn {
+   175→   375→   375→            display: none;
+   176→   376→   376→            background: rgba(13, 27, 42, 0.95);
+   177→   377→   377→            border: 2px solid var(--qfs-gold);
+   178→   378→   378→            border-radius: 4px;
+   179→   379→   379→            color: var(--qfs-accent);
+   180→   380→   380→            font-size: 1.5rem;
+   181→   381→   381→            width: 60px;
+   182→   382→   382→            height: 60px;
+   183→   383→   383→            position: fixed;
+   184→   384→   384→            top: 1rem;
+   185→   385→   385→            right: 1rem;
+   186→   386→   386→            z-index: 1001;
+   187→   387→   387→            cursor: pointer;
+   188→   388→   388→            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   189→   389→   389→            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+   190→   390→   390→            outline: none;
+   191→   391→   391→        }
+   192→   392→   392→        
+   193→   393→   393→        .qfs-mobile-menu-btn:hover {
+   194→   394→   394→            background: var(--qfs-primary);
+   195→   395→   395→            transform: scale(1.05);
+   196→   396→   396→        }
+   197→   397→   397→        
+   198→   398→   398→        .qfs-mobile-menu-btn:active {
+   199→   399→   399→            transform: scale(0.95);
+   200→   400→   400→        }
+   201→   401→   401→        
+   202→   402→   402→        /* Back to top button - Official style */
+   203→   403→   403→        .qfs-back-to-top {
+   204→   404→   404→            position: fixed;
+   205→   405→   405→            bottom: 2rem;
+   206→   406→   406→            right: 2rem;
+   207→   407→   407→            background: linear-gradient(135deg, var(--qfs-primary), var(--qfs-blue));
+   208→   408→   408→            width: 60px;
+   209→   409→   409→            height: 60px;
+   210→   410→   410→            border-radius: 50%;
+   211→   411→   411→            display: flex;
+   212→   412→   412→            align-items: center;
+   213→   413→   413→            justify-content: center;
+   214→   414→   414→            color: var(--qfs-accent);
+   215→   415→   415→            font-size: 1.5rem;
+   216→   416→   416→            text-decoration: none;
+   217→   417→   417→            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+   218→   418→   418→            opacity: 0;
+   219→   419→   419→            visibility: hidden;
+   220→   420→   420→            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+   221→   421→   421→            z-index: 999;
+   222→   422→   422→            border: 1px solid rgba(212, 175, 55, 0.5);
+   223→   423→   423→        }
+   224→   424→   424→        
+   225→   425→   425→        .qfs-back-to-top.qfs-visible {
+   226→   426→   426→            opacity: 1;
+   227→   427→   427→            visibility: visible;
+   228→   428→   428→        }
+   229→   429→   429→        
+   230→   430→   430→        .qfs-back-to-top:hover {
+   231→   431→   431→            transform: translateY(-5px) scale(1.05);
+   232→   432→   432→            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+   233→   433→   433→            background: linear-gradient(135deg, var(--qfs-blue), var(--qfs-primary));
+   234→   434→   434→        }
+   235→   435→   435→        
+   236→   436→   436→        .qfs-back-to-top:active {
+   237→   437→   437→            transform: translateY(-2px) scale(1);
+   238→   438→   438→        }
+   239→   439→   439→        
+   240→   440→   440→        /* Mobile responsive styles */
+   241→   441→   441→        @media (max-width: 768px) {
+   242→   442→   442→            .qfs-mobile-menu-btn {
+   243→   443→   443→                display: flex;
+   244→   444→   444→                align-items: center;
+   245→   445→   445→                justify-content: center;
+   246→   446→   446→            }
+   247→   447→   447→            
+   248→   448→   448→            .qfs-menu-vertical {
+   249→   449→   449→                transform: translateX(-100%);
+   250→   450→   450→                width: 300px;
+   251→   451→   451→            }
+   252→   452→   452→            
+   253→   453→   453→            .qfs-menu-vertical.qfs-active {
+   254→   454→   454→                transform: translateX(0);
+   255→   455→   455→            }
+   256→   456→   456→            
+   257→   457→   457→            .qfs-content {
+   258→   458→   458→                margin-left: 0;
+   259→   459→   459→                width: 100%;
+   260→   460→   460→                padding: 1.5rem;
+   261→   461→   461→            }
+   262→   462→   462→            
+   263→   463→   463→            .qfs-container {
+   264→   464→   464→                padding: 0.5rem;
+   265→   465→   465→            }
+   266→   466→   466→            
+   267→   467→   467→            .qfs-button {
+   268→   468→   468→                padding: 0.9rem 1.5rem;
+   269→   469→   469→                font-size: 0.95rem;
+   270→   470→   470→                width: 100%;
+   271→   471→   471→                margin: 0.5rem 0;
+   272→   472→   472→            }
+   273→   473→   473→            
+   274→   474→   474→            .qfs-cta-button {
+   275→   475→   475→                padding: 1.2rem 2rem;
+   276→   476→   476→                font-size: 1.1rem;
+   277→   477→   477→            }
+   278→   478→   478→            
+   279→   479→   479→            .qfs-back-to-top {
+   280→   480→   480→                width: 50px;
+   281→   481→   481→                height: 50px;
+   282→   482→   482→                font-size: 1.2rem;
+   283→   483→   483→                bottom: 1.5rem;
+   284→   484→   484→                right: 1.5rem;
+   285→   485→   485→            }
+   286→   486→   486→
+   287→   487→   487→            .qfs-card {
+   288→   488→   488→                padding: 1.5rem;
+   289→   489→   489→            }
+   290→   490→   490→        }
+   291→   491→   491→        
+   292→   492→   492→        /* Currency section styles */
+   293→   493→   493→        .qfs-currency-section {
+   294→   494→   494→            margin: 3rem 0;
+   295→   495→   495→        }
+   296→   496→   496→
+   297→   497→   497→        .qfs-currency-grid {
+   298→   498→   498→            display: grid;
+   299→   499→   499→            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   300→   500→   500→            gap: 2rem;
+   301→   501→   501→            margin-top: 2rem;
+   302→   502→   502→        }
+   303→   503→   503→
+   304→   504→   504→        .qfs-currency-card {
+   305→   505→   505→            background: rgba(13, 27, 42, 0.8);
+   306→   506→   506→            border-radius: 8px;
+   307→   507→   507→            padding: 2rem;
+   308→   508→   508→            border: 1px solid rgba(212, 175, 55, 0.3);
+   309→   509→   509→            transition: all 0.3s ease;
+   310→   510→   510→            position: relative;
+   311→   511→   511→            overflow: hidden;
+   312→   512→   512→        }
+   313→   513→   513→
+   314→   514→   514→        .qfs-currency-card:hover {
+   315→   515→   515→            transform: translateY(-8px);
+   316→   516→   516→            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+   317→   517→   517→            border-color: var(--qfs-gold);
+   318→   518→   518→        }
+   319→   519→   519→
+   320→   520→   520→        .qfs-currency-card:before {
+   321→   521→   521→            content: '';
+   322→   522→   522→            position: absolute;
+   323→   523→   523→            top: 0;
+   324→   524→   524→            left: 0;
+   325→   525→   525→            width: 100%;
+   326→   526→   526→            height: 5px;
+   327→   527→   527→            background: linear-gradient(90deg, var(--qfs-red), var(--qfs-blue), var(--qfs-gold));
+   328→   528→   528→            border-radius: 2px;
+   329→   529→   529→        }
+   330→   530→   530→
+   331→   531→   531→        .qfs-currency-icon {
+   332→   532→   532→            display: flex;
+   333→   533→   533→            justify-content: center;
+   334→   534→   534→            align-items: center;
+   335→   535→   535→            height: 80px;
+   336→   536→   536→            margin-bottom: 1.5rem;
+   337→   537→   537→        }
+   338→   538→   538→
+   339→   539→   539→        .qfs-currency-icon img {
+   340→   540→   540→            max-height: 100%;
+   341→   541→   541→            max-width: 100%;
+   342→   542→   542→            object-fit: contain;
+   343→   543→   543→        }
+   344→   544→   544→
+   345→   545→   545→        .qfs-currency-title {
+   346→   546→   546→            font-size: 1.5rem;
+   347→   547→   547→            margin-bottom: 0.5rem;
+   348→   548→   548→            color: var(--qfs-accent);
+   349→   549→   549→            font-weight: 600;
+   350→   550→   550→            position: relative;
+   351→   551→   551→            display: inline-block;
+   352→   552→   552→        }
+   353→   553→   553→
+   354→   554→   554→        .qfs-currency-title:after {
+   355→   555→   555→            content: '';
+   356→   556→   556→            position: absolute;
+   357→   557→   557→            bottom: -5px;
+   358→   558→   558→            left: 0;
+   359→   559→   559→            width: 50px;
+   360→   560→   560→            height: 2px;
+   361→   561→   561→            background: var(--qfs-gold);
+   362→   562→   562→        }
+   363→   563→   563→
+   364→   564→   564→        .qfs-currency-subtitle {
+   365→   565→   565→            font-size: 1rem;
+   366→   566→   566→            opacity: 0.9;
+   367→   567→   567→            margin-bottom: 1.5rem;
+   368→   568→   568→            display: block;
+   369→   569→   569→            color: var(--qfs-light);
+   370→   570→   570→            font-weight: 500;
+   371→   571→   571→        }
+   372→   572→   572→
+   373→   573→   573→        .qfs-currency-description {
+   374→   574→   574→            font-size: 1rem;
+   375→   575→   575→            line-height: 1.6;
+   376→   576→   576→            color: var(--qfs-light);
+   377→   577→   577→        }
+   378→   578→   578→        
+   379→   579→   579→        /* Features grid */
+   380→   580→   580→        .qfs-features-grid {
+   381→   581→   581→            display: grid;
+   382→   582→   582→            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   383→   583→   583→            gap: 2rem;
+   384→   584→   584→            margin-top: 2rem;
+   385→   585→   585→        }
+   386→   586→   586→
+   387→   587→   587→        .qfs-feature-item {
+   388→   588→   588→            background: rgba(13, 27, 42, 0.8);
+   389→   589→   589→            border-radius: 8px;
+   390→   590→   590→            padding: 2rem;
+   391→   591→   591→            border: 1px solid rgba(212, 175, 55, 0.3);
+   392→   592→   592→            transition: all 0.3s ease;
+   393→   593→   593→            text-align: center;
+   394→   594→   594→        }
+   395→   595→   595→
+   396→   596→   596→        .qfs-feature-item:hover {
+   397→   597→   597→            transform: translateY(-5px);
+   398→   598→   598→            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   399→   599→   599→            border-color: var(--qfs-gold);
+   400→   600→   600→        }
+   401→   601→   601→
+   402→   602→   602→        .qfs-feature-icon {
+   403→   603→   603→            width: 70px;
+   404→   604→   604→            height: 70px;
+   405→   605→   605→            background: rgba(212, 175, 55, 0.1);
+   406→   606→   606→            border-radius: 50%;
+   407→   607→   607→            display: flex;
+   408→   608→   608→            align-items: center;
+   409→   609→   609→            justify-content: center;
+   410→   610→   610→            margin: 0 auto 1.5rem;
+   411→   611→   611→            color: var(--qfs-gold);
+   412→   612→   612→            font-size: 2rem;
+   413→   613→   613→            border: 1px solid rgba(212, 175, 55, 0.3);
+   414→   614→   614→        }
+   415→   615→   615→
+   416→   616→   616→        .qfs-feature-title {
+   417→   617→   617→            font-size: 1.3rem;
+   418→   618→   618→            margin-bottom: 1rem;
+   419→   619→   619→            color: var(--qfs-accent);
+   420→   620→   620→            font-weight: 600;
+   421→   621→   621→        }
+   422→   622→   622→        
+   423→   623→   623→        /* Footer - Official style */
+   424→   624→   624→        .qfs-footer {
+   425→   625→   625→            text-align: center;
+   426→   626→   626→            padding: 2rem 0;
+   427→   627→   627→            margin-top: 3rem;
+   428→   628→   628→            border-top: 1px solid rgba(212, 175, 55, 0.3);
+   429→   629→   629→            width: 100%;
+   430→   630→   630→            background: rgba(13, 27, 42, 0.8);
+   431→   631→   631→        }
+   432→   632→   632→
+   433→   633→   633→        .qfs-social-links {
+   434→   634→   634→            display: flex;
+   435→   635→   635→            justify-content: center;
+   436→   636→   636→            gap: 1.5rem;
+   437→   637→   637→            margin-bottom: 1.5rem;
+   438→   638→   638→        }
+   439→   639→   639→
+   440→   640→   640→        .qfs-social-links a {
+   441→   641→   641→            color: var(--qfs-light);
+   442→   642→   642→            font-size: 1.5rem;
+   443→   643→   643→            transition: all 0.3s ease;
+   444→   644→   644→        }
+   445→   645→   645→
+   446→   646→   646→        .qfs-social-links a:hover {
+   447→   647→   647→            color: var(--qfs-gold);
+   448→   648→   648→            transform: translateY(-3px);
+   449→   649→   649→        }
+   450→   650→   650→
+   451→   651→   651→        .qfs-copyright {
+   452→   652→   652→            font-size: 0.9rem;
+   453→   653→   653→            opacity: 0.8;
+   454→   654→   654→            margin-top: 1rem;
+   455→   655→   655→        }
+   456→   656→   656→        
+   457→   657→   657→        /* Strategic Partners Section */
+   458→   658→   658→        .qfs-partners-section {
+   459→   659→   659→            margin: 3rem 0;
+   460→   660→   660→        }
+   461→   661→   661→
+   462→   662→   662→        .qfs-partners-grid {
+   463→   663→   663→            display: grid;
+   464→   664→   664→            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   465→   665→   665→            gap: 2rem;
+   466→   666→   666→            margin-top: 2rem;
+   467→   667→   667→            align-items: center;
+   468→   668→   668→        }
+   469→   669→   669→
+   470→   670→   670→        .qfs-partner-card {
+   471→   671→   671→            background: rgba(13, 27, 42, 0.8);
+   472→   672→   672→            border-radius: 8px;
+   473→   673→   673→            padding: 1.5rem;
+   474→   674→   674→            border: 1px solid rgba(212, 175, 55, 0.3);
+   475→   675→   675→            transition: all 0.3s ease;
+   476→   676→   676→            text-align: center;
+   477→   677→   677→            height: 100%;
+   478→   678→   678→            display: flex;
+   479→   679→   679→            flex-direction: column;
+   480→   680→   680→            justify-content: center;
+   481→   681→   681→        }
+   482→   682→   682→
+   483→   683→   683→        .qfs-partner-card:hover {
+   484→   684→   684→            transform: translateY(-5px);
+   485→   685→   685→            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   486→   686→   686→            border-color: var(--qfs-gold);
+   487→   687→   687→        }
+   488→   688→   688→
+   489→   689→   689→        .qfs-partner-logo {
+   490→   690→   690→            max-width: 100%;
+   491→   691→   691→            height: 60px;
+   492→   692→   692→            object-fit: contain;
+   493→   693→   693→            margin-bottom: 1rem;
+   494→   694→   694→            filter: grayscale(100%) brightness(1.5);
+   495→   695→   695→            transition: filter 0.3s ease;
+   496→   696→   696→        }
+   497→   697→   697→
+   498→   698→   698→        .qfs-partner-card:hover .qfs-partner-logo {
+   499→   699→   699→            filter: grayscale(0%) brightness(1);
+   500→   700→   700→        }
+   501→   701→   701→
+   502→   702→   702→        .qfs-partner-name {
+   503→   703→   703→            font-size: 1.1rem;
+   504→   704→   704→            color: var(--qfs-accent);
+   505→   705→   705→            font-weight: 600;
+   506→   706→   706→            margin-bottom: 0.5rem;
+   507→   707→   707→        }
+   508→   708→   708→
+   509→   709→   709→        .qfs-partner-country {
+   510→   710→   710→            font-size: 0.9rem;
+   511→   711→   711→            color: var(--qfs-light);
+   512→   712→   712→            opacity: 0.8;
+   513→   713→   713→        }
+   514→   714→   714→
+   515→   715→   715→        /* G20 Banner */
+   516→   716→   716→        .qfs-g20-banner {
+   517→   717→   717→            width: 100%;
+   518→   718→   718→            height: 300px;
+   519→   719→   719→            background-size: cover;
+   520→   720→   720→            background-position: center;
+   521→   721→   721→            border-radius: 8px;
+   522→   722→   722→            margin: 2rem 0;
+   523→   723→   723→            position: relative;
+   524→   724→   724→            overflow: hidden;
+   525→   725→   725→            display: flex;
+   526→   726→   726→            align-items: center;
+   527→   727→   727→            justify-content: center;
+   528→   728→   728→        }
+   529→   729→   729→
+   530→   730→   730→        .qfs-g20-banner::before {
+   531→   731→   731→            content: '';
+   532→   732→   732→            position: absolute;
+   533→   733→   733→            top: 0;
+   534→   734→   734→            left: 0;
+   535→   735→   735→            width: 100%;
+   536→   736→   736→            height: 100%;
+   537→   737→   737→            background: rgba(0, 0, 0, 0.5);
+   538→   738→   738→        }
+   539→   739→   739→
+   540→   740→   740→        .qfs-g20-banner-content {
+   541→   741→   741→            position: relative;
+   542→   742→   742→            z-index: 1;
+   543→   743→   743→            text-align: center;
+   544→   744→   744→            padding: 2rem;
+   545→   745→   745→            color: white;
+   546→   746→   746→        }
+   547→   747→   747→
+   548→   748→   748→        .qfs-g20-banner h2 {
+   549→   749→   749→            font-size: 2.5rem;
+   550→   750→   750→            margin-bottom: 1rem;
+   551→   751→   751→            color: var(--qfs-accent);
+   552→   752→   752→        }
+   553→   753→   753→
+   554→   754→   754→        .qfs-g20-banner p {
+   555→   755→   755→            font-size: 1.2rem;
+   556→   756→   756→            max-width: 800px;
+   557→   757→   757→            margin: 0 auto;
+   558→   758→   758→        }
+   559→   759→   759→        
+   560→   760→   760→        /* Highlight box - Official notice style */
+   561→   761→   761→        .qfs-highlight-box {
+   562→   762→   762→            background: rgba(0, 35, 102, 0.3);
+   563→   763→   763→            border-left: 4px solid var(--qfs-gold);
+   564→   764→   764→            padding: 1.5rem;
+   565→   765→   765→            margin: 2rem 0;
+   566→   766→   766→            border-radius: 0 4px 4px 0;
+   567→   767→   767→        }
+   568→   768→   768→
+   569→   769→   769→        .qfs-highlight-box .qfs-h3 {
+   570→   770→   770→            color: var(--qfs-gold);
+   571→   771→   771→            margin-top: 0;
+   572→   772→   772→            font-size: 1.3rem;
+   573→   773→   773→        }
+   574→   774→   774→
+   575→   775→   775→        .qfs-features-list {
+   576→   776→   776→            list-style-type: none;
+   577→   777→   777→            padding-left: 0;
+   578→   778→   778→        }
+   579→   779→   779→
+   580→   780→   780→        .qfs-features-list li {
+   581→   781→   781→            position: relative;
+   582→   782→   782→            padding-left: 1.5rem;
+   583→   783→   783→            margin-bottom: 0.8rem;
+   584→   784→   784→        }
+   585→   785→   785→
+   586→   786→   786→        .qfs-features-list li:before {
+   587→   787→   787→            content: '•';
+   588→   788→   788→            position: absolute;
+   589→   789→   789→            left: 0;
+   590→   790→   790→            color: var(--qfs-gold);
+   591→   791→   791→            font-size: 1.5rem;
+   592→   792→   792→            line-height: 1;
+   593→   793→   793→        }
+   594→   794→   794→        
+   595→   795→   795→        /* Button group */
+   596→   796→   796→        .qfs-button-group {
+   597→   797→   797→            display: flex;
+   598→   798→   798→            flex-wrap: wrap;
+   599→   799→   799→            gap: 1rem;
+   600→   800→   800→            margin: 2rem 0;
+   601→   801→   801→        }
+   602→   802→   802→        
+   603→   803→   803→        /* Small button variant */
+   604→   804→   804→        .qfs-small-button {
+   605→   805→   805→            padding: 0.6rem 1.2rem;
+   606→   806→   806→            font-size: 0.9rem;
+   607→   807→   807→            margin-top: 1rem;
+   608→   808→   808→        }
+   609→   809→   809→        
+   610→   810→   810→        /* Chains list */
+   611→   811→   811→        .qfs-chains-list {
+   612→   812→   812→            display: flex;
+   613→   813→   813→            flex-wrap: wrap;
+   614→   814→   814→            gap: 1rem;
+   615→   815→   815→            margin: 1.5rem 0;
+   616→   816→   816→        }
+   617→   817→   817→
+   618→   818→   818→        .qfs-chain {
+   619→   819→   819→            background: rgba(0, 35, 102, 0.3);
+   620→   820→   820→            padding: 0.5rem 1rem;
+   621→   821→   821→            border-radius: 4px;
+   622→   822→   822→            border: 1px solid rgba(212, 175, 55, 0.3);
+   623→   823→   823→            font-size: 0.9rem;
+   624→   824→   824→        }
+   625→   825→   825→        
+   626→   826→   826→        /* Official Seal */
+   627→   827→   827→        .qfs-seal {
+   628→   828→   828→            width: 120px;
+   629→   829→   829→            height: 120px;
+   630→   830→   830→            border-radius: 50%;
+   631→   831→   831→            background: var(--qfs-seal);
+   632→   832→   832→            display: flex;
+   633→   833→   833→            align-items: center;
+   634→   834→   834→            justify-content: center;
+   635→   835→   835→            margin: 0 auto;
+   636→   836→   836→            border: 3px solid var(--qfs-gold);
+   637→   837→   837→            box-shadow: 0 0 0 5px rgba(139, 0, 0, 0.5);
+   638→   838→   838→            position: relative;
+   639→   839→   839→        }
+   640→   840→   840→
+   641→   841→   841→        .qfs-seal:before {
+   642→   842→   842→            content: '';
+   643→   843→   843→            position: absolute;
+   644→   844→   844→            top: -5px;
+   645→   845→   845→            left: -5px;
+   646→   846→   846→            right: -5px;
+   647→   847→   847→            bottom: -5px;
+   648→   848→   848→            border: 2px solid var(--qfs-gold);
+   649→   849→   849→            border-radius: 50%;
+   650→   850→   850→            animation: qfs-pulse 2s infinite;
+   651→   851→   851→        }
+   652→   852→   852→
+   653→   853→   853→        .qfs-seal-icon {
+   654→   854→   854→            color: var(--qfs-gold);
+   655→   855→   855→            font-size: 3rem;
+   656→   856→   856→        }
+   657→   857→   857→        
+   658→   858→   858→        /* Official Document Style */
+   659→   859→   859→        .qfs-document {
+   660→   860→   860→            background: rgba(255, 255, 255, 0.05);
+   661→   861→   861→            border: 1px solid rgba(212, 175, 55, 0.3);
+   662→   862→   862→            padding: 2rem;
+   663→   863→   863→            margin: 2rem 0;
+   664→   864→   864→            position: relative;
+   665→   865→   865→        }
+   666→   866→   866→
+   667→   867→   867→        .qfs-document:before {
+   668→   868→   868→            content: '';
+   669→   869→   869→            position: absolute;
+   670→   870→   870→            top: 0;
+   671→   871→   871→            left: 0;
+   672→   872→   872→            width: 100%;
+   673→   873→   873→            height: 100%;
+   674→   874→   874→            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+   675→   875→   875→            opacity: 0.1;
+   676→   876→   876→            pointer-events: none;
+   677→   877→   877→        }
+   678→   878→   878→
+   679→   879→   879→        .qfs-document-header {
+   680→   880→   880→            border-bottom: 2px solid var(--qfs-gold);
+   681→   881→   881→            padding-bottom: 1rem;
+   682→   882→   882→            margin-bottom: 1.5rem;
+   683→   883→   883→            display: flex;
+   684→   884→   884→            justify-content: space-between;
+   685→   885→   885→            align-items: flex-end;
+   686→   886→   886→        }
+   687→   887→   887→
+   688→   888→   888→        .qfs-document-title {
+   689→   889→   889→            font-family: 'Orbitron', sans-serif;
+   690→   890→   890→            color: var(--qfs-accent);
+   691→   891→   891→            margin: 0;
+   692→   892→   892→        }
+   693→   893→   893→
+   694→   894→   894→        .qfs-document-number {
+   695→   895→   895→            color: var(--qfs-light);
+   696→   896→   896→            opacity: 0.7;
+   697→   897→   897→            font-size: 0.9rem;
+   698→   898→   898→        }
+   699→   899→   899→
+   700→   900→   900→        .qfs-document-content {
+   701→   901→   901→            line-height: 1.8;
+   702→   902→   902→        }
+   703→   903→   903→
+   704→   904→   904→        .qfs-document-footer {
+   705→   905→   905→            border-top: 2px solid var(--qfs-gold);
+   706→   906→   906→            padding-top: 1rem;
+   707→   907→   907→            margin-top: 1.5rem;
+   708→   908→   908→            display: flex;
+   709→   909→   909→            justify-content: space-between;
+   710→   910→   910→            align-items: center;
+   711→   911→   911→        }
+   712→   912→   912→
+   713→   913→   913→        .qfs-document-signature {
+   714→   914→   914→            display: flex;
+   715→   915→   915→            flex-direction: column;
+   716→   916→   916→            align-items: center;
+   717→   917→   917→        }
+   718→   918→   918→
+   719→   919→   919→        .qfs-signature-line {
+   720→   920→   920→            width: 200px;
+   721→   921→   921→            height: 1px;
+   722→   922→   922→            background: var(--qfs-light);
+   723→   923→   923→            margin: 0.5rem 0;
+   724→   924→   924→        }
+   725→   925→   925→
+   726→   926→   926→        .qfs-document-stamp {
+   727→   927→   927→            width: 80px;
+   728→   928→   928→            height: 80px;
+   729→   929→   929→            background: var(--qfs-seal);
+   730→   930→   930→            border-radius: 50%;
+   731→   931→   931→            display: flex;
+   732→   932→   932→            align-items: center;
+   733→   933→   933→            justify-content: center;
+   734→   934→   934→            color: var(--qfs-gold);
+   735→   935→   935→            font-weight: bold;
+   736→   936→   936→            font-size: 0.8rem;
+   737→   937→   937→            border: 2px solid var(--qfs-gold);
+   738→   938→   938→        }
+   739→   939→   939→        
+   740→   940→   940→        /* QFSpay Card */
+   741→   941→   941→        .qfs-pay-card {
+   742→   942→   942→            background: linear-gradient(135deg, rgba(75, 0, 130, 0.2), rgba(13, 27, 42, 0.8));
+   743→   943→   943→            border: 1px solid rgba(75, 0, 130, 0.5);
+   744→   944→   944→            border-radius: 12px;
+   745→   945→   945→            padding: 2rem;
+   746→   946→   946→            margin: 2rem 0;
+   747→   947→   947→            position: relative;
+   748→   948→   948→            overflow: hidden;
+   749→   949→   949→        }
+   750→   950→   950→
+   751→   951→   951→        .qfs-pay-card:before {
+   752→   952→   952→            content: '';
+   753→   953→   953→            position: absolute;
+   754→   954→   954→            top: 0;
+   755→   955→   955→            left: 0;
+   756→   956→   956→            width: 100%;
+   757→   957→   957→            height: 100%;
+   758→   958→   958→            background: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+   759→   959→   959→            opacity: 0.1;
+   760→   960→   960→            pointer-events: none;
+   761→   961→   961→        }
+   762→   962→   962→
+   763→   963→   963→        .qfs-pay-card-header {
+   764→   964→   964→            display: flex;
+   765→   965→   965→            align-items: center;
+   766→   966→   966→            margin-bottom: 1.5rem;
+   767→   967→   967→        }
+   768→   968→   968→
+   769→   969→   969→        .qfs-pay-card-icon {
+   770→   970→   970→            width: 60px;
+   771→   971→   971→            height: 60px;
+   772→   972→   972→            background: rgba(75, 0, 130, 0.3);
+   773→   973→   973→            border-radius: 50%;
+   774→   974→   974→            display: flex;
+   775→   975→   975→            align-items: center;
+   776→   976→   976→            justify-content: center;
+   777→   977→   977→            margin-right: 1.5rem;
+   778→   978→   978→            color: white;
+   779→   979→   979→            font-size: 1.8rem;
+   780→   980→   980→            border: 2px solid var(--qfs-accent);
+   781→   981→   981→        }
+   782→   982→   982→
+   783→   983→   983→        .qfs-pay-card-title {
+   784→   984→   984→            font-family: 'Orbitron', sans-serif;
+   785→   985→   985→            color: white;
+   786→   986→   986→            margin: 0;
+   787→   987→   987→            font-size: 1.8rem;
+   788→   988→   988→            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+   789→   989→   989→        }
+   790→   990→   990→
+   791→   991→   991→        .qfs-pay-card-subtitle {
+   792→   992→   992→            color: var(--qfs-accent);
+   793→   993→   993→            margin: 0;
+   794→   994→   994→            font-size: 1.1rem;
+   795→   995→   995→        }
+   796→   996→   996→
+   797→   997→   997→        .qfs-pay-card-content {
+   798→   998→   998→            display: grid;
+   799→   999→   999→            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   800→  1000→  1000→            gap: 2rem;
+   801→  1001→  1001→        }
+   802→  1002→  1002→
+   803→  1003→  1003→        .qfs-pay-feature {
+   804→  1004→  1004→            display: flex;
+   805→  1005→  1005→            align-items: flex-start;
+   806→  1006→  1006→            margin-bottom: 1rem;
+   807→  1007→  1007→        }
+   808→  1008→  1008→
+   809→  1009→  1009→        .qfs-pay-feature-icon {
+   810→  1010→  1010→            color: var(--qfs-accent);
+   811→  1011→  1011→            font-size: 1.2rem;
+   812→  1012→  1012→            margin-right: 1rem;
+   813→  1013→  1013→            flex-shrink: 0;
+   814→  1014→  1014→        }
+   815→  1015→  1015→
+   816→  1016→  1016→        .qfs-pay-feature-text {
+   817→  1017→  1017→            flex: 1;
+   818→  1018→  1018→        }
+   819→  1019→  1019→
+   820→  1020→  1020→        .qfs-pay-feature-title {
+   821→  1021→  1021→            color: white;
+   822→  1022→  1022→            margin-bottom: 0.5rem;
+   823→  1023→  1023→            font-weight: 600;
+   824→  1024→  1024→        }
+   825→  1025→  1025→
+   826→  1026→  1026→        .qfs-pay-feature-desc {
+   827→  1027→  1027→            color: var(--qfs-light);
+   828→  1028→  1028→            font-size: 0.9rem;
+   829→  1029→  1029→            line-height: 1.5;
+   830→  1030→  1030→        }
+   831→  1031→  1031→
+   832→  1032→  1032→        .qfs-pay-card-image {
+   833→  1033→  1033→            display: flex;
+   834→  1034→  1034→            align-items: center;
+   835→  1035→  1035→            justify-content: center;
+   836→  1036→  1036→        }
+   837→  1037→  1037→
+   838→  1038→  1038→        .qfs-pay-card-image img {
+   839→  1039→  1039→            max-width: 100%;
+   840→  1040→  1040→            height: auto;
+   841→  1041→  1041→            border-radius: 8px;
+   842→  1042→  1042→            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+   843→  1043→  1043→            border: 1px solid rgba(212, 175, 55, 0.3);
+   844→  1044→  1044→        }
+   845→  1045→  1045→        
+   846→  1046→  1046→        /* Animations */
+   847→  1047→  1047→        @keyframes qfs-fadeInDown {
+   848→  1048→  1048→            from { opacity: 0; transform: translateY(-20px); }
+   849→  1049→  1049→            to { opacity: 1; transform: translateY(0); }
+   850→  1050→  1050→        }
+   851→  1051→  1051→        
+   852→  1052→  1052→        @keyframes qfs-fadeInRight {
+   853→  1053→  1053→            from { opacity: 0; transform: translateX(-20px); }
+   854→  1054→  1054→            to { opacity: 1; transform: translateX(0); }
+   855→  1055→  1055→        }
+   856→  1056→  1056→        
+   857→  1057→  1057→        @keyframes qfs-fadeOutLeft {
+   858→  1058→  1058→            from { opacity: 1; transform: translateX(0); }
+   859→  1059→  1059→            to { opacity: 0; transform: translateX(-20px); }
+   860→  1060→  1060→        }
+   861→  1061→  1061→        
+   862→  1062→  1062→        @keyframes qfs-pulse {
+   863→  1063→  1063→            0% { transform: scale(1); }
+   864→  1064→  1064→            50% { transform: scale(1.05); }
+   865→  1065→  1065→            100% { transform: scale(1); }
+   866→  1066→  1066→        }
+   867→  1067→  1067→
+   868→  1068→  1068→        @keyframes qfs-float {
+   869→  1069→  1069→            0% { transform: translateY(0px); }
+   870→  1070→  1070→            50% { transform: translateY(-10px); }
+   871→  1071→  1071→            100% { transform: translateY(0px); }
+   872→  1072→  1072→        }
+   873→  1073→  1073→        
+   874→  1074→  1074→        /* Touch feedback for mobile */
+   875→  1075→  1075→        @media (hover: none) {
+   876→  1076→  1076→            .qfs-button:hover {
+   877→  1077→  1077→                transform: none;
+   878→  1078→  1078→                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   879→  1079→  1079→            }
+   880→  1080→  1080→            
+   881→  1081→  1081→            .qfs-button:active {
+   882→  1082→  1082→                transform: scale(0.98);
+   883→  1083→  1083→                background: var(--qfs-button-active);
+   884→  1084→  1084→            }
+   885→  1085→  1085→            
+   886→  1086→  1086→            .qfs-menu-vertical li:active {
+   887→  1087→  1087→                background-color: var(--qfs-button-active);
+   888→  1088→  1088→            }
+   889→  1089→  1089→        }
+   890→  1090→  1090→
+   891→  1091→  1091→        @media (max-width: 768px) {
+   892→  1092→  1092→            .qfs-g20-banner {
+   893→  1093→  1093→                height: 200px;
+   894→  1094→  1094→            }
+   895→  1095→  1095→            
+   896→  1096→  1096→            .qfs-g20-banner h2 {
+   897→  1097→  1097→                font-size: 1.8rem;
+   898→  1098→  1098→            }
+   899→  1099→  1099→            
+   900→  1100→  1100→            .qfs-g20-banner p {
+   901→  1101→  1101→                font-size: 1rem;
+   902→  1102→  1102→            }
+   903→  1103→  1103→            
+   904→  1104→  1104→            .qfs-pay-card-content {
+   905→  1105→  1105→                grid-template-columns: 1fr;
+   906→  1106→  1106→            }
+   907→  1107→  1107→            
+   908→  1108→  1108→            .qfs-pay-card-image {
+   909→  1109→  1109→                order: -1;
+   910→  1110→  1110→                margin-bottom: 2rem;
+   911→  1111→  1111→            }
+   912→  1112→  1112→        }
+   913→  1113→  1113→    </style>
+   914→  1114→  1114→</head>
+   915→  1115→  1115→<body class="qfs-body qfs-reset">
+   916→  1116→  1116→    <!-- Mobile menu button -->
+   917→  1117→  1117→    <button class="qfs-mobile-menu-btn" id="qfsMobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+   918→  1118→  1118→        <i class="fas fa-bars"></i>
+   919→  1119→  1119→    </button>
+   920→  1120→  1120→    
+   921→  1121→  1121→    <!-- Vertical menu -->
+   922→  1122→  1122→    <nav class="qfs-menu-vertical" id="qfsMenuVertical" aria-label="Main navigation">
+   923→  1123→  1123→        <div class="qfs-logo">QFS Portal</div>
+   924→  1124→  1124→        <ul>
+   925→  1125→  1125→            <li><a href="#home" class="qfs-menu-link"><i class="fas fa-home qfs-button-icon"></i> Home</a></li>
+   926→  1126→  1126→            <li><a href="#about" class="qfs-menu-link"><i class="fas fa-info-circle qfs-button-icon"></i> About QFS</a></li>
+   927→  1127→  1127→            <li><a href="#qfspay" class="qfs-menu-link"><i class="fas fa-credit-card qfs-button-icon"></i> QFSpay</a></li>
+   928→  1128→  1128→            <li><a href="#technology" class="qfs-menu-link"><i class="fas fa-atom qfs-button-icon"></i> Technology</a></li>
+   929→  1129→  1129→            <li><a href="#currencies" class="qfs-menu-link"><i class="fas fa-coins qfs-button-icon"></i> Supported Currencies</a></li>
+   930→  1130→  1130→            
+   931→  1131→  1131→            <li class="qfs-menu-heading"><i class="fas fa-key qfs-button-icon"></i> Secure Access</li>
+   932→  1132→  1132→            <li><a href="#login" class="qfs-menu-link"><i class="fas fa-user-shield qfs-button-icon"></i> Government Login</a></li>
+   933→  1133→  1133→            <li><a href="#register" class="qfs-menu-link"><i class="fas fa-user-plus qfs-button-icon"></i> Register Institution</a></li>
+   934→  1134→  1134→            
+   935→  1135→  1135→  <li class="qfs-seal-item">
+   936→  1136→  1136→    <a href="https://www.quantum.gov/iyq-2025/" target="_blank" style="text-decoration: none;">
+   937→  1137→  1137→        <div class="qfs-seal">
+   938→  1138→  1138→            <img src="https://www.quantum.gov/wp-content/uploads/2020/11/NQCO_Seal_highres.png" alt="QFS Seal" style="width: 100px; display: block; margin: 0 auto;">
+   939→  1139→  1139→        </div>
+   940→  1140→  1140→        <p style="text-align: center; margin-top: 10px;">Official QFS Portal</p>
+   941→  1141→  1141→    </a>
+   942→  1142→  1142→</li>
+   943→  1143→  1143→ <li><a href="#contact" class="qfs-menu-link"><i class="fas fa-envelope qfs-button-icon"></i> Contact</a></li>
+   944→  1144→  1144→            <li><a href="#resources" class="qfs-menu-link"><i class="fas fa-book qfs-button-icon"></i> Resources</a></li>
+   945→  1145→  1145→        </ul>
+   946→  1146→  1146→    </nav>
+   947→  1147→  1147→
+   948→  1148→  1148→    <!-- Main content -->
+   949→  1149→  1149→    <main class="qfs-content">
+   950→  1150→  1150→        <div class="qfs-container">
+   951→  1151→  1151→            <header class="qfs-header qfs-header-accent" id="home">
+   952→  1152→  1152→                <h1 class="qfs-h1">Quantum Financial System</h1>
+   953→  1153→  1153→                <p class="qfs-subtitle"><span style="color: #fffacd;">The official government portal for the next-generation financial infrastructure and QFSpay</p>
+   954→  1154→  1154→            </header>
+   955→  1155→  1155→            
+   956→  1156→  1156→            <div class="qfs-content-section">
+   957→  1157→  1157→                <!-- Introduction -->
+   958→  1158→  1158→                <section class="qfs-card">
+   959→  1159→  1159→                    <div class="qfs-card-content">
+   960→  1160→  1160→                        <h2 class="qfs-h2"><i class="fas fa-flag" style="color: var(--qfs-gold); margin-right: 10px;"></i> <span style="color: #FFED7D;">
+   961→  1161→  1161→Government Vision</h2>
+   962→  1162→  1162→                        <p><span style="color: #fffacd;">The Quantum Financial System (QFS) represents a revolutionary leap in financial technology, providing a secure, transparent, and efficient platform for global transactions. As part of the NESARA/GESARA economic reforms, QFS establishes a new standard for financial sovereignty and integrity, with QFSpay as its official payment solution.</p>
+   963→  1163→  1163→                        
+   964→  1164→  1164→                        <div class="qfs-highlight-box">
+   965→  1165→  1165→                            <h3 class="qfs-h3"><i class="fas fa-key" style="margin-right: 10px;"></i> Key Features:</h3>
+   966→  1166→  1166→                            <span style="color: #FFED7D;"><ul class="qfs-features-list">
+   967→  1167→  1167→                                <li>Quantum-secured financial transactions</li>
+   968→  1168→  1168→                                <li>QFSpay - Official government payment solution</li>
+   969→  1169→  1169→                                <li>Instant settlement across borders</li>
+   970→  1170→  1170→                                <li>Complete transparency and auditability</li>
+   971→  1171→  1171→                                <li>Integration with sovereign digital currencies</li>
+   972→  1172→  1172→                            </ul>
+   973→  1173→  1173→                        </div>
+   974→  1174→  1174→                        
+   975→  1175→  1175→                        <div class="qfs-button-group">
+   976→  1176→  1176→                            <button class="qfs-button" onclick="location.href='#about'">
+   977→  1177→  1177→                                <i class="fas fa-info-circle qfs-button-icon"></i> Learn More
+   978→  1178→  1178→                            </button>
+   979→  1179→  1179→                            <button class="qfs-button qfs-pay-button" onclick="location.href='#qfspay'">
+   980→  1180→  1180→                                <i class="fas fa-credit-card qfs-button-icon"></i> QFSpay
+   981→  1181→  1181→                            </button>
+   982→  1182→  1182→                            <button class="qfs-button" onclick="location.href='#technology'">
+   983→  1183→  1183→                                <i class="fas fa-atom qfs-button-icon"></i> Technology
+   984→  1184→  1184→                            </button>
+   985→  1185→  1185→                        </div>
+   986→  1186→  1186→                    </div>
+   987→  1187→  1187→                </section>
+   988→  1188→  1188→
+   989→  1189→  1189→                <!-- G20 Banner -->
+   990→  1190→  1190→                <section class="qfs-g20-banner" style="background-image: url('https://www.g20.org/content/dam/gtwenty/gtwenty_new/about-g20/G20_India_2023_Logo.svg');">
+   991→  1191→  1191→                    <div class="qfs-g20-banner-content">
+   992→  1192→  1192→                        <h2>Official Financial Infrastructure of the G20 Nations</h2>
+   993→  1193→  1193→                        <p>Supporting the transition to a new era of financial transparency and sovereignty with QFSpay integration</p>
+   994→  1194→  1194→                    </div>
+   995→  1195→  1195→                </section>
+   996→  1196→  1196→                
+   997→  1197→  1197→                <!-- About QFS -->
+   998→  1198→  1198→                <section class="qfs-card" id="about">
+   999→  1199→  1199→                    <div class="qfs-card-header">
+  1000→  1200→  1200→                        <div class="qfs-card-icon">
+  1001→  1201→  1201→                            <i class="fas fa-info-circle"></i>
+  1002→  1202→  1202→                        </div>
+  1003→  1203→  1203→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">About the Quantum Financial System</h2>
+  1004→  1204→  1204→                    </div>
+  1005→  1205→  1205→                    <div class="qfs-card-content">
+  1006→  1206→  1206→                        <p><span style="color: #fffacd;">The Quantum Financial System (QFS) is a government-backed financial infrastructure that utilizes quantum computing and blockchain technologies to create an unhackable, transparent financial network. It serves as the foundation for the new global financial architecture, with QFSpay as its official payment solution.</p>
+  1007→  1207→  1207→                        
+  1008→  1208→  1208→                        <div class="qfs-document">
+  1009→  1209→  1209→                            <div class="qfs-document-header">
+  1010→  1210→  1210→                                <h3 class="qfs-document-title">QFS Implementation Directive</h3>
+  1011→  1211→  1211→                                <span class="qfs-document-number">Document H. Rept. 115-950</span>
+  1012→  1212→  1212→                            </div>
+  1013→  1213→  1213→                            <div class="qfs-document-content">
+  1014→  1214→  1214→                                <p><span style="color: #fffacd;">Pursuant to the NESARA/GESARA economic reforms, all government financial institutions are hereby directed to implement QFS protocols and QFSpay solutions for all sovereign transactions effective January 1, 2026.</p>
+  1015→  1215→  1215→                                <p><span style="color: #fffacd;">The QFS provides:</p>
+  1016→  1216→  1216→                                <ul>
+  1017→  1217→  1217→                                    <span style="color: #fffacd;"><li>Quantum-resistant encryption for all transactions</li>
+  1018→  1218→  1218→                                    <li>QFSpay integration for seamless payments</li>
+  1019→  1219→  1219→                                    <li>Real-time settlement without intermediary banks</li>
+  1020→  1220→  1220→                                    <li>Complete transaction transparency with privacy protections</li>
+  1021→  1221→  1221→                                    <li>Integration with asset-backed sovereign currencies</li>
+  1022→  1222→  1222→                                </ul>
+  1023→  1223→  1223→                            </div>
+  1024→  1224→  1224→                            <div class="qfs-document-footer">
+  1025→  1225→  1225→                                <div class="qfs-document-signature">
+  1026→  1226→  1226→                                    <span><span style="color: #d4af37;">Authorized by:</span>
+  1027→  1227→  1227→                                    <div class="qfs-signature-line"></div>
+  1028→  1228→  1228→                                    <span><span style="color: #fffacd;">Global Financial Oversight Committee</span>
+  1029→  1229→  1229→                                </div>
+  1030→  1230→  1230→                                <div class=""> <img src="https://www.quantum.gov/wp-content/uploads/2020/11/NQCO_Seal_highres.png" alt="Descripción de la imagen">
+  1031→  1231→  1231→                                   </div>
+  1032→  1232→  1232→                            </div>
+  1033→  1233→  1233→                        </div>
+  1034→  1234→  1234→                    </div>
+  1035→  1235→  1235→                </section>
+  1036→  1236→  1236→                
+  1037→  1237→  1237→                <!-- QFSpay Section -->
+  1038→  1238→  1238→                <section class="qfs-card qfs-pay-card" id="qfspay">
+  1039→  1239→  1239→                    
+  1040→  1240→  1240→                    <div class="qfs-pay-card-header">
+  1041→  1241→  1241→                        
+  1042→  1242→  1242→                        <div class="qfs-pay-card-icon">
+  1043→  1243→  1243→                            
+  1044→  1244→  1244→                            <i class="fas fa-credit-card">
+  1045→  1245→  1245→                            </i> 
+  1046→  1246→  1246→                        </div>
+  1047→  1247→  1247→                        <div>
+  1048→  1248→  1248→                            <h2 class="qfs-pay-card-title">QFSpay</h2>
+  1049→  1249→  1249→                                       
+  1050→  1250→  1250→                            <p class="qfs-pay-card-subtitle">The Official Payment Solution of the Quantum Financial System</p>
+  1051→  1251→  1251→                        </div>
+  1052→  1252→  1252→                    </div>
+  1053→  1253→  1253→                    <div class="qfs-pay-card-content">
+  1054→  1254→  1254→                        </div>
+  1055→  1255→  1255→                            <img src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png
+  1056→  1256→  1256→" alt="Descripción de la imagen">
+  1057→  1257→  1257→                            <div class="qfs-pay-feature">
+  1058→  1258→  1258→                                <div class="qfs-pay-feature-icon">
+  1059→  1259→  1259→                                    
+  1060→  1260→  1260→                                    <i class="fas fa-shield-alt"></i>
+  1061→  1261→  1261→                                </div>
+  1062→  1262→  1262→                                <div class="qfs-pay-feature-text">
+  1063→  1263→  1263→                                    
+  1064→  1264→  1264→                                    <h4 class="qfs-pay-feature-title"> Quantum Security</h4>
+  1065→  1265→  1265→                                    
+  1066→  1266→  1266→                                    <p class="qfs-pay-feature-desc">Military-grade quantum encryption protects every transaction from hacking and fraud.</p>
+  1067→  1267→  1267→                                </div>
+  1068→  1268→  1268→                            </div>
+  1069→  1269→  1269→                            
+  1070→  1270→  1270→                            <div class="qfs-pay-feature">
+  1071→  1271→  1271→                                <div class="qfs-pay-feature-icon">
+  1072→  1272→  1272→                                    <i class="fas fa-globe"></i>
+  1073→  1273→  1273→                                </div>
+  1074→  1274→  1274→                                <div class="qfs-pay-feature-text">
+  1075→  1275→  1275→                                    <h4 class="qfs-pay-feature-title">Global Acceptance</h4>
+  1076→  1276→  1276→                                    <p class="qfs-pay-feature-desc">Accepted by all G20 nations and participating merchants worldwide.</p>
+  1077→  1277→  1277→                                </div>
+  1078→  1278→  1278→                            </div>
+  1079→  1279→  1279→                            
+  1080→  1280→  1280→                            <div class="qfs-pay-feature">
+  1081→  1281→  1281→                                <div class="qfs-pay-feature-icon">
+  1082→  1282→  1282→                                    <i class="fas fa-bolt"></i>
+  1083→  1283→  1283→                                </div>
+  1084→  1284→  1284→                                <div class="qfs-pay-feature-text">
+  1085→  1285→  1285→                                    <h4 class="qfs-pay-feature-title">Instant Settlement</h4>
+  1086→  1286→  1286→                                    <p class="qfs-pay-feature-desc">Transactions complete in quantum time with no banking delays.</p>
+  1087→  1287→  1287→                                </div>
+  1088→  1288→  1288→                            </div>
+  1089→  1289→  1289→                            
+  1090→  1290→  1290→                            <div class="qfs-pay-feature">
+  1091→  1291→  1291→                                <div class="qfs-pay-feature-icon">
+  1092→  1292→  1292→                                    <i class="fas fa-exchange-alt"></i>
+  1093→  1293→  1293→                                </div>
+  1094→  1294→  1294→                                <div class="qfs-pay-feature-text">
+  1095→  1295→  1295→                                    <h4 class="qfs-pay-feature-title">Multi-Currency</h4>
+  1096→  1296→  1296→                                    <p class="qfs-pay-feature-desc">Supports all QFS-backed currencies with automatic conversion.</p>
+  1097→  1297→  1297→                                </div>
+  1098→  1298→  1298→                            </div>
+  1099→  1299→  1299→                            
+  1100→  1300→  1300→                            <button class="qfs-button qfs-pay-button" style="margin-top: 1.5rem;">
+  1101→  1301→  1301→                                <i class="fas fa-download qfs-button-icon"></i> Download QFSpay App
+  1102→  1302→  1302→                            </button>
+  1103→  1303→  1303→                        </div>
+  1104→  1304→  1304→                        
+  1105→  1305→  1305→                        <div class="qfs-pay-card-image">
+  1106→  1306→  1306→                            <img src="https://via.placeholder.com/400x600.png?text=QFSpay+Card+and+App" alt="">
+  1107→  1307→  1307→                        </div>
+  1108→  1308→  1308→                    </div>
+  1109→  1309→  1309→                </section>
+  1110→  1310→  1310→                
+  1111→  1311→  1311→                <!-- Technology Section -->
+  1112→  1312→  1312→                <section class="qfs-card" id="technology">
+  1113→  1313→  1313→                    <div class="qfs-card-header">
+  1114→  1314→  1314→                        <div class="qfs-card-icon">
+  1115→  1315→  1315→                            <i class="fas fa-atom"></i>
+  1116→  1316→  1316→                        </div>
+  1117→  1317→  1317→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">QFS Technology</h2>
+  1118→  1318→  1318→                    </div>
+  1119→  1319→  1319→                    <div class="qfs-card-content">
+  1120→  1320→  1320→                        <p><span style="color: #fffacd;">The QFS combines cutting-edge quantum computing with advanced blockchain technology to create a financial system that is secure, efficient, and transparent, with QFSpay as its consumer-facing payment solution.</p>
+  1121→  1321→  1321→                        
+  1122→  1322→  1322→                        <div class="qfs-features-grid">
+  1123→  1323→  1323→                            <article class="qfs-feature-item">
+  1124→  1324→  1324→                                <div class="qfs-feature-icon">
+  1125→  1325→  1325→                                    <i class="fas fa-lock"></i>
+  1126→  1326→  1326→                                </div>
+  1127→  1327→  1327→                                <h3 class="qfs-feature-title">Quantum Encryption</h3>
+  1128→  1328→  1328→                                <p><span style="color: #fffacd;">Unbreakable quantum key distribution ensures complete security for all transactions</p>
+  1129→  1329→  1329→                                <button class="qfs-button qfs-small-button">Technical Details</button>
+  1130→  1330→  1330→                            </article>
+  1131→  1331→  1331→                            <article class="qfs-feature-item">
+  1132→  1332→  1332→                                <div class="qfs-feature-icon">
+  1133→  1333→  1333→                                    <i class="fas fa-project-diagram"></i>
+  1134→  1334→  1334→                                </div>
+  1135→  1335→  1335→                                <h3 class="qfs-feature-title">Decentralized Network</h3>
+  1136→  1336→  1336→                                <p><span style="color: #fffacd;">Distributed across government nodes worldwide with no single point of failure</p>
+  1137→  1337→  1337→                                <button class="qfs-button qfs-small-button">Network Map</button>
+  1138→  1338→  1338→                            </article>
+  1139→  1339→  1339→                            <article class="qfs-feature-item">
+  1140→  1340→  1340→                                <div class="qfs-feature-icon">
+  1141→  1341→  1341→                                    <i class="fas fa-bolt"></i>
+  1142→  1342→  1342→                                </div>
+  1143→  1343→  1343→                                <h3 class="qfs-feature-title">Instant Settlement</h3>
+  1144→  1344→  1344→                                <p><span style="color: #fffacd;">Transactions settle in quantum time without traditional banking delays</p>
+  1145→  1345→  1345→                                <button class="qfs-button qfs-small-button">Performance Data</button>
+  1146→  1346→  1346→                            </article>
+  1147→  1347→  1347→                            <article class="qfs-feature-item">
+  1148→  1348→  1348→                                <div class="qfs-feature-icon">
+  1149→  1349→  1349→                                    <i class="fas fa-shield-alt"></i>
+  1150→  1350→  1350→                                </div>
+  1151→  1351→  1351→                                <h3 class="qfs-feature-title">Sovereign Security</h3>
+  1152→  1352→  1352→                                <p><span style="color: #fffacd;">Government-controlled access with military-grade protection</p>
+  1153→  1353→  1353→                                <button class="qfs-button qfs-small-button">Security Protocols</button>
+  1154→  1354→  1354→                            </article>
+  1155→  1355→  1355→                        </div>
+  1156→  1356→  1356→                    </div>
+  1157→  1357→  1357→                </section>
+  1158→  1358→  1358→
+  1159→  1359→  1359→                <!-- Currency Section -->
+  1160→  1360→  1360→                <section class="qfs-card qfs-currency-section" id="currencies">
+  1161→  1361→  1361→                    <div class="qfs-card-header">
+  1162→  1362→  1362→                        <div class="qfs-card-icon">
+  1163→  1363→  1363→                            <i class="fas fa-globe-americas"></i>
+  1164→  1364→  1364→                        </div>
+  1165→  1365→  1365→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">Supported Sovereign Currencies</h2>
+  1166→  1366→  1366→                    </div>
+  1167→  1367→  1367→                    <div class="qfs-card-content">
+  1168→  1368→  1368→                        <p><span style="color: #D6C8CD;">QFS provides the infrastructure for the following institutional currencies backed by tangible assets and sovereign agreements, all compatible with QFSpay:</p>
+  1169→  1369→  1369→                        
+  1170→  1370→  1370→                        <div class="qfs-currency-grid">
+  1171→  1371→  1371→                            <!-- QFS Currency Card -->
+  1172→  1372→  1372→                            <div class="qfs-currency-card"> 
+  1173→  1373→  1373→                                <div class="qfs-currency-icon">
+  1174→  1374→  1374→                                     <img src="https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png" alt="QFS Logo">
+  1175→  1375→  1375→                                </div>
+  1176→  1376→  1376→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">QFS Digital Currency</h3>
+  1177→  1377→  1377→                                <span class="qfs-currency-subtitle">Quantum Financial System Standard</span>
+  1178→  1378→  1378→                                <p class="qfs-currency-description">
+  1179→  1379→  1379→                                    <span style="color: #fffacd;">The primary quantum-secured digital currency of the new financial system, backed by sovereign assets and integrated with all national currencies. Fully compatible with QFSpay.
+  1180→  1380→  1380→                                </p>
+  1181→  1381→  1381→                            </div>
+  1182→  1382→  1382→                            
+  1183→  1383→  1383→                            <!-- GCR Card -->
+  1184→  1384→  1384→                            <div class="qfs-currency-card">
+  1185→  1385→  1385→                                <div class="qfs-currency-icon">
+  1186→  1386→  1386→                                    <img src="https://gcr.social/images/logo-s2-white.png" alt="GCR Logo">
+  1187→  1387→  1387→                                </div>
+  1188→  1388→  1388→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">GCR</h3>
+  1189→  1389→  1389→                                <span class="qfs-currency-subtitle">Global Currency Reset</span>
+  1190→  1390→  1390→                                <p class="qfs-currency-description">
+  1191→  1391→  1391→                                    The official currency of the Global Financial Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available in QFSpay.
+  1192→  1392→  1392→                                </p>
+  1193→  1393→  1393→                            </div>
+  1194→  1394→  1394→                            
+  1195→  1395→  1395→                            <!-- Al Arab Card -->
+  1196→  1396→  1396→                            <div class="qfs-currency-card">
+  1197→  1397→  1397→                                <div class="qfs-currency-icon">
+  1198→  1398→  1398→                                    <img src="https://alarab.io/images/logo.png" alt="GCR Logo">
+  1199→  1399→  1399→                                </div>
+  1200→  1400→  1400→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">Al Arab</h3>
+  1201→  1401→  1401→                                <span class="qfs-currency-subtitle">Official Arab Currency</span>
+  1202→  1402→  1402→                                <p class="qfs-currency-description">
+  1203→  1403→  1403→                                    The first gold-backed Arab currency, established as a reference for sovereign trade between Middle Eastern, African, and Asian markets. Backed by UAE institutions including G42, Mubadala, and the Mohammed Bin Rashid Space Centre.
+  1204→  1404→  1404→                                </p>
+  1205→  1405→  1405→                            </div>
+  1206→  1406→  1406→                            
+  1207→  1407→  1407→                            <!-- Sovereign Currency Card -->
+  1208→  1408→  1408→                            <div class="qfs-currency-card">
+  1209→  1409→  1409→                                <div class="qfs-currency-icon">
+  1210→  1410→  1410→                                    <img src="https://mf.b37mrtl.ru/actualidad/public_images/2019.06/article/5d170f8308f3d931268b45ca.JPG" alt="Sovereign Logo">
+  1211→  1411→  1411→                                </div>
+  1212→  1412→  1412→                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">Sovereign Currencies</h3>
+  1213→  1413→  1413→                                <span class="qfs-currency-subtitle">National Digital Currencies</span>
+  1214→  1414→  1414→                                <p class="qfs-currency-description">
+  1215→  1415→  1415→                                    All G20 national digital currencies including Digital Dollar, Digital Yuan, Digital Euro, and others, fully interoperable through QFS and QFSpay.
+  1216→  1416→  1416→                                </p>
+  1217→  1417→  1417→                            </div>
+  1218→  1418→  1418→                        </div>
+  1219→  1419→  1419→                     </div>
+  1220→  1420→  1420→                </section>
+  1221→  1421→  1421→
+  1222→  1422→  1422→                <!-- Strategic Partners Section -->
+  1223→  1423→  1423→                <section class="qfs-card qfs-partners-section" id="partners">
+  1224→  1424→  1424→                    <div class="qfs-card-header">
+  1225→  1425→  1425→                        <div class="qfs-card-icon">
+  1226→  1426→  1426→                            <i class="fas fa-handshake"></i>
+  1227→  1427→  1427→                        </div>
+  1228→  1428→  1428→                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">Government Partners</h2>
+  1229→  1429→  1429→                    </div>
+  1230→  1430→  1430→                    <div class="qfs-card-content">
+  1231→  1431→  1431→                        <p><span style="color: #D6C8CD;">QFS and QFSpay are developed and maintained through international cooperation between sovereign governments and leading technology institutions:</p>
+  1232→  1432→  1432→                        
+  1233→  1433→  1433→                        <div class="qfs-partners-grid">
+  1234→  1434→  1434→                            <!-- USA -->
+  1235→  1435→  1435→                            <div class="qfs-partner-card">
+  1236→  1436→  1436→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png" alt="USA Flag" class="qfs-partner-logo">
+  1237→  1437→  1437→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">United States</h3>
+  1238→  1438→  1438→                                <p class="qfs-partner-country">Department of the Treasury</p>
+  1239→  1439→  1439→                                <p class="qfs-currency-description">Lead developer of quantum encryption protocols</p>
+  1240→  1440→  1440→                            </div>
+  1241→  1441→  1441→                            
+  1242→  1442→  1442→                            <!-- China -->
+  1243→  1443→  1443→                            <div class="qfs-partner-card">
+  1244→  1444→  1444→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/125px-Flag_of_the_People%27s_Republic_of_China.svg.png" alt="China Flag" class="qfs-partner-logo">
+  1245→  1445→  1445→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">PEOPLE'S REPUBLIC OF CHINA</h3>
+  1246→  1446→  1446→                                <p class="qfs-partner-country">People's Bank of China</p>
+  1247→  1447→  1447→                                <p class="qfs-currency-description">Digital Yuan integration lead</p>
+  1248→  1448→  1448→                            </div>
+  1249→  1449→  1449→                            
+  1250→  1450→  1450→                            <!-- EU -->
+  1251→  1451→  1451→                            <div class="qfs-partner-card">
+  1252→  1452→  1452→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/125px-Flag_of_Europe.svg.png" alt="EU Flag" class="qfs-partner-logo">
+  1253→  1453→  1453→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">European Union</h3>
+  1254→  1454→  1454→                                <p class="qfs-partner-country">European Central Bank</p>
+  1255→  1455→  1455→                                <p class="qfs-currency-description">Digital Euro development</p>
+  1256→  1456→  1456→                            </div>
+  1257→  1457→  1457→                            
+  1258→  1458→  1458→                            <!-- UAE -->
+  1259→  1459→  1459→                            <div class="qfs-partner-card">
+  1260→  1460→  1460→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/125px-Flag_of_the_United_Arab_Emirates.svg.png" alt="UAE Flag" class="qfs-partner-logo">
+  1261→  1461→  1461→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">UAE</h3>
+  1262→  1462→  1462→                                <p class="qfs-partner-country">Central Bank of the UAE</p>
+  1263→  1463→  1463→                                <p class="qfs-currency-description">Middle East implementation lead Currency AlArab </p>
+  1264→  1464→  1464→                            </div>
+  1265→  1465→  1465→                            
+  1266→  1466→  1466→                            <!-- Technology Partners -->
+  1267→  1467→  1467→                            <div class="qfs-partner-card">
+  1268→  1468→  1468→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/125px-IBM_logo.svg.png" alt="IBM Logo" class="qfs-partner-logo">
+  1269→  1469→  1469→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">IBM</h3>
+  1270→  1470→  1470→                                <p class="qfs-partner-country">Quantum Computing</p>
+  1271→  1471→  1471→                                <p class="qfs-currency-description">Quantum hardware provider</p>
+  1272→  1472→  1472→                            </div>
+  1273→  1473→  1473→                            
+  1274→  1474→  1474→                            <div class="qfs-partner-card">
+  1275→  1475→  1475→                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/125px-OpenAI_Logo.svg.png" alt="OpenAI Logo" class="qfs-partner-logo">
+  1276→  1476→  1476→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">OpenAI</h3>
+  1277→  1477→  1477→                                <p class="qfs-partner-country">AI Security</p>
+  1278→  1478→  1478→                                <p class="qfs-currency-description">AI-driven threat detection</p>
+  1279→  1479→  1479→                            </div>
+  1280→  1480→  1480→                            
+  1281→  1481→  1481→                            <div class="qfs-partner-card">
+  1282→  1482→  1482→                                <img src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png" alt="QFSpay Logo" class="qfs-partner-logo">
+  1283→  1483→  1483→                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">QFSpay</h3>
+  1284→  1484→  1484→                                <p class="qfs-partner-country">Payment Solutions</p>
+  1285→  1485→  1485→                                <p class="qfs-currency-description">Official payment platform</p>
+  1286→  1486→  1486→                            </div>
+  1287→  1487→  1487→                 </section>
+  1288→  1488→  1488→                 
+  1289→  1489→  1489→                <!-- Final CTA -->
+  1290→  1490→  1490→                <section class="qfs-card">
+  1291→  1491→  1491→                    <div class="qfs-card-content qfs-final-card-content">
+  1292→  1492→  1492→                        <h2 class="qfs-h2"><i class="fas fa-landmark" style="color: var(--qfs-gold); margin-right: 10px;"></i> <span style="color: #FFED7D;">QFS & QFSpay are the future of sovereign finance</h2>
+  1293→  1493→  1493→                        <p><span style="color: #D6C8CD;">Secure, transparent, and efficient financial infrastructure for governments and citizens worldwide.</p>
+  1294→  1494→  1494→                        <div class="qfs-button-group">
+  1295→  1495→  1495→                            <button class="qfs-cta-button" id="qfsMainCTA">
+  1296→  1496→  1496→                                <i class="fas fa-shield-alt qfs-button-icon">
+  1297→  1497→  1497→                                 <a href="https://www.quantum.gov/iyq-2025/" target="_BLACK"><strong>Government Portal Login</strong></a></i> 
+  1298→  1498→  1498→                            </button>
+  1299→  1499→  1499→                            <button class="qfs-button qfs-pay-button">
+  1300→  1500→  1500→                                <i class="fas fa-mobile-alt qfs-button-icon"></i> Get QFSpay App
+  1301→  1501→  1501→                            </button>
+  1302→  1502→  1502→                        </div>
+  1303→  1503→  1503→                    </div>
+  1304→  1504→  1504→                </section>
+  1305→  1505→  1505→            </div>
+  1306→  1506→  1506→        </div>
+  1307→  1507→  1507→        
+  1308→  1508→  1508→        <footer class="qfs-footer">
+  1309→  1509→  1509→            <div class="qfs-social-links">
+  1310→  1510→  1510→                <a href="#" aria-label="Government Website"><i class="fas fa-landmark"></i></a>
+  1311→  1511→  1511→                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  1312→  1512→  1512→                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+  1313→  1513→  1513→                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  1314→  1514→  1514→                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  1315→  1515→  1515→            </div>
+  1316→  1516→  1516→            <p>Quantum Financial System - Official Government Portal</p>
+  1317→  1517→  1517→            <p class="qfs-copyright">© 2025 Global Financial Oversight Committee. All rights reserved.</p>
+  1318→  1518→  1518→        </footer>
+  1319→  1519→  1519→    </main>
+  1320→  1520→  1520→
+  1321→  1521→  1521→    <!-- Back to top button -->
+  1322→  1522→  1522→    <a href="#home" class="qfs-back-to-top" id="qfsBackToTop" aria-label="Back to top">
+  1323→  1523→  1523→        <i class="fas fa-arrow-up"></i>
+  1324→  1524→  1524→    </a>
+  1325→  1525→  1525→
+  1326→  1526→  1526→    <script>
+  1327→  1527→  1527→        document.addEventListener('DOMContentLoaded', function() {
+  1328→  1528→  1528→            // Mobile menu functionality
+  1329→  1529→  1529→            const mobileMenuBtn = document.getElementById('qfsMobileMenuBtn');
+  1330→  1530→  1530→            const menuVertical = document.getElementById('qfsMenuVertical');
+  1331→  1531→  1531→            
+  1332→  1532→  1532→            if (mobileMenuBtn && menuVertical) {
+  1333→  1533→  1533→                mobileMenuBtn.addEventListener('click', function() {
+  1334→  1534→  1534→                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  1335→  1535→  1535→                    this.setAttribute('aria-expanded', !isExpanded);
+  1336→  1536→  1536→                    menuVertical.classList.toggle('qfs-active');
+  1337→  1537→  1537→                    
+  1338→  1538→  1538→                    // Add animation class
+  1339→  1539→  1539→                    if (!isExpanded) {
+  1340→  1540→  1540→                        menuVertical.style.animation = 'qfs-fadeInRight 0.3s ease';
+  1341→  1541→  1541→                    } else {
+  1342→  1542→  1542→                        menuVertical.style.animation = 'qfs-fadeOutLeft 0.3s ease';
+  1343→  1543→  1543→                    }
+  1344→  1544→  1544→                });
+  1345→  1545→  1545→                
+  1346→  1546→  1546→                // Close menu when clicking outside
+  1347→  1547→  1547→                document.addEventListener('click', function(e) {
+  1348→  1548→  1548→                    if (!menuVertical.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+  1349→  1549→  1549→                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  1350→  1550→  1550→                        menuVertical.classList.remove('qfs-active');
+  1351→  1551→  1551→                    }
+  1352→  1552→  1552→                });
+  1353→  1553→  1553→            }
+  1354→  1554→  1554→            
+  1355→  1555→  1555→            // Back to top button
+  1356→  1556→  1556→            const backToTopBtn = document.getElementById('qfsBackToTop');
+  1357→  1557→  1557→            if (backToTopBtn) {
+  1358→  1558→  1558→                window.addEventListener('scroll', function() {
+  1359→  1559→  1559→                    if (window.pageYOffset > 300) {
+  1360→  1560→  1560→                        backToTopBtn.classList.add('qfs-visible');
+  1361→  1561→  1561→                    } else {
+  1362→  1562→  1562→                        backToTopBtn.classList.remove('qfs-visible');
+  1363→  1563→  1563→                    }
+  1364→  1564→  1564→                });
+  1365→  1565→  1565→                
+  1366→  1566→  1566→                backToTopBtn.addEventListener('click', function(e) {
+  1367→  1567→  1567→                    e.preventDefault();
+  1368→  1568→  1568→                    window.scrollTo({
+  1369→  1569→  1569→                        top: 0,
+  1370→  1570→  1570→                        behavior: 'smooth'
+  1371→  1571→  1571→                    });
+  1372→  1572→  1572→                });
+  1373→  1573→  1573→            }
+  1374→  1574→  1574→            
+  1375→  1575→  1575→            // Main CTA button
+  1376→  1576→  1576→            const mainCTA = document.getElementById('qfsMainCTA');
+  1377→  1577→  1577→            if (mainCTA) {
+  1378→  1578→  1578→                mainCTA.addEventListener('click', function() {
+  1379→  1579→  1579→                    // Add ripple effect
+  1380→  1580→  1580→                    const ripple = document.createElement('span');
+  1381→  1581→  1581→                    ripple.classList.add('qfs-ripple');
+  1382→  1582→  1582→                    this.appendChild(ripple);
+  1383→  1583→  1583→                    
+  1384→  1584→  1584→                    // Remove ripple after animation
+  1385→  1585→  1585→                    setTimeout(() => {
+  1386→  1586→  1586→                        ripple.remove();
+  1387→  1587→  1587→                    }, 600);
+  1388→  1588→  1588→                    
+  1389→  1589→  1589→                    // Redirect to login
+  1390→  1590→  1590→                    window.location.href = '#login';
+  1391→  1591→  1591→                });
+  1392→  1592→  1592→            }
+  1393→  1593→  1593→            
+  1394→  1594→  1594→            // Add animation to cards when they come into view
+  1395→  1595→  1595→            const animateOnScroll = new IntersectionObserver((entries) => {
+  1396→  1596→  1596→                entries.forEach(entry => {
+  1397→  1597→  1597→                    if (entry.isIntersecting) {
+  1398→  1598→  1598→                        entry.target.style.opacity = 1;
+  1399→  1599→  1599→                        entry.target.style.transform = 'translateY(0)';
+  1400→  1600→  1600→                    }
+  1401→  1601→  1601→                });
+  1402→  1602→  1602→            }, { threshold: 0.1 });
+  1403→  1603→  1603→            
+  1404→  1604→  1604→            document.querySelectorAll('.qfs-card, .qfs-feature-item, .qfs-currency-card, .qfs-partner-card, .qfs-g20-banner, .qfs-pay-card').forEach(el => {
+  1405→  1605→  1605→                el.style.opacity = 0;
+  1406→  1606→  1606→                el.style.transform = 'translateY(20px)';
+  1407→  1607→  1607→                el.style.transition = 'all 0.6s ease-out';
+  1408→  1608→  1608→                animateOnScroll.observe(el);
+  1409→  1609→  1609→            });
+  1410→  1610→  1610→
+  1411→  1611→  1611→            // Seal animation
+  1412→  1612→  1612→            const seal = document.querySelector('.qfs-seal');
+  1413→  1613→  1613→            if (seal) {
+  1414→  1614→  1614→                seal.style.animation = 'qfs-pulse 2s infinite';
+  1415→  1615→  1615→                
+  1416→  1616→  1616→                seal.addEventListener('mouseenter', () => {
+  1417→  1617→  1617→                    seal.style.animation = 'qfs-float 3s ease-in-out infinite';
+  1418→  1618→  1618→                });
+  1419→  1619→  1619→                
+  1420→  1620→  1620→                seal.addEventListener('mouseleave', () => {
+  1421→  1621→  1621→                    seal.style.animation = 'qfs-pulse 2s infinite';
+  1422→  1622→  1622→                });
+  1423→  1623→  1623→            }
+  1424→  1624→  1624→        });
+  1425→  1625→  1625→    </script>
+  1426→  1626→  1626→</body>
+  1427→  1627→  1627→</html>

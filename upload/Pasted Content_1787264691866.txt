@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title>QFS Government Portal - Quantum Financial System & QFSpay</title>
+    <meta name="description" content="Official government portal for the Quantum Financial System (QFS) and QFSpay">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables with government colors */
+        :root {
+            --qfs-primary: #002366; /* Official blue */
+            --qfs-secondary: #005B96; /* Government secondary blue */
+            --qfs-accent: #FFD700; /* Gold - financial excellence */
+            --qfs-dark: #0D1B2A; /* Dark navy - professional */
+            --qfs-light: #E0E1DD; /* Light neutral */
+            --qfs-card-bg: rgba(0, 35, 102, 0.3);
+            --qfs-mobile-breakpoint: 700px;
+            --qfs-tablet-breakpoint: 1000px;
+            --qfs-button-hover: rgba(255, 215, 0, 0.1);
+            --qfs-button-active: rgba(255, 215, 0, 0.2);
+            --qfs-gold: #D4AF37; /* Prestigious gold */
+            --qfs-red: #B22234; /* Government red */
+            --qfs-blue: #0057B7; /* Official blue */
+            --qfs-green: #008000; /* Government green */
+            --qfs-seal: #8B0000; /* Official seal red */
+            --qfs-pay: #4B0082; /* QFSpay DARK BLUE */
+        }
+        
+        /* Reset with namespace */
+        .qfs-reset {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body styles with official background */
+        .qfs-body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--qfs-dark);
+            color: var(--qfs-light);
+            line-height: 1.6;
+            background-image: 
+                linear-gradient(rgba(0, 35, 102, 0.8), rgba(0, 35, 102, 0.8)),
+                url('https://www.whitehouse.gov/wp-content/uploads/2021/01/17-2440-A-2020.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Government-style header accents */
+        .qfs-header-accent {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .qfs-header-accent:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--qfs-red), var(--qfs-blue), var(--qfs-gold));
+            border-radius: 2px;
+        }
+        
+        /* Vertical menu - Government official style */
+        .qfs-menu-vertical {
+            width: 280px;
+            background-color: rgba(13, 27, 42, 0.98);
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px 0;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.4);
+            border-right: 3px solid var(--qfs-gold);
+            z-index: 1000;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .qfs-menu-vertical ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .qfs-menu-vertical li {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .qfs-menu-vertical li:hover {
+            background: linear-gradient(90deg, rgba(0, 35, 102, 0.5), transparent);
+            cursor: pointer;
+            color: var(--qfs-accent);
+            padding-left: 25px;
+        }
+
+        .qfs-menu-vertical li:hover:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: var(--qfs-accent);
+        }
+        
+        /* Improved menu buttons */
+        .qfs-menu-link {
+            display: flex;
+            align-items: center;
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            padding: 8px 0;
+        }
+        
+        .qfs-menu-link:hover {
+            color: var(--qfs-accent);
+        }
+        
+        .qfs-menu-vertical .qfs-seal-item {
+            background: rgba(139, 0, 0, 0.3);
+            margin: 8px 0;
+            border-left: 3px solid var(--qfs-gold);
+            padding: 12px 25px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .qfs-menu-vertical .qfs-menu-heading {
+            color: var(--qfs-accent);
+            margin-top: 25px;
+            border-bottom: 2px solid var(--qfs-gold);
+            font-weight: 600;
+            padding: 15px 25px;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0, 35, 102, 0.2);
+        }
+
+        .qfs-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 25px 0;
+            color: var(--qfs-accent);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .qfs-logo:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background: rgba(255, 215, 0, 0.5);
+        }
+
+        /* Main content */
+        .qfs-content {
+            margin-left: 280px;
+            padding: 2rem;
+            width: calc(100% - 280px);
+            min-height: 100vh;
+        }
+        
+        .qfs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Header styles */
+        .qfs-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            animation: qfs-fadeInDown 0.8s ease;
+            padding: 0 1rem;
+        }
+        
+        .qfs-h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--qfs-accent), var(--qfs-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            line-height: 1.2;
+            padding-bottom: 15px;
+        }
+
+        .qfs-h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--qfs-red), var(--qfs-blue), var(--qfs-gold));
+            border-radius: 3px;
+        }
+        
+        /* Government-style cards */
+        .qfs-card {
+            background: rgba(13, 27, 42, 0.7);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .qfs-card:hover {
+            border-color: var(--qfs-gold);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .qfs-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .qfs-card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--qfs-gold);
+            font-size: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .qfs-card-title {
+            font-size: 1.5rem;
+            color: var(--qfs-accent);
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        /* Improved buttons - Official style */
+        .qfs-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--qfs-primary), var(--qfs-blue));
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .qfs-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3);
+            color: var(--qfs-accent);
+            background: linear-gradient(135deg, var(--qfs-blue), var(--qfs-primary));
+        }
+        
+        .qfs-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        }
+        
+        .qfs-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .qfs-button:hover::before {
+            left: 100%;
+        }
+        
+        .qfs-button .qfs-button-icon {
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        
+        /* QFSpay Button Style */
+        .qfs-pay-button {
+            background: linear-gradient(135deg, var(--qfs-pay), #003366);
+            color: white;
+        }
+        
+        .qfs-pay-button:hover {
+            background: linear-gradient(135deg, #003366, var(--qfs-pay));
+            color: var(--qfs-accent);
+        }
+        
+        /* CTA Button - Government seal style */
+        .qfs-cta-button {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--qfs-gold), #FFBF00);
+            color: var(--qfs-dark);
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+        }
+        
+        .qfs-cta-button:hover {
+            background: linear-gradient(135deg, #FFBF00, var(--qfs-gold));
+            color: var(--qfs-dark);
+            box-shadow: 0 7px 20px rgba(212, 175, 55, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .qfs-cta-button:active {
+            transform: translateY(1px);
+        }
+        
+        /* Mobile menu button - Official style */
+        .qfs-mobile-menu-btn {
+            display: none;
+            background: rgba(13, 27, 42, 0.95);
+            border: 2px solid var(--qfs-gold);
+            border-radius: 4px;
+            color: var(--qfs-accent);
+            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            outline: none;
+        }
+        
+        .qfs-mobile-menu-btn:hover {
+            background: var(--qfs-primary);
+            transform: scale(1.05);
+        }
+        
+        .qfs-mobile-menu-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Back to top button - Official style */
+        .qfs-back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--qfs-primary), var(--qfs-blue));
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--qfs-accent);
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 999;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+        }
+        
+        .qfs-back-to-top.qfs-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .qfs-back-to-top:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, var(--qfs-blue), var(--qfs-primary));
+        }
+        
+        .qfs-back-to-top:active {
+            transform: translateY(-2px) scale(1);
+        }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .qfs-mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .qfs-menu-vertical {
+                transform: translateX(-100%);
+                width: 300px;
+            }
+            
+            .qfs-menu-vertical.qfs-active {
+                transform: translateX(0);
+            }
+            
+            .qfs-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .qfs-container {
+                padding: 0.5rem;
+            }
+            
+            .qfs-button {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+            
+            .qfs-cta-button {
+                padding: 1.2rem 2rem;
+                font-size: 1.1rem;
+            }
+            
+            .qfs-back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .qfs-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Currency section styles */
+        .qfs-currency-section {
+            margin: 3rem 0;
+        }
+
+        .qfs-currency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .qfs-currency-card {
+            background: rgba(13, 27, 42, 0.8);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qfs-currency-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--qfs-gold);
+        }
+
+        .qfs-currency-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--qfs-red), var(--qfs-blue), var(--qfs-gold));
+            border-radius: 2px;
+        }
+
+        .qfs-currency-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+
+        .qfs-currency-icon img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .qfs-currency-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--qfs-accent);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .qfs-currency-title:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--qfs-gold);
+        }
+
+        .qfs-currency-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: var(--qfs-light);
+            font-weight: 500;
+        }
+
+        .qfs-currency-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--qfs-light);
+        }
+        
+        /* Features grid */
+        .qfs-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .qfs-feature-item {
+            background: rgba(13, 27, 42, 0.8);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .qfs-feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--qfs-gold);
+        }
+
+        .qfs-feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--qfs-gold);
+            font-size: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .qfs-feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--qfs-accent);
+            font-weight: 600;
+        }
+        
+        /* Footer - Official style */
+        .qfs-footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            width: 100%;
+            background: rgba(13, 27, 42, 0.8);
+        }
+
+        .qfs-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .qfs-social-links a {
+            color: var(--qfs-light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .qfs-social-links a:hover {
+            color: var(--qfs-gold);
+            transform: translateY(-3px);
+        }
+
+        .qfs-copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+        
+        /* Strategic Partners Section */
+        .qfs-partners-section {
+            margin: 3rem 0;
+        }
+
+        .qfs-partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .qfs-partner-card {
+            background: rgba(13, 27, 42, 0.8);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .qfs-partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--qfs-gold);
+        }
+
+        .qfs-partner-logo {
+            max-width: 100%;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            filter: grayscale(100%) brightness(1.5);
+            transition: filter 0.3s ease;
+        }
+
+        .qfs-partner-card:hover .qfs-partner-logo {
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .qfs-partner-name {
+            font-size: 1.1rem;
+            color: var(--qfs-accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .qfs-partner-country {
+            font-size: 0.9rem;
+            color: var(--qfs-light);
+            opacity: 0.8;
+        }
+
+        /* G20 Banner */
+        .qfs-g20-banner {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qfs-g20-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .qfs-g20-banner-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+            color: white;
+        }
+
+        .qfs-g20-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--qfs-accent);
+        }
+
+        .qfs-g20-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Highlight box - Official notice style */
+        .qfs-highlight-box {
+            background: rgba(0, 35, 102, 0.3);
+            border-left: 4px solid var(--qfs-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .qfs-highlight-box .qfs-h3 {
+            color: var(--qfs-gold);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .qfs-features-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .qfs-features-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .qfs-features-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--qfs-gold);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        /* Button group */
+        .qfs-button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        /* Small button variant */
+        .qfs-small-button {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        /* Chains list */
+        .qfs-chains-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .qfs-chain {
+            background: rgba(0, 35, 102, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem;
+        }
+        
+        /* Official Seal */
+        .qfs-seal {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--qfs-seal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 3px solid var(--qfs-gold);
+            box-shadow: 0 0 0 5px rgba(139, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .qfs-seal:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid var(--qfs-gold);
+            border-radius: 50%;
+            animation: qfs-pulse 2s infinite;
+        }
+
+        .qfs-seal-icon {
+            color: var(--qfs-gold);
+            font-size: 3rem;
+        }
+        
+        /* Official Document Style */
+        .qfs-document {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .qfs-document:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .qfs-document-header {
+            border-bottom: 2px solid var(--qfs-gold);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .qfs-document-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--qfs-accent);
+            margin: 0;
+        }
+
+        .qfs-document-number {
+            color: var(--qfs-light);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .qfs-document-content {
+            line-height: 1.8;
+        }
+
+        .qfs-document-footer {
+            border-top: 2px solid var(--qfs-gold);
+            padding-top: 1rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qfs-document-signature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qfs-signature-line {
+            width: 200px;
+            height: 1px;
+            background: var(--qfs-light);
+            margin: 0.5rem 0;
+        }
+
+        .qfs-document-stamp {
+            width: 80px;
+            height: 80px;
+            background: var(--qfs-seal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--qfs-gold);
+            font-weight: bold;
+            font-size: 0.8rem;
+            border: 2px solid var(--qfs-gold);
+        }
+        
+        /* QFSpay Card */
+        .qfs-pay-card {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.2), rgba(13, 27, 42, 0.8));
+            border: 1px solid rgba(75, 0, 130, 0.5);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qfs-pay-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .qfs-pay-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .qfs-pay-card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(75, 0, 130, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+            border: 2px solid var(--qfs-accent);
+        }
+
+        .qfs-pay-card-title {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .qfs-pay-card-subtitle {
+            color: var(--qfs-accent);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .qfs-pay-card-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .qfs-pay-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .qfs-pay-feature-icon {
+            color: var(--qfs-accent);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .qfs-pay-feature-text {
+            flex: 1;
+        }
+
+        .qfs-pay-feature-title {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .qfs-pay-feature-desc {
+            color: var(--qfs-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .qfs-pay-card-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qfs-pay-card-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes qfs-fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes qfs-fadeInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes qfs-fadeOutLeft {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(-20px); }
+        }
+        
+        @keyframes qfs-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes qfs-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Touch feedback for mobile */
+        @media (hover: none) {
+            .qfs-button:hover {
+                transform: none;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            
+            .qfs-button:active {
+                transform: scale(0.98);
+                background: var(--qfs-button-active);
+            }
+            
+            .qfs-menu-vertical li:active {
+                background-color: var(--qfs-button-active);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .qfs-g20-banner {
+                height: 200px;
+            }
+            
+            .qfs-g20-banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .qfs-g20-banner p {
+                font-size: 1rem;
+            }
+            
+            .qfs-pay-card-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .qfs-pay-card-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="qfs-body qfs-reset">
+    <!-- Mobile menu button -->
+    <button class="qfs-mobile-menu-btn" id="qfsMobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Vertical menu -->
+    <nav class="qfs-menu-vertical" id="qfsMenuVertical" aria-label="Main navigation">
+        <div class="qfs-logo">QFS Portal</div>
+        <ul>
+            <li><a href="#home" class="qfs-menu-link"><i class="fas fa-home qfs-button-icon"></i> Home</a></li>
+            <li><a href="#about" class="qfs-menu-link"><i class="fas fa-info-circle qfs-button-icon"></i> About QFS</a></li>
+            <li><a href="#qfspay" class="qfs-menu-link"><i class="fas fa-credit-card qfs-button-icon"></i> QFSpay</a></li>
+            <li><a href="#technology" class="qfs-menu-link"><i class="fas fa-atom qfs-button-icon"></i> Technology</a></li>
+            <li><a href="#currencies" class="qfs-menu-link"><i class="fas fa-coins qfs-button-icon"></i> Supported Currencies</a></li>
+            
+            <li class="qfs-menu-heading"><i class="fas fa-key qfs-button-icon"></i> Secure Access</li>
+            <li><a href="#login" class="qfs-menu-link"><i class="fas fa-user-shield qfs-button-icon"></i> Government Login</a></li>
+            <li><a href="#register" class="qfs-menu-link"><i class="fas fa-user-plus qfs-button-icon"></i> Register Institution</a></li>
+            
+  <li class="qfs-seal-item">
+    <a href="https://www.quantum.gov/iyq-2025/" target="_blank" style="text-decoration: none;">
+        <div class="qfs-seal">
+            <img src="https://www.quantum.gov/wp-content/uploads/2020/11/NQCO_Seal_highres.png" alt="QFS Seal" style="width: 100px; display: block; margin: 0 auto;">
+        </div>
+        <p style="text-align: center; margin-top: 10px;">Official QFS Portal</p>
+    </a>
+</li>
+ <li><a href="#contact" class="qfs-menu-link"><i class="fas fa-envelope qfs-button-icon"></i> Contact</a></li>
+            <li><a href="#resources" class="qfs-menu-link"><i class="fas fa-book qfs-button-icon"></i> Resources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="qfs-content">
+        <div class="qfs-container">
+            <header class="qfs-header qfs-header-accent" id="home">
+                <h1 class="qfs-h1">Quantum Financial System</h1>
+                <p class="qfs-subtitle"><span style="color: #fffacd;">The official government portal for the next-generation financial infrastructure and QFSpay</p>
+            </header>
+            
+            <div class="qfs-content-section">
+                <!-- Introduction -->
+                <section class="qfs-card">
+                    <div class="qfs-card-content">
+                        <h2 class="qfs-h2"><i class="fas fa-flag" style="color: var(--qfs-gold); margin-right: 10px;"></i> <span style="color: #FFED7D;">
+Government Vision</h2>
+                        <p><span style="color: #fffacd;">The Quantum Financial System (QFS) represents a revolutionary leap in financial technology, providing a secure, transparent, and efficient platform for global transactions. As part of the NESARA/GESARA economic reforms, QFS establishes a new standard for financial sovereignty and integrity, with QFSpay as its official payment solution.</p>
+                        
+                        <div class="qfs-highlight-box">
+                            <h3 class="qfs-h3"><i class="fas fa-key" style="margin-right: 10px;"></i> Key Features:</h3>
+                            <span style="color: #FFED7D;"><ul class="qfs-features-list">
+                                <li>Quantum-secured financial transactions</li>
+                                <li>QFSpay - Official government payment solution</li>
+                                <li>Instant settlement across borders</li>
+                                <li>Complete transparency and auditability</li>
+                                <li>Integration with sovereign digital currencies</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="qfs-button-group">
+                            <button class="qfs-button" onclick="location.href='#about'">
+                                <i class="fas fa-info-circle qfs-button-icon"></i> Learn More
+                            </button>
+                            <button class="qfs-button qfs-pay-button" onclick="location.href='#qfspay'">
+                                <i class="fas fa-credit-card qfs-button-icon"></i> QFSpay
+                            </button>
+                            <button class="qfs-button" onclick="location.href='#technology'">
+                                <i class="fas fa-atom qfs-button-icon"></i> Technology
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- G20 Banner -->
+                <section class="qfs-g20-banner" style="background-image: url('https://www.g20.org/content/dam/gtwenty/gtwenty_new/about-g20/G20_India_2023_Logo.svg');">
+                    <div class="qfs-g20-banner-content">
+                        <h2>Official Financial Infrastructure of the G20 Nations</h2>
+                        <p>Supporting the transition to a new era of financial transparency and sovereignty with QFSpay integration</p>
+                    </div>
+                </section>
+                
+                <!-- About QFS -->
+                <section class="qfs-card" id="about">
+                    <div class="qfs-card-header">
+                        <div class="qfs-card-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">About the Quantum Financial System</h2>
+                    </div>
+                    <div class="qfs-card-content">
+                        <p><span style="color: #fffacd;">The Quantum Financial System (QFS) is a government-backed financial infrastructure that utilizes quantum computing and blockchain technologies to create an unhackable, transparent financial network. It serves as the foundation for the new global financial architecture, with QFSpay as its official payment solution.</p>
+                        
+                        <div class="qfs-document">
+                            <div class="qfs-document-header">
+                                <h3 class="qfs-document-title">QFS Implementation Directive</h3>
+                                <span class="qfs-document-number">Document H. Rept. 115-950</span>
+                            </div>
+                            <div class="qfs-document-content">
+                                <p><span style="color: #fffacd;">Pursuant to the NESARA/GESARA economic reforms, all government financial institutions are hereby directed to implement QFS protocols and QFSpay solutions for all sovereign transactions effective January 1, 2026.</p>
+                                <p><span style="color: #fffacd;">The QFS provides:</p>
+                                <ul>
+                                    <span style="color: #fffacd;"><li>Quantum-resistant encryption for all transactions</li>
+                                    <li>QFSpay integration for seamless payments</li>
+                                    <li>Real-time settlement without intermediary banks</li>
+                                    <li>Complete transaction transparency with privacy protections</li>
+                                    <li>Integration with asset-backed sovereign currencies</li>
+                                </ul>
+                            </div>
+                            <div class="qfs-document-footer">
+                                <div class="qfs-document-signature">
+                                    <span><span style="color: #d4af37;">Authorized by:</span>
+                                    <div class="qfs-signature-line"></div>
+                                    <span><span style="color: #fffacd;">Global Financial Oversight Committee</span>
+                                </div>
+                                <div class=""> <img src="https://www.quantum.gov/wp-content/uploads/2020/11/NQCO_Seal_highres.png" alt="Descripción de la imagen">
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- QFSpay Section -->
+                <section class="qfs-card qfs-pay-card" id="qfspay">
+                    
+                    <div class="qfs-pay-card-header">
+                        
+                        <div class="qfs-pay-card-icon">
+                            
+                            <i class="fas fa-credit-card">
+                            </i> 
+                        </div>
+                        <div>
+                            <h2 class="qfs-pay-card-title">QFSpay</h2>
+                                       
+                            <p class="qfs-pay-card-subtitle">The Official Payment Solution of the Quantum Financial System</p>
+                        </div>
+                    </div>
+                    <div class="qfs-pay-card-content">
+                        </div>
+                            <img src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png
+" alt="Descripción de la imagen">
+                            <div class="qfs-pay-feature">
+                                <div class="qfs-pay-feature-icon">
+                                    
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="qfs-pay-feature-text">
+                                    
+                                    <h4 class="qfs-pay-feature-title"> Quantum Security</h4>
+                                    
+                                    <p class="qfs-pay-feature-desc">Military-grade quantum encryption protects every transaction from hacking and fraud.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="qfs-pay-feature">
+                                <div class="qfs-pay-feature-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="qfs-pay-feature-text">
+                                    <h4 class="qfs-pay-feature-title">Global Acceptance</h4>
+                                    <p class="qfs-pay-feature-desc">Accepted by all G20 nations and participating merchants worldwide.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="qfs-pay-feature">
+                                <div class="qfs-pay-feature-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="qfs-pay-feature-text">
+                                    <h4 class="qfs-pay-feature-title">Instant Settlement</h4>
+                                    <p class="qfs-pay-feature-desc">Transactions complete in quantum time with no banking delays.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="qfs-pay-feature">
+                                <div class="qfs-pay-feature-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="qfs-pay-feature-text">
+                                    <h4 class="qfs-pay-feature-title">Multi-Currency</h4>
+                                    <p class="qfs-pay-feature-desc">Supports all QFS-backed currencies with automatic conversion.</p>
+                                </div>
+                            </div>
+                            
+                            <button class="qfs-button qfs-pay-button" style="margin-top: 1.5rem;">
+                                <i class="fas fa-download qfs-button-icon"></i> Download QFSpay App
+                            </button>
+                        </div>
+                        
+                        <div class="qfs-pay-card-image">
+                            <img src="https://via.placeholder.com/400x600.png?text=QFSpay+Card+and+App" alt="">
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Technology Section -->
+                <section class="qfs-card" id="technology">
+                    <div class="qfs-card-header">
+                        <div class="qfs-card-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">QFS Technology</h2>
+                    </div>
+                    <div class="qfs-card-content">
+                        <p><span style="color: #fffacd;">The QFS combines cutting-edge quantum computing with advanced blockchain technology to create a financial system that is secure, efficient, and transparent, with QFSpay as its consumer-facing payment solution.</p>
+                        
+                        <div class="qfs-features-grid">
+                            <article class="qfs-feature-item">
+                                <div class="qfs-feature-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <h3 class="qfs-feature-title">Quantum Encryption</h3>
+                                <p><span style="color: #fffacd;">Unbreakable quantum key distribution ensures complete security for all transactions</p>
+                                <button class="qfs-button qfs-small-button">Technical Details</button>
+                            </article>
+                            <article class="qfs-feature-item">
+                                <div class="qfs-feature-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="qfs-feature-title">Decentralized Network</h3>
+                                <p><span style="color: #fffacd;">Distributed across government nodes worldwide with no single point of failure</p>
+                                <button class="qfs-button qfs-small-button">Network Map</button>
+                            </article>
+                            <article class="qfs-feature-item">
+                                <div class="qfs-feature-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3 class="qfs-feature-title">Instant Settlement</h3>
+                                <p><span style="color: #fffacd;">Transactions settle in quantum time without traditional banking delays</p>
+                                <button class="qfs-button qfs-small-button">Performance Data</button>
+                            </article>
+                            <article class="qfs-feature-item">
+                                <div class="qfs-feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3 class="qfs-feature-title">Sovereign Security</h3>
+                                <p><span style="color: #fffacd;">Government-controlled access with military-grade protection</p>
+                                <button class="qfs-button qfs-small-button">Security Protocols</button>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Currency Section -->
+                <section class="qfs-card qfs-currency-section" id="currencies">
+                    <div class="qfs-card-header">
+                        <div class="qfs-card-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">Supported Sovereign Currencies</h2>
+                    </div>
+                    <div class="qfs-card-content">
+                        <p><span style="color: #D6C8CD;">QFS provides the infrastructure for the following institutional currencies backed by tangible assets and sovereign agreements, all compatible with QFSpay:</p>
+                        
+                        <div class="qfs-currency-grid">
+                            <!-- QFS Currency Card -->
+                            <div class="qfs-currency-card"> 
+                                <div class="qfs-currency-icon">
+                                     <img src="https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png" alt="QFS Logo">
+                                </div>
+                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">QFS Digital Currency</h3>
+                                <span class="qfs-currency-subtitle">Quantum Financial System Standard</span>
+                                <p class="qfs-currency-description">
+                                    <span style="color: #fffacd;">The primary quantum-secured digital currency of the new financial system, backed by sovereign assets and integrated with all national currencies. Fully compatible with QFSpay.
+                                </p>
+                            </div>
+                            
+                            <!-- GCR Card -->
+                            <div class="qfs-currency-card">
+                                <div class="qfs-currency-icon">
+                                    <img src="https://gcr.social/images/logo-s2-white.png" alt="GCR Logo">
+                                </div>
+                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">GCR</h3>
+                                <span class="qfs-currency-subtitle">Global Currency Reset</span>
+                                <p class="qfs-currency-description">
+                                    The official currency of the Global Financial Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available in QFSpay.
+                                </p>
+                            </div>
+                            
+                            <!-- Al Arab Card -->
+                            <div class="qfs-currency-card">
+                                <div class="qfs-currency-icon">
+                                    <img src="https://alarab.io/images/logo.png" alt="GCR Logo">
+                                </div>
+                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">Al Arab</h3>
+                                <span class="qfs-currency-subtitle">Official Arab Currency</span>
+                                <p class="qfs-currency-description">
+                                    The first gold-backed Arab currency, established as a reference for sovereign trade between Middle Eastern, African, and Asian markets. Backed by UAE institutions including G42, Mubadala, and the Mohammed Bin Rashid Space Centre.
+                                </p>
+                            </div>
+                            
+                            <!-- Sovereign Currency Card -->
+                            <div class="qfs-currency-card">
+                                <div class="qfs-currency-icon">
+                                    <img src="https://mf.b37mrtl.ru/actualidad/public_images/2019.06/article/5d170f8308f3d931268b45ca.JPG" alt="Sovereign Logo">
+                                </div>
+                                <h3 class="qfs-currency-title"><span style="color: #D0B200;">Sovereign Currencies</h3>
+                                <span class="qfs-currency-subtitle">National Digital Currencies</span>
+                                <p class="qfs-currency-description">
+                                    All G20 national digital currencies including Digital Dollar, Digital Yuan, Digital Euro, and others, fully interoperable through QFS and QFSpay.
+                                </p>
+                            </div>
+                        </div>
+                     </div>
+                </section>
+
+                <!-- Strategic Partners Section -->
+                <section class="qfs-card qfs-partners-section" id="partners">
+                    <div class="qfs-card-header">
+                        <div class="qfs-card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h2 class="qfs-card-title"><span style="color: #FFED7D;">Government Partners</h2>
+                    </div>
+                    <div class="qfs-card-content">
+                        <p><span style="color: #D6C8CD;">QFS and QFSpay are developed and maintained through international cooperation between sovereign governments and leading technology institutions:</p>
+                        
+                        <div class="qfs-partners-grid">
+                            <!-- USA -->
+                            <div class="qfs-partner-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png" alt="USA Flag" class="qfs-partner-logo">
+                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">United States</h3>
+                                <p class="qfs-partner-country">Department of the Treasury</p>
+                                <p class="qfs-currency-description">Lead developer of quantum encryption protocols</p>
+                            </div>
+                            
+                            <!-- China -->
+                            <div class="qfs-partner-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/125px-Flag_of_the_People%27s_Republic_of_China.svg.png" alt="China Flag" class="qfs-partner-logo">
+                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">PEOPLE'S REPUBLIC OF CHINA</h3>
+                                <p class="qfs-partner-country">People's Bank of China</p>
+                                <p class="qfs-currency-description">Digital Yuan integration lead</p>
+                            </div>
+                            
+                            <!-- EU -->
+                            <div class="qfs-partner-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/125px-Flag_of_Europe.svg.png" alt="EU Flag" class="qfs-partner-logo">
+                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">European Union</h3>
+                                <p class="qfs-partner-country">European Central Bank</p>
+                                <p class="qfs-currency-description">Digital Euro development</p>
+                            </div>
+                            
+                            <!-- UAE -->
+                            <div class="qfs-partner-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/125px-Flag_of_the_United_Arab_Emirates.svg.png" alt="UAE Flag" class="qfs-partner-logo">
+                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">UAE</h3>
+                                <p class="qfs-partner-country">Central Bank of the UAE</p>
+                                <p class="qfs-currency-description">Middle East implementation lead Currency AlArab </p>
+                            </div>
+                            
+                            <!-- Technology Partners -->
+                            <div class="qfs-partner-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/125px-IBM_logo.svg.png" alt="IBM Logo" class="qfs-partner-logo">
+                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">IBM</h3>
+                                <p class="qfs-partner-country">Quantum Computing</p>
+                                <p class="qfs-currency-description">Quantum hardware provider</p>
+                            </div>
+                            
+                            <div class="qfs-partner-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/125px-OpenAI_Logo.svg.png" alt="OpenAI Logo" class="qfs-partner-logo">
+                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">OpenAI</h3>
+                                <p class="qfs-partner-country">AI Security</p>
+                                <p class="qfs-currency-description">AI-driven threat detection</p>
+                            </div>
+                            
+                            <div class="qfs-partner-card">
+                                <img src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png" alt="QFSpay Logo" class="qfs-partner-logo">
+                                <h3 class="qfs-partner-name"><span style="color: #D0B200;">QFSpay</h3>
+                                <p class="qfs-partner-country">Payment Solutions</p>
+                                <p class="qfs-currency-description">Official payment platform</p>
+                            </div>
+                 </section>
+                 
+                <!-- Final CTA -->
+                <section class="qfs-card">
+                    <div class="qfs-card-content qfs-final-card-content">
+                        <h2 class="qfs-h2"><i class="fas fa-landmark" style="color: var(--qfs-gold); margin-right: 10px;"></i> <span style="color: #FFED7D;">QFS & QFSpay are the future of sovereign finance</h2>
+                        <p><span style="color: #D6C8CD;">Secure, transparent, and efficient financial infrastructure for governments and citizens worldwide.</p>
+                        <div class="qfs-button-group">
+                            <button class="qfs-cta-button" id="qfsMainCTA">
+                                <i class="fas fa-shield-alt qfs-button-icon">
+                                 <a href="https://www.quantum.gov/iyq-2025/" target="_BLACK"><strong>Government Portal Login</strong></a></i> 
+                            </button>
+                            <button class="qfs-button qfs-pay-button">
+                                <i class="fas fa-mobile-alt qfs-button-icon"></i> Get QFSpay App
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <footer class="qfs-footer">
+            <div class="qfs-social-links">
+                <a href="#" aria-label="Government Website"><i class="fas fa-landmark"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>Quantum Financial System - Official Government Portal</p>
+            <p class="qfs-copyright">© 2025 Global Financial Oversight Committee. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Back to top button -->
+    <a href="#home" class="qfs-back-to-top" id="qfsBackToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('qfsMobileMenuBtn');
+            const menuVertical = document.getElementById('qfsMenuVertical');
+            
+            if (mobileMenuBtn && menuVertical) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    menuVertical.classList.toggle('qfs-active');
+                    
+                    // Add animation class
+                    if (!isExpanded) {
+                        menuVertical.style.animation = 'qfs-fadeInRight 0.3s ease';
+                    } else {
+                        menuVertical.style.animation = 'qfs-fadeOutLeft 0.3s ease';
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!menuVertical.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        menuVertical.classList.remove('qfs-active');
+                    }
+                });
+            }
+            
+            // Back to top button
+            const backToTopBtn = document.getElementById('qfsBackToTop');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('qfs-visible');
+                    } else {
+                        backToTopBtn.classList.remove('qfs-visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Main CTA button
+            const mainCTA = document.getElementById('qfsMainCTA');
+            if (mainCTA) {
+                mainCTA.addEventListener('click', function() {
+                    // Add ripple effect
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('qfs-ripple');
+                    this.appendChild(ripple);
+                    
+                    // Remove ripple after animation
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                    
+                    // Redirect to login
+                    window.location.href = '#login';
+                });
+            }
+            
+            // Add animation to cards when they come into view
+            const animateOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.qfs-card, .qfs-feature-item, .qfs-currency-card, .qfs-partner-card, .qfs-g20-banner, .qfs-pay-card').forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease-out';
+                animateOnScroll.observe(el);
+            });
+
+            // Seal animation
+            const seal = document.querySelector('.qfs-seal');
+            if (seal) {
+                seal.style.animation = 'qfs-pulse 2s infinite';
+                
+                seal.addEventListener('mouseenter', () => {
+                    seal.style.animation = 'qfs-float 3s ease-in-out infinite';
+                });
+                
+                seal.addEventListener('mouseleave', () => {
+                    seal.style.animation = 'qfs-pulse 2s infinite';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
