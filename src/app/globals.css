@@ -275,6 +275,32 @@
   }
 }
 
+/* Subtitle labels - bright in dark mode */
+.dark .sub-label {
+  color: #60a5fa !important;
+  opacity: 0.85 !important;
+}
+.dark .sub-label-purple {
+  color: #a78bfa !important;
+  opacity: 0.85 !important;
+}
+.dark .sub-label-teal {
+  color: #2dd4bf !important;
+  opacity: 0.85 !important;
+}
+.dark .sub-label-amber {
+  color: #fbbf24 !important;
+  opacity: 0.85 !important;
+}
+.dark .sub-label-pink {
+  color: #f472b6 !important;
+  opacity: 0.85 !important;
+}
+.dark .sub-label-indigo {
+  color: #818cf8 !important;
+  opacity: 0.85 !important;
+}
+
 /* Dark mode specific overrides */
 .dark .dark-bg-card {
   background: rgba(17, 24, 39, 0.9) !important;

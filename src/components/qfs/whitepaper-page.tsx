@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useThemeStore } from '@/store/theme-store';
 import {
   FileText, Atom, Shield, Wallet, CreditCard, ArrowRightLeft,
   Bot, Globe, Network, Landmark, Users, Cpu, Layers, Link2,
@@ -33,6 +34,8 @@ const tocItems = [
 ];
 
 export function WhitePaperPage() {
+  const { theme } = useThemeStore();
+  const isDark = theme === 'dark';
   return (
     <div className="relative z-10">
       {/* Header */}
@@ -105,7 +108,7 @@ export function WhitePaperPage() {
                 className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-100 hover:border-blue-200/50 transition-colors cursor-default group"
                 style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}
               >
-                <span className="text-xs font-mono text-[#2563eb]/50 w-6">{item.num}</span>
+                <span className="text-xs font-mono text-[#2563eb]/50 sub-label w-6">{item.num}</span>
                 <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">{item.title}</span>
               </motion.div>
             ))}
@@ -406,6 +409,8 @@ function WhitePaperSection({
   children: React.ReactNode;
   isLast?: boolean;
 }) {
+  const { theme } = useThemeStore();
+  const isDark = theme === 'dark';
   return (
     <>
       <section className="py-16 px-4">
@@ -421,7 +426,7 @@ function WhitePaperSection({
                 {icon}
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest" style={{ color: `${color}80` }}>
+                <span className="text-xs font-mono tracking-widest" style={{ color: isDark ? color : (color + '80') }}>
                   SECCIÓN {num}
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{title}</h2>

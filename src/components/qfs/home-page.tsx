@@ -177,7 +177,7 @@ export function HomePage() {
             variants={stagger}
             className="text-center mb-16"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
               {t('eco.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
@@ -237,7 +237,7 @@ export function HomePage() {
             variants={stagger}
             className="text-center mb-16"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#7c3aed]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple uppercase">
               {t('pil.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
@@ -301,7 +301,7 @@ export function HomePage() {
               >
                 <Shield className="w-5 h-5" />
               </div>
-              <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">{t('sec.subtitle')}</span>
+              <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">{t('sec.subtitle')}</span>
             </motion.div>
             <motion.h2 variants={fadeUp} className={`text-3xl sm:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
               {t('sec.title')} <span className="gradient-text">Security</span>
@@ -353,7 +353,7 @@ export function HomePage() {
             variants={stagger}
             className="text-center mb-16"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#0d9488]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#0d9488]/50 sub-label-teal uppercase">
               {t('prod.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
@@ -385,7 +385,7 @@ export function HomePage() {
                     </div>
                     <div>
                       <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.wallet.title')}</h3>
-                      <p className="text-xs text-[#2563eb]/50 font-mono">{t('prod.wallet.subtitle')}</p>
+                      <p className="text-xs text-[#2563eb]/50 sub-label font-mono">{t('prod.wallet.subtitle')}</p>
                     </div>
                   </div>
                   <p className={`mb-6 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -468,7 +468,7 @@ export function HomePage() {
                   </div>
                   <div>
                     <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.qfspay.title')}</h3>
-                    <p className="text-xs text-[#7c3aed]/50 font-mono">{t('prod.qfspay.subtitle')}</p>
+                    <p className="text-xs text-[#7c3aed]/50 sub-label-purple font-mono">{t('prod.qfspay.subtitle')}</p>
                   </div>
                 </div>
                 <p className={`text-sm mb-6 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -512,7 +512,7 @@ export function HomePage() {
                   </div>
                   <div>
                     <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.dex.title')}</h3>
-                    <p className="text-xs text-[#0d9488]/50 font-mono">{t('prod.dex.subtitle')}</p>
+                    <p className="text-xs text-[#0d9488]/50 sub-label-teal font-mono">{t('prod.dex.subtitle')}</p>
                   </div>
                 </div>
                 <p className={`text-sm mb-6 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -554,7 +554,7 @@ export function HomePage() {
                   </div>
                   <div>
                     <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.cards.title')}</h3>
-                    <p className="text-xs text-[#d97706]/50 font-mono">{t('prod.cards.subtitle')}</p>
+                    <p className="text-xs text-[#d97706]/50 sub-label-amber font-mono">{t('prod.cards.subtitle')}</p>
                   </div>
                 </div>
                 <p className={`text-sm mb-4 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -594,7 +594,7 @@ export function HomePage() {
                   </div>
                   <div>
                     <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.ai.title')}</h3>
-                    <p className="text-xs text-[#db2777]/50 font-mono">{t('prod.ai.subtitle')}</p>
+                    <p className="text-xs text-[#db2777]/50 sub-label-pink font-mono">{t('prod.ai.subtitle')}</p>
                   </div>
                 </div>
                 <div className="space-y-3">
@@ -644,7 +644,7 @@ export function HomePage() {
             variants={stagger}
             className="text-center mb-12"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
               {t('faq.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mt-3 mb-4">

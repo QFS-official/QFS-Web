@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useThemeStore } from '@/store/theme-store';
 import {
   Landmark, Shield, Globe, Zap, Lock, GitBranch, CreditCard,
   Coins, Handshake, ArrowRight, ExternalLink, ShieldCheck,
@@ -60,6 +61,8 @@ const partners = [
 ];
 
 export function PortalPage() {
+  const { theme } = useThemeStore();
+  const isDark = theme === 'dark';
   return (
     <div className="relative z-10">
       {/* Header */}
@@ -185,7 +188,7 @@ export function PortalPage() {
                 <Shield className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50">ABOUT</span>
+                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label">ABOUT</span>
                 <h2 className="text-xl font-bold text-slate-900">A New Digital Infrastructure for Global Finance</h2>
               </div>
             </motion.div>
@@ -246,7 +249,7 @@ export function PortalPage() {
                 <CreditCard className="w-5 h-5 text-[#7c3aed]" />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#7c3aed]/50">PAYMENT SOLUTION</span>
+                <span className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple">PAYMENT SOLUTION</span>
                 <h2 className="text-xl font-bold text-slate-900">QFSpay</h2>
               </div>
             </motion.div>
@@ -310,7 +313,7 @@ export function PortalPage() {
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
             className="text-center mb-12"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
               Technology
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl font-bold mt-3 mb-4">
@@ -375,7 +378,7 @@ export function PortalPage() {
                 <Coins className="w-5 h-5" style={{ color: '#d97706' }} />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#d97706]/50">
+                <span className="text-xs font-mono tracking-widest text-[#d97706]/50 sub-label-amber">
                   CURRENCIES
                 </span>
                 <h2 className="text-xl font-bold text-slate-900">Supported Sovereign Currencies</h2>
@@ -440,7 +443,7 @@ export function PortalPage() {
                 <Handshake className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50">PARTNERS</span>
+                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label">PARTNERS</span>
                 <h2 className="text-xl font-bold text-slate-900">Government Partners</h2>
               </div>
             </motion.div>

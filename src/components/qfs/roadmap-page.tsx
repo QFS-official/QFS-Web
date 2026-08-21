@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useThemeStore } from '@/store/theme-store';
 import { Map, CheckCircle2, Circle, ArrowRight, Rocket, Globe, Cpu, Building2, Sparkles } from 'lucide-react';
 
 const fadeUp = {
@@ -91,6 +92,8 @@ const phases = [
 ];
 
 export function RoadmapPage() {
+  const { theme } = useThemeStore();
+  const isDark = theme === 'dark';
   return (
     <div className="relative z-10">
       {/* Header */}
@@ -132,7 +135,7 @@ export function RoadmapPage() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
             className="text-center mb-12"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#7c3aed]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple uppercase">
               Mapa del Ecosistema
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mt-3">
@@ -182,7 +185,7 @@ export function RoadmapPage() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
             className="text-center mb-16"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
               Línea de Tiempo
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mt-3">

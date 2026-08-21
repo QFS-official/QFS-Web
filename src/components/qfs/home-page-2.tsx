@@ -67,7 +67,7 @@ export function HomePagePart2() {
             variants={stagger}
             className="text-center mb-16"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#d97706]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#d97706]/50 sub-label-amber uppercase">
               {t('all.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
@@ -149,7 +149,7 @@ export function HomePagePart2() {
             variants={stagger}
             className="text-center mb-16"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
               {lang === 'es' ? 'Distribucion de Tokens' : 'Token Distribution'}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
@@ -185,7 +185,7 @@ export function HomePagePart2() {
             variants={stagger}
             className="text-center mb-16"
           >
-            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
               {t('why.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
