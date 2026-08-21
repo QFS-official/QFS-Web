@@ -50,5 +50,15 @@ test
 prompt
 
 server.log
+
 # Skills directory
 /skills/
+
+# Database files
+db/*.db
+
+# Tool results (temporary artifacts)
+tool-results/
+
+# Uploads (temporary artifacts)
+upload/
