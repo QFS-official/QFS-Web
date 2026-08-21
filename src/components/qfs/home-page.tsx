@@ -411,7 +411,7 @@ export function HomePage() {
                       <span className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{t('prod.wallet.balance')}</span>
                       <Eye className={`w-4 h-4 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`} />
                     </div>
-                    <div className="text-3xl font-bold gradient-text">$47,892.35</div>
+                    <div className="text-3xl font-bold gradient-text">$52,892.35</div>
                     <div className="flex items-center gap-2 text-xs text-[#0d9488]">
                       <ArrowRightLeft className="w-3 h-3" /> +12.4% {t('prod.wallet.month')}
                     </div>
@@ -419,7 +419,9 @@ export function HomePage() {
                       {[
                         { name: 'QFS Token', amount: '12,450 QFS', value: '$28,350', change: '+5.2%' },
                         { name: 'USDT', amount: '15,000 USDT', value: '$15,000', change: '+0.1%' },
-                        { name: 'BTC', amount: '0.042 BTC', value: '$4,542', change: '+8.7%' },
+                        { name: 'ETH', amount: '1.45 ETH', value: '$4,542', change: '+8.7%' },
+                        { name: 'SOL', amount: '32.8 SOL', value: '$3,920', change: '+12.1%' },
+                        { name: 'Linea', amount: '820 LINEA', value: '$1,080', change: '+3.5%' },
                       ].map((asset) => (
                         <div key={asset.name} className={`flex items-center justify-between py-2 border-b last:border-0 ${theme === 'dark' ? 'border-slate-700' : 'border-gray-50'}`}>
                           <div>
