@@ -45,7 +45,7 @@ export function WhitePaperPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#7c3aed] border border-violet-200 bg-violet-50/80"
+            className={`mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest border ${isDark ? 'text-violet-300 border-violet-700/50 bg-violet-500/10' : 'text-[#7c3aed] border-violet-200 bg-violet-50/80'}`}
           >
             <FileText className="w-3.5 h-3.5" />
             LIBRO BLANCO
@@ -62,7 +62,7 @@ export function WhitePaperPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-slate-500 max-w-2xl mx-auto leading-relaxed"
+            className={`max-w-2xl mx-auto leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
           >
             Documento técnico que describe la visión, arquitectura y desarrollo progresivo
             del Quantum Financial System.
@@ -71,7 +71,7 @@ export function WhitePaperPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.45, duration: 0.7 }}
-            className="flex items-center justify-center gap-4 mt-6 text-xs text-slate-400"
+            className={`flex items-center justify-center gap-4 mt-6 text-xs ${isDark ? 'text-slate-500' : 'text-slate-400'}`}
           >
             <span className="flex items-center gap-1"><BookOpen className="w-3 h-3" /> v1.0</span>
             <span className="text-gray-200">|</span>
@@ -105,11 +105,11 @@ export function WhitePaperPage() {
                 key={item.id}
                 custom={i}
                 variants={fadeUp}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-100 hover:border-blue-200/50 transition-colors cursor-default group"
-                style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-colors cursor-default group ${isDark ? 'bg-slate-800/90 border-slate-700/60 hover:border-blue-500/30' : 'bg-white border-gray-100 hover:border-blue-200/50'}`}
+                style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}
               >
                 <span className="text-xs font-mono text-[#2563eb]/50 sub-label w-6">{item.num}</span>
-                <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">{item.title}</span>
+                <span className={`text-sm transition-colors ${isDark ? 'text-slate-300 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900'}`}>{item.title}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -125,7 +125,7 @@ export function WhitePaperPage() {
         icon={<Lightbulb className="w-5 h-5" />}
         color="#2563eb"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             El sistema financiero global está experimentando una transformación fundamental. La digitalización
             acelerada, la evolución de las tecnologías blockchain, el surgimiento de activos digitales y la creciente
@@ -166,7 +166,7 @@ export function WhitePaperPage() {
         icon={<Atom className="w-5 h-5" />}
         color="#7c3aed"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             La visión de QFS se fundamenta en cinco pilares: <span className="text-[#2563eb] font-medium">Seguridad</span>,
             <span className="text-[#7c3aed] font-medium"> Transparencia</span>,
@@ -197,7 +197,7 @@ export function WhitePaperPage() {
         icon={<Layers className="w-5 h-5" />}
         color="#0d9488"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             El ecosistema QFS se compone de varios componentes integrados, cada uno diseñado para cumplir una
             función específica dentro de la arquitectura financiera digital:
@@ -211,7 +211,7 @@ export function WhitePaperPage() {
               { name: 'QFS Quantum Cards', desc: 'Tarjetas que conectan activos digitales con el mundo real.' },
               { name: 'QFS Financial Services', desc: 'Suite de servicios financieros para usuarios e instituciones.' },
             ].map((comp) => (
-              <div key={comp.name} className="bg-white rounded-xl p-4 border border-gray-100" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}>
+              <div key={comp.name} className="bg-white rounded-xl p-4 border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
                 <div className="text-sm font-semibold text-slate-800 mb-1">{comp.name}</div>
                 <div className="text-xs text-slate-500 leading-relaxed">{comp.desc}</div>
               </div>
@@ -231,7 +231,7 @@ export function WhitePaperPage() {
         icon={<Shield className="w-5 h-5" />}
         color="#2563eb"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             La seguridad es el pilar más crítico del ecosistema QFS. La arquitectura contempla múltiples capas
             de protección que evolucionan continuamente para enfrentar amenazas emergentes. Esto incluye
@@ -253,7 +253,7 @@ export function WhitePaperPage() {
         icon={<Network className="w-5 h-5" />}
         color="#d97706"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             QFS está orientado a una arquitectura interoperable que no se limita a una única red blockchain.
             La visión multicadena permite conectar progresivamente diferentes redes y protocolos, creando
@@ -275,7 +275,7 @@ export function WhitePaperPage() {
         icon={<Bot className="w-5 h-5" />}
         color="#db2777"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             La inteligencia artificial se integra como una capa transversal del ecosistema QFS, aplicándose en
             múltiples áreas: seguridad (detección de transacciones anómalas), monitoreo de riesgos, asistencia
@@ -296,7 +296,7 @@ export function WhitePaperPage() {
         icon={<Globe className="w-5 h-5" />}
         color="#0d9488"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             QFS está orientado a participar en la evolución hacia una economía donde diferentes tipos de activos
             puedan representarse y gestionarse digitalmente. Esto incluye criptoactivos, stablecoins, activos
@@ -317,7 +317,7 @@ export function WhitePaperPage() {
         icon={<Landmark className="w-5 h-5" />}
         color="#7c3aed"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             QFS también contempla soluciones específicas para empresas e instituciones, incluyendo gestión
             de activos digitales a escala, treasury management, pagos empresariales, transferencias internacionales,
@@ -337,27 +337,27 @@ export function WhitePaperPage() {
         icon={<Link2 className="w-5 h-5" />}
         color="#d97706"
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             QFS construye su visión sobre alianzas estratégicas que fortalezcan la infraestructura y expandan
             el alcance del ecosistema:
           </p>
           <div className="space-y-3 my-4">
-            <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#2563eb] border border-gray-100" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}>
+            <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#2563eb] border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
               <div className="text-sm font-semibold text-slate-800 mb-1">Alianza GCRM</div>
               <div className="text-xs text-slate-500 leading-relaxed">
                 Integración de servicios financieros digitales para conectar economías regionales con QFS,
                 facilitando pagos y transferencias transfronterizas.
               </div>
             </div>
-            <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#d97706] border border-gray-100" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}>
+            <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#d97706] border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
               <div className="text-sm font-semibold text-slate-800 mb-1">Al Arab</div>
               <div className="text-xs text-slate-500 leading-relaxed">
                 Expansión en mercados de Medio Oriente y Norte de África, integrando activos digitales
                 con sistemas financieros regionales existentes.
               </div>
             </div>
-            <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#7c3aed] border border-gray-100" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}>
+            <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#7c3aed] border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
               <div className="text-sm font-semibold text-slate-800 mb-1">Monedas de Gobiernos</div>
               <div className="text-xs text-slate-500 leading-relaxed">
                 Integración progresiva con CBDCs y activos digitales gubernamentales para establecer
@@ -376,7 +376,7 @@ export function WhitePaperPage() {
         color="#db2777"
         isLast
       >
-        <div className="space-y-4 text-slate-600 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
             QFS desarrolla su visión dentro de una comunidad tecnológica y financiera vinculada al ecosistema NESG.
             La comunidad impulsa iniciativas relacionadas con finanzas digitales, blockchain, DeFi, inclusión financiera,
@@ -429,7 +429,7 @@ function WhitePaperSection({
                 <span className="text-xs font-mono tracking-widest" style={{ color: isDark ? color : (color + '80') }}>
                   SECCIÓN {num}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{title}</h2>
+                <h2 className={`text-2xl sm:text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{title}</h2>
               </div>
             </motion.div>
             <motion.div variants={fadeUp}>

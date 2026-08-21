@@ -103,7 +103,7 @@ export function RoadmapPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#0d9488] border border-teal-200 bg-teal-50/80"
+            className={`mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest border ${isDark ? 'text-teal-300 border-teal-700/50 bg-teal-500/10' : 'text-[#0d9488] border-teal-200 bg-teal-50/80'}`}
           >
             <Map className="w-3.5 h-3.5" />
             ROADMAP
@@ -160,7 +160,7 @@ export function RoadmapPage() {
               <motion.div key={node.name} custom={i} variants={fadeUp} className="flex flex-col items-center">
                 <div
                   className="bg-white rounded-xl px-6 py-3 text-center min-w-[220px] border border-gray-100 hover:border-blue-200/50 transition-colors"
-                  style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.02)' }}
+                  style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.15)' : '0 1px 3px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.02)' }}
                 >
                   <div className="text-sm font-semibold text-slate-800">{node.name}</div>
                   <div className="text-xs mt-0.5" style={{ color: `${node.color}80` }}>{node.sub}</div>
@@ -215,7 +215,7 @@ export function RoadmapPage() {
                       className="w-8 h-8 rounded-full flex items-center justify-center border-2"
                       style={{
                         borderColor: phase.color,
-                        background: phase.status === 'active' ? `${phase.color}10` : '#f8fafc',
+                        background: phase.status === 'active' ? `${phase.color}10` : (isDark ? '#1e293b' : '#f8fafc'),
                         boxShadow: phase.status === 'active' ? `0 0 12px ${phase.color}20` : 'none',
                       }}
                     >
@@ -234,7 +234,7 @@ export function RoadmapPage() {
                     className={`ml-12 md:ml-0 md:w-[calc(50%-3rem)] bg-white rounded-2xl p-6 relative overflow-hidden border border-gray-100 ${
                       phase.status === 'active' ? 'quantum-glow' : ''
                     }`}
-                    style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.02)' }}
+                    style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.15)' : '0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.02)' }}
                   >
                     {phase.status === 'active' && (
                       <div

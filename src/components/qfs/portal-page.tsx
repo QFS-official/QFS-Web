@@ -72,7 +72,7 @@ export function PortalPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#d97706] border border-amber-200 bg-amber-50/80"
+            className={`mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest border ${isDark ? 'text-amber-300 border-amber-700/50 bg-amber-500/10' : 'text-[#d97706] border-amber-200 bg-amber-50/80'}`}
           >
             <Landmark className="w-3.5 h-3.5" />
             GOVERNMENT PORTAL

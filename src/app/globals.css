@@ -276,43 +276,131 @@
 }
 
 /* Subtitle labels - bright in dark mode */
-.dark .sub-label {
-  color: #60a5fa !important;
-  opacity: 0.85 !important;
+html.dark .sub-label,
+html.dark span.sub-label,
+html.dark div.sub-label {
+  color: #93bbfd !important;
 }
-.dark .sub-label-purple {
-  color: #a78bfa !important;
-  opacity: 0.85 !important;
+html.dark .sub-label-purple,
+html.dark span.sub-label-purple,
+html.dark div.sub-label-purple {
+  color: #c4b5fd !important;
 }
-.dark .sub-label-teal {
-  color: #2dd4bf !important;
-  opacity: 0.85 !important;
+html.dark .sub-label-teal,
+html.dark span.sub-label-teal,
+html.dark div.sub-label-teal {
+  color: #5eead4 !important;
 }
-.dark .sub-label-amber {
-  color: #fbbf24 !important;
-  opacity: 0.85 !important;
+html.dark .sub-label-amber,
+html.dark span.sub-label-amber,
+html.dark div.sub-label-amber {
+  color: #fcd34d !important;
 }
-.dark .sub-label-pink {
-  color: #f472b6 !important;
-  opacity: 0.85 !important;
+html.dark .sub-label-pink,
+html.dark span.sub-label-pink,
+html.dark div.sub-label-pink {
+  color: #f9a8d4 !important;
 }
-.dark .sub-label-indigo {
-  color: #818cf8 !important;
-  opacity: 0.85 !important;
+html.dark .sub-label-indigo,
+html.dark span.sub-label-indigo,
+html.dark div.sub-label-indigo {
+  color: #a5b4fc !important;
 }
 
 /* Dark mode specific overrides */
-.dark .dark-bg-card {
+html.dark .dark-bg-card {
   background: rgba(17, 24, 39, 0.9) !important;
   border-color: rgba(51, 65, 85, 0.6) !important;
 }
 
-.dark .dark-text {
+html.dark .dark-text {
   color: #e2e8f0 !important;
 }
 
-.dark .dark-text-sub {
+html.dark .dark-text-sub {
   color: #94a3b8 !important;
+}
+
+/* ===== Global dark mode text color overrides ===== */
+/* These fix static Tailwind classes on whitepaper, portal, roadmap pages */
+/* Home page uses inline conditionals so these won't conflict */
+
+/* Subtitle/description text */
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+/* Body/content text */
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+/* Strong body text / card titles */
+html.dark .text-slate-800 {
+  color: #e2e8f0 !important;
+}
+
+/* Headings */
+html.dark .text-slate-900 {
+  color: #f1f5f9 !important;
+}
+
+/* Separators */
+html.dark .text-gray-200 {
+  color: #334155 !important;
+}
+
+/* Card backgrounds */
+html.dark .bg-white {
+  background: rgba(30, 41, 59, 0.9) !important;
+}
+
+/* Card borders */
+html.dark .border-gray-100 {
+  border-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Colored backgrounds */
+html.dark .bg-blue-50 {
+  background: rgba(37, 99, 235, 0.08) !important;
+}
+html.dark .bg-amber-50 {
+  background: rgba(217, 119, 6, 0.08) !important;
+}
+html.dark .bg-slate-50 {
+  background: rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Colored borders */
+html.dark .border-blue-100 {
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+html.dark .border-amber-100 {
+  border-color: rgba(217, 119, 6, 0.2) !important;
+}
+html.dark .border-gray-100 {
+  border-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+/* Hover borders */
+html.dark .hover\:border-blue-200\/50:hover {
+  border-color: rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Slightly brighter slate-400 in dark mode */
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* Roadmap timeline line */
+html.dark .from-blue-200 {
+  --tw-gradient-from: rgba(37, 99, 235, 0.3) !important;
+}
+html.dark .via-violet-200 {
+  --tw-gradient-via: rgba(124, 58, 237, 0.3) !important;
+}
+html.dark .to-pink-200 {
+  --tw-gradient-to: rgba(219, 39, 119, 0.3) !important;
 }
 
 @keyframes float {
