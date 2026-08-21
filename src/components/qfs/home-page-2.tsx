@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Globe, Building2, Users, Handshake, Star } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Globe, Building2, Users, Handshake, Star, PieChart } from 'lucide-react';
 import { QFSCoin } from './qfs-coin';
 import { useThemeStore } from '@/store/theme-store';
 import { useT, useLangStore } from '@/store/lang-store';
@@ -127,6 +128,42 @@ export function HomePagePart2() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="section-divider max-w-5xl mx-auto origin-left"
+      />
+
+      {/* ===== QFS TOKEN ALLOCATION ===== */}
+      <section className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={stagger}
+            className="text-center mb-16"
+          >
+            <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
+              {lang === 'es' ? 'Distribucion de Tokens' : 'Token Distribution'}
+            </motion.span>
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
+              <span className="gradient-text">QFS Token</span>{' '}
+              <span className={isDark ? 'text-white' : 'text-slate-900'}>{lang === 'es' ? 'Asignacion' : 'Allocation'}</span>
+            </motion.h2>
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-mono mt-2" style={{ color: '#7c3aed', background: isDark ? 'rgba(124,58,237,0.1)' : 'rgba(124,58,237,0.06)', border: `1px solid ${isDark ? 'rgba(124,58,237,0.2)' : 'rgba(124,58,237,0.12)'}` }}>
+              <PieChart className="w-4 h-4" />
+              <span className="font-bold">177.64B QFS</span>
+              <span className={isDark ? 'text-slate-500' : 'text-slate-400'}>— {lang === 'es' ? 'Suministro de Referencia*' : 'Reference Supply*'}</span>
+            </motion.div>
+          </motion.div>
+
+          <TokenAllocationBars isDark={isDark} lang={lang} />
         </div>
       </section>
 
@@ -279,5 +316,156 @@ function AtomIcon({ className }: { className?: string }) {
       <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
       <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
     </svg>
+  );
+}
+
+/* ─── QFS Token Allocation Bars ─── */
+const allocationData = [
+  {
+    emoji: '🌍',
+    labelEs: 'Fondo Humanitario Global',
+    labelEn: 'Global Humanitarian Fund',
+    pct: 15.2,
+    amount: '27B QFS',
+    color: '#2563eb',
+    colorEnd: '#60a5fa',
+  },
+  {
+    emoji: '💱',
+    labelEs: 'Reserva de Exchange & Liquidez',
+    labelEn: 'Exchange & Liquidity Reserve',
+    pct: 33.8,
+    amount: '60B QFS',
+    color: '#7c3aed',
+    colorEnd: '#a78bfa',
+  },
+  {
+    emoji: '⚛️',
+    labelEs: 'Tecnologia & Ecosistema QFS',
+    labelEn: 'QFS Technology & Ecosystem',
+    pct: 16.9,
+    amount: '30B QFS',
+    color: '#0d9488',
+    colorEnd: '#2dd4bf',
+  },
+  {
+    emoji: '🌐',
+    labelEs: 'Adopcion & Expansion Global',
+    labelEn: 'Global Adoption & Expansion',
+    pct: 11.3,
+    amount: '20B QFS',
+    color: '#d97706',
+    colorEnd: '#fbbf24',
+  },
+  {
+    emoji: '🛡️',
+    labelEs: 'Reserva Institucional & Estabilidad',
+    labelEn: 'Institutional & Stability Reserve',
+    pct: 11.3,
+    amount: '20B QFS',
+    color: '#db2777',
+    colorEnd: '#f472b6',
+  },
+  {
+    emoji: '🔐',
+    labelEs: 'Gobernanza Futura / Reserva No Asignada',
+    labelEn: 'Future Governance / Unallocated Reserve',
+    pct: 11.6,
+    amount: '≈20.64B QFS',
+    color: '#6366f1',
+    colorEnd: '#818cf8',
+  },
+];
+
+function TokenAllocationBars({ isDark, lang }: { isDark: boolean; lang: string }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+  return (
+    <div ref={ref} className="space-y-5">
+      {allocationData.map((item, i) => {
+        const barBg = 'linear-gradient(90deg, ' + item.color + ', ' + item.colorEnd + ')';
+        const glowShadow = '0 0 8px ' + item.color + '80, 0 0 16px ' + item.color + '40';
+        return (
+          <motion.div
+            key={item.labelEn}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: i * 0.12, duration: 0.5, ease: 'easeOut' }}
+            className={"group rounded-2xl p-5 transition-all duration-300 " + (isDark ? 'bg-slate-800/80 border border-slate-700/50 hover:border-slate-600/60' : 'bg-white border border-gray-100 hover:border-blue-200/40')}
+            style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.15)' : '0 1px 3px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.01)' }}
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">{item.emoji}</span>
+                <span className={"text-sm font-semibold " + (isDark ? 'text-white' : 'text-slate-800')}>
+                  {lang === 'es' ? item.labelEs : item.labelEn}
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className={"text-xs font-mono " + (isDark ? 'text-slate-500' : 'text-slate-400')}>{item.amount}</span>
+                <span
+                  className="text-sm font-bold tabular-nums min-w-[52px] text-right"
+                  style={{ color: item.color }}
+                >
+                  {item.pct}%
+                </span>
+              </div>
+            </div>
+
+            <div className={"relative h-3 rounded-full overflow-hidden " + (isDark ? 'bg-slate-700/80' : 'bg-slate-100')}>
+              <motion.div
+                className="absolute inset-y-0 left-0 rounded-full"
+                style={{ background: barBg }}
+                initial={{ width: 0 }}
+                animate={isInView ? { width: item.pct + '%' } : { width: 0 }}
+                transition={{
+                  delay: i * 0.12 + 0.3,
+                  duration: 1.2,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+              >
+                <motion.div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
+                  }}
+                  initial={{ x: '-100%' }}
+                  animate={isInView ? { x: '200%' } : {}}
+                  transition={{
+                    delay: i * 0.12 + 0.5,
+                    duration: 1.5,
+                    ease: 'easeInOut',
+                  }}
+                />
+              </motion.div>
+
+              <motion.div
+                className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full"
+                style={{
+                  background: item.color,
+                  boxShadow: glowShadow,
+                }}
+                initial={{ left: '0%', opacity: 0 }}
+                animate={isInView ? { left: item.pct + '%', opacity: [0, 1, 0.6, 1] } : {}}
+                transition={{
+                  left: { delay: i * 0.12 + 0.3, duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] },
+                  opacity: { delay: i * 0.12 + 1.2, duration: 0.6 },
+                }}
+              />
+            </div>
+          </motion.div>
+        );
+      })}
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ delay: 1.2, duration: 0.5 }}
+        className={"text-[11px] text-center mt-6 " + (isDark ? 'text-slate-600' : 'text-slate-400')}
+      >
+        * {lang === 'es' ? 'Suministro de referencia sujeto a ajustes segun el desarrollo del ecosistema.' : 'Reference supply subject to adjustments based on ecosystem development.'}
+      </motion.p>
+    </div>
   );
 }
