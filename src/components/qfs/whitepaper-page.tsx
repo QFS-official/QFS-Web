@@ -21,16 +21,16 @@ const stagger = {
 };
 
 const tocItems = [
-  { num: '01', title: 'Resumen Ejecutivo', id: 'exec-summary' },
-  { num: '02', title: 'Visión y Arquitectura', id: 'vision' },
-  { num: '03', title: 'Componentes del Ecosistema', id: 'components' },
-  { num: '04', title: 'Seguridad y Criptografía', id: 'security' },
-  { num: '05', title: 'Infraestructura Multichain', id: 'multichain' },
-  { num: '06', title: 'Inteligencia Artificial', id: 'ai' },
-  { num: '07', title: 'Economía de Activos Digitales', id: 'digital-economy' },
-  { num: '08', title: 'Soluciones Institucionales', id: 'institutional' },
-  { num: '09', title: 'Alianzas Estratégicas', id: 'alliances' },
-  { num: '10', title: 'Comunidad NESG', id: 'nesg' },
+  { num: '01', title: 'Executive Summary', id: 'exec-summary' },
+  { num: '02', title: 'Vision & Architecture', id: 'vision' },
+  { num: '03', title: 'Ecosystem Components', id: 'components' },
+  { num: '04', title: 'Security & Cryptography', id: 'security' },
+  { num: '05', title: 'Multichain Infrastructure', id: 'multichain' },
+  { num: '06', title: 'Artificial Intelligence', id: 'ai' },
+  { num: '07', title: 'Digital Asset Economy', id: 'digital-economy' },
+  { num: '08', title: 'Institutional Solutions', id: 'institutional' },
+  { num: '09', title: 'Strategic Alliances', id: 'alliances' },
+  { num: '10', title: 'NESG Community', id: 'nesg' },
 ];
 
 export function WhitePaperPage() {
@@ -48,7 +48,7 @@ export function WhitePaperPage() {
             className={`mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest border ${isDark ? 'text-violet-300 border-violet-700/50 bg-violet-500/10' : 'text-[#7c3aed] border-violet-200 bg-violet-50/80'}`}
           >
             <FileText className="w-3.5 h-3.5" />
-            LIBRO BLANCO
+            WHITE PAPER
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -64,8 +64,8 @@ export function WhitePaperPage() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className={`max-w-2xl mx-auto leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
           >
-            Documento técnico que describe la visión, arquitectura y desarrollo progresivo
-            del Quantum Financial System.
+            Technical document describing the vision, architecture and progressive development
+            of the Quantum Financial System.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -75,9 +75,9 @@ export function WhitePaperPage() {
           >
             <span className="flex items-center gap-1"><BookOpen className="w-3 h-3" /> v1.0</span>
             <span className="text-gray-200">|</span>
-            <span>Agosto 2026</span>
+            <span>August 2026</span>
             <span className="text-gray-200">|</span>
-            <span>Confidencial</span>
+            <span>Confidential</span>
           </motion.div>
         </div>
       </section>
@@ -94,7 +94,7 @@ export function WhitePaperPage() {
             <motion.span variants={fadeUp} className="text-[#2563eb]">
               <Target className="w-5 h-5" />
             </motion.span>
-            <motion.span variants={fadeUp}>Contenido</motion.span>
+            <motion.span variants={fadeUp}>Contents</motion.span>
           </motion.h2>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
@@ -121,37 +121,37 @@ export function WhitePaperPage() {
       {/* 01 - Executive Summary */}
       <WhitePaperSection
         num="01"
-        title="Resumen Ejecutivo"
+        title="Executive Summary"
         icon={<Lightbulb className="w-5 h-5" />}
         color="#2563eb"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            El sistema financiero global está experimentando una transformación fundamental. La digitalización
-            acelerada, la evolución de las tecnologías blockchain, el surgimiento de activos digitales y la creciente
-            demanda de transparencia y accesibilidad están redefiniendo las expectativas de usuarios, empresas e
-            instituciones respecto a los servicios financieros.
+            The global financial system is undergoing a fundamental transformation. Accelerated
+            digitalization, the evolution of blockchain technologies, the emergence of digital assets and the growing
+            demand for transparency and accessibility are redefining the expectations of users, enterprises and
+            institutions regarding financial services.
           </p>
           <p>
-            En este contexto, <span className="text-[#2563eb] font-medium">QFS Oficial</span> presenta una
-            iniciativa orientada al desarrollo de una nueva infraestructura financiera digital que integra múltiples
-            tecnologías convergentes: blockchain, inteligencia artificial, criptografía avanzada, pagos digitales y
-            servicios financieros descentralizados.
+            In this context, <span className="text-[#2563eb] font-medium">QFS Official</span> presents an
+            initiative focused on developing a new digital financial infrastructure that integrates multiple
+            convergent technologies: blockchain, artificial intelligence, advanced cryptography, digital payments and
+            decentralized financial services.
           </p>
           <p>
-            QFS no busca reemplazar los sistemas existentes, sino complementar la evolución del ecosistema financiero
-            global proporcionando una infraestructura modular, segura y accesible que pueda adaptarse a las
-            necesidades de diferentes usuarios y jurisdicciones. El enfoque se basa en la construcción progresiva,
-            donde cada componente del ecosistema se desarrolla e integra de manera incremental.
+            QFS does not seek to replace existing systems, but to complement the evolution of the global financial
+            ecosystem by providing modular, secure and accessible infrastructure that can adapt to the
+            needs of different users and jurisdictions. The approach is based on progressive construction,
+            where each component of the ecosystem is developed and integrated incrementally.
           </p>
           <div className="bg-blue-50/50 rounded-xl p-4 mt-6 border border-blue-100/50">
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-[#2563eb] shrink-0 mt-0.5" />
               <div>
-                <div className="text-sm font-medium text-slate-800 mb-1">Propuesta Central</div>
+                <div className="text-sm font-medium text-slate-800 mb-1">Core Proposal</div>
                 <div className="text-sm text-slate-500">
-                  Construir un ecosistema financiero digital integrado donde Wallet, Payments, Exchange, Cards, AI,
-                  Blockchain y Multichain funcionen dentro de una arquitectura unificada, progresiva y verificable.
+                  Build an integrated digital financial ecosystem where Wallet, Payments, Exchange, Cards, AI,
+                  Blockchain and Multichain operate within a unified, progressive and verifiable architecture.
                 </div>
               </div>
             </div>
@@ -162,30 +162,30 @@ export function WhitePaperPage() {
       {/* 02 - Vision */}
       <WhitePaperSection
         num="02"
-        title="Visión y Arquitectura"
+        title="Vision & Architecture"
         icon={<Atom className="w-5 h-5" />}
         color="#7c3aed"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            La visión de QFS se fundamenta en cinco pilares: <span className="text-[#2563eb] font-medium">Seguridad</span>,
-            <span className="text-[#7c3aed] font-medium"> Transparencia</span>,
-            <span className="text-[#0d9488] font-medium"> Interoperabilidad</span>,
-            <span className="text-[#db2777] font-medium"> Descentralización</span> e
-            <span className="text-[#d97706] font-medium"> Innovación</span>. Cada uno de estos principios guía el diseño
-            y desarrollo de cada componente del ecosistema.
+            The QFS vision is built on five pillars: <span className="text-[#2563eb] font-medium">Security</span>,
+            <span className="text-[#7c3aed] font-medium"> Transparency</span>,
+            <span className="text-[#0d9488] font-medium"> Interoperability</span>,
+            <span className="text-[#db2777] font-medium"> Decentralization</span> and
+            <span className="text-[#d97706] font-medium"> Innovation</span>. Each of these principles guides the design
+            and development of every component within the ecosystem.
           </p>
           <p>
-            La arquitectura QFS está diseñada como un sistema modular donde cada componente opera de forma
-            independiente pero puede integrarse con los demás. Esta modularidad permite un desarrollo progresivo,
-            donde la funcionalidad se construye y despliega por fases, reduciendo riesgos y permitiendo adaptación
-            continua.
+            The QFS architecture is designed as a modular system where each component operates
+            independently but can integrate with the others. This modularity enables progressive development,
+            where functionality is built and deployed in phases, reducing risks and allowing continuous
+            adaptation.
           </p>
           <p>
-            La visión a largo plazo contempla una infraestructura financiera digital global que conecte usuarios,
-            empresas, instituciones y gobiernos, facilitando la gestión y transferencia de activos digitales de
-            manera segura, transparente y eficiente. Esta visión incluye la participación progresiva en la economía
-            de activos digitales, incluyendo criptoactivos, stablecoins, activos tokenizados y Real World Assets (RWA).
+            The long-term vision encompasses a global digital financial infrastructure that connects users,
+            enterprises, institutions and governments, facilitating the management and transfer of digital assets
+            in a secure, transparent and efficient manner. This vision includes progressive participation in the
+            digital asset economy, including crypto assets, stablecoins, tokenized assets and Real World Assets (RWA).
           </p>
         </div>
       </WhitePaperSection>
@@ -193,23 +193,23 @@ export function WhitePaperPage() {
       {/* 03 - Components */}
       <WhitePaperSection
         num="03"
-        title="Componentes del Ecosistema"
+        title="Ecosystem Components"
         icon={<Layers className="w-5 h-5" />}
         color="#0d9488"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            El ecosistema QFS se compone de varios componentes integrados, cada uno diseñado para cumplir una
-            función específica dentro de la arquitectura financiera digital:
+            The QFS ecosystem is composed of several integrated components, each designed to fulfill a
+            specific function within the digital financial architecture:
           </p>
           <div className="grid sm:grid-cols-2 gap-3 my-6">
             {[
-              { name: 'QFS Core', desc: 'Infraestructura base que conecta todos los componentes del ecosistema.' },
-              { name: 'QFS Wallet', desc: 'Billetera digital multi-activos y multi-cadena para gestión integral.' },
-              { name: 'QFSPay', desc: 'Sistema de pagos y transferencias digitales integrado al ecosistema.' },
-              { name: 'QFS Exchange DEX', desc: 'Plataforma descentralizada de intercambio de activos digitales.' },
-              { name: 'QFS Quantum Cards', desc: 'Tarjetas que conectan activos digitales con el mundo real.' },
-              { name: 'QFS Financial Services', desc: 'Suite de servicios financieros para usuarios e instituciones.' },
+              { name: 'QFS Core', desc: 'Base infrastructure connecting all ecosystem components.' },
+              { name: 'QFS Wallet', desc: 'Multi-asset and multi-chain digital wallet for comprehensive management.' },
+              { name: 'QFSPay', desc: 'Digital payment and transfer system integrated with the ecosystem.' },
+              { name: 'QFS Exchange DEX', desc: 'Decentralized digital asset exchange platform.' },
+              { name: 'QFS Quantum Cards', desc: 'Cards connecting digital assets with the real world.' },
+              { name: 'QFS Financial Services', desc: 'Suite of financial services for users and institutions.' },
             ].map((comp) => (
               <div key={comp.name} className="bg-white rounded-xl p-4 border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
                 <div className="text-sm font-semibold text-slate-800 mb-1">{comp.name}</div>
@@ -218,8 +218,8 @@ export function WhitePaperPage() {
             ))}
           </div>
           <p>
-            Cada componente se desarrolla de manera progresiva, con integraciones que se activan conforme
-            la infraestructura base está lista y los marcos regulatorios correspondientes están clarificados.
+            Each component is developed progressively, with integrations activated as the
+            base infrastructure becomes ready and the corresponding regulatory frameworks are clarified.
           </p>
         </div>
       </WhitePaperSection>
@@ -227,21 +227,21 @@ export function WhitePaperPage() {
       {/* 04 - Security */}
       <WhitePaperSection
         num="04"
-        title="Seguridad y Criptografía"
+        title="Security & Cryptography"
         icon={<Shield className="w-5 h-5" />}
         color="#2563eb"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            La seguridad es el pilar más crítico del ecosistema QFS. La arquitectura contempla múltiples capas
-            de protección que evolucionan continuamente para enfrentar amenazas emergentes. Esto incluye
-            criptografía resistente a computación cuántica, autenticación multifactor avanzada, gestión segura
-            de claves criptográficas, y sistemas de detección de anomalías impulsados por inteligencia artificial.
+            Security is the most critical pillar of the QFS ecosystem. The architecture contemplates multiple layers
+            of protection that continuously evolve to address emerging threats. This includes
+            quantum-computing-resistant cryptography, advanced multi-factor authentication, secure
+            cryptographic key management, and AI-powered anomaly detection systems.
           </p>
           <p>
-            El enfoque de seguridad de QFS no es estático: está diseñado para evolucionar conjuntamente con las
-            nuevas amenazas digitales. Esto implica auditorías periódicas de smart contracts, monitoreo continuo
-            de transacciones, y la incorporación de nuevos protocolos criptográficos conforme la tecnología avanza.
+            The QFS security approach is not static: it is designed to evolve alongside
+            new digital threats. This implies periodic smart contract audits, continuous
+            transaction monitoring, and the incorporation of new cryptographic protocols as technology advances.
           </p>
         </div>
       </WhitePaperSection>
@@ -249,21 +249,21 @@ export function WhitePaperPage() {
       {/* 05 - Multichain */}
       <WhitePaperSection
         num="05"
-        title="Infraestructura Multichain"
+        title="Multichain Infrastructure"
         icon={<Network className="w-5 h-5" />}
         color="#d97706"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            QFS está orientado a una arquitectura interoperable que no se limita a una única red blockchain.
-            La visión multicadena permite conectar progresivamente diferentes redes y protocolos, creando
-            un ecosistema más flexible, resiliente y escalable.
+            QFS is oriented toward an interoperable architecture not limited to a single blockchain network.
+            The multichain vision allows progressively connecting different networks and protocols, creating
+            a more flexible, resilient and scalable ecosystem.
           </p>
           <p>
-            La infraestructura multichain se implementa mediante puentes (bridges) y protocolos de interoperabilidad
-            que permiten la transferencia fluida de activos entre diferentes redes. Esto significa que un usuario
-            podría gestionar activos en múltiples cadenas desde una única interfaz QFS Wallet, con QFSPay
-            facilitando pagos independientemente de la red subyacente.
+            The multichain infrastructure is implemented through bridges and interoperability protocols
+            that enable the seamless transfer of assets between different networks. This means a user
+            could manage assets on multiple chains from a single QFS Wallet interface, with QFSPay
+            facilitating payments regardless of the underlying network.
           </p>
         </div>
       </WhitePaperSection>
@@ -271,20 +271,20 @@ export function WhitePaperPage() {
       {/* 06 - AI */}
       <WhitePaperSection
         num="06"
-        title="Inteligencia Artificial"
+        title="Artificial Intelligence"
         icon={<Bot className="w-5 h-5" />}
         color="#db2777"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            La inteligencia artificial se integra como una capa transversal del ecosistema QFS, aplicándose en
-            múltiples áreas: seguridad (detección de transacciones anómalas), monitoreo de riesgos, asistencia
-            financiera personalizada, automatización de compliance y optimización de infraestructura.
+            Artificial intelligence is integrated as a cross-cutting layer of the QFS ecosystem, applied across
+            multiple areas: security (anomalous transaction detection), risk monitoring, personalized
+            financial assistance, compliance automation and infrastructure optimization.
           </p>
           <p>
-            La visión de IA en QFS no es reemplazar el juicio humano, sino amplificar las capacidades del
-            ecosistema proporcionando análisis en tiempo real, alertas tempranas y herramientas que ayuden
-            a los usuarios a tomar decisiones financieras informadas.
+            The vision for AI in QFS is not to replace human judgment, but to amplify the capabilities of the
+            ecosystem by providing real-time analysis, early alerts and tools that help
+            users make informed financial decisions.
           </p>
         </div>
       </WhitePaperSection>
@@ -292,20 +292,20 @@ export function WhitePaperPage() {
       {/* 07 - Digital Economy */}
       <WhitePaperSection
         num="07"
-        title="Economía de Activos Digitales"
+        title="Digital Asset Economy"
         icon={<Globe className="w-5 h-5" />}
         color="#0d9488"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            QFS está orientado a participar en la evolución hacia una economía donde diferentes tipos de activos
-            puedan representarse y gestionarse digitalmente. Esto incluye criptoactivos, stablecoins, activos
-            tokenizados, commodities tokenizados, activos financieros digitales y Real World Assets (RWA).
+            QFS is oriented toward participating in the evolution toward an economy where different types of assets
+            can be represented and managed digitally. This includes crypto assets, stablecoins, tokenized
+            assets, tokenized commodities, digital financial assets and Real World Assets (RWA).
           </p>
           <p>
-            La incorporación de activos respaldados por bienes físicos requiere mecanismos verificables de custodia,
-            auditoría y cumplimiento regulatorio. QFS contempla el desarrollo de estas capacidades de forma
-            progresiva, priorizando la transparencia y la verificabilidad en cada etapa.
+            The incorporation of assets backed by physical goods requires verifiable custody,
+            auditing and regulatory compliance mechanisms. QFS contemplates the development of these capabilities
+            progressively, prioritizing transparency and verifiability at every stage.
           </p>
         </div>
       </WhitePaperSection>
@@ -313,19 +313,19 @@ export function WhitePaperPage() {
       {/* 08 - Institutional */}
       <WhitePaperSection
         num="08"
-        title="Soluciones Institucionales"
+        title="Institutional Solutions"
         icon={<Landmark className="w-5 h-5" />}
         color="#7c3aed"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            QFS también contempla soluciones específicas para empresas e instituciones, incluyendo gestión
-            de activos digitales a escala, treasury management, pagos empresariales, transferencias internacionales,
-            APIs financieras, custodia institucional, tokenización de activos y herramientas de compliance.
+            QFS also contemplates specific solutions for enterprises and institutions, including large-scale
+            digital asset management, treasury management, enterprise payments, international transfers,
+            financial APIs, institutional custody, asset tokenization and compliance tools.
           </p>
           <p>
-            Estas soluciones se desarrollarán en fases posteriores del roadmap, una vez que la infraestructura base
-            y los productos orientados al consumidor estén operativos y verificados.
+            These solutions will be developed in later phases of the roadmap, once the base infrastructure
+            and consumer-oriented products are operational and verified.
           </p>
         </div>
       </WhitePaperSection>
@@ -333,35 +333,35 @@ export function WhitePaperPage() {
       {/* 09 - Alliances */}
       <WhitePaperSection
         num="09"
-        title="Alianzas Estratégicas"
+        title="Strategic Alliances"
         icon={<Link2 className="w-5 h-5" />}
         color="#d97706"
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            QFS construye su visión sobre alianzas estratégicas que fortalezcan la infraestructura y expandan
-            el alcance del ecosistema:
+            QFS builds its vision on strategic alliances that strengthen the infrastructure and expand
+            the reach of the ecosystem:
           </p>
           <div className="space-y-3 my-4">
             <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#2563eb] border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
-              <div className="text-sm font-semibold text-slate-800 mb-1">Alianza GCRM</div>
+              <div className="text-sm font-semibold text-slate-800 mb-1">GCRM Alliance</div>
               <div className="text-xs text-slate-500 leading-relaxed">
-                Integración de servicios financieros digitales para conectar economías regionales con QFS,
-                facilitando pagos y transferencias transfronterizas.
+                Integration of digital financial services to connect regional economies with QFS,
+                facilitating cross-border payments and transfers.
               </div>
             </div>
             <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#d97706] border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
               <div className="text-sm font-semibold text-slate-800 mb-1">Al Arab</div>
               <div className="text-xs text-slate-500 leading-relaxed">
-                Expansión en mercados de Medio Oriente y Norte de África, integrando activos digitales
-                con sistemas financieros regionales existentes.
+                Expansion in Middle East and North Africa markets, integrating digital assets
+                with existing regional financial systems.
               </div>
             </div>
             <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#7c3aed] border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
-              <div className="text-sm font-semibold text-slate-800 mb-1">Monedas de Gobiernos</div>
+              <div className="text-sm font-semibold text-slate-800 mb-1">Government Currencies</div>
               <div className="text-xs text-slate-500 leading-relaxed">
-                Integración progresiva con CBDCs y activos digitales gubernamentales para establecer
-                puentes entre finanzas tradicionales y el ecosistema descentralizado.
+                Progressive integration with CBDCs and government digital assets to establish
+                bridges between traditional finance and the decentralized ecosystem.
               </div>
             </div>
           </div>
@@ -371,26 +371,26 @@ export function WhitePaperPage() {
       {/* 10 - NESG */}
       <WhitePaperSection
         num="10"
-        title="Comunidad NESG"
+        title="NESG Community"
         icon={<Users className="w-5 h-5" />}
         color="#db2777"
         isLast
       >
         <div className="space-y-4 leading-relaxed text-slate-600">
           <p>
-            QFS desarrolla su visión dentro de una comunidad tecnológica y financiera vinculada al ecosistema NESG.
-            La comunidad impulsa iniciativas relacionadas con finanzas digitales, blockchain, DeFi, inclusión financiera,
-            innovación tecnológica, proyectos de desarrollo, economía digital y cooperación internacional.
+            QFS develops its vision within a technological and financial community linked to the NESG ecosystem.
+            The community drives initiatives related to digital finance, blockchain, DeFi, financial inclusion,
+            technological innovation, development projects, digital economy and international cooperation.
           </p>
           <p>
-            La participación comunitaria es fundamental para el desarrollo de QFS, proporcionando retroalimentación,
-            validación de uso cases y apoyo en la adopción progresiva de la plataforma.
+            Community participation is fundamental to the development of QFS, providing feedback,
+            use case validation and support in the progressive adoption of the platform.
           </p>
           <div className="bg-pink-50/50 rounded-xl p-4 mt-4 border border-pink-100/50">
             <div className="text-xs text-slate-500 leading-relaxed">
-              <strong className="text-slate-600">Nota:</strong> La referencia a NESARA-GESARA se presenta como
-              parte de la visión y narrativa comunitaria; cualquier afirmación sobre reconocimiento gubernamental,
-              adopción oficial o implementación internacional deberá estar respaldada por documentación verificable.
+              <strong className="text-slate-600">Note:</strong> The reference to NESARA-GESARA is presented as
+              part of the community vision and narrative; any claims regarding government recognition,
+              official adoption or international implementation must be supported by verifiable documentation.
             </div>
           </div>
         </div>
@@ -427,7 +427,7 @@ function WhitePaperSection({
               </div>
               <div>
                 <span className="text-xs font-mono tracking-widest" style={{ color: isDark ? color : (color + '80') }}>
-                  SECCIÓN {num}
+                  SECTION {num}
                 </span>
                 <h2 className={`text-2xl sm:text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{title}</h2>
               </div>

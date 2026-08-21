@@ -11,7 +11,7 @@ interface LangStore {
 export const useLangStore = create<LangStore>()(
   persist(
     (set) => ({
-      lang: "es",
+      lang: "en",
       setLang: (lang) => set({ lang }),
     }),
     { name: "qfs-lang" }

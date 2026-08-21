@@ -25,16 +25,14 @@ export function Footer() {
               </div>
             </div>
             <p className={`text-xs leading-relaxed ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
-              {lang === 'es'
-                ? 'La proxima generacion de finanzas digitales. Tecnologia, Seguridad, Descentralizacion, Innovacion.'
-                : 'The Next Generation of Digital Finance. Technology, Security, Decentralization, Innovation.'}
+              The Next Generation of Digital Finance. Technology, Security, Decentralization, Innovation.
             </p>
           </div>
 
           {/* Products */}
           <div>
             <h4 className={`text-xs font-bold uppercase tracking-wider mb-4 ${isDark ? 'text-slate-300' : 'text-slate-800'}`}>
-              {lang === 'es' ? 'Productos' : 'Products'}
+              Products
             </h4>
             <div className="space-y-2.5">
               {['QFS Wallet', 'QFSPay', 'QFS Exchange DEX', 'QFS Quantum Cards', 'QFS AI'].map((item) => (
@@ -48,13 +46,10 @@ export function Footer() {
           {/* Resources */}
           <div>
             <h4 className={`text-xs font-bold uppercase tracking-wider mb-4 ${isDark ? 'text-slate-300' : 'text-slate-800'}`}>
-              {lang === 'es' ? 'Recursos' : 'Resources'}
+              Resources
             </h4>
             <div className="space-y-2.5">
-              {(lang === 'es'
-                ? ['Libro Blanco', 'Roadmap', 'Documentacion Tecnica', 'APIs', 'Comunidad NESG']
-                : ['White Paper', 'Roadmap', 'Technical Documentation', 'APIs', 'NESG Community']
-              ).map((item) => (
+              {['White Paper', 'Roadmap', 'Technical Documentation', 'APIs', 'NESG Community'].map((item) => (
                 <div key={item} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
                   {item}
                 </div>
@@ -65,13 +60,10 @@ export function Footer() {
           {/* Alliances */}
           <div>
             <h4 className={`text-xs font-bold uppercase tracking-wider mb-4 ${isDark ? 'text-slate-300' : 'text-slate-800'}`}>
-              {lang === 'es' ? 'Alianzas' : 'Alliances'}
+              Alliances
             </h4>
             <div className="space-y-2.5">
-              {(lang === 'es'
-                ? ['Alianza GCRM', 'Al Arab', 'Monedas Gubernamentales', 'CBDCs', 'Global Network']
-                : ['GCRM Alliance', 'Al Arab', 'Government Currencies', 'CBDCs', 'Global Network']
-              ).map((item) => (
+              {['GCRM Alliance', 'Al Arab', 'Government Currencies', 'CBDCs', 'Global Network'].map((item) => (
                 <div key={item} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
                   {item}
                 </div>

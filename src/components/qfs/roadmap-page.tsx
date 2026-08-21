@@ -19,74 +19,74 @@ const stagger = {
 const phases = [
   {
     year: '2026',
-    phase: 'Fase 1',
+    phase: 'Phase 1',
     title: 'Foundation',
     color: '#2563eb',
     icon: <Rocket className="w-5 h-5" />,
     status: 'active' as const,
-    description: 'Construcción de los cimientos tecnológicos y los productos principales del ecosistema QFS.',
+    description: 'Building the technological foundations and core products of the QFS ecosystem.',
     items: [
-      'Desarrollo de infraestructura QFS Core',
-      'Lanzamiento y evolución de QFS Wallet',
-      'Desarrollo del sistema QFSPay',
-      'Diseño de arquitectura QFS Exchange DEX',
-      'Implementación de seguridad multicapa',
-      'Integración inicial del ecosistema',
-      'Auditorías de seguridad iniciales',
-      'Establecimiento de la comunidad técnica',
+      'QFS Core infrastructure development',
+      'QFS Wallet launch and evolution',
+      'QFSPay system development',
+      'QFS Exchange DEX architecture design',
+      'Multi-layered security implementation',
+      'Initial ecosystem integration',
+      'Initial security audits',
+      'Technical community establishment',
     ],
   },
   {
     year: '2027-2028',
-    phase: 'Fase 2',
+    phase: 'Phase 2',
     title: 'Expansion',
     color: '#7c3aed',
     icon: <Globe className="w-5 h-5" />,
     status: 'upcoming' as const,
-    description: 'Expansión multicadena, nuevos activos y desarrollo de herramientas institucionales.',
+    description: 'Multichain expansion, new assets and institutional tool development.',
     items: [
-      'Expansión a múltiples blockchains',
-      'Integración de nuevos activos digitales',
-      'Desarrollo de QFS Quantum Cards',
-      'APIs para empresas y desarrolladores',
-      'Herramientas institucionales (treasury, compliance)',
-      'Expansión internacional inicial',
-      'Integración con Alianza GCRM',
-      'Colaboración con Al Arab para mercados MENA',
+      'Expansion to multiple blockchains',
+      'Integration of new digital assets',
+      'QFS Quantum Cards development',
+      'APIs for enterprises and developers',
+      'Institutional tools (treasury, compliance)',
+      'Initial international expansion',
+      'GCRM Alliance integration',
+      'Collaboration with Al Arab for MENA markets',
     ],
   },
   {
     year: '2029-2030',
-    phase: 'Fase 3',
+    phase: 'Phase 3',
     title: 'Interoperability',
     color: '#0d9488',
     icon: <Cpu className="w-5 h-5" />,
     status: 'upcoming' as const,
-    description: 'Mayor integración entre redes, tokenización de activos y servicios financieros digitales completos.',
+    description: 'Greater integration between networks, asset tokenization and complete digital financial services.',
     items: [
-      'Integración avanzada entre redes blockchain',
-      'Tokenización de activos reales (RWA)',
-      'Servicios financieros digitales completos',
-      'Infraestructura institucional madura',
-      'Integración con CBDCs y monedas gubernamentales',
-      'Expansión del ecosistema QFS',
-      'Gobernanza descentralizada operativa',
+      'Advanced blockchain network integration',
+      'Real World Asset (RWA) tokenization',
+      'Complete digital financial services',
+      'Mature institutional infrastructure',
+      'CBDC and government currency integration',
+      'QFS ecosystem expansion',
+      'Operational decentralized governance',
     ],
   },
   {
     year: '2030+',
-    phase: 'Fase 4',
+    phase: 'Phase 4',
     title: 'Global Digital Finance',
     color: '#db2777',
     icon: <Sparkles className="w-5 h-5" />,
     status: 'future' as const,
-    description: 'Construcción progresiva de una infraestructura financiera digital global, interoperable y accesible.',
+    description: 'Progressive construction of a global, interoperable and accessible digital financial infrastructure.',
     items: [
-      'Infraestructura financiera digital global',
-      'Conectividad total entre redes y activos',
-      'Adopción masiva de servicios QFS',
-      'Economía digital completamente integrada',
-      'Innovación continua con tecnologías emergentes',
+      'Global digital financial infrastructure',
+      'Full connectivity between networks and assets',
+      'Massive adoption of QFS services',
+      'Fully integrated digital economy',
+      'Continuous innovation with emerging technologies',
     ],
   },
 ];
@@ -122,8 +122,8 @@ export function RoadmapPage() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="text-slate-500 max-w-2xl mx-auto leading-relaxed"
           >
-            Desarrollo progresivo del ecosistema QFS a través de fases estratégicas,
-            desde la infraestructura base hasta la finanzas digitales globales.
+            Progressive development of the QFS ecosystem through strategic phases,
+            from the base infrastructure to global digital finance.
           </motion.p>
         </div>
       </section>
@@ -136,10 +136,10 @@ export function RoadmapPage() {
             className="text-center mb-12"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple uppercase">
-              Mapa del Ecosistema
+              Ecosystem Map
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mt-3">
-              Un Ecosistema. <span className="gradient-text">Múltiples Servicios.</span>
+              One Ecosystem. <span className="gradient-text">Multiple Services.</span>
             </motion.h2>
           </motion.div>
 
@@ -186,10 +186,10 @@ export function RoadmapPage() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
-              Línea de Tiempo
+              Timeline
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mt-3">
-              Fases de <span className="gradient-text">Desarrollo</span>
+              Development <span className="gradient-text">Phases</span>
             </motion.h2>
           </motion.div>
 

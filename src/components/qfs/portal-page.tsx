@@ -24,40 +24,40 @@ const currencies = [
   {
     name: 'QFS Digital Currency',
     subtitle: 'Quantum Financial System Standard',
-    desc: 'La moneda digital cuántica primaria del nuevo sistema financiero, respaldada por activos soberanos e integrada con todas las monedas nacionales. Totalmente compatible con QFSpay.',
+    desc: 'The primary quantum digital currency of the new financial system, backed by sovereign assets and integrated with all national currencies. Fully compatible with QFSpay.',
     logo: 'https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png',
     color: '#2563eb',
   },
   {
     name: 'GCR',
     subtitle: 'Global Currency Reset',
-    desc: 'La moneda oficial del Reset Financiero Global, respaldada por oro y recursos naturales. Apoyada por naciones G20 como nuevo estándar internacional. Disponible en QFSpay.',
+    desc: 'The official currency of the Global Currency Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available on QFSpay.',
     logo: 'https://gcr.social/images/logo-s2-white.png',
     color: '#d97706',
   },
   {
     name: 'Al Arab',
     subtitle: 'Official Arab Currency',
-    desc: 'La primera moneda árabe respaldada por oro, establecida como referencia para el comercio soberano entre mercados de Medio Oriente, África y Asia.',
+    desc: 'The first gold-backed Arab currency, established as a benchmark for sovereign trade between Middle East, Africa and Asia markets.',
     logo: 'https://alarab.io/images/logo.png',
     color: '#7c3aed',
   },
   {
-    name: 'Monedas Soberanas',
+    name: 'Sovereign Currencies',
     subtitle: 'National Digital Currencies',
-    desc: 'Todas las monedas digitales nacionales del G20 incluyendo Digital Dollar, Digital Yuan, Digital Euro y otras, totalmente interoperables a través de QFS y QFSpay.',
+    desc: 'All G20 national digital currencies including Digital Dollar, Digital Yuan, Digital Euro and others, fully interoperable through QFS and QFSpay.',
     logo: '',
     color: '#0d9488',
   },
 ];
 
 const partners = [
-  { name: 'United States', org: 'Department of the Treasury', desc: 'Líder en protocolos de encriptación cuántica', flag: '🇺🇸' },
-  { name: 'China', org: "People's Bank of China", desc: 'Líder en integración del Digital Yuan', flag: '🇨🇳' },
-  { name: 'European Union', org: 'European Central Bank', desc: 'Desarrollo del Digital Euro', flag: '🇪🇺' },
-  { name: 'UAE', org: 'Central Bank of the UAE', desc: 'Líder de implementación en Medio Oriente', flag: '🇦🇪' },
-  { name: 'IBM', org: 'Quantum Computing', desc: 'Proveedor de hardware cuántico', flag: '' },
-  { name: 'OpenAI', org: 'AI Security', desc: 'Detección de amenazas con IA', flag: '' },
+  { name: 'United States', org: 'Department of the Treasury', desc: 'Leader in quantum encryption protocols', flag: '🇺🇸' },
+  { name: 'China', org: "People's Bank of China", desc: 'Leader in Digital Yuan integration', flag: '🇨🇳' },
+  { name: 'European Union', org: 'European Central Bank', desc: 'Digital Euro development', flag: '🇪🇺' },
+  { name: 'UAE', org: 'Central Bank of the UAE', desc: 'Middle East implementation leader', flag: '🇦🇪' },
+  { name: 'IBM', org: 'Quantum Computing', desc: 'Quantum hardware provider', flag: '' },
+  { name: 'OpenAI', org: 'AI Security', desc: 'AI-powered threat detection', flag: '' },
 ];
 
 export function PortalPage() {

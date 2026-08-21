@@ -150,16 +150,16 @@ export function HomePagePart2() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
-              {lang === 'es' ? 'Distribucion de Tokens' : 'Token Distribution'}
+              Token Distribution
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
               <span className="gradient-text">QFS Token</span>{' '}
-              <span className={isDark ? 'text-white' : 'text-slate-900'}>{lang === 'es' ? 'Asignacion' : 'Allocation'}</span>
+              <span className={isDark ? 'text-white' : 'text-slate-900'}>Allocation</span>
             </motion.h2>
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-mono mt-2" style={{ color: '#7c3aed', background: isDark ? 'rgba(124,58,237,0.1)' : 'rgba(124,58,237,0.06)', border: `1px solid ${isDark ? 'rgba(124,58,237,0.2)' : 'rgba(124,58,237,0.12)'}` }}>
               <PieChart className="w-4 h-4" />
               <span className="font-bold">177.64B QFS</span>
-              <span className={isDark ? 'text-slate-500' : 'text-slate-400'}>— {lang === 'es' ? 'Suministro de Referencia*' : 'Reference Supply*'}</span>
+              <span className={isDark ? 'text-slate-500' : 'text-slate-400'}>— Reference Supply*</span>
             </motion.div>
           </motion.div>
 
@@ -285,7 +285,7 @@ export function HomePagePart2() {
                     className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium cursor-pointer"
                     style={{ borderColor: 'rgba(124,58,237,0.2)', color: '#7c3aed' }}
                   >
-                    {lang === 'es' ? 'Unirse a la Comunidad' : 'Join Community'}
+                    Join Community
                   </motion.button>
                 </motion.div>
               </div>
@@ -399,7 +399,7 @@ function TokenAllocationBars({ isDark, lang }: { isDark: boolean; lang: string }
               <div className="flex items-center gap-3">
                 <span className="text-xl">{item.emoji}</span>
                 <span className={"text-sm font-semibold " + (isDark ? 'text-white' : 'text-slate-800')}>
-                  {lang === 'es' ? item.labelEs : item.labelEn}
+                  {item.labelEn}
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -464,7 +464,7 @@ function TokenAllocationBars({ isDark, lang }: { isDark: boolean; lang: string }
         transition={{ delay: 1.2, duration: 0.5 }}
         className={"text-[11px] text-center mt-6 " + (isDark ? 'text-slate-600' : 'text-slate-400')}
       >
-        * {lang === 'es' ? 'Suministro de referencia sujeto a ajustes segun el desarrollo del ecosistema.' : 'Reference supply subject to adjustments based on ecosystem development.'}
+        * Reference supply subject to adjustments based on ecosystem development.
       </motion.p>
     </div>
   );

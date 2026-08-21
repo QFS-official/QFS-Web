@@ -24,9 +24,9 @@ export function Navigation() {
   };
 
   const navItems: { id: PageType; label: string; icon: React.ReactNode }[] = [
-    { id: 'home', label: lang === 'es' ? 'Inicio' : 'Home', icon: <Atom className="w-4 h-4" /> },
+    { id: 'home', label: 'Home', icon: <Atom className="w-4 h-4" /> },
     { id: 'portal', label: 'Portal', icon: <Landmark className="w-4 h-4" /> },
-    { id: 'whitepaper', label: lang === 'es' ? 'Libro Blanco' : 'White Paper', icon: <FileText className="w-4 h-4" /> },
+    { id: 'whitepaper', label: 'White Paper', icon: <FileText className="w-4 h-4" /> },
     { id: 'roadmap', label: 'Roadmap', icon: <Map className="w-4 h-4" /> },
   ];
 
@@ -147,7 +147,7 @@ export function Navigation() {
                 ? 'text-amber-400 hover:bg-amber-400/10'
                 : 'text-slate-500 hover:text-[#2563eb] hover:bg-blue-50'
             }`}
-            title={theme === 'dark' ? 'Modo Claro' : 'Modo Oscuro'}
+            title={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
           >
             <AnimatePresence mode="wait">
               {theme === 'dark' ? (
@@ -222,7 +222,7 @@ export function Navigation() {
                         }`}
                       >
                         <span className={`text-base ${l === 'es' ? '' : ''}`}>{l === 'es' ? '🇪🇸' : '🇺🇸'}</span>
-                        <span className="font-medium">{l === 'es' ? 'Espanol' : 'English'}</span>
+                        <span className="font-medium">{l === 'es' ? 'Español' : 'English'}</span>
                         {lang === l && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-500" />}
                       </button>
                     ))}
@@ -239,14 +239,14 @@ export function Navigation() {
             whileTap={{ y: 0 }}
             className={`quantum-btn px-4 py-2 rounded-xl text-sm font-medium cursor-pointer ${theme === 'dark' ? 'quantum-btn-dark' : ''}`}
           >
-            {lang === 'es' ? 'Explorar QFS' : 'Explore QFS'}
+            Explore QFS
           </motion.button>
           <motion.button
             whileHover={{ y: -1 }}
             whileTap={{ y: 0 }}
             className="quantum-btn-solid px-4 py-2 rounded-xl text-sm cursor-pointer"
           >
-            {lang === 'es' ? 'Unirse a la Comunidad' : 'Join Community'}
+            Join Community
           </motion.button>
         </div>
 
@@ -324,10 +324,10 @@ export function Navigation() {
                   onClick={() => handleNav('whitepaper')}
                   className={`quantum-btn px-4 py-3 rounded-xl text-sm font-medium text-center cursor-pointer ${theme === 'dark' ? 'quantum-btn-dark' : ''}`}
                 >
-                  {lang === 'es' ? 'Explorar QFS' : 'Explore QFS'}
+                  Explore QFS
                 </button>
                 <button className="quantum-btn-solid px-4 py-3 rounded-xl text-sm text-center cursor-pointer">
-                  {lang === 'es' ? 'Unirse a la Comunidad' : 'Join Community'}
+                  Join Community
                 </button>
               </div>
             </div>
