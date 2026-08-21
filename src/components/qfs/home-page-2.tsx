@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { Globe, Building2, Users, Handshake, Star } from 'lucide-react';
 import { QFSCoin } from './qfs-coin';
+import { useThemeStore } from '@/store/theme-store';
+import { useT, useLangStore } from '@/store/lang-store';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,28 +18,42 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.06 } },
 };
 
-const alliances = [
-  {
-    name: 'Alianza GCRM',
-    desc: 'Alianza estrategica con GCRM para la integracion de servicios financieros digitales, facilitando la conectividad entre economias regionales y el ecosistema QFS mediante soluciones de pago y transferencias transfronterizas.',
-    color: '#2563eb',
-    tag: 'Socio Estrategico',
-  },
-  {
-    name: 'Al Arab',
-    desc: 'Colaboracion con Al Arab para expandir la infraestructura financiera digital en mercados de Medio Oriente y Norte de Africa, integrando activos digitales con sistemas financieros regionales existentes.',
-    color: '#d97706',
-    tag: 'Expansion Regional',
-  },
-  {
-    name: 'Monedas de Gobiernos',
-    desc: 'Integracion progresiva con monedas digitales de bancos centrales (CBDCs) y activos digitales gubernamentales para establecer puentes entre la finanzas tradicionales y el ecosistema descentralizado.',
-    color: '#7c3aed',
-    tag: 'Gobierno Digital',
-  },
-];
-
 export function HomePagePart2() {
+  const { theme } = useThemeStore();
+  const t = useT();
+  const { lang } = useLangStore();
+  const isDark = theme === 'dark';
+
+  const alliances = [
+    {
+      name: t('all.gcrm.name'),
+      desc: t('all.gcrm.desc'),
+      color: '#2563eb',
+      tag: t('all.gcrm.tag'),
+    },
+    {
+      name: t('all.arab.name'),
+      desc: t('all.arab.desc'),
+      color: '#d97706',
+      tag: t('all.arab.tag'),
+    },
+    {
+      name: t('all.gov.name'),
+      desc: t('all.gov.desc'),
+      color: '#7c3aed',
+      tag: t('all.gov.tag'),
+    },
+  ];
+
+  const whyQFS = [
+    { title: t('why.security'), desc: t('why.security.desc'), icon: <Star className="w-6 h-6" />, color: '#2563eb' },
+    { title: t('why.speed'), desc: t('why.speed.desc'), icon: <Globe className="w-6 h-6" />, color: '#0d9488' },
+    { title: t('why.transparency'), desc: t('why.transparency.desc'), icon: <Building2 className="w-6 h-6" />, color: '#7c3aed' },
+    { title: t('why.access'), desc: t('why.access.desc'), icon: <Users className="w-6 h-6" />, color: '#db2777' },
+    { title: t('why.interop'), desc: t('why.interop.desc'), icon: <Handshake className="w-6 h-6" />, color: '#d97706' },
+    { title: t('why.innovation'), desc: t('why.innovation.desc'), icon: <Star className="w-6 h-6" />, color: '#2563eb' },
+  ];
+
   return (
     <>
       {/* ===== ALLIANCES ===== */}
@@ -51,13 +67,13 @@ export function HomePagePart2() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#d97706]/50 uppercase">
-              Alianzas Estrategicas
+              {t('all.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              <span className="gradient-text">Alianzas</span> Globales
+              <span className="gradient-text">{t('all.title')}</span> {t('all.title2')}
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mx-auto">
-              QFS construye puentes de colaboracion con organizaciones y gobiernos para una infraestructura financiera verdaderamente global.
+            <motion.p variants={fadeUp} className={`${isDark ? 'text-slate-400' : 'text-slate-500'} max-w-2xl mx-auto`}>
+              {t('all.desc')}
             </motion.p>
           </motion.div>
 
@@ -74,8 +90,8 @@ export function HomePagePart2() {
                 custom={i}
                 variants={fadeUp}
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className="bg-white rounded-3xl p-8 relative overflow-hidden group border border-gray-100 hover:border-blue-200/50 transition-all duration-300"
-                style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.02)' }}
+                className={`${isDark ? 'bg-slate-800/90 border-slate-700/60 hover:border-blue-500/30' : 'bg-white border-gray-100 hover:border-blue-200/50'} rounded-3xl p-8 relative overflow-hidden group border transition-all duration-300`}
+                style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2), 0 4px 20px rgba(0,0,0,0.15)' : '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.02)' }}
               >
                 <div
                   className="absolute top-0 left-0 right-0 h-1"
@@ -105,8 +121,8 @@ export function HomePagePart2() {
                   >
                     {a.tag}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3">{a.name}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{a.desc}</p>
+                  <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'} mb-3`}>{a.name}</h3>
+                  <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'} leading-relaxed`}>{a.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -133,10 +149,10 @@ export function HomePagePart2() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
-              Por que QFS
+              {t('why.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              Por que <span className="gradient-text">QFS</span>?
+              {t('why.title').replace('?', '')} <span className="gradient-text">{t('why.title').includes('QFS') ? 'QFS' : 'QFS'}</span>?
             </motion.h2>
           </motion.div>
 
@@ -156,13 +172,13 @@ export function HomePagePart2() {
                 className="glass-card-hover rounded-2xl p-6 text-center group"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-[#2563eb] group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br from-blue-50 to-violet-50"
+                  className={`w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-[#2563eb] group-hover:scale-110 transition-transform duration-300 ${isDark ? 'bg-blue-500/10' : 'bg-gradient-to-br from-blue-50 to-violet-50'}`}
                   style={{ boxShadow: `0 4px 12px ${item.color}10` }}
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-slate-900 font-semibold mb-2 text-sm uppercase tracking-wider">{item.title}</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                <h3 className={`font-semibold mb-2 text-sm uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-900'}`}>{item.title}</h3>
+                <p className={`text-xs leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -188,34 +204,35 @@ export function HomePagePart2() {
         >
           <motion.div
             variants={fadeUp}
-            className="relative bg-white rounded-3xl p-8 md:p-16 overflow-hidden"
+            className={`relative ${isDark ? 'bg-slate-800/90' : 'bg-white'} rounded-3xl p-8 md:p-16 overflow-hidden`}
             style={{
-              boxShadow: '0 4px 32px rgba(37, 99, 235, 0.08), 0 2px 8px rgba(124, 58, 237, 0.06)',
+              boxShadow: isDark
+                ? '0 4px 32px rgba(37, 99, 235, 0.15), 0 2px 8px rgba(124, 58, 237, 0.12)'
+                : '0 4px 32px rgba(37, 99, 235, 0.08), 0 2px 8px rgba(124, 58, 237, 0.06)',
             }}
           >
             {/* Gradient top border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2563eb] via-[#7c3aed] to-[#db2777]" />
             {/* Subtle glow */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-48 bg-gradient-to-b from-blue-100/40 to-transparent rounded-full blur-2xl" />
+            <div className={`absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-48 rounded-full blur-2xl ${isDark ? 'bg-gradient-to-b from-blue-500/10 to-transparent' : 'bg-gradient-to-b from-blue-100/40 to-transparent'}`} />
 
             <div className="relative grid md:grid-cols-2 gap-12 items-center">
               {/* Text side */}
               <div>
                 <motion.div
                   variants={fadeUp}
-                  className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-violet-50 flex items-center justify-center mb-6"
-                  style={{ boxShadow: '0 4px 16px rgba(37,99,235,0.1)' }}
+                  className={`w-16 h-16 rounded-2xl ${isDark ? 'bg-blue-500/10' : 'bg-gradient-to-br from-blue-50 to-violet-50'} flex items-center justify-center mb-6`}
+                  style={{ boxShadow: isDark ? '0 4px 16px rgba(37,99,235,0.2)' : '0 4px 16px rgba(37,99,235,0.1)' }}
                 >
                   <AtomIcon className="w-8 h-8 text-[#2563eb]" />
                 </motion.div>
                 <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-                  <span className="gradient-text">Construyendo el Futuro</span>
+                  <span className="gradient-text">{t('cta.title1')}</span>
                   <br />
-                  <span className="text-slate-900">de las Finanzas Digitales</span>
+                  <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('cta.title2')}</span>
                 </motion.h2>
-                <motion.p variants={fadeUp} className="text-slate-500 max-w-xl mb-10 leading-relaxed">
-                  QFS es mas que una wallet, mas que pagos, mas que un exchange. Es un ecosistema financiero
-                  digital integrado disenado para la proxima generacion de la economia global.
+                <motion.p variants={fadeUp} className={`${isDark ? 'text-slate-400' : 'text-slate-500'} max-w-xl mb-10 leading-relaxed`}>
+                  {t('cta.desc')}
                 </motion.p>
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
                   <motion.button
@@ -223,7 +240,7 @@ export function HomePagePart2() {
                     whileTap={{ y: 0 }}
                     className="quantum-btn-solid px-8 py-3.5 rounded-2xl text-sm font-semibold cursor-pointer"
                   >
-                    Explorar QFS
+                    {t('hero.explore_btn')}
                   </motion.button>
                   <motion.button
                     whileHover={{ y: -2 }}
@@ -231,7 +248,7 @@ export function HomePagePart2() {
                     className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium cursor-pointer"
                     style={{ borderColor: 'rgba(124,58,237,0.2)', color: '#7c3aed' }}
                   >
-                    Unirse a la Comunidad
+                    {lang === 'es' ? 'Unirse a la Comunidad' : 'Join Community'}
                   </motion.button>
                 </motion.div>
               </div>
@@ -253,15 +270,6 @@ export function HomePagePart2() {
     </>
   );
 }
-
-const whyQFS = [
-  { title: 'Seguridad', desc: 'Infraestructura disenada con seguridad como prioridad absoluta.', icon: <Star className="w-6 h-6" />, color: '#2563eb' },
-  { title: 'Velocidad', desc: 'Procesamiento digital eficiente y escalable.', icon: <Globe className="w-6 h-6" />, color: '#0d9488' },
-  { title: 'Transparencia', desc: 'Tecnologia blockchain y registros verificables.', icon: <Building2 className="w-6 h-6" />, color: '#7c3aed' },
-  { title: 'Acceso', desc: 'Servicios financieros accesibles desde una plataforma integrada.', icon: <Users className="w-6 h-6" />, color: '#db2777' },
-  { title: 'Interoperabilidad', desc: 'Conexion entre diferentes redes y activos.', icon: <Handshake className="w-6 h-6" />, color: '#d97706' },
-  { title: 'Innovacion', desc: 'Blockchain + IA + Criptografia + Finanzas Digitales.', icon: <Star className="w-6 h-6" />, color: '#2563eb' },
-];
 
 function AtomIcon({ className }: { className?: string }) {
   return (

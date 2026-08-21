@@ -1,9 +1,12 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useThemeStore } from '@/store/theme-store';
 
 export function QuantumBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useThemeStore();
+  const isDark = theme === 'dark';
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -14,16 +17,14 @@ export function QuantumBackground() {
     let animationId: number;
     let time = 0;
 
-    // Floating orbs
     const orbs = [
-      { x: 0.15, y: 0.25, r: 300, color: [37, 99, 235], speed: 0.0003, phase: 0 },
-      { x: 0.8, y: 0.15, r: 350, color: [124, 58, 237], speed: 0.00025, phase: 2 },
-      { x: 0.6, y: 0.7, r: 280, color: [6, 182, 212], speed: 0.00035, phase: 4 },
-      { x: 0.25, y: 0.8, r: 320, color: [219, 39, 119], speed: 0.0002, phase: 1 },
-      { x: 0.5, y: 0.4, r: 400, color: [37, 99, 235], speed: 0.00015, phase: 3 },
+      { x: 0.15, y: 0.25, r: 300, color: isDark ? [59, 130, 246] : [37, 99, 235], speed: 0.0003, phase: 0 },
+      { x: 0.8, y: 0.15, r: 350, color: isDark ? [139, 92, 246] : [124, 58, 237], speed: 0.00025, phase: 2 },
+      { x: 0.6, y: 0.7, r: 280, color: isDark ? [20, 184, 166] : [6, 182, 212], speed: 0.00035, phase: 4 },
+      { x: 0.25, y: 0.8, r: 320, color: isDark ? [236, 72, 153] : [219, 39, 119], speed: 0.0002, phase: 1 },
+      { x: 0.5, y: 0.4, r: 400, color: isDark ? [59, 130, 246] : [37, 99, 235], speed: 0.00015, phase: 3 },
     ];
 
-    // Quantum particles
     const particles: Array<{
       x: number; y: number;
       vx: number; vy: number;
@@ -32,15 +33,23 @@ export function QuantumBackground() {
       pulseSpeed: number; pulsePhase: number;
     }> = [];
 
-    // Quantum wave lines
-    const waveLines = [
-      { y: 0.3, amplitude: 40, frequency: 0.003, speed: 0.0008, color: 'rgba(37,99,235,0.04)', width: 1 },
-      { y: 0.5, amplitude: 30, frequency: 0.004, speed: 0.0006, color: 'rgba(124,58,237,0.03)', width: 1.5 },
-      { y: 0.7, amplitude: 35, frequency: 0.0035, speed: 0.0007, color: 'rgba(6,182,212,0.03)', width: 1 },
-      { y: 0.85, amplitude: 25, frequency: 0.005, speed: 0.001, color: 'rgba(219,39,119,0.025)', width: 0.8 },
-    ];
+    const waveLines = isDark
+      ? [
+          { y: 0.3, amplitude: 40, frequency: 0.003, speed: 0.0008, color: 'rgba(59,130,246,0.06)', width: 1 },
+          { y: 0.5, amplitude: 30, frequency: 0.004, speed: 0.0006, color: 'rgba(139,92,246,0.05)', width: 1.5 },
+          { y: 0.7, amplitude: 35, frequency: 0.0035, speed: 0.0007, color: 'rgba(20,184,166,0.05)', width: 1 },
+          { y: 0.85, amplitude: 25, frequency: 0.005, speed: 0.001, color: 'rgba(236,72,153,0.04)', width: 0.8 },
+        ]
+      : [
+          { y: 0.3, amplitude: 40, frequency: 0.003, speed: 0.0008, color: 'rgba(37,99,235,0.04)', width: 1 },
+          { y: 0.5, amplitude: 30, frequency: 0.004, speed: 0.0006, color: 'rgba(124,58,237,0.03)', width: 1.5 },
+          { y: 0.7, amplitude: 35, frequency: 0.0035, speed: 0.0007, color: 'rgba(6,182,212,0.03)', width: 1 },
+          { y: 0.85, amplitude: 25, frequency: 0.005, speed: 0.001, color: 'rgba(219,39,119,0.025)', width: 0.8 },
+        ];
 
-    const colors = ['#2563eb', '#7c3aed', '#0d9488', '#db2777', '#06b6d4', '#60a5fa'];
+    const colors = isDark
+      ? ['#60a5fa', '#a78bfa', '#2dd4bf', '#f472b6', '#22d3ee', '#93c5fd']
+      : ['#2563eb', '#7c3aed', '#0d9488', '#db2777', '#06b6d4', '#60a5fa'];
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -58,13 +67,16 @@ export function QuantumBackground() {
           vx: (Math.random() - 0.5) * 0.3,
           vy: (Math.random() - 0.5) * 0.3,
           size: Math.random() * 2 + 0.5,
-          opacity: Math.random() * 0.3 + 0.1,
+          opacity: isDark ? Math.random() * 0.4 + 0.15 : Math.random() * 0.3 + 0.1,
           color: colors[Math.floor(Math.random() * colors.length)],
           pulseSpeed: Math.random() * 0.002 + 0.001,
           pulsePhase: Math.random() * Math.PI * 2,
         });
       }
     };
+
+    const orbAlpha = isDark ? 0.1 : 0.06;
+    const orbAlpha2 = isDark ? 0.05 : 0.03;
 
     const drawOrbs = () => {
       orbs.forEach((orb) => {
@@ -73,8 +85,8 @@ export function QuantumBackground() {
         const r = orb.r + Math.sin(time * orb.speed * 500) * 30;
         const [cr, cg, cb] = orb.color;
         const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-        grad.addColorStop(0, `rgba(${cr},${cg},${cb},0.06)`);
-        grad.addColorStop(0.4, `rgba(${cr},${cg},${cb},0.03)`);
+        grad.addColorStop(0, `rgba(${cr},${cg},${cb},${orbAlpha})`);
+        grad.addColorStop(0.4, `rgba(${cr},${cg},${cb},${orbAlpha2})`);
         grad.addColorStop(1, 'transparent');
         ctx.fillStyle = grad;
         ctx.fillRect(cx - r, cy - r, r * 2, r * 2);
@@ -101,14 +113,15 @@ export function QuantumBackground() {
     const drawGrid = () => {
       const gridSize = 60;
       const offset = (time * 0.01) % gridSize;
-      ctx.fillStyle = 'rgba(37, 99, 235, 0.025)';
+      const gridColor = isDark ? 'rgba(96,165,250,0.04)' : 'rgba(37,99,235,0.025)';
+      ctx.fillStyle = gridColor;
       for (let x = -gridSize + offset; x < canvas.width + gridSize; x += gridSize) {
         for (let y = -gridSize + offset; y < canvas.height + gridSize; y += gridSize) {
           const distX = Math.abs(x - canvas.width / 2) / (canvas.width / 2);
           const distY = Math.abs(y - canvas.height / 2) / (canvas.height / 2);
-          const alpha = 0.025 * (1 - (distX + distY) * 0.3);
+          const alpha = (isDark ? 0.04 : 0.025) * (1 - (distX + distY) * 0.3);
           if (alpha > 0.005) {
-            ctx.globalAlpha = alpha / 0.025;
+            ctx.globalAlpha = alpha / (isDark ? 0.04 : 0.025);
             ctx.beginPath();
             ctx.arc(x, y, 0.8, 0, Math.PI * 2);
             ctx.fill();
@@ -119,15 +132,16 @@ export function QuantumBackground() {
     };
 
     const drawConnections = () => {
+      const connColor = isDark ? '96,165,250' : '37,99,235';
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 150) {
-            const alpha = 0.06 * (1 - dist / 150);
+            const alpha = (isDark ? 0.1 : 0.06) * (1 - dist / 150);
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(37, 99, 235, ${alpha})`;
+            ctx.strokeStyle = `rgba(${connColor}, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -141,8 +155,6 @@ export function QuantumBackground() {
       particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
-
-        // Quantum jitter
         p.x += Math.sin(time * 0.003 + p.pulsePhase) * 0.15;
         p.y += Math.cos(time * 0.002 + p.pulsePhase) * 0.15;
 
@@ -155,7 +167,6 @@ export function QuantumBackground() {
         const currentOpacity = p.opacity * (0.6 + pulse * 0.4);
         const currentSize = p.size * (0.8 + pulse * 0.4);
 
-        // Glow
         ctx.globalAlpha = currentOpacity * 0.3;
         const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, currentSize * 6);
         grad.addColorStop(0, p.color + '30');
@@ -165,7 +176,6 @@ export function QuantumBackground() {
         ctx.arc(p.x, p.y, currentSize * 6, 0, Math.PI * 2);
         ctx.fill();
 
-        // Core
         ctx.globalAlpha = currentOpacity;
         ctx.fillStyle = p.color;
         ctx.beginPath();
@@ -178,32 +188,29 @@ export function QuantumBackground() {
     const animate = () => {
       time++;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       drawOrbs();
       drawWaves();
       drawGrid();
       drawConnections();
       drawParticles();
-
       animationId = requestAnimationFrame(animate);
     };
 
     resize();
     animate();
-
     window.addEventListener('resize', resize);
 
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
     };
-  }, []);
+  }, [isDark]);
 
   return (
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.9 }}
+      style={{ opacity: isDark ? 1 : 0.9 }}
     />
   );
 }

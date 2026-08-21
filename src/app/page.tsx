@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePageStore } from '@/store/page-store';
+import { useThemeStore } from '@/store/theme-store';
 import { QuantumBackground } from '@/components/qfs/quantum-bg';
 import { Navigation } from '@/components/qfs/navigation';
 import { HomePage } from '@/components/qfs/home-page';
@@ -10,6 +11,7 @@ import { WhitePaperPage } from '@/components/qfs/whitepaper-page';
 import { RoadmapPage } from '@/components/qfs/roadmap-page';
 import { PortalPage } from '@/components/qfs/portal-page';
 import { Footer } from '@/components/qfs/footer';
+import { useEffect } from 'react';
 
 const pageVariants = {
   initial: { opacity: 0, y: 20, filter: 'blur(6px)', scale: 0.98 },
@@ -25,9 +27,15 @@ const pageVariants = {
 
 export default function Home() {
   const { currentPage } = usePageStore();
+  const { theme } = useThemeStore();
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.body.style.background = theme === 'dark' ? '#0a0f1a' : '#f8fafc';
+  }, [theme]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8fafc]">
+    <div className={`min-h-screen flex flex-col transition-colors duration-500 ${theme === 'dark' ? 'bg-[#0a0f1a] text-slate-100' : 'bg-[#f8fafc] text-slate-900'}`}>
       <QuantumBackground />
       <Navigation />
 

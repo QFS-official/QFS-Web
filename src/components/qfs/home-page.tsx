@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import { ecosystemCards, pillars, securityFeatures, walletFeatures, faqItems } from './home-data';
 import { QFSCoin } from './qfs-coin';
+import { useThemeStore } from '@/store/theme-store';
+import { useT, useTD } from '@/store/lang-store';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -44,6 +46,10 @@ const slideFromRight = {
 };
 
 export function HomePage() {
+  const { theme } = useThemeStore();
+  const t = useT();
+  const td = useTD();
+
   return (
     <div className="relative z-10">
       {/* ===== HERO ===== */}
@@ -57,11 +63,11 @@ export function HomePage() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="mb-6"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#2563eb] border border-blue-200 bg-blue-50/80"
+              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest text-[#2563eb] border ${theme === 'dark' ? 'border-blue-800/50 bg-blue-500/10' : 'border-blue-200 bg-blue-50/80'}`}
                 style={{ boxShadow: '0 0 20px rgba(37,99,235,0.08)' }}
               >
                 <Atom className="w-3.5 h-3.5 animate-pulse" />
-                QUANTUM FINANCIAL SYSTEM
+                {t('hero.badge')}
               </span>
             </motion.div>
 
@@ -71,22 +77,18 @@ export function HomePage() {
               transition={{ delay: 0.15, duration: 0.8 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
             >
-              <span className="gradient-text-hero">El Futuro de las</span>
+              <span className="gradient-text-hero">{t('hero.title1')}</span>
               <br />
-              <span className="text-slate-900">Finanzas Digitales</span>
+              <span className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('hero.title2')}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed"
+              className={`text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}
             >
-              QFS Official desarrolla una nueva infraestructura financiera digital que integra{' '}
-              <span className="text-[#2563eb] font-medium">blockchain</span>,{' '}
-              <span className="text-[#7c3aed] font-medium">inteligencia artificial</span>,{' '}
-              <span className="text-[#0d9488] font-medium">seguridad criptografica avanzada</span>,{' '}
-              pagos digitales y servicios financieros descentralizados.
+              {t('hero.desc')}
             </motion.p>
 
             <motion.div
@@ -100,14 +102,14 @@ export function HomePage() {
                 whileTap={{ y: 0 }}
                 className="quantum-btn-solid px-8 py-3.5 rounded-2xl text-sm font-semibold flex items-center gap-2 cursor-pointer"
               >
-                Explorar QFS <ChevronRight className="w-4 h-4" />
+                {t('hero.explore_btn')} <ChevronRight className="w-4 h-4" />
               </motion.button>
               <motion.button
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
                 className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
               >
-                QFS Wallet
+                {t('hero.wallet')}
               </motion.button>
               <motion.button
                 whileHover={{ y: -2 }}
@@ -115,7 +117,7 @@ export function HomePage() {
                 className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
                 style={{ borderColor: 'rgba(124,58,237,0.2)', color: '#7c3aed' }}
               >
-                QFSPay
+                {t('hero.qfspay')}
               </motion.button>
             </motion.div>
 
@@ -123,15 +125,21 @@ export function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-3 text-xs text-slate-400 font-mono"
+              className={`flex flex-wrap justify-center lg:justify-start gap-3 text-xs font-mono ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}
             >
-              {['Technology', 'Digital Finance', 'Security', 'Decentralization', 'Global Connectivity'].map((tag, i) => (
+              {[
+                t('hero.tags.technology'),
+                t('hero.tags.finance'),
+                t('hero.tags.security'),
+                t('hero.tags.decentralization'),
+                t('hero.tags.connectivity'),
+              ].map((tag, i) => (
                 <motion.span
-                  key={tag}
+                  key={i}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7 + i * 0.05 }}
-                  className="px-3 py-1.5 rounded-full border border-gray-200 bg-white/60"
+                  className={`px-3 py-1.5 rounded-full border ${theme === 'dark' ? 'border-slate-700 bg-slate-800/60 text-slate-400' : 'border-gray-200 bg-white/60 text-slate-400'}`}
                 >
                   {tag}
                 </motion.span>
@@ -170,13 +178,13 @@ export function HomePage() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
-              El Ecosistema
+              {t('eco.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              <span className="gradient-text">Ecosistema QFS</span>
+              <span className="gradient-text">{t('eco.title')}</span>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mx-auto">
-              Arquitectura financiera modular que integra diferentes servicios dentro de un mismo ecosistema digital.
+            <motion.p variants={fadeUp} className={`max-w-2xl mx-auto ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+              {t('eco.desc')}
             </motion.p>
           </motion.div>
 
@@ -200,11 +208,11 @@ export function HomePage() {
                 >
                   {card.icon}
                 </div>
-                <h3 className="text-slate-900 font-semibold mb-2 flex items-center gap-2">
+                <h3 className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-semibold mb-2 flex items-center gap-2`}>
                   {card.title}
                   <span className="text-sm opacity-60">{card.emoji}</span>
                 </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{card.desc}</p>
+                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{card.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -230,13 +238,13 @@ export function HomePage() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#7c3aed]/50 uppercase">
-              Arquitectura
+              {t('pil.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              Cinco <span className="gradient-text">Pilares</span> Fundamentales
+              {t('pil.title1')} <span className="gradient-text">{t('pil.title2')}</span> {t('pil.title3')}
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mx-auto">
-              QFS propone una nueva arquitectura financiera basada en principios que transformaran la economia digital.
+            <motion.p variants={fadeUp} className={`max-w-2xl mx-auto ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+              {t('pil.desc')}
             </motion.p>
           </motion.div>
 
@@ -256,13 +264,13 @@ export function HomePage() {
                 className="glass-card-hover rounded-2xl p-6 text-center group"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-blue-50 to-violet-50 text-[#2563eb] group-hover:scale-110 transition-transform duration-300"
+                  className={`w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-[#2563eb] group-hover:scale-110 transition-transform duration-300 ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-gradient-to-br from-blue-50 to-violet-50'}`}
                   style={{ boxShadow: '0 4px 12px rgba(37,99,235,0.08)' }}
                 >
                   {p.icon}
                 </div>
-                <h3 className="text-slate-900 font-semibold mb-2 text-sm uppercase tracking-wider">{p.title}</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">{p.desc}</p>
+                <h3 className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-semibold mb-2 text-sm uppercase tracking-wider`}>{p.title}</h3>
+                <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{p.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -288,19 +296,18 @@ export function HomePage() {
           >
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
               <div
-                className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[#2563eb]"
+                className={`w-10 h-10 rounded-xl flex items-center justify-center text-[#2563eb] ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-50'}`}
                 style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.08)' }}
               >
                 <Shield className="w-5 h-5" />
               </div>
-              <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">Seguridad</span>
+              <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">{t('sec.subtitle')}</span>
             </motion.div>
-            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mb-4">
-              QFS <span className="gradient-text">Security</span>
+            <motion.h2 variants={fadeUp} className={`text-3xl sm:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+              {t('sec.title')} <span className="gradient-text">Security</span>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mb-10 leading-relaxed">
-              La seguridad constituye uno de los pilares fundamentales del ecosistema QFS. Disenado para evolucionar
-              conjuntamente con las nuevas amenazas digitales mediante una arquitectura de seguridad multicapa.
+            <motion.p variants={fadeUp} className={`max-w-2xl mb-10 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+              {t('sec.desc')}
             </motion.p>
           </motion.div>
 
@@ -317,11 +324,11 @@ export function HomePage() {
                 custom={i}
                 variants={fadeUp}
                 whileHover={{ x: 4, borderColor: 'rgba(37,99,235,0.3)', transition: { duration: 0.2 } }}
-                className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white border border-gray-100 transition-colors"
+                className={`flex items-center gap-3 px-5 py-3.5 rounded-xl border transition-colors ${theme === 'dark' ? 'bg-slate-800/60 border-slate-700' : 'bg-white border-gray-100'}`}
                 style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}
               >
                 <Lock className="w-4 h-4 text-[#2563eb] shrink-0" />
-                <span className="text-sm text-slate-600">{feat}</span>
+                <span className={`text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>{feat}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -347,10 +354,10 @@ export function HomePage() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#0d9488]/50 uppercase">
-              Productos
+              {t('prod.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              <span className="gradient-text">Productos</span> QFS
+              <span className="gradient-text">{t('prod.title')}</span>
             </motion.h2>
           </motion.div>
 
@@ -371,19 +378,18 @@ export function HomePage() {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <div
-                      className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-teal-50 flex items-center justify-center"
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-gradient-to-br from-blue-50 to-teal-50'}`}
                       style={{ boxShadow: '0 4px 12px rgba(37,99,235,0.08)' }}
                     >
                       <Wallet className="w-6 h-6 text-[#2563eb]" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900">QFS Wallet</h3>
-                      <p className="text-xs text-[#2563eb]/50 font-mono">Your Digital Financial Hub</p>
+                      <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.wallet.title')}</h3>
+                      <p className="text-xs text-[#2563eb]/50 font-mono">{t('prod.wallet.subtitle')}</p>
                     </div>
                   </div>
-                  <p className="text-slate-500 mb-6 leading-relaxed">
-                    El punto de acceso del usuario al ecosistema QFS. Gestione diferentes tipos de activos digitales
-                    desde una unica interfaz con seguridad avanzada.
+                  <p className={`mb-6 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {t('prod.wallet.desc')}
                   </p>
                   <div className="grid grid-cols-2 gap-2">
                     {walletFeatures.map((f, i) => (
@@ -391,7 +397,7 @@ export function HomePage() {
                         key={f}
                         custom={i}
                         variants={fadeUp}
-                        className="flex items-center gap-2 text-sm text-slate-600"
+                        className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}
                       >
                         <div className="w-1.5 h-1.5 rounded-full bg-[#2563eb]" />
                         {f}
@@ -400,14 +406,14 @@ export function HomePage() {
                   </div>
                 </div>
                 <div className="gradient-border rounded-2xl p-6">
-                  <div className="bg-white rounded-xl p-6 space-y-4 border border-gray-100">
+                  <div className={`rounded-xl p-6 space-y-4 border ${theme === 'dark' ? 'bg-slate-800/90 border-slate-700' : 'bg-white border-gray-100'}`}>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-500">Total Balance</span>
-                      <Eye className="w-4 h-4 text-slate-400" />
+                      <span className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{t('prod.wallet.balance')}</span>
+                      <Eye className={`w-4 h-4 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`} />
                     </div>
                     <div className="text-3xl font-bold gradient-text">$47,892.35</div>
                     <div className="flex items-center gap-2 text-xs text-[#0d9488]">
-                      <ArrowRightLeft className="w-3 h-3" /> +12.4% este mes
+                      <ArrowRightLeft className="w-3 h-3" /> +12.4% {t('prod.wallet.month')}
                     </div>
                     <div className="space-y-3 pt-2">
                       {[
@@ -415,13 +421,13 @@ export function HomePage() {
                         { name: 'USDT', amount: '15,000 USDT', value: '$15,000', change: '+0.1%' },
                         { name: 'BTC', amount: '0.042 BTC', value: '$4,542', change: '+8.7%' },
                       ].map((asset) => (
-                        <div key={asset.name} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
+                        <div key={asset.name} className={`flex items-center justify-between py-2 border-b last:border-0 ${theme === 'dark' ? 'border-slate-700' : 'border-gray-50'}`}>
                           <div>
-                            <div className="text-sm font-medium text-slate-800">{asset.name}</div>
+                            <div className={`text-sm font-medium ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>{asset.name}</div>
                             <div className="text-xs text-slate-400">{asset.amount}</div>
                           </div>
                           <div className="text-right">
-                            <div className="text-sm font-medium text-slate-800">{asset.value}</div>
+                            <div className={`text-sm font-medium ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>{asset.value}</div>
                             <div className="text-xs text-[#0d9488]">{asset.change}</div>
                           </div>
                         </div>
@@ -455,23 +461,22 @@ export function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-50 to-pink-50 flex items-center justify-center"
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme === 'dark' ? 'bg-violet-500/10' : 'bg-gradient-to-br from-violet-50 to-pink-50'}`}
                     style={{ boxShadow: '0 4px 12px rgba(124,58,237,0.08)' }}
                   >
                     <CreditCard className="w-6 h-6 text-[#7c3aed]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">QFSPay</h3>
-                    <p className="text-xs text-[#7c3aed]/50 font-mono">Digital Payments</p>
+                    <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.qfspay.title')}</h3>
+                    <p className="text-xs text-[#7c3aed]/50 font-mono">{t('prod.qfspay.subtitle')}</p>
                   </div>
                 </div>
-                <p className="text-sm text-slate-500 mb-6 leading-relaxed">
-                  Pagos digitales para una economia conectada. Facilita la utilizacion de activos digitales
-                  para operaciones cotidianas y comerciales.
+                <p className={`text-sm mb-6 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                  {t('prod.qfspay.desc')}
                 </p>
                 <div className="space-y-2">
-                  {['Pagos digitales', 'Transferencias P2P', 'Pagos comerciales', 'Conversion de activos', 'APIs para desarrolladores', 'Soluciones empresariales'].map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm text-slate-600">
+                  {td('qfspay.features').map((item, idx) => (
+                    <div key={idx} className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
                       <div className="w-1.5 h-1.5 rounded-full bg-[#7c3aed]" />
                       {item}
                     </div>
@@ -500,23 +505,22 @@ export function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-50 to-blue-50 flex items-center justify-center"
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme === 'dark' ? 'bg-teal-500/10' : 'bg-gradient-to-br from-teal-50 to-blue-50'}`}
                     style={{ boxShadow: '0 4px 12px rgba(13,148,136,0.08)' }}
                   >
                     <ArrowRightLeft className="w-6 h-6 text-[#0d9488]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">QFS Exchange DEX</h3>
-                    <p className="text-xs text-[#0d9488]/50 font-mono">Decentralized Trading</p>
+                    <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.dex.title')}</h3>
+                    <p className="text-xs text-[#0d9488]/50 font-mono">{t('prod.dex.subtitle')}</p>
                   </div>
                 </div>
-                <p className="text-sm text-slate-500 mb-6 leading-relaxed">
-                  Plataforma descentralizada para el intercambio de activos digitales con acceso
-                  a mercados y liquidez del ecosistema.
+                <p className={`text-sm mb-6 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                  {t('prod.dex.desc')}
                 </p>
                 <div className="space-y-2">
-                  {['Swap de activos', 'Pools de liquidez', 'Interoperabilidad multicadena', 'Herramientas de mercado', 'Smart contracts', 'Gobernanza descentralizada'].map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm text-slate-600">
+                  {td('dex.features').map((item, idx) => (
+                    <div key={idx} className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
                       <div className="w-1.5 h-1.5 rounded-full bg-[#0d9488]" />
                       {item}
                     </div>
@@ -543,27 +547,27 @@ export function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-50 to-pink-50 flex items-center justify-center"
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme === 'dark' ? 'bg-amber-500/10' : 'bg-gradient-to-br from-amber-50 to-pink-50'}`}
                     style={{ boxShadow: '0 4px 12px rgba(217,119,6,0.08)' }}
                   >
                     <CreditCard className="w-6 h-6 text-[#d97706]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">QFS Quantum Cards</h3>
-                    <p className="text-xs text-[#d97706]/50 font-mono">Digital-to-Physical</p>
+                    <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.cards.title')}</h3>
+                    <p className="text-xs text-[#d97706]/50 font-mono">{t('prod.cards.subtitle')}</p>
                   </div>
                 </div>
-                <p className="text-sm text-slate-500 mb-4 leading-relaxed">
-                  Conecta el ecosistema digital QFS con soluciones de pago fisicas y digitales del mundo real.
+                <p className={`text-sm mb-4 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                  {t('prod.cards.desc')}
                 </p>
-                <div className="flex items-center gap-2 text-xs font-mono text-slate-400 py-3 flex-wrap">
-                  <span className="px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#2563eb]">Wallet</span>
+                <div className={`flex items-center gap-2 text-xs font-mono py-3 flex-wrap ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#2563eb] ${theme === 'dark' ? 'bg-blue-500/10 border-blue-800/50' : 'bg-blue-50 border-blue-100'}`}>Wallet</span>
                   <ChevronRight className="w-3 h-3" />
-                  <span className="px-2.5 py-1 rounded-lg bg-violet-50 border border-violet-100 text-[#7c3aed]">QFSPay</span>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#7c3aed] ${theme === 'dark' ? 'bg-violet-500/10 border-violet-800/50' : 'bg-violet-50 border-violet-100'}`}>QFSPay</span>
                   <ChevronRight className="w-3 h-3" />
-                  <span className="px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-100 text-[#d97706]">Cards</span>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#d97706] ${theme === 'dark' ? 'bg-amber-500/10 border-amber-800/50' : 'bg-amber-50 border-amber-100'}`}>Cards</span>
                   <ChevronRight className="w-3 h-3" />
-                  <span className="px-2.5 py-1 rounded-lg bg-teal-50 border border-teal-100 text-[#0d9488]">Payments</span>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#0d9488] ${theme === 'dark' ? 'bg-teal-500/10 border-teal-800/50' : 'bg-teal-50 border-teal-100'}`}>Payments</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -583,36 +587,38 @@ export function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-50 to-violet-50 flex items-center justify-center"
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme === 'dark' ? 'bg-pink-500/10' : 'bg-gradient-to-br from-pink-50 to-violet-50'}`}
                     style={{ boxShadow: '0 4px 12px rgba(219,39,119,0.08)' }}
                   >
                     <Bot className="w-6 h-6 text-[#db2777]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">QFS + IA</h3>
-                    <p className="text-xs text-[#db2777]/50 font-mono">Intelligent Finance</p>
+                    <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.ai.title')}</h3>
+                    <p className="text-xs text-[#db2777]/50 font-mono">{t('prod.ai.subtitle')}</p>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  {[
-                    { title: 'AI Security', desc: 'Deteccion de transacciones anomalas' },
-                    { title: 'AI Risk Monitoring', desc: 'Analisis de riesgos y patrones' },
-                    { title: 'AI Financial Assistance', desc: 'Herramientas inteligentes para usuarios' },
-                    { title: 'AI Compliance', desc: 'Automatizacion de cumplimiento' },
-                  ].map((item) => (
-                    <div key={item.title} className="flex items-start gap-3 py-2">
-                      <div
-                        className="w-8 h-8 rounded-lg bg-pink-50 flex items-center justify-center shrink-0 mt-0.5"
-                        style={{ boxShadow: '0 2px 6px rgba(219,39,119,0.06)' }}
-                      >
-                        <Cpu className="w-4 h-4 text-[#db2777]" />
+                  {(() => {
+                    const aiItems = td('ai.items');
+                    const pairs: { title: string; desc: string }[] = [];
+                    for (let idx = 0; idx < aiItems.length; idx += 2) {
+                      pairs.push({ title: aiItems[idx], desc: aiItems[idx + 1] || '' });
+                    }
+                    return pairs.map((item) => (
+                      <div key={item.title} className="flex items-start gap-3 py-2">
+                        <div
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${theme === 'dark' ? 'bg-pink-500/10' : 'bg-pink-50'}`}
+                          style={{ boxShadow: '0 2px 6px rgba(219,39,119,0.06)' }}
+                        >
+                          <Cpu className="w-4 h-4 text-[#db2777]" />
+                        </div>
+                        <div>
+                          <div className={`text-sm font-medium ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>{item.title}</div>
+                          <div className={`text-xs ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{item.desc}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-sm font-medium text-slate-800">{item.title}</div>
-                        <div className="text-xs text-slate-500">{item.desc}</div>
-                      </div>
-                    </div>
-                  ))}
+                    ));
+                  })()}
                 </div>
               </motion.div>
             </motion.div>
@@ -639,10 +645,10 @@ export function HomePage() {
             className="text-center mb-12"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 uppercase">
-              Preguntas Frecuentes
+              {t('faq.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-              <span className="gradient-text">FAQ</span>
+              <span className="gradient-text">{t('faq.title')}</span>
             </motion.h2>
           </motion.div>
 
@@ -658,14 +664,14 @@ export function HomePage() {
                   key={i}
                   custom={i}
                   variants={fadeUp}
-                  className="bg-white rounded-xl overflow-hidden border border-gray-100"
+                  className={`rounded-xl overflow-hidden border ${theme === 'dark' ? 'bg-slate-800/60 border-slate-700' : 'bg-white border-gray-100'}`}
                   style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}
                 >
                   <AccordionItem value={`faq-${i}`} className="border-none">
-                    <AccordionTrigger className="px-6 py-4 text-left text-sm font-medium text-slate-800 hover:no-underline hover:text-[#2563eb] transition-colors [&[data-state=open]]:text-[#2563eb]">
+                    <AccordionTrigger className={`px-6 py-4 text-left text-sm font-medium hover:no-underline hover:text-[#2563eb] transition-colors [&[data-state=open]]:text-[#2563eb] ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>
                       {item.q}
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 text-sm text-slate-500 leading-relaxed">
+                    <AccordionContent className={`px-6 pb-4 text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
                       {item.a}
                     </AccordionContent>
                   </AccordionItem>
