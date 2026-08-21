@@ -29,10 +29,11 @@ const currencies = [
     color: '#2563eb',
   },
   {
-    name: 'GCR',
-    subtitle: 'Global Currency Reset',
-    desc: 'The official currency of the Global Currency Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available on QFSpay.',
+    name: 'GCRM',
+    subtitle: 'Global Currency Reset → GCRM',
+    desc: 'Migrated from GCR to GCRM. The official currency of the Global Currency Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available on QFSpay.',
     logo: 'https://gcr.social/images/logo-s2-white.png',
+    logo2: '/gcrm-logo.png',
     color: '#d97706',
   },
   {
@@ -404,16 +405,21 @@ export function PortalPage() {
                     style={{ background: `linear-gradient(90deg, ${curr.color}, transparent)` }}
                   />
                   <div className="flex items-center gap-3 mb-4">
-                    {curr.logo ? (
-                      <img src={curr.logo} alt={curr.name} className="h-10 rounded-lg object-contain bg-slate-50 p-1" />
-                    ) : (
-                      <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center"
-                        style={{ background: `${curr.color}0d`, color: curr.color }}
-                      >
-                        <Coins className="w-5 h-5" />
-                      </div>
-                    )}
+                    <div className="flex items-center gap-1.5">
+                      {curr.logo ? (
+                        <img src={curr.logo} alt={curr.name} className="h-10 rounded-lg object-contain bg-slate-50 p-1" />
+                      ) : (
+                        <div
+                          className="w-10 h-10 rounded-lg flex items-center justify-center"
+                          style={{ background: `${curr.color}0d`, color: curr.color }}
+                        >
+                          <Coins className="w-5 h-5" />
+                        </div>
+                      )}
+                      {'logo2' in curr && curr.logo2 && (
+                        <img src={curr.logo2} alt={curr.name + ' new'} className="h-10 rounded-lg object-contain bg-slate-50 p-1" />
+                      )}
+                    </div>
                     <div>
                       <h3 className="font-bold text-slate-800" style={{ color: curr.color }}>{curr.name}</h3>
                       <span className="text-xs text-slate-400">{curr.subtitle}</span>
