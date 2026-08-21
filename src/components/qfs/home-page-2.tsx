@@ -189,7 +189,7 @@ export function HomePagePart2() {
               {t('why.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              {t('why.title').replace('?', '')} <span className="gradient-text">{t('why.title').includes('QFS') ? 'QFS' : 'QFS'}</span>?
+              <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('why.title').split('QFS')[0]}</span><span className="gradient-text">QFS</span>?
             </motion.h2>
           </motion.div>
 
