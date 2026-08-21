@@ -97,11 +97,11 @@ export const walletFeatures = [
 export const faqItems = [
   {
     q: '¿Qué es QFS?',
-    a: 'QFS Official es una iniciativa que desarrolla una arquitectura y ecosistema de servicios financieros digitales inspirados en tecnologías como blockchain, criptografía avanzada, inteligencia artificial e interoperabilidad. Su objetivo es construir una infraestructura integrada para la gestión, transferencia e intercambio de activos digitales.',
+    a: 'QFS Oficial es una iniciativa que desarrolla una arquitectura y ecosistema de servicios financieros digitales inspirados en tecnologías como blockchain, criptografía avanzada, inteligencia artificial e interoperabilidad. Su objetivo es construir una infraestructura integrada para la gestión, transferencia e intercambio de activos digitales.',
   },
   {
     q: '¿Es QFS un reemplazo global del sistema bancario?',
-    a: 'No. QFS Official representa una iniciativa y visión tecnológica en desarrollo. No debe presentarse como un sistema financiero global oficialmente implementado ni como reemplazo confirmado de la banca tradicional. Es una propuesta de infraestructura complementaria y evolutiva.',
+    a: 'No. QFS Oficial representa una iniciativa y visión tecnológica en desarrollo. No debe presentarse como un sistema financiero global oficialmente implementado ni como reemplazo confirmado de la banca tradicional. Es una propuesta de infraestructura complementaria y evolutiva.',
   },
   {
     q: '¿Qué es QFS Wallet?',
@@ -121,6 +121,6 @@ export const faqItems = [
   },
   {
     q: '¿QFS está conectado con NESG?',
-    a: 'Sí. QFS Official forma parte de la visión tecnológica y comunitaria desarrollada alrededor del ecosistema NESG, que impulsa iniciativas relacionadas con finanzas digitales, blockchain, DeFi, inclusión financiera e innovación tecnológica.',
+    a: 'Sí. QFS Oficial forma parte de la visión tecnológica y comunitaria desarrollada alrededor del ecosistema NESG, que impulsa iniciativas relacionadas con finanzas digitales, blockchain, DeFi, inclusión financiera e innovación tecnológica.',
   },
 ];

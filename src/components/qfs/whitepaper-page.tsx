@@ -130,7 +130,7 @@ export function WhitePaperPage() {
             instituciones respecto a los servicios financieros.
           </p>
           <p>
-            En este contexto, <span className="text-[#2563eb] font-medium">QFS Official</span> presenta una
+            En este contexto, <span className="text-[#2563eb] font-medium">QFS Oficial</span> presenta una
             iniciativa orientada al desarrollo de una nueva infraestructura financiera digital que integra múltiples
             tecnologías convergentes: blockchain, inteligencia artificial, criptografía avanzada, pagos digitales y
             servicios financieros descentralizados.

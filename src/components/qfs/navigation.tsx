@@ -90,16 +90,8 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div
-              className="absolute -inset-1.5 rounded-xl blur-md opacity-60"
-              style={{
-                background: theme === 'dark'
-                  ? 'linear-gradient(135deg, #3b82f6, #60a5fa, #8b5cf6)'
-                  : 'linear-gradient(135deg, #2563eb, #60a5fa, #7c3aed)',
-              }}
-            />
-            <div className={`relative w-9 h-9 rounded-xl ${theme === 'dark' ? 'bg-gradient-to-br from-blue-500 to-violet-600' : 'bg-gradient-to-br from-[#2563eb] to-[#7c3aed]'} flex items-center justify-center text-white font-bold text-sm overflow-hidden`}>
-              <Image src="/qfs-coin.png" alt="QFS" width={28} height={28} className="rounded-lg object-cover" />
+            <div className="relative w-9 h-9 flex items-center justify-center overflow-hidden">
+              <Image src="/qfs-coin.png" alt="QFS" width={36} height={36} className="object-contain" />
             </div>
           </motion.div>
           <div className="flex flex-col">

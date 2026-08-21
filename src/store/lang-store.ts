@@ -34,7 +34,7 @@ const t: Record<string, Record<Lang, string>> = {
   "hero.title1": { es: "El Futuro de las", en: "The Future of" },
   "hero.title2": { es: "Finanzas Digitales", en: "Digital Finance" },
   "hero.desc": {
-    es: "QFS Official desarrolla una nueva infraestructura financiera digital que integra blockchain, inteligencia artificial, seguridad criptografica avanzada, pagos digitales y servicios financieros descentralizados.",
+    es: "QFS Oficial desarrolla una nueva infraestructura financiera digital que integra blockchain, inteligencia artificial, seguridad criptografica avanzada, pagos digitales y servicios financieros descentralizados.",
     en: "QFS Official develops a new digital financial infrastructure integrating blockchain, artificial intelligence, advanced cryptographic security, digital payments and decentralized financial services.",
   },
   "hero.wallet": { es: "QFS Wallet", en: "QFS Wallet" },
