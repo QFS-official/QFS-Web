@@ -2,7 +2,7 @@
 
 import { usePageStore } from '@/store/page-store';
 import { useThemeStore } from '@/store/theme-store';
-import { useLangStore } from '@/store/lang-store';
+import { useLangStore, type Lang } from '@/store/lang-store';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe } from 'lucide-react';
 import { useState } from 'react';
@@ -211,19 +211,30 @@ export function Navigation() {
                         : 'bg-white border-gray-100 shadow-xl shadow-blue-500/5'
                     }`}
                   >
-                    {(['es', 'en'] as const).map((l) => (
+                    {(
+                      [
+                        { code: 'en', flag: '🇺🇸', label: 'English' },
+                        { code: 'es', flag: '🇪🇸', label: 'Español' },
+                        { code: 'fr', flag: '🇫🇷', label: 'Français' },
+                        { code: 'pt', flag: '🇵🇹', label: 'Português' },
+                        { code: 'de', flag: '🇩🇪', label: 'Deutsch' },
+                        { code: 'zh', flag: '🇨🇳', label: '中文' },
+                        { code: 'ar', flag: '🇸🇦', label: 'العربية' },
+                        { code: 'th', flag: '🇹🇭', label: 'ไทย' },
+                      ] as const
+                    ).map((l) => (
                       <button
-                        key={l}
-                        onClick={() => { setLang(l); setLangOpen(false); }}
+                        key={l.code}
+                        onClick={() => { setLang(l.code); setLangOpen(false); }}
                         className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm cursor-pointer transition-colors ${
-                          lang === l
+                          lang === l.code
                             ? theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-50 text-[#2563eb]'
                             : theme === 'dark' ? 'text-slate-300 hover:bg-slate-700' : 'text-slate-600 hover:bg-gray-50'
                         }`}
                       >
-                        <span className={`text-base ${l === 'es' ? '' : ''}`}>{l === 'es' ? '🇪🇸' : '🇺🇸'}</span>
-                        <span className="font-medium">{l === 'es' ? 'Español' : 'English'}</span>
-                        {lang === l && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-500" />}
+                        <span className="text-base">{l.flag}</span>
+                        <span className="font-medium">{l.label}</span>
+                        {lang === l.code && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-500" />}
                       </button>
                     ))}
                   </motion.div>
@@ -260,7 +271,7 @@ export function Navigation() {
             {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </motion.button>
           <motion.button
-            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+            onClick={() => { const langs: Lang[] = ['en','es','fr','pt','de','zh','ar','th']; const idx = langs.indexOf(lang); setLang(langs[(idx + 1) % langs.length]); }}
             whileTap={{ scale: 0.9 }}
             className={`p-2 rounded-lg cursor-pointer flex items-center gap-1 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}
           >

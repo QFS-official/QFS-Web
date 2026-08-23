@@ -411,7 +411,7 @@ export function HomePage() {
                       <span className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{t('prod.wallet.balance')}</span>
                       <Eye className={`w-4 h-4 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`} />
                     </div>
-                    <div className="text-3xl font-bold gradient-text">$52,892.35</div>
+                    <div className="text-3xl font-bold gradient-text">$76,692.35</div>
                     <div className="flex items-center gap-2 text-xs text-[#0d9488]">
                       <ArrowRightLeft className="w-3 h-3" /> +12.4% {t('prod.wallet.month')}
                     </div>
@@ -422,6 +422,10 @@ export function HomePage() {
                         { name: 'ETH', amount: '1.45 ETH', value: '$4,542', change: '+8.7%' },
                         { name: 'SOL', amount: '32.8 SOL', value: '$3,920', change: '+12.1%' },
                         { name: 'Linea', amount: '820 LINEA', value: '$1,080', change: '+3.5%' },
+                        { name: 'GCRM', amount: '5,200 GCRM', value: '$8,450', change: '+6.8%' },
+                        { name: 'ALArab', amount: '3,100 ALA', value: '$5,280', change: '+4.3%' },
+                        { name: 'NESG', amount: '8,750 NESG', value: '$6,920', change: '+9.5%' },
+                        { name: 'Traex', amount: '2,400 TRX', value: '$3,150', change: '+7.1%' },
                       ].map((asset) => (
                         <div key={asset.name} className={`flex items-center justify-between py-2 border-b last:border-0 ${theme === 'dark' ? 'border-slate-700' : 'border-gray-50'}`}>
                           <div>
