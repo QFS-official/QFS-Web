@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { Globe, Building2, Users, Handshake, Star, PieChart } from 'lucide-react';
 import { QFSCoin } from './qfs-coin';
 import { useThemeStore } from '@/store/theme-store';
-import { useT, useLangStore } from '@/store/lang-store';
+import { useT, useTD } from '@/store/lang-store';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,7 +22,6 @@ const stagger = {
 export function HomePagePart2() {
   const { theme } = useThemeStore();
   const t = useT();
-  const { lang } = useLangStore();
   const isDark = theme === 'dark';
 
   const alliances = [
@@ -150,20 +149,20 @@ export function HomePagePart2() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
-              Token Distribution
+              {t('token.alloc.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
               <span className="gradient-text">QFS Token</span>{' '}
-              <span className={isDark ? 'text-white' : 'text-slate-900'}>Allocation</span>
+              <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('token.alloc.title2')}</span>
             </motion.h2>
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-mono mt-2" style={{ color: '#7c3aed', background: isDark ? 'rgba(124,58,237,0.1)' : 'rgba(124,58,237,0.06)', border: `1px solid ${isDark ? 'rgba(124,58,237,0.2)' : 'rgba(124,58,237,0.12)'}` }}>
               <PieChart className="w-4 h-4" />
               <span className="font-bold">177.64B QFS</span>
-              <span className={isDark ? 'text-slate-500' : 'text-slate-400'}>— Reference Supply*</span>
+              <span className={isDark ? 'text-slate-500' : 'text-slate-400'}>— {t('token.alloc.supply')}</span>
             </motion.div>
           </motion.div>
 
-          <TokenAllocationBars isDark={isDark} lang={lang} />
+          <TokenAllocationBars isDark={isDark} />
         </div>
       </section>
 
@@ -285,7 +284,7 @@ export function HomePagePart2() {
                     className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium cursor-pointer"
                     style={{ borderColor: 'rgba(124,58,237,0.2)', color: '#7c3aed' }}
                   >
-                    Join Community
+                    {t('cta.join_btn')}
                   </motion.button>
                 </motion.div>
               </div>
@@ -323,8 +322,6 @@ function AtomIcon({ className }: { className?: string }) {
 const allocationData = [
   {
     emoji: '🌍',
-    labelEs: 'Fondo Humanitario Global',
-    labelEn: 'Global Humanitarian Fund',
     pct: 15.2,
     amount: '27B QFS',
     color: '#2563eb',
@@ -332,8 +329,6 @@ const allocationData = [
   },
   {
     emoji: '💱',
-    labelEs: 'Reserva de Exchange & Liquidez',
-    labelEn: 'Exchange & Liquidity Reserve',
     pct: 33.8,
     amount: '60B QFS',
     color: '#7c3aed',
@@ -341,8 +336,6 @@ const allocationData = [
   },
   {
     emoji: '⚛️',
-    labelEs: 'Tecnologia & Ecosistema QFS',
-    labelEn: 'QFS Technology & Ecosystem',
     pct: 16.9,
     amount: '30B QFS',
     color: '#0d9488',
@@ -350,8 +343,6 @@ const allocationData = [
   },
   {
     emoji: '🌐',
-    labelEs: 'Adopcion & Expansion Global',
-    labelEn: 'Global Adoption & Expansion',
     pct: 11.3,
     amount: '20B QFS',
     color: '#d97706',
@@ -359,8 +350,6 @@ const allocationData = [
   },
   {
     emoji: '🛡️',
-    labelEs: 'Reserva Institucional & Estabilidad',
-    labelEn: 'Institutional & Stability Reserve',
     pct: 11.3,
     amount: '20B QFS',
     color: '#db2777',
@@ -368,8 +357,6 @@ const allocationData = [
   },
   {
     emoji: '🔐',
-    labelEs: 'Gobernanza Futura / Reserva No Asignada',
-    labelEn: 'Future Governance / Unallocated Reserve',
     pct: 11.6,
     amount: '≈20.64B QFS',
     color: '#6366f1',
@@ -377,7 +364,9 @@ const allocationData = [
   },
 ];
 
-function TokenAllocationBars({ isDark, lang }: { isDark: boolean; lang: string }) {
+function TokenAllocationBars({ isDark }: { isDark: boolean }) {
+  const td2 = useTD();
+  const allocLabels = td2('token.alloc.labels');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
@@ -388,7 +377,7 @@ function TokenAllocationBars({ isDark, lang }: { isDark: boolean; lang: string }
         const glowShadow = '0 0 8px ' + item.color + '80, 0 0 16px ' + item.color + '40';
         return (
           <motion.div
-            key={item.labelEn}
+            key={i}
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: i * 0.12, duration: 0.5, ease: 'easeOut' }}
@@ -399,7 +388,7 @@ function TokenAllocationBars({ isDark, lang }: { isDark: boolean; lang: string }
               <div className="flex items-center gap-3">
                 <span className="text-xl">{item.emoji}</span>
                 <span className={"text-sm font-semibold " + (isDark ? 'text-white' : 'text-slate-800')}>
-                  {item.labelEn}
+                  {allocLabels[i]}
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -464,7 +453,7 @@ function TokenAllocationBars({ isDark, lang }: { isDark: boolean; lang: string }
         transition={{ delay: 1.2, duration: 0.5 }}
         className={"text-[11px] text-center mt-6 " + (isDark ? 'text-slate-600' : 'text-slate-400')}
       >
-        * Reference supply subject to adjustments based on ecosystem development.
+        {t('token.alloc.footnote')}
       </motion.p>
     </div>
   );

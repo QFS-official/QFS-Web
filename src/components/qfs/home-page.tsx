@@ -6,7 +6,7 @@ import {
   Atom, Shield, Zap, Eye, Network, Cpu, CreditCard, Wallet,
   ArrowRightLeft, Landmark, Globe, Bot, ChevronRight, Lock,
 } from 'lucide-react';
-import { ecosystemCards, pillars, securityFeatures, walletFeatures, faqItems } from './home-data';
+import { ecosystemCardStyles, pillarIcons } from './home-data';
 import { QFSCoin } from './qfs-coin';
 import { useThemeStore } from '@/store/theme-store';
 import { useT, useTD } from '@/store/lang-store';
@@ -195,26 +195,30 @@ export function HomePage() {
             variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
-            {ecosystemCards.map((card, i) => (
+            {(() => {
+              const ecoData = td('eco.cards');
+              const emojis = ['⚛️', '💳', '👛', '🔄', '💳', '🏦', '🌍', '🤖'];
+              return ecosystemCardStyles.map((style, i) => (
               <motion.div
-                key={card.title}
+                key={ecoData[i * 2]}
                 custom={i}
                 variants={fadeUp}
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
                 className="glass-card-hover rounded-2xl p-6 group cursor-default"
               >
-                <div className={`w-12 h-12 rounded-xl ${card.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                <div className={`w-12 h-12 rounded-xl ${style.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
                   style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}
                 >
-                  {card.icon}
+                  {style.icon}
                 </div>
                 <h3 className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-semibold mb-2 flex items-center gap-2`}>
-                  {card.title}
-                  <span className="text-sm opacity-60">{card.emoji}</span>
+                  {ecoData[i * 2]}
+                  <span className="text-sm opacity-60">{emojis[i]}</span>
                 </h3>
-                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{card.desc}</p>
+                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{ecoData[i * 2 + 1]}</p>
               </motion.div>
-            ))}
+              ));
+            })()}
           </motion.div>
         </div>
       </section>
@@ -255,9 +259,11 @@ export function HomePage() {
             variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
           >
-            {pillars.map((p, i) => (
+            {(() => {
+              const pilData = td('pil.items');
+              return pillarIcons.map((icon, i) => (
               <motion.div
-                key={p.title}
+                key={pilData[i * 2]}
                 custom={i}
                 variants={fadeUp}
                 whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3 } }}
@@ -267,12 +273,13 @@ export function HomePage() {
                   className={`w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-[#2563eb] group-hover:scale-110 transition-transform duration-300 ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-gradient-to-br from-blue-50 to-violet-50'}`}
                   style={{ boxShadow: '0 4px 12px rgba(37,99,235,0.08)' }}
                 >
-                  {p.icon}
+                  {icon}
                 </div>
-                <h3 className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-semibold mb-2 text-sm uppercase tracking-wider`}>{p.title}</h3>
-                <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{p.desc}</p>
+                <h3 className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-semibold mb-2 text-sm uppercase tracking-wider`}>{pilData[i * 2]}</h3>
+                <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{pilData[i * 2 + 1]}</p>
               </motion.div>
-            ))}
+              ));
+            })()}
           </motion.div>
         </div>
       </section>
@@ -304,7 +311,7 @@ export function HomePage() {
               <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">{t('sec.subtitle')}</span>
             </motion.div>
             <motion.h2 variants={fadeUp} className={`text-3xl sm:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
-              {t('sec.title')} <span className="gradient-text">Security</span>
+              {t('sec.title')}
             </motion.h2>
             <motion.p variants={fadeUp} className={`max-w-2xl mb-10 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
               {t('sec.desc')}
@@ -318,7 +325,7 @@ export function HomePage() {
             variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
           >
-            {securityFeatures.map((feat, i) => (
+            {td('sec.features').map((feat, i) => (
               <motion.div
                 key={feat}
                 custom={i}
@@ -392,7 +399,7 @@ export function HomePage() {
                     {t('prod.wallet.desc')}
                   </p>
                   <div className="grid grid-cols-2 gap-2">
-                    {walletFeatures.map((f, i) => (
+                    {td('wallet.features').map((f, i) => (
                       <motion.div
                         key={f}
                         custom={i}
@@ -567,13 +574,13 @@ export function HomePage() {
                   {t('prod.cards.desc')}
                 </p>
                 <div className={`flex items-center gap-2 text-xs font-mono py-3 flex-wrap ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#2563eb] ${theme === 'dark' ? 'bg-blue-500/10 border-blue-800/50' : 'bg-blue-50 border-blue-100'}`}>Wallet</span>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#2563eb] ${theme === 'dark' ? 'bg-blue-500/10 border-blue-800/50' : 'bg-blue-50 border-blue-100'}`}>{t('prod.cards.wallet')}</span>
                   <ChevronRight className="w-3 h-3" />
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#7c3aed] ${theme === 'dark' ? 'bg-violet-500/10 border-violet-800/50' : 'bg-violet-50 border-violet-100'}`}>QFSPay</span>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#7c3aed] ${theme === 'dark' ? 'bg-violet-500/10 border-violet-800/50' : 'bg-violet-50 border-violet-100'}`}>{t('hero.qfspay')}</span>
                   <ChevronRight className="w-3 h-3" />
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#d97706] ${theme === 'dark' ? 'bg-amber-500/10 border-amber-800/50' : 'bg-amber-50 border-amber-100'}`}>Cards</span>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#d97706] ${theme === 'dark' ? 'bg-amber-500/10 border-amber-800/50' : 'bg-amber-50 border-amber-100'}`}>{t('prod.cards.title')}</span>
                   <ChevronRight className="w-3 h-3" />
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#0d9488] ${theme === 'dark' ? 'bg-teal-500/10 border-teal-800/50' : 'bg-teal-50 border-teal-100'}`}>Payments</span>
+                  <span className={`px-2.5 py-1 rounded-lg border text-[#0d9488] ${theme === 'dark' ? 'bg-teal-500/10 border-teal-800/50' : 'bg-teal-50 border-teal-100'}`}>{t('prod.cards.payments')}</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -665,7 +672,9 @@ export function HomePage() {
             variants={stagger}
           >
             <Accordion type="single" collapsible className="space-y-3">
-              {faqItems.map((item, i) => (
+              {(() => {
+                const faqData = td('faq.items');
+                return Array.from({ length: faqData.length / 2 }, (_, i) => (
                 <motion.div
                   key={i}
                   custom={i}
@@ -675,14 +684,15 @@ export function HomePage() {
                 >
                   <AccordionItem value={`faq-${i}`} className="border-none">
                     <AccordionTrigger className={`px-6 py-4 text-left text-sm font-medium hover:no-underline hover:text-[#2563eb] transition-colors [&[data-state=open]]:text-[#2563eb] ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>
-                      {item.q}
+                      {faqData[i * 2]}
                     </AccordionTrigger>
                     <AccordionContent className={`px-6 pb-4 text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
-                      {item.a}
+                      {faqData[i * 2 + 1]}
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
-              ))}
+                ));
+              })()}
             </Accordion>
           </motion.div>
         </div>
