@@ -117,7 +117,7 @@ export function PortalPage() {
                 <Flag className="w-5 h-5" style={{ color: '#d97706' }} />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                <span style={{ color: '#d97706' }}>Government Vision</span>
+                <span style={{ color: '#d97706' }}>{t('portal.gov.title')}</span>
               </h2>
             </motion.div>
             <motion.p variants={fadeUp} className="text-slate-600 leading-relaxed mb-6">
@@ -147,13 +147,13 @@ export function PortalPage() {
             </motion.div>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-6">
               <button className="quantum-btn-solid px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
-                <ShieldCheck className="w-4 h-4" /> Learn More
+                <ShieldCheck className="w-4 h-4" /> {t('portal.gov.learn')}
               </button>
               <button className="quantum-btn px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 cursor-pointer" style={{ color: '#7c3aed', borderColor: 'rgba(124,58,237,0.2)' }}>
                 <CreditCard className="w-4 h-4" /> QFSpay
               </button>
               <button className="quantum-btn px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
-                <Cpu className="w-4 h-4" /> Technology
+                <Cpu className="w-4 h-4" /> {t('portal.gov.learn')}
               </button>
             </motion.div>
           </motion.div>
@@ -169,10 +169,10 @@ export function PortalPage() {
             style={{ boxShadow: '0 4px 24px rgba(37,99,235,0.06)' }}
           >
             <motion.h2 variants={fadeUp} className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
-              Official Financial Infrastructure of the G20 Nations
+              {t('portal.g20.title')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-slate-500">
-              Supporting the transition to a new era of financial transparency and sovereignty with QFSpay integration
+              {t('portal.g20.desc')}
             </motion.p>
           </motion.div>
         </div>
@@ -193,8 +193,8 @@ export function PortalPage() {
                 <Shield className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label">ABOUT</span>
-                <h2 className="text-xl font-bold text-slate-900">A New Digital Infrastructure for Global Finance</h2>
+                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label">{t('portal.about.label')}</span>
+                <h2 className="text-xl font-bold text-slate-900">{t('portal.about.title')}</h2>
               </div>
             </motion.div>
 
@@ -205,7 +205,7 @@ export function PortalPage() {
             {/* QFS Core Capabilities */}
             <motion.div variants={fadeUp} className="bg-white rounded-2xl p-6 md:p-8 border border-blue-100/50" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.03)' }}>
               <div className="flex items-center gap-3 mb-5 pb-4 border-b border-gray-100">
-                <h3 className="text-lg font-bold text-slate-900" style={{ color: '#2563eb' }}>QFS Core Capabilities</h3>
+                <h3 className="text-lg font-bold text-slate-900" style={{ color: '#2563eb' }}>{t('portal.about.cap.title')}</h3>
               </div>
               <div className="space-y-4">
                 {[
@@ -252,7 +252,7 @@ export function PortalPage() {
                 <CreditCard className="w-5 h-5 text-[#7c3aed]" />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple">PAYMENT SOLUTION</span>
+                <span className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple">{t('portal.pay.label')}</span>
                 <h2 className="text-xl font-bold text-slate-900">{t('portal.card.title')}</h2>
               </div>
             </motion.div>
@@ -261,7 +261,7 @@ export function PortalPage() {
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">The Official Payment Solution</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('portal.pay.subtitle')}</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
                       {t('portal.card.desc')}
                     </p>
@@ -285,7 +285,7 @@ export function PortalPage() {
                     ))}
                   </div>
                   <button className="quantum-btn-solid px-6 py-3 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
-                    <Download className="w-4 h-4" /> Download QFSpay App
+                    <Download className="w-4 h-4" /> {t('portal.pay.download')}
                   </button>
                 </div>
                 <div className="flex justify-center">
@@ -317,15 +317,13 @@ export function PortalPage() {
             className="text-center mb-12"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
-              Technology
+              {t('portal.tech.label')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl font-bold mt-3 mb-4">
-              <span className="gradient-text">QFS Technology</span>
+              <span className="gradient-text">{t('portal.tech.title')}</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-slate-500 max-w-2xl mx-auto">
-              The QFS combines cutting-edge quantum computing with advanced blockchain technology to create
-              a financial system that is secure, efficient, and transparent, with QFSpay as its consumer-facing
-              payment solution.
+              {t('portal.tech.desc')}
             </motion.p>
           </motion.div>
 
@@ -382,15 +380,14 @@ export function PortalPage() {
               </div>
               <div>
                 <span className="text-xs font-mono tracking-widest text-[#d97706]/50 sub-label-amber">
-                  CURRENCIES
+                  {t('portal.currencies')}
                 </span>
                 <h2 className="text-xl font-bold text-slate-900">{t('portal.currencies')}</h2>
               </div>
             </motion.div>
 
             <motion.p variants={fadeUp} className="text-slate-500 mb-8 max-w-3xl leading-relaxed">
-              QFS provides the infrastructure for the following institutional currencies backed by tangible
-              assets and sovereign agreements, all compatible with QFSpay.
+              {t('portal.curr.desc')}
             </motion.p>
 
             <div className="grid sm:grid-cols-2 gap-4">
@@ -451,14 +448,13 @@ export function PortalPage() {
                 <Handshake className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label">PARTNERS</span>
-                <h2 className="text-xl font-bold text-slate-900">Government Partners</h2>
+                <span className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label">{t('portal.part.label')}</span>
+                <h2 className="text-xl font-bold text-slate-900">{t('portal.part.title')}</h2>
               </div>
             </motion.div>
 
             <motion.p variants={fadeUp} className="text-slate-500 mb-8 max-w-3xl leading-relaxed">
-              QFS and QFSpay are developed and maintained through international cooperation between
-              sovereign governments and leading technology institutions.
+              {t('portal.part.desc')}
             </motion.p>
 
             <motion.div
@@ -500,18 +496,17 @@ export function PortalPage() {
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mb-4">
               <span className="gradient-text">QFS & QFSpay</span>{' '}
-              <span className="text-slate-900">are the future of sovereign finance</span>
+              <span className="text-slate-900">{t('portal.cta.title2')}</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-slate-500 max-w-xl mx-auto mb-8 leading-relaxed">
-              Secure, transparent, and efficient financial infrastructure for governments
-              and citizens worldwide.
+              {t('portal.cta.desc')}
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
               <button className="quantum-btn-solid px-8 py-3.5 rounded-xl text-sm font-semibold flex items-center gap-2 cursor-pointer">
-                <ShieldCheck className="w-4 h-4" /> Government Portal Login
+                <ShieldCheck className="w-4 h-4" /> {t('portal.cta.login')}
               </button>
               <button className="quantum-btn px-8 py-3.5 rounded-xl text-sm font-medium flex items-center gap-2 cursor-pointer" style={{ color: '#7c3aed', borderColor: 'rgba(124,58,237,0.2)' }}>
-                <Download className="w-4 h-4" /> Get QFSpay App
+                <Download className="w-4 h-4" /> {t('portal.cta.get')}
               </button>
             </motion.div>
           </motion.div>

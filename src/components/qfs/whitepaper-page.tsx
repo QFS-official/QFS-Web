@@ -430,7 +430,7 @@ function WhitePaperSection({
               </div>
               <div>
                 <span className="text-xs font-mono tracking-widest" style={{ color: isDark ? color : (color + '80') }}>
-                  SECTION {num}
+                  {t('wp.section')} {num}
                 </span>
                 <h2 className={`text-2xl sm:text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{title}</h2>
               </div>

@@ -21,16 +21,17 @@ export function RoadmapPage() {
   const { theme } = useThemeStore();
   const isDark = theme === 'dark';
   const t = useT();
+  const diagnostic = typeof t('road.eco.title1');
 
   const phases = [
     {
       year: '2026',
       phase: 'Phase 1',
-      title: 'Foundation',
+      title: t('road.p1.title'),
       color: '#2563eb',
       icon: <Rocket className="w-5 h-5" />,
       status: 'active' as const,
-      description: 'Building the technological foundations and core products of the QFS ecosystem.',
+      description: t('road.p1.desc'),
       items: [
         'QFS Core infrastructure development',
         'QFS Wallet launch and evolution',
@@ -45,11 +46,11 @@ export function RoadmapPage() {
     {
       year: '2027-2028',
       phase: 'Phase 2',
-      title: 'Expansion',
+      title: t('road.p2.title'),
       color: '#7c3aed',
       icon: <Globe className="w-5 h-5" />,
       status: 'upcoming' as const,
-      description: 'Multichain expansion, new assets and institutional tool development.',
+      description: t('road.p2.desc'),
       items: [
         'Expansion to multiple blockchains',
         'Integration of new digital assets',
@@ -64,11 +65,11 @@ export function RoadmapPage() {
     {
       year: '2029-2030',
       phase: 'Phase 3',
-      title: 'Interoperability',
+      title: t('road.p3.title'),
       color: '#0d9488',
       icon: <Cpu className="w-5 h-5" />,
       status: 'upcoming' as const,
-      description: 'Greater integration between networks, asset tokenization and complete digital financial services.',
+      description: t('road.p3.desc'),
       items: [
         'Advanced blockchain network integration',
         'Real World Asset (RWA) tokenization',
@@ -82,11 +83,11 @@ export function RoadmapPage() {
     {
       year: '2030+',
       phase: 'Phase 4',
-      title: 'Global Digital Finance',
+      title: t('road.p4.title'),
       color: '#db2777',
       icon: <Sparkles className="w-5 h-5" />,
       status: 'future' as const,
-      description: 'Progressive construction of a global, interoperable and accessible digital financial infrastructure.',
+      description: t('road.p4.desc'),
       items: [
         'Global digital financial infrastructure',
         'Full connectivity between networks and assets',
@@ -98,14 +99,14 @@ export function RoadmapPage() {
   ];
 
   const ecoNodes = [
-    { name: 'QFS Core', sub: 'Infrastructure', color: '#2563eb' },
-    { name: 'QFS Wallet', sub: 'Digital Asset Management', color: '#0d9488' },
-    { name: 'QFSPay', sub: 'Digital Payments', color: '#7c3aed' },
-    { name: 'QFS Exchange DEX', sub: 'Decentralized Trading', color: '#db2777' },
-    { name: 'QFS Quantum Cards', sub: 'Digital-to-Physical', color: '#d97706' },
-    { name: 'QFS AI', sub: 'Intelligent Tools', color: '#db2777' },
-    { name: 'QFS Multichain', sub: 'Blockchain Interop', color: '#7c3aed' },
-    { name: 'QFS Financial Services', sub: 'Digital Economy', color: '#2563eb' },
+    { name: 'QFS Core', sub: t('road.node.infra'), color: '#2563eb' },
+    { name: 'QFS Wallet', sub: t('road.node.asset'), color: '#0d9488' },
+    { name: 'QFSPay', sub: t('road.node.payments'), color: '#7c3aed' },
+    { name: 'QFS Exchange DEX', sub: t('road.node.trading'), color: '#db2777' },
+    { name: 'QFS Quantum Cards', sub: t('road.node.d2p'), color: '#d97706' },
+    { name: 'QFS AI', sub: t('road.node.ai'), color: '#db2777' },
+    { name: 'QFS Multichain', sub: t('road.node.interop'), color: '#7c3aed' },
+    { name: 'QFS Financial Services', sub: t('road.node.economy'), color: '#2563eb' },
   ];
 
   return (
@@ -152,7 +153,7 @@ export function RoadmapPage() {
               {t('road.eco.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mt-3">
-              One Ecosystem. <span className="gradient-text">Multiple Services.</span>
+              {diagnostic === 'string' ? t('road.eco.title1') : <span style={{color:'red',fontSize:'9px'}}>DEBUG: key not found</span>} <span className="gradient-text">{t('road.eco.title2')}</span>
             </motion.h2>
           </motion.div>
 
