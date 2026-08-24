@@ -265,6 +265,80 @@ export function HomePagePart2() {
         className="section-divider max-w-5xl mx-auto origin-left"
       />
 
+      {/* ===== FOUNDER MESSAGE ===== */}
+      <section className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+            className={`relative rounded-3xl overflow-hidden border ${isDark ? 'bg-slate-800/90 border-slate-700/50' : 'bg-white border-gray-100'}`}
+            style={{ boxShadow: isDark ? '0 4px 40px rgba(37,99,235,0.1), 0 2px 12px rgba(124,58,237,0.08), 0 16px 48px -8px rgba(0,0,0,0.3)' : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(124,58,237,0.04), 0 16px 48px -8px rgba(0,0,0,0.04)' }}
+          >
+            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed, #d97706)' }} />
+            <div className="grid md:grid-cols-5 gap-0">
+              <motion.div
+                variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } } }}
+                className="md:col-span-2 relative min-h-[360px] md:min-h-[480px]"
+              >
+                <Image
+                  src="/qfs-founder-portrait.png"
+                  alt="QFS Visionary"
+                  fill
+                  className="object-cover object-top"
+                  priority={false}
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10 md:hidden" />
+              </motion.div>
+              <motion.div
+                variants={stagger}
+                className="md:col-span-3 p-8 md:p-12 flex flex-col justify-center"
+              >
+                <motion.div variants={fadeUp} className="flex items-center gap-2 mb-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #2563eb, #7c3aed)' }}>
+                    <Star className="w-4 h-4 text-white" />
+                  </div>
+                  <span className={`text-xs font-mono tracking-widest uppercase ${isDark ? 'text-blue-400/60' : 'text-[#2563eb]/50'}`}>
+                    {t('founder.label')}
+                  </span>
+                </motion.div>
+                <motion.h2 variants={fadeUp} className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight`}>
+                  <span className="gradient-text">{t('founder.title1')}</span>
+                  <br />
+                  <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('founder.title2')}</span>
+                </motion.h2>
+                <motion.div variants={fadeUp} className={`space-y-4 mb-8 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  <p className="text-sm sm:text-base leading-relaxed">{t('founder.p1')}</p>
+                  <p className="text-sm sm:text-base leading-relaxed">{t('founder.p2')}</p>
+                  <p className="text-sm sm:text-base leading-relaxed font-medium" style={{ color: isDark ? '#60a5fa' : '#2563eb' }}>
+                    {t('founder.p3')}
+                  </p>
+                </motion.div>
+                <motion.div variants={fadeUp} className="flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${isDark ? 'bg-blue-500/15 text-blue-400' : 'bg-blue-50 text-[#2563eb]'}`} style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.15)' }}>
+                    Q
+                  </div>
+                  <div>
+                    <div className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('founder.name')}</div>
+                    <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{t('founder.role')}</div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="section-divider max-w-5xl mx-auto origin-left"
+      />
+
       {/* ===== CTA with QFS Coin ===== */}
       <section className="py-24 px-4">
         <motion.div
