@@ -288,113 +288,71 @@ export function HomePagePart2() {
       {/* ===== FOUNDER MESSAGE ===== */}
       <section className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-6">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-80px' }}
-              variants={stagger}
-              className={`relative rounded-3xl overflow-hidden border ${isDark ? 'bg-slate-800/90 border-slate-700/50' : 'bg-white border-gray-100'}`}
-              style={{ boxShadow: isDark ? '0 4px 40px rgba(37,99,235,0.1), 0 2px 12px rgba(124,58,237,0.08), 0 16px 48px -8px rgba(0,0,0,0.3)' : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(124,58,237,0.04), 0 16px 48px -8px rgba(0,0,0,0.04)' }}
-            >
-              <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed, #d97706)' }} />
-              <div className="grid md:grid-cols-5 gap-0">
-                <motion.div
-                  variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } } }}
-                  className="md:col-span-2 relative min-h-[300px] md:min-h-[440px]"
-                >
-                  <Image
-                    src="/qfs-founder-vision.png"
-                    alt="QFS Ecosystem Vision"
-                    fill
-                    className="object-cover object-center"
-                    priority={false}
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10 md:hidden" />
-                </motion.div>
-                <motion.div
-                  variants={stagger}
-                  className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center"
-                >
-                  <motion.div variants={fadeUp} className="flex items-center gap-2 mb-3">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #2563eb, #7c3aed)' }}>
-                      <Star className="w-3.5 h-3.5 text-white" />
-                    </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className={`relative rounded-3xl overflow-hidden ${isDark ? 'ring-1 ring-slate-700/50' : 'ring-1 ring-gray-200/60'}`}
+            style={{
+              boxShadow: isDark
+                ? '0 4px 40px rgba(37,99,235,0.1), 0 2px 12px rgba(124,58,237,0.08), 0 16px 48px -8px rgba(0,0,0,0.35)'
+                : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(124,58,237,0.04), 0 16px 48px -8px rgba(0,0,0,0.05)',
+            }}
+          >
+            <div className="absolute bottom-0 left-0 right-0 h-1 z-20" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed, #d97706)' }} />
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="relative min-h-[400px] md:min-h-[560px]">
+                <Image
+                  src="/qfs-founder-vision.png"
+                  alt="QFS Ecosystem Vision"
+                  fill
+                  className="object-cover object-center"
+                  priority={false}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 z-10 hidden md:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 md:hidden" />
+                <div className="absolute top-4 left-4 z-20">
+                  <div className="px-3 py-1.5 rounded-lg text-[11px] font-medium backdrop-blur-md bg-white/10 text-white/80 border border-white/10">
+                    {t('founder.label')}
+                  </div>
+                </div>
+              </div>
+              <div className={`${isDark ? 'bg-slate-800/95' : 'bg-white/95'} p-8 md:p-12 flex flex-col justify-center relative`}>
+                <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl ${isDark ? 'bg-purple-500/8' : 'bg-purple-100/30'}`} />
+                <div className="relative">
+                  <div className="flex items-center gap-2 mb-5">
+                    <div className="w-1.5 h-8 rounded-full" style={{ background: 'linear-gradient(180deg, #2563eb, #7c3aed)' }} />
                     <span className={`text-[10px] font-mono tracking-widest uppercase ${isDark ? 'text-blue-400/60' : 'text-[#2563eb]/50'}`}>
                       {t('founder.label')}
                     </span>
-                  </motion.div>
-                  <motion.h2 variants={fadeUp} className={`text-xl sm:text-2xl font-bold mb-4 leading-tight`}>
+                  </div>
+                  <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-5 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
                     <span className="gradient-text">{t('founder.title1')}</span>
                     <br />
                     <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('founder.title2')}</span>
-                  </motion.h2>
-                  <motion.div variants={fadeUp} className={`space-y-3 mb-6 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                    <p className="text-xs sm:text-sm leading-relaxed">{t('founder.p1')}</p>
-                    <p className="text-xs sm:text-sm leading-relaxed">{t('founder.p2')}</p>
-                    <p className="text-xs sm:text-sm leading-relaxed font-medium" style={{ color: isDark ? '#60a5fa' : '#2563eb' }}>
+                  </h3>
+                  <div className={`space-y-4 mb-8 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                    <p className="text-sm leading-relaxed">{t('founder.p1')}</p>
+                    <p className="text-sm leading-relaxed">{t('founder.p2')}</p>
+                    <p className="text-sm leading-relaxed font-medium" style={{ color: isDark ? '#a78bfa' : '#7c3aed' }}>
                       {t('founder.p3')}
                     </p>
-                  </motion.div>
-                  <motion.div variants={fadeUp} className="flex items-center gap-3">
-                    <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold ${isDark ? 'bg-blue-500/15 text-blue-400' : 'bg-blue-50 text-[#2563eb]'}`} style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.15)' }}>
+                  </div>
+                  <div className={`flex items-center gap-3 pt-5 border-t ${isDark ? 'border-slate-700/50' : 'border-slate-100'}`}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${isDark ? 'bg-blue-500/15 text-blue-400' : 'bg-blue-50 text-[#2563eb]'}`} style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.15)' }}>
                       Q
                     </div>
                     <div>
-                      <div className={`text-xs font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('founder.name')}</div>
-                      <div className={`text-[10px] ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{t('founder.role')}</div>
+                      <div className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('founder.name')}</div>
+                      <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{t('founder.role')}</div>
                     </div>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-80px' }}
-              variants={stagger}
-              className={`relative rounded-3xl overflow-hidden border ${isDark ? 'bg-slate-800/90 border-slate-700/50' : 'bg-white border-gray-100'}`}
-              style={{ boxShadow: isDark ? '0 4px 40px rgba(37,99,235,0.1), 0 2px 12px rgba(212,175,55,0.08), 0 16px 48px -8px rgba(0,0,0,0.3)' : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(212,175,55,0.04), 0 16px 48px -8px rgba(0,0,0,0.04)' }}
-            >
-              <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, #d97706, #2563eb, #7c3aed)' }} />
-              <div className="p-6 md:p-8 flex flex-col justify-center min-h-[300px] md:min-h-[440px] relative">
-                <div className={`absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl ${isDark ? 'bg-amber-500/8' : 'bg-amber-100/30'}`} />
-                <div className="relative">
-                  <motion.div variants={fadeUp} className="flex items-center gap-2 mb-3">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d97706, #2563eb)' }}>
-                      <Building2 className="w-3.5 h-3.5 text-white" />
-                    </div>
-                    <span className={`text-[10px] font-mono tracking-widest uppercase ${isDark ? 'text-amber-400/60' : 'text-[#d97706]/50'}`}>
-                      {t('founder.label')}
-                    </span>
-                  </motion.div>
-                  <motion.h2 variants={fadeUp} className={`text-xl sm:text-2xl font-bold mb-4 leading-tight`}>
-                    <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('founder2.title1')}:</span>
-                    <br />
-                    <span className="gradient-text">{t('founder2.title2')}</span>
-                  </motion.h2>
-                  <motion.div variants={fadeUp} className={`space-y-3 mb-6 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                    <p className="text-xs sm:text-sm leading-relaxed">{t('founder2.p1')}</p>
-                    <p className="text-xs sm:text-sm leading-relaxed">{t('founder2.p2')}</p>
-                    <p className="text-xs sm:text-sm leading-relaxed font-medium" style={{ color: isDark ? '#fbbf24' : '#d97706' }}>
-                      {t('founder2.p3')}
-                    </p>
-                  </motion.div>
-                  <motion.div variants={fadeUp} className="flex items-center gap-3">
-                    <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold ${isDark ? 'bg-amber-500/15 text-amber-400' : 'bg-amber-50 text-[#d97706]'}`} style={{ boxShadow: '0 2px 8px rgba(217,119,6,0.15)' }}>
-                      Q
-                    </div>
-                    <div>
-                      <div className={`text-xs font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('founder2.name')}</div>
-                      <div className={`text-[10px] ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{t('founder2.role')}</div>
-                    </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
