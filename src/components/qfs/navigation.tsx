@@ -4,7 +4,7 @@ import { usePageStore } from '@/store/page-store';
 import { useThemeStore } from '@/store/theme-store';
 import { useLangStore, useT, type Lang } from '@/store/lang-store';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe } from 'lucide-react';
+import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -16,6 +16,7 @@ export function Navigation() {
   const { lang, setLang } = useLangStore();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [communityOpen, setCommunityOpen] = useState(false);
 
   const handleNav = (page: PageType) => {
     setCurrentPage(page);
@@ -254,13 +255,79 @@ export function Navigation() {
           >
             {t('nav.explore')}
           </motion.button>
-          <motion.button
-            whileHover={{ y: -1 }}
-            whileTap={{ y: 0 }}
-            className="quantum-btn-solid px-4 py-2 rounded-xl text-sm cursor-pointer"
-          >
-            {t('nav.join')}
-          </motion.button>
+          <div className="relative">
+            <motion.button
+              onClick={() => setCommunityOpen(!communityOpen)}
+              whileHover={{ y: -1 }}
+              whileTap={{ y: 0 }}
+              className="quantum-btn-solid px-4 py-2 rounded-xl text-sm cursor-pointer flex items-center gap-1.5"
+            >
+              {t('nav.join')}
+              <motion.span
+                animate={{ rotate: communityOpen ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-3.5 h-3.5" />
+              </motion.span>
+            </motion.button>
+
+            <AnimatePresence>
+              {communityOpen && (
+                <>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 z-40"
+                    onClick={() => setCommunityOpen(false)}
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className={`absolute right-0 top-full mt-2 rounded-xl overflow-hidden z-50 border min-w-[180px] ${
+                      theme === 'dark'
+                        ? 'bg-slate-800 border-slate-700 shadow-2xl shadow-black/50'
+                        : 'bg-white border-gray-100 shadow-xl shadow-blue-500/5'
+                    }`}
+                  >
+                    <a
+                      href="https://t.me/QFS_Oficial"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                        theme === 'dark'
+                          ? 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                          : 'text-slate-600 hover:bg-gray-50 hover:text-slate-900'
+                      }`}
+                      onClick={() => setCommunityOpen(false)}
+                    >
+                      <svg className="w-5 h-5 text-sky-400" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                      <span className="font-medium">{t('nav.community.telegram')}</span>
+                      <svg className="w-3.5 h-3.5 ml-auto opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <div className={`h-px ${theme === 'dark' ? 'bg-slate-700/60' : 'bg-gray-100'}`} />
+                    <a
+                      href="https://x.com/QFS_Pay"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                        theme === 'dark'
+                          ? 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                          : 'text-slate-600 hover:bg-gray-50 hover:text-slate-900'
+                      }`}
+                      onClick={() => setCommunityOpen(false)}
+                    >
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                      <span className="font-medium">{t('nav.community.x')}</span>
+                      <svg className="w-3.5 h-3.5 ml-auto opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Mobile: Theme + Lang + Hamburger */}
@@ -339,9 +406,34 @@ export function Navigation() {
                 >
                   {t('nav.explore')}
                 </button>
-                <button className="quantum-btn-solid px-4 py-3 rounded-xl text-sm text-center cursor-pointer">
-                  {t('nav.join')}
-                </button>
+                <div className={`flex flex-col gap-1 rounded-xl overflow-hidden border ${theme === 'dark' ? 'border-slate-700' : 'border-gray-100'}`}>
+                  <a
+                    href="https://t.me/QFS_Oficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                      theme === 'dark'
+                        ? 'text-slate-300 hover:bg-slate-800'
+                        : 'text-slate-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    <svg className="w-5 h-5 text-sky-400" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    <span className="font-medium">{t('nav.community.telegram')}</span>
+                  </a>
+                  <a
+                    href="https://x.com/QFS_Pay"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                      theme === 'dark'
+                        ? 'text-slate-300 hover:bg-slate-800'
+                        : 'text-slate-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <span className="font-medium">{t('nav.community.x')}</span>
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
