@@ -21,3 +21,28 @@ Stage Summary:
 - CSS approach handles 90% of cases globally without touching component JSX
 - Critical elements (section badges, boxShadow) use inline isDark conditionals
 - Commit 41dfd2f pushed to QFS-official/QFS-Web
+
+---
+Task ID: 1
+Agent: main
+Task: Fix all visible programming text (translation keys showing as raw text) across all QFSpay pages
+
+Work Log:
+- Diagnosed: syntax error in lang-store.ts (double comma `},,`) broke the ENTIRE translation system
+- Found 14 missing translation keys: all.gcrm.desc, all.arab.desc, all.gov.desc, hero.title1, hero.title2, hero.explore_btn, pil.title1, pil.title2, pil.title3, cta.title1, cta.title2, cta.join_btn, token.alloc.title2, all.title2
+- Fixed syntax error and added all 14 missing keys with 8-language translations
+- Fixed home-page-2.tsx: TokenAllocationBars was using t() without hook in scope
+- Fixed navigation.tsx: connected all nav labels and buttons to useT()
+- Fixed footer.tsx: connected product/resource/alliance lists to useTD()
+- Connected portal-page.tsx: translated header, titles with existing portal.* keys
+- Connected roadmap-page.tsx: translated header, section labels with existing road.* keys
+- Connected whitepaper-page.tsx: translated header, TOC, section titles with existing wp.* keys
+- Verified zero TypeScript errors and successful build
+- Deployed to Vercel: https://qfspay.org
+
+Stage Summary:
+- Root cause was a syntax error breaking all translations (not missing keys per se)
+- 14 missing keys added to lang-store.ts
+- 6 component files updated to use translation system
+- No raw key text visible anymore
+- Deployed successfully to qfspay.org

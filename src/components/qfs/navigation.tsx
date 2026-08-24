@@ -2,7 +2,7 @@
 
 import { usePageStore } from '@/store/page-store';
 import { useThemeStore } from '@/store/theme-store';
-import { useLangStore, type Lang } from '@/store/lang-store';
+import { useLangStore, useT, type Lang } from '@/store/lang-store';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe } from 'lucide-react';
 import { useState } from 'react';
@@ -23,11 +23,13 @@ export function Navigation() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const t = useT();
+
   const navItems: { id: PageType; label: string; icon: React.ReactNode }[] = [
-    { id: 'home', label: 'Home', icon: <Atom className="w-4 h-4" /> },
-    { id: 'portal', label: 'Portal', icon: <Landmark className="w-4 h-4" /> },
-    { id: 'whitepaper', label: 'White Paper', icon: <FileText className="w-4 h-4" /> },
-    { id: 'roadmap', label: 'Roadmap', icon: <Map className="w-4 h-4" /> },
+    { id: 'home', label: t('nav.home'), icon: <Atom className="w-4 h-4" /> },
+    { id: 'portal', label: t('nav.portal'), icon: <Landmark className="w-4 h-4" /> },
+    { id: 'whitepaper', label: t('nav.whitepaper'), icon: <FileText className="w-4 h-4" /> },
+    { id: 'roadmap', label: t('nav.roadmap'), icon: <Map className="w-4 h-4" /> },
   ];
 
   return (
@@ -250,14 +252,14 @@ export function Navigation() {
             whileTap={{ y: 0 }}
             className={`quantum-btn px-4 py-2 rounded-xl text-sm font-medium cursor-pointer ${theme === 'dark' ? 'quantum-btn-dark' : ''}`}
           >
-            Explore QFS
+            {t('nav.explore')}
           </motion.button>
           <motion.button
             whileHover={{ y: -1 }}
             whileTap={{ y: 0 }}
             className="quantum-btn-solid px-4 py-2 rounded-xl text-sm cursor-pointer"
           >
-            Join Community
+            {t('nav.join')}
           </motion.button>
         </div>
 
@@ -335,10 +337,10 @@ export function Navigation() {
                   onClick={() => handleNav('whitepaper')}
                   className={`quantum-btn px-4 py-3 rounded-xl text-sm font-medium text-center cursor-pointer ${theme === 'dark' ? 'quantum-btn-dark' : ''}`}
                 >
-                  Explore QFS
+                  {t('nav.explore')}
                 </button>
                 <button className="quantum-btn-solid px-4 py-3 rounded-xl text-sm text-center cursor-pointer">
-                  Join Community
+                  {t('nav.join')}
                 </button>
               </div>
             </div>

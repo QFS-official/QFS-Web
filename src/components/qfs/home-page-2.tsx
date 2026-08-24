@@ -365,6 +365,7 @@ const allocationData = [
 ];
 
 function TokenAllocationBars({ isDark }: { isDark: boolean }) {
+  const t = useT();
   const td2 = useTD();
   const allocLabels = td2('token.alloc.labels');
   const ref = useRef(null);

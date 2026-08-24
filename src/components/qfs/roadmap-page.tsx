@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useThemeStore } from '@/store/theme-store';
-import { Map, CheckCircle2, Circle, ArrowRight, Rocket, Globe, Cpu, Building2, Sparkles } from 'lucide-react';
+import { useT } from '@/store/lang-store';
+import { Map, CheckCircle2, Circle, ArrowRight, Rocket, Globe, Cpu, Sparkles } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,84 +17,97 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.06 } },
 };
 
-const phases = [
-  {
-    year: '2026',
-    phase: 'Phase 1',
-    title: 'Foundation',
-    color: '#2563eb',
-    icon: <Rocket className="w-5 h-5" />,
-    status: 'active' as const,
-    description: 'Building the technological foundations and core products of the QFS ecosystem.',
-    items: [
-      'QFS Core infrastructure development',
-      'QFS Wallet launch and evolution',
-      'QFSPay system development',
-      'QFS Exchange DEX architecture design',
-      'Multi-layered security implementation',
-      'Initial ecosystem integration',
-      'Initial security audits',
-      'Technical community establishment',
-    ],
-  },
-  {
-    year: '2027-2028',
-    phase: 'Phase 2',
-    title: 'Expansion',
-    color: '#7c3aed',
-    icon: <Globe className="w-5 h-5" />,
-    status: 'upcoming' as const,
-    description: 'Multichain expansion, new assets and institutional tool development.',
-    items: [
-      'Expansion to multiple blockchains',
-      'Integration of new digital assets',
-      'QFS Quantum Cards development',
-      'APIs for enterprises and developers',
-      'Institutional tools (treasury, compliance)',
-      'Initial international expansion',
-      'GCRM Alliance integration',
-      'Collaboration with Al Arab for MENA markets',
-    ],
-  },
-  {
-    year: '2029-2030',
-    phase: 'Phase 3',
-    title: 'Interoperability',
-    color: '#0d9488',
-    icon: <Cpu className="w-5 h-5" />,
-    status: 'upcoming' as const,
-    description: 'Greater integration between networks, asset tokenization and complete digital financial services.',
-    items: [
-      'Advanced blockchain network integration',
-      'Real World Asset (RWA) tokenization',
-      'Complete digital financial services',
-      'Mature institutional infrastructure',
-      'CBDC and government currency integration',
-      'QFS ecosystem expansion',
-      'Operational decentralized governance',
-    ],
-  },
-  {
-    year: '2030+',
-    phase: 'Phase 4',
-    title: 'Global Digital Finance',
-    color: '#db2777',
-    icon: <Sparkles className="w-5 h-5" />,
-    status: 'future' as const,
-    description: 'Progressive construction of a global, interoperable and accessible digital financial infrastructure.',
-    items: [
-      'Global digital financial infrastructure',
-      'Full connectivity between networks and assets',
-      'Massive adoption of QFS services',
-      'Fully integrated digital economy',
-      'Continuous innovation with emerging technologies',
-    ],
-  },
-];
-
 export function RoadmapPage() {
   const { theme } = useThemeStore();
   const isDark = theme === 'dark';
+  const t = useT();
+
+  const phases = [
+    {
+      year: '2026',
+      phase: 'Phase 1',
+      title: 'Foundation',
+      color: '#2563eb',
+      icon: <Rocket className="w-5 h-5" />,
+      status: 'active' as const,
+      description: 'Building the technological foundations and core products of the QFS ecosystem.',
+      items: [
+        'QFS Core infrastructure development',
+        'QFS Wallet launch and evolution',
+        'QFSPay system development',
+        'QFS Exchange DEX architecture design',
+        'Multi-layered security implementation',
+        'Initial ecosystem integration',
+        'Initial security audits',
+        'Technical community establishment',
+      ],
+    },
+    {
+      year: '2027-2028',
+      phase: 'Phase 2',
+      title: 'Expansion',
+      color: '#7c3aed',
+      icon: <Globe className="w-5 h-5" />,
+      status: 'upcoming' as const,
+      description: 'Multichain expansion, new assets and institutional tool development.',
+      items: [
+        'Expansion to multiple blockchains',
+        'Integration of new digital assets',
+        'QFS Quantum Cards development',
+        'APIs for enterprises and developers',
+        'Institutional tools (treasury, compliance)',
+        'Initial international expansion',
+        'GCRM Alliance integration',
+        'Collaboration with Al Arab for MENA markets',
+      ],
+    },
+    {
+      year: '2029-2030',
+      phase: 'Phase 3',
+      title: 'Interoperability',
+      color: '#0d9488',
+      icon: <Cpu className="w-5 h-5" />,
+      status: 'upcoming' as const,
+      description: 'Greater integration between networks, asset tokenization and complete digital financial services.',
+      items: [
+        'Advanced blockchain network integration',
+        'Real World Asset (RWA) tokenization',
+        'Complete digital financial services',
+        'Mature institutional infrastructure',
+        'CBDC and government currency integration',
+        'QFS ecosystem expansion',
+        'Operational decentralized governance',
+      ],
+    },
+    {
+      year: '2030+',
+      phase: 'Phase 4',
+      title: 'Global Digital Finance',
+      color: '#db2777',
+      icon: <Sparkles className="w-5 h-5" />,
+      status: 'future' as const,
+      description: 'Progressive construction of a global, interoperable and accessible digital financial infrastructure.',
+      items: [
+        'Global digital financial infrastructure',
+        'Full connectivity between networks and assets',
+        'Massive adoption of QFS services',
+        'Fully integrated digital economy',
+        'Continuous innovation with emerging technologies',
+      ],
+    },
+  ];
+
+  const ecoNodes = [
+    { name: 'QFS Core', sub: 'Infrastructure', color: '#2563eb' },
+    { name: 'QFS Wallet', sub: 'Digital Asset Management', color: '#0d9488' },
+    { name: 'QFSPay', sub: 'Digital Payments', color: '#7c3aed' },
+    { name: 'QFS Exchange DEX', sub: 'Decentralized Trading', color: '#db2777' },
+    { name: 'QFS Quantum Cards', sub: 'Digital-to-Physical', color: '#d97706' },
+    { name: 'QFS AI', sub: 'Intelligent Tools', color: '#db2777' },
+    { name: 'QFS Multichain', sub: 'Blockchain Interop', color: '#7c3aed' },
+    { name: 'QFS Financial Services', sub: 'Digital Economy', color: '#2563eb' },
+  ];
+
   return (
     <div className="relative z-10">
       {/* Header */}
@@ -106,7 +120,7 @@ export function RoadmapPage() {
             className={`mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest border ${isDark ? 'text-teal-300 border-teal-700/50 bg-teal-500/10' : 'text-[#0d9488] border-teal-200 bg-teal-50/80'}`}
           >
             <Map className="w-3.5 h-3.5" />
-            ROADMAP
+            {t('road.badge')}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -114,7 +128,7 @@ export function RoadmapPage() {
             transition={{ delay: 0.15, duration: 0.7 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
           >
-            <span className="gradient-text">QFS Roadmap</span>
+            <span className="gradient-text">{t('road.title')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -122,8 +136,7 @@ export function RoadmapPage() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="text-slate-500 max-w-2xl mx-auto leading-relaxed"
           >
-            Progressive development of the QFS ecosystem through strategic phases,
-            from the base infrastructure to global digital finance.
+            {t('road.desc')}
           </motion.p>
         </div>
       </section>
@@ -136,7 +149,7 @@ export function RoadmapPage() {
             className="text-center mb-12"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple uppercase">
-              Ecosystem Map
+              {t('road.eco.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mt-3">
               One Ecosystem. <span className="gradient-text">Multiple Services.</span>
@@ -147,16 +160,7 @@ export function RoadmapPage() {
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
             className="flex flex-col items-center gap-3"
           >
-            {[
-              { name: 'QFS Core', sub: 'Infrastructure', color: '#2563eb' },
-              { name: 'QFS Wallet', sub: 'Digital Asset Management', color: '#0d9488' },
-              { name: 'QFSPay', sub: 'Digital Payments', color: '#7c3aed' },
-              { name: 'QFS Exchange DEX', sub: 'Decentralized Trading', color: '#db2777' },
-              { name: 'QFS Quantum Cards', sub: 'Digital-to-Physical', color: '#d97706' },
-              { name: 'QFS AI', sub: 'Intelligent Tools', color: '#db2777' },
-              { name: 'QFS Multichain', sub: 'Blockchain Interop', color: '#7c3aed' },
-              { name: 'QFS Financial Services', sub: 'Digital Economy', color: '#2563eb' },
-            ].map((node, i) => (
+            {ecoNodes.map((node, i) => (
               <motion.div key={node.name} custom={i} variants={fadeUp} className="flex flex-col items-center">
                 <div
                   className="bg-white rounded-xl px-6 py-3 text-center min-w-[220px] border border-gray-100 hover:border-blue-200/50 transition-colors"
@@ -186,10 +190,10 @@ export function RoadmapPage() {
             className="text-center mb-16"
           >
             <motion.span variants={fadeUp} className="text-xs font-mono tracking-widest text-[#2563eb]/50 sub-label uppercase">
-              Timeline
+              {t('road.timeline')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mt-3">
-              Development <span className="gradient-text">Phases</span>
+              {t('road.phases')}
             </motion.h2>
           </motion.div>
 

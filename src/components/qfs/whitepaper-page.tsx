@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useThemeStore } from '@/store/theme-store';
+import { useT } from '@/store/lang-store';
 import {
   FileText, Atom, Shield, Wallet, CreditCard, ArrowRightLeft,
   Bot, Globe, Network, Landmark, Users, Cpu, Layers, Link2,
@@ -21,21 +22,24 @@ const stagger = {
 };
 
 const tocItems = [
-  { num: '01', title: 'Executive Summary', id: 'exec-summary' },
-  { num: '02', title: 'Vision & Architecture', id: 'vision' },
-  { num: '03', title: 'Ecosystem Components', id: 'components' },
-  { num: '04', title: 'Security & Cryptography', id: 'security' },
-  { num: '05', title: 'Multichain Infrastructure', id: 'multichain' },
-  { num: '06', title: 'Artificial Intelligence', id: 'ai' },
-  { num: '07', title: 'Digital Asset Economy', id: 'digital-economy' },
-  { num: '08', title: 'Institutional Solutions', id: 'institutional' },
-  { num: '09', title: 'Strategic Alliances', id: 'alliances' },
-  { num: '10', title: 'NESG Community', id: 'nesg' },
+  { num: '01', id: 'exec-summary' },
+  { num: '02', id: 'vision' },
+  { num: '03', id: 'components' },
+  { num: '04', id: 'security' },
+  { num: '05', id: 'multichain' },
+  { num: '06', id: 'ai' },
+  { num: '07', id: 'digital-economy' },
+  { num: '08', id: 'institutional' },
+  { num: '09', id: 'alliances' },
+  { num: '10', id: 'nesg' },
 ];
 
 export function WhitePaperPage() {
   const { theme } = useThemeStore();
   const isDark = theme === 'dark';
+  const t = useT();
+  const tocSecKeys = ['wp.sec01','wp.sec02','wp.sec03','wp.sec04','wp.sec05','wp.sec06','wp.sec07','wp.sec08','wp.sec09','wp.sec10'];
+
   return (
     <div className="relative z-10">
       {/* Header */}
@@ -48,7 +52,7 @@ export function WhitePaperPage() {
             className={`mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest border ${isDark ? 'text-violet-300 border-violet-700/50 bg-violet-500/10' : 'text-[#7c3aed] border-violet-200 bg-violet-50/80'}`}
           >
             <FileText className="w-3.5 h-3.5" />
-            WHITE PAPER
+            {t('wp.badge')}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +60,7 @@ export function WhitePaperPage() {
             transition={{ delay: 0.15, duration: 0.7 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
           >
-            <span className="gradient-text">QFS White Paper</span>
+            <span className="gradient-text">{t('wp.title')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -64,8 +68,7 @@ export function WhitePaperPage() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className={`max-w-2xl mx-auto leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
           >
-            Technical document describing the vision, architecture and progressive development
-            of the Quantum Financial System.
+            {t('wp.desc')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -77,7 +80,7 @@ export function WhitePaperPage() {
             <span className="text-gray-200">|</span>
             <span>August 2026</span>
             <span className="text-gray-200">|</span>
-            <span>Confidential</span>
+            <span>{t('wp.confidential')}</span>
           </motion.div>
         </div>
       </section>
@@ -94,7 +97,7 @@ export function WhitePaperPage() {
             <motion.span variants={fadeUp} className="text-[#2563eb]">
               <Target className="w-5 h-5" />
             </motion.span>
-            <motion.span variants={fadeUp}>Contents</motion.span>
+            <motion.span variants={fadeUp}>{t('wp.toc')}</motion.span>
           </motion.h2>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
@@ -109,7 +112,7 @@ export function WhitePaperPage() {
                 style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}
               >
                 <span className="text-xs font-mono text-[#2563eb]/50 sub-label w-6">{item.num}</span>
-                <span className={`text-sm transition-colors ${isDark ? 'text-slate-300 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900'}`}>{item.title}</span>
+                <span className={`text-sm transition-colors ${isDark ? 'text-slate-300 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900'}`}>{t(tocSecKeys[i])}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -121,7 +124,7 @@ export function WhitePaperPage() {
       {/* 01 - Executive Summary */}
       <WhitePaperSection
         num="01"
-        title="Executive Summary"
+        title={t('wp.sec01')}
         icon={<Lightbulb className="w-5 h-5" />}
         color="#2563eb"
       >
@@ -162,7 +165,7 @@ export function WhitePaperPage() {
       {/* 02 - Vision */}
       <WhitePaperSection
         num="02"
-        title="Vision & Architecture"
+        title={t('wp.sec02')}
         icon={<Atom className="w-5 h-5" />}
         color="#7c3aed"
       >
@@ -193,7 +196,7 @@ export function WhitePaperPage() {
       {/* 03 - Components */}
       <WhitePaperSection
         num="03"
-        title="Ecosystem Components"
+        title={t('wp.sec03')}
         icon={<Layers className="w-5 h-5" />}
         color="#0d9488"
       >
@@ -227,7 +230,7 @@ export function WhitePaperPage() {
       {/* 04 - Security */}
       <WhitePaperSection
         num="04"
-        title="Security & Cryptography"
+        title={t('wp.sec04')}
         icon={<Shield className="w-5 h-5" />}
         color="#2563eb"
       >
@@ -249,7 +252,7 @@ export function WhitePaperPage() {
       {/* 05 - Multichain */}
       <WhitePaperSection
         num="05"
-        title="Multichain Infrastructure"
+        title={t('wp.sec05')}
         icon={<Network className="w-5 h-5" />}
         color="#d97706"
       >
@@ -271,7 +274,7 @@ export function WhitePaperPage() {
       {/* 06 - AI */}
       <WhitePaperSection
         num="06"
-        title="Artificial Intelligence"
+        title={t('wp.sec06')}
         icon={<Bot className="w-5 h-5" />}
         color="#db2777"
       >
@@ -292,7 +295,7 @@ export function WhitePaperPage() {
       {/* 07 - Digital Economy */}
       <WhitePaperSection
         num="07"
-        title="Digital Asset Economy"
+        title={t('wp.sec07')}
         icon={<Globe className="w-5 h-5" />}
         color="#0d9488"
       >
@@ -313,7 +316,7 @@ export function WhitePaperPage() {
       {/* 08 - Institutional */}
       <WhitePaperSection
         num="08"
-        title="Institutional Solutions"
+        title={t('wp.sec08')}
         icon={<Landmark className="w-5 h-5" />}
         color="#7c3aed"
       >
@@ -333,7 +336,7 @@ export function WhitePaperPage() {
       {/* 09 - Alliances */}
       <WhitePaperSection
         num="09"
-        title="Strategic Alliances"
+        title={t('wp.sec09')}
         icon={<Link2 className="w-5 h-5" />}
         color="#d97706"
       >
@@ -371,7 +374,7 @@ export function WhitePaperPage() {
       {/* 10 - NESG */}
       <WhitePaperSection
         num="10"
-        title="NESG Community"
+        title={t('wp.sec10')}
         icon={<Users className="w-5 h-5" />}
         color="#db2777"
         isLast

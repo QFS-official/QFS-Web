@@ -2,7 +2,7 @@
 
 import { Atom } from 'lucide-react';
 import { useThemeStore } from '@/store/theme-store';
-import { useT } from '@/store/lang-store';
+import { useT, useTD } from '@/store/lang-store';
 
 const socials = [
   { name: 'X', href: 'https://x.com/QFS_Pay', svg: <svg viewBox='0 0 24 24' fill='currentColor' className='w-[18px] h-[18px]'><path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' /></svg> },
@@ -20,7 +20,11 @@ const socials = [
 export function Footer() {
   const { theme } = useThemeStore();
   const t = useT();
+  const td = useTD();
   const isDark = theme === 'dark';
+  const products = td('foot.products.list');
+  const resources = td('foot.resources.list');
+  const alliances = td('foot.alliances.list');
 
   return (
     <footer className={`relative z-10 border-t backdrop-blur-xl ${isDark ? 'border-slate-800 bg-slate-900/80' : 'border-gray-100 bg-white/80'}`}>
@@ -48,8 +52,8 @@ export function Footer() {
               {t('foot.products')}
             </h4>
             <div className='space-y-2.5'>
-              {['QFS Wallet', 'QFSPay', 'QFS Exchange DEX', 'QFS Quantum Cards', 'QFS AI'].map((item) => (
-                <div key={item} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
+              {products.map((item: string, i: number) => (
+                <div key={i} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
                   {item}
                 </div>
               ))}
@@ -62,8 +66,8 @@ export function Footer() {
               {t('foot.resources')}
             </h4>
             <div className='space-y-2.5'>
-              {['White Paper', 'Roadmap', 'Technical Documentation', 'APIs', 'NESG Community'].map((item) => (
-                <div key={item} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
+              {resources.map((item: string, i: number) => (
+                <div key={i} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
                   {item}
                 </div>
               ))}
@@ -76,8 +80,8 @@ export function Footer() {
               {t('foot.alliances')}
             </h4>
             <div className='space-y-2.5'>
-              {['GCRM Alliance', 'Al Arab', 'Government Currencies', 'CBDCs', 'Global Network'].map((item) => (
-                <div key={item} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
+              {alliances.map((item: string, i: number) => (
+                <div key={i} className={`text-xs transition-colors cursor-default ${isDark ? 'text-slate-500 hover:text-blue-400' : 'text-slate-400 hover:text-[#2563eb]'}`}>
                   {item}
                 </div>
               ))}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useThemeStore } from '@/store/theme-store';
+import { useT, useTD } from '@/store/lang-store';
 import {
   Landmark, Shield, Globe, Zap, Lock, GitBranch, CreditCard,
   Coins, Handshake, ArrowRight, ExternalLink, ShieldCheck,
@@ -20,50 +21,53 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.06 } },
 };
 
-const currencies = [
-  {
-    name: 'QFS Digital Currency',
-    subtitle: 'Quantum Financial System Standard',
-    desc: 'The primary quantum digital currency of the new financial system, backed by sovereign assets and integrated with all national currencies. Fully compatible with QFSpay.',
-    logo: 'https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png',
-    color: '#2563eb',
-  },
-  {
-    name: 'GCRM',
-    subtitle: 'Global Currency Reset → GCRM',
-    desc: 'Migrated from GCR to GCRM. The official currency of the Global Currency Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available on QFSpay.',
-    logo: 'https://gcr.social/images/logo-s2-white.png',
-    logo2: '/gcrm-logo.png',
-    color: '#d97706',
-  },
-  {
-    name: 'Al Arab',
-    subtitle: 'Official Arab Currency',
-    desc: 'The first gold-backed Arab currency, established as a benchmark for sovereign trade between Middle East, Africa and Asia markets.',
-    logo: 'https://alarab.io/images/logo.png',
-    color: '#7c3aed',
-  },
-  {
-    name: 'Sovereign Currencies',
-    subtitle: 'National Digital Currencies',
-    desc: 'All G20 national digital currencies including Digital Dollar, Digital Yuan, Digital Euro and others, fully interoperable through QFS and QFSpay.',
-    logo: '',
-    color: '#0d9488',
-  },
-];
-
-const partners = [
-  { name: 'United States', org: 'Department of the Treasury', desc: 'Leader in quantum encryption protocols', flag: '🇺🇸' },
-  { name: 'China', org: "People's Bank of China", desc: 'Leader in Digital Yuan integration', flag: '🇨🇳' },
-  { name: 'European Union', org: 'European Central Bank', desc: 'Digital Euro development', flag: '🇪🇺' },
-  { name: 'UAE', org: 'Central Bank of the UAE', desc: 'Middle East implementation leader', flag: '🇦🇪' },
-  { name: 'IBM', org: 'Quantum Computing', desc: 'Quantum hardware provider', flag: '' },
-  { name: 'OpenAI', org: 'AI Security', desc: 'AI-powered threat detection', flag: '' },
-];
-
 export function PortalPage() {
   const { theme } = useThemeStore();
   const isDark = theme === 'dark';
+  const t = useT();
+  const td = useTD();
+
+  const currencies = [
+    {
+      name: 'QFS Digital Currency',
+      subtitle: 'Quantum Financial System Standard',
+      desc: 'The primary quantum digital currency of the new financial system, backed by sovereign assets and integrated with all national currencies. Fully compatible with QFSpay.',
+      logo: 'https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png',
+      color: '#2563eb',
+    },
+    {
+      name: 'GCRM',
+      subtitle: 'Global Currency Reset → GCRM',
+      desc: 'Migrated from GCR to GCRM. The official currency of the Global Currency Reset, backed by gold and natural resources. Supported by G20 nations as a new international standard. Available on QFSpay.',
+      logo: 'https://gcr.social/images/logo-s2-white.png',
+      logo2: '/gcrm-logo.png',
+      color: '#d97706',
+    },
+    {
+      name: 'Al Arab',
+      subtitle: 'Official Arab Currency',
+      desc: 'The first gold-backed Arab currency, established as a benchmark for sovereign trade between Middle East, Africa and Asia markets.',
+      logo: 'https://alarab.io/images/logo.png',
+      color: '#7c3aed',
+    },
+    {
+      name: 'Sovereign Currencies',
+      subtitle: 'National Digital Currencies',
+      desc: 'All G20 national digital currencies including Digital Dollar, Digital Yuan, Digital Euro and others, fully interoperable through QFS and QFSpay.',
+      logo: '',
+      color: '#0d9488',
+    },
+  ];
+
+  const partners = [
+    { name: 'United States', org: 'Department of the Treasury', desc: 'Leader in quantum encryption protocols', flag: '🇺🇸' },
+    { name: 'China', org: "People's Bank of China", desc: 'Leader in Digital Yuan integration', flag: '🇨🇳' },
+    { name: 'European Union', org: 'European Central Bank', desc: 'Digital Euro development', flag: '🇪🇺' },
+    { name: 'UAE', org: 'Central Bank of the UAE', desc: 'Middle East implementation leader', flag: '🇦🇪' },
+    { name: 'IBM', org: 'Quantum Computing', desc: 'Quantum hardware provider', flag: '' },
+    { name: 'OpenAI', org: 'AI Security', desc: 'AI-powered threat detection', flag: '' },
+  ];
+
   return (
     <div className="relative z-10">
       {/* Header */}
@@ -76,7 +80,7 @@ export function PortalPage() {
             className={`mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest border ${isDark ? 'text-amber-300 border-amber-700/50 bg-amber-500/10' : 'text-[#d97706] border-amber-200 bg-amber-50/80'}`}
           >
             <Landmark className="w-3.5 h-3.5" />
-            GOVERNMENT PORTAL
+            {t('portal.badge')}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -84,7 +88,7 @@ export function PortalPage() {
             transition={{ delay: 0.15, duration: 0.7 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
           >
-            <span className="gradient-text">Quantum Financial System</span>
+            <span className="gradient-text">{t('portal.title')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -92,7 +96,7 @@ export function PortalPage() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="text-slate-500 max-w-2xl mx-auto leading-relaxed"
           >
-            The official government portal for the next-generation financial infrastructure and QFSpay.
+            {t('portal.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -124,7 +128,7 @@ export function PortalPage() {
             </motion.p>
             <motion.div variants={fadeUp} className="bg-amber-50/50 rounded-xl p-5 border border-amber-100/50">
               <h3 className="text-sm font-semibold mb-3 flex items-center gap-2 text-slate-800" style={{ color: '#d97706' }}>
-                <Key className="w-4 h-4" /> Key Features:
+                <Key className="w-4 h-4" /> {t('portal.features')}
               </h3>
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
@@ -195,9 +199,7 @@ export function PortalPage() {
             </motion.div>
 
             <motion.p variants={fadeUp} className="text-slate-600 leading-relaxed mb-8">
-              Aligned with the vision of NESARA/GESARA economic transformation, the Quantum Financial System (QFS)
-              is presented as a next-generation financial infrastructure designed to support secure, transparent
-              and efficient digital transactions.
+              {t('portal.desc')}
             </motion.p>
 
             {/* QFS Core Capabilities */}
@@ -251,7 +253,7 @@ export function PortalPage() {
               </div>
               <div>
                 <span className="text-xs font-mono tracking-widest text-[#7c3aed]/50 sub-label-purple">PAYMENT SOLUTION</span>
-                <h2 className="text-xl font-bold text-slate-900">QFSpay</h2>
+                <h2 className="text-xl font-bold text-slate-900">{t('portal.card.title')}</h2>
               </div>
             </motion.div>
 
@@ -261,7 +263,7 @@ export function PortalPage() {
                   <div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">The Official Payment Solution</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                      of the Quantum Financial System
+                      {t('portal.card.desc')}
                     </p>
                   </div>
                   <div className="space-y-4">
@@ -382,7 +384,7 @@ export function PortalPage() {
                 <span className="text-xs font-mono tracking-widest text-[#d97706]/50 sub-label-amber">
                   CURRENCIES
                 </span>
-                <h2 className="text-xl font-bold text-slate-900">Supported Sovereign Currencies</h2>
+                <h2 className="text-xl font-bold text-slate-900">{t('portal.currencies')}</h2>
               </div>
             </motion.div>
 
