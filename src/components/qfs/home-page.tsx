@@ -172,46 +172,69 @@ export function HomePage() {
       <section className="py-8 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 40, filter: 'blur(6px)' }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
             className={`relative rounded-3xl overflow-hidden ${theme === 'dark' ? 'ring-1 ring-slate-700/50' : 'ring-1 ring-gray-200/60'}`}
             style={{
               boxShadow: theme === 'dark'
-                ? '0 4px 40px rgba(37,99,235,0.12), 0 2px 12px rgba(124,58,237,0.1), 0 16px 48px -8px rgba(0,0,0,0.4)'
-                : '0 4px 40px rgba(37,99,235,0.08), 0 2px 12px rgba(124,58,237,0.06), 0 16px 48px -8px rgba(0,0,0,0.06)',
+                ? '0 4px 40px rgba(37,99,235,0.1), 0 2px 12px rgba(124,58,237,0.08), 0 16px 48px -8px rgba(0,0,0,0.35)'
+                : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(124,58,237,0.04), 0 16px 48px -8px rgba(0,0,0,0.05)',
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-1 z-20" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed, #db2777, #0d9488)' }} />
-            <div className="relative w-full aspect-[21/9] md:aspect-[3/1]">
-              <Image
-                src="/qfs-office-vision.png"
-                alt="QFS Vision"
-                fill
-                className="object-cover"
-                priority={false}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
-              />
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute bottom-6 left-6 right-6 z-20 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3"
-            >
-              <div>
-                <div className="text-white/60 text-xs font-mono tracking-widest uppercase mb-1">QFS Vision</div>
-                <div className="text-white text-lg sm:text-xl font-bold leading-tight">
-                  {t('vision.banner.title')}
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="relative min-h-[350px] md:min-h-[480px]">
+                <Image
+                  src="/qfs-founder-vision.png"
+                  alt="QFS Vision"
+                  fill
+                  className="object-cover object-center"
+                  priority={false}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 z-10 hidden md:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 md:hidden" />
+                <div className="absolute top-4 left-4 z-20">
+                  <div className="px-3 py-1.5 rounded-lg text-[11px] font-medium backdrop-blur-md bg-white/10 text-white/80 border border-white/10">
+                    {t('founder.label')}
+                  </div>
                 </div>
               </div>
-              <div className={`px-4 py-2 rounded-xl text-xs font-medium backdrop-blur-md ${theme === 'dark' ? 'bg-white/10 text-white/80 border border-white/10' : 'bg-black/20 text-white border border-white/15'}`}>
-                {t('vision.banner.tag')}
+              <div className={`${theme === 'dark' ? 'bg-slate-800/95' : 'bg-white/95'} p-8 md:p-12 flex flex-col justify-center relative`}>
+                <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-100/40'}`} />
+                <div className="relative">
+                  <div className="flex items-center gap-2 mb-5">
+                    <div className="w-1.5 h-8 rounded-full" style={{ background: 'linear-gradient(180deg, #2563eb, #7c3aed)' }} />
+                    <span className={`text-[10px] font-mono tracking-widest uppercase ${theme === 'dark' ? 'text-blue-400/60' : 'text-[#2563eb]/50'}`}>
+                      {t('founder.label')}
+                    </span>
+                  </div>
+                  <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-5 leading-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                    <span className="gradient-text">{t('founder.title1')}</span>
+                    <br />
+                    <span className={theme === 'dark' ? 'text-white' : 'text-slate-900'}>{t('founder.title2')}</span>
+                  </h3>
+                  <div className={`space-y-4 mb-8 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                    <p className="text-sm leading-relaxed">{t('founder.p1')}</p>
+                    <p className="text-sm leading-relaxed">{t('founder.p2')}</p>
+                    <p className="text-sm leading-relaxed font-medium" style={{ color: theme === 'dark' ? '#a78bfa' : '#7c3aed' }}>
+                      {t('founder.p3')}
+                    </p>
+                  </div>
+                  <div className={`flex items-center gap-3 pt-5 border-t ${theme === 'dark' ? 'border-slate-700/50' : 'border-slate-100'}`}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${theme === 'dark' ? 'bg-blue-500/15 text-blue-400' : 'bg-blue-50 text-[#2563eb]'}`} style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.15)' }}>
+                      Q
+                    </div>
+                    <div>
+                      <div className={`text-sm font-semibold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('founder.name')}</div>
+                      <div className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>{t('founder.role')}</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>

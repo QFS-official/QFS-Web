@@ -300,12 +300,12 @@ export function HomePagePart2() {
                 : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(124,58,237,0.04), 0 16px 48px -8px rgba(0,0,0,0.05)',
             }}
           >
-            <div className="absolute bottom-0 left-0 right-0 h-1 z-20" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed, #d97706)' }} />
+            <div className="absolute bottom-0 left-0 right-0 h-1 z-20" style={{ background: 'linear-gradient(90deg, #d97706, #2563eb, #7c3aed)' }} />
             <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative min-h-[400px] md:min-h-[560px]">
+              <div className="relative min-h-[400px] md:min-h-[520px]">
                 <Image
-                  src="/qfs-founder-vision.png"
-                  alt="QFS Ecosystem Vision"
+                  src="/qfs-gcrm-alliance-vertical.png"
+                  alt="QFS Infrastructure"
                   fill
                   className="object-cover object-center"
                   priority={false}
@@ -320,33 +320,33 @@ export function HomePagePart2() {
                 </div>
               </div>
               <div className={`${isDark ? 'bg-slate-800/95' : 'bg-white/95'} p-8 md:p-12 flex flex-col justify-center relative`}>
-                <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl ${isDark ? 'bg-purple-500/8' : 'bg-purple-100/30'}`} />
+                <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl ${isDark ? 'bg-amber-500/8' : 'bg-amber-100/30'}`} />
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-5">
-                    <div className="w-1.5 h-8 rounded-full" style={{ background: 'linear-gradient(180deg, #2563eb, #7c3aed)' }} />
-                    <span className={`text-[10px] font-mono tracking-widest uppercase ${isDark ? 'text-blue-400/60' : 'text-[#2563eb]/50'}`}>
+                    <div className="w-1.5 h-8 rounded-full" style={{ background: 'linear-gradient(180deg, #d97706, #2563eb)' }} />
+                    <span className={`text-[10px] font-mono tracking-widest uppercase ${isDark ? 'text-amber-400/60' : 'text-[#d97706]/50'}`}>
                       {t('founder.label')}
                     </span>
                   </div>
                   <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-5 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
-                    <span className="gradient-text">{t('founder.title1')}</span>
+                    <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('founder2.title1')}:</span>
                     <br />
-                    <span className={isDark ? 'text-white' : 'text-slate-900'}>{t('founder.title2')}</span>
+                    <span className="gradient-text">{t('founder2.title2')}</span>
                   </h3>
                   <div className={`space-y-4 mb-8 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                    <p className="text-sm leading-relaxed">{t('founder.p1')}</p>
-                    <p className="text-sm leading-relaxed">{t('founder.p2')}</p>
-                    <p className="text-sm leading-relaxed font-medium" style={{ color: isDark ? '#a78bfa' : '#7c3aed' }}>
-                      {t('founder.p3')}
+                    <p className="text-sm leading-relaxed">{t('founder2.p1')}</p>
+                    <p className="text-sm leading-relaxed">{t('founder2.p2')}</p>
+                    <p className="text-sm leading-relaxed font-medium" style={{ color: isDark ? '#fbbf24' : '#d97706' }}>
+                      {t('founder2.p3')}
                     </p>
                   </div>
                   <div className={`flex items-center gap-3 pt-5 border-t ${isDark ? 'border-slate-700/50' : 'border-slate-100'}`}>
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${isDark ? 'bg-blue-500/15 text-blue-400' : 'bg-blue-50 text-[#2563eb]'}`} style={{ boxShadow: '0 2px 8px rgba(37,99,235,0.15)' }}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${isDark ? 'bg-amber-500/15 text-amber-400' : 'bg-amber-50 text-[#d97706]'}`} style={{ boxShadow: '0 2px 8px rgba(217,119,6,0.15)' }}>
                       Q
                     </div>
                     <div>
-                      <div className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('founder.name')}</div>
-                      <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{t('founder.role')}</div>
+                      <div className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('founder2.name')}</div>
+                      <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{t('founder2.role')}</div>
                     </div>
                   </div>
                 </div>
