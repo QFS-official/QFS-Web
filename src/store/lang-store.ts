@@ -362,7 +362,6 @@ const td: Record<string, Record<Lang, string[]>> = {
 };
 
 export function useT() {
-  console.log('t type:', typeof t, 'keys count:', Object.keys(t).length, 'has road.eco:', 'road.eco.title1' in t, 'sample:', t['hero.badge']);
   const { lang } = useLangStore();
   return (key: string): string => t[key]?.[lang] ?? key;
 }
