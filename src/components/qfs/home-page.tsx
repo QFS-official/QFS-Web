@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import {
   Atom, Shield, Zap, Eye, Network, Cpu, CreditCard, Wallet,
@@ -155,6 +156,62 @@ export function HomePage() {
             className="flex justify-center lg:justify-end"
           >
             <QFSCoin size={300} />
+          </motion.div>
+        </div>
+      </section>
+
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="section-divider max-w-5xl mx-auto origin-left"
+      />
+
+      {/* ===== VISION BANNER ===== */}
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className={`relative rounded-3xl overflow-hidden ${theme === 'dark' ? 'ring-1 ring-slate-700/50' : 'ring-1 ring-gray-200/60'}`}
+            style={{
+              boxShadow: theme === 'dark'
+                ? '0 4px 40px rgba(37,99,235,0.12), 0 2px 12px rgba(124,58,237,0.1), 0 16px 48px -8px rgba(0,0,0,0.4)'
+                : '0 4px 40px rgba(37,99,235,0.08), 0 2px 12px rgba(124,58,237,0.06), 0 16px 48px -8px rgba(0,0,0,0.06)',
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 z-20" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed, #db2777, #0d9488)' }} />
+            <div className="relative w-full aspect-[21/9] md:aspect-[3/1]">
+              <Image
+                src="/qfs-office-vision.png"
+                alt="QFS Vision"
+                fill
+                className="object-cover"
+                priority={false}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
+              />
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="absolute bottom-6 left-6 right-6 z-20 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3"
+            >
+              <div>
+                <div className="text-white/60 text-xs font-mono tracking-widest uppercase mb-1">QFS Vision</div>
+                <div className="text-white text-lg sm:text-xl font-bold leading-tight">
+                  {t('vision.banner.title')}
+                </div>
+              </div>
+              <div className={`px-4 py-2 rounded-xl text-xs font-medium backdrop-blur-md ${theme === 'dark' ? 'bg-white/10 text-white/80 border border-white/10' : 'bg-black/20 text-white border border-white/15'}`}>
+                {t('vision.banner.tag')}
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

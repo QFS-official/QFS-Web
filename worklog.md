@@ -1,48 +1,18 @@
 ---
 Task ID: 1
-Agent: Super Z (main)
-Task: Fix all subtitle colors for dark mode readability across all QFS website pages
+Agent: Main
+Task: Colocar imagen QFS office vision en el lugar óptimo del sitio web
 
 Work Log:
-- Analyzed uploaded screenshot showing "POR QUÉ QFS" subtitle invisible in dark mode
-- Identified root cause: Tailwind v4 `text-[#color]/50` opacity classes not being overridden by CSS `.dark .sub-label` rules
-- Identified 3 categories of issues: (A) sub-label CSS specificity, (B) static text-slate-* in whitepaper/portal/roadmap, (C) static bg/border colors
-- Strengthened CSS sub-label selectors from `.dark .sub-label` to `html.dark span.sub-label` etc., removed `opacity` property
-- Added comprehensive global CSS rules: text-slate-500→#94a3b8, text-slate-600→#cbd5e1, text-slate-800→#e2e8f0, text-slate-900→#f1f5f9
-- Added CSS rules for bg-white, border-gray-100, bg-blue-50, bg-amber-50, bg-slate-50 in dark mode
-- Added inline isDark conditionals for header badges (whitepaper, portal, roadmap)
-- Added inline isDark conditionals for TOC cards, section headings, boxShadow (whitepaper)
-- Fixed roadmap timeline dot background and card boxShadow for dark mode
-- Removed invalid CSS selectors with `/50` opacity syntax
-- Build verified clean, pushed to GitHub
+- Analicé la imagen subida con VLM: render de oficina corporativa QFS con tarjetas, torniquetes y banners "WELCOME TO THE FUTURE"
+- Leí todos los archivos del proyecto (home-page.tsx, home-page-2.tsx, lang-store.ts, navigation.tsx, footer.tsx, roadmap-page.tsx, whitepaper-page.tsx, portal-page.tsx)
+- Copié la imagen a /public/qfs-office-vision.png
+- Agregué un banner cinematográfico entre el Hero y la sección Ecosystem con overlay de gradiente, barra de colores degradada y caption flotante
+- Agregé claves de traducción `vision.banner.title` y `vision.banner.tag` en los 8 idiomas
+- Corregí error de parsing de JSX (comentarios `{/* */}` causaban problema con Turbopack)
+- Build exitoso y deploy a Vercel (qfspay.org)
 
 Stage Summary:
-- All subtitles, descriptions, headings, and content text now readable in dark mode
-- CSS approach handles 90% of cases globally without touching component JSX
-- Critical elements (section badges, boxShadow) use inline isDark conditionals
-- Commit 41dfd2f pushed to QFS-official/QFS-Web
-
----
-Task ID: 1
-Agent: main
-Task: Fix all visible programming text (translation keys showing as raw text) across all QFSpay pages
-
-Work Log:
-- Diagnosed: syntax error in lang-store.ts (double comma `},,`) broke the ENTIRE translation system
-- Found 14 missing translation keys: all.gcrm.desc, all.arab.desc, all.gov.desc, hero.title1, hero.title2, hero.explore_btn, pil.title1, pil.title2, pil.title3, cta.title1, cta.title2, cta.join_btn, token.alloc.title2, all.title2
-- Fixed syntax error and added all 14 missing keys with 8-language translations
-- Fixed home-page-2.tsx: TokenAllocationBars was using t() without hook in scope
-- Fixed navigation.tsx: connected all nav labels and buttons to useT()
-- Fixed footer.tsx: connected product/resource/alliance lists to useTD()
-- Connected portal-page.tsx: translated header, titles with existing portal.* keys
-- Connected roadmap-page.tsx: translated header, section labels with existing road.* keys
-- Connected whitepaper-page.tsx: translated header, TOC, section titles with existing wp.* keys
-- Verified zero TypeScript errors and successful build
-- Deployed to Vercel: https://qfspay.org
-
-Stage Summary:
-- Root cause was a syntax error breaking all translations (not missing keys per se)
-- 14 missing keys added to lang-store.ts
-- 6 component files updated to use translation system
-- No raw key text visible anymore
-- Deployed successfully to qfspay.org
+- Imagen colocada como banner cinematográfico de ancho completo entre Hero y Ecosystem
+- Traducciones agregadas en 8 idiomas
+- Deploy exitoso: https://qfspay.org
