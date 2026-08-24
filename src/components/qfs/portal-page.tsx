@@ -284,23 +284,79 @@ export function PortalPage() {
                       </div>
                     ))}
                   </div>
-                  <button className="quantum-btn-solid px-6 py-3 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
-                    <Download className="w-4 h-4" /> {t('portal.pay.download')}
-                  </button>
-                </div>
-                <div className="flex justify-center">
-                  <div className="relative">
-                    <div className="bg-white rounded-2xl p-4 border border-gray-100" style={{ boxShadow: '0 4px 24px rgba(124,58,237,0.08)' }}>
-                      <img
-                        src="https://nesgswap.com/wp-content/uploads/2025/06/Tarjeta-QFSpay.png"
-                        alt="QFSpay Card"
-                        className="rounded-xl max-w-full h-auto"
-                        style={{ maxHeight: '360px' }}
-                      />
-                    </div>
-                    <div className="absolute -inset-4 bg-gradient-to-br from-violet-100/30 to-transparent rounded-3xl -z-10 blur-xl" />
+                  <div className="flex flex-wrap gap-3">
+                    <button className="quantum-btn-solid px-6 py-3 rounded-xl text-sm flex items-center gap-2 cursor-pointer">
+                      <Download className="w-4 h-4" /> {t('portal.pay.download')}
+                    </button>
+                    <a
+                      href="https://etherscan.io/address/0x7C670A7EBa354E0d22F0ecBBE7A36BF10dCE305E"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="quantum-btn px-6 py-3 rounded-xl text-sm flex items-center gap-2 no-underline"
+                      style={{ color: '#2563eb', borderColor: 'rgba(37,99,235,0.2)' }}
+                    >
+                      <ExternalLink className="w-4 h-4" /> {t('portal.contract.view')}
+                    </a>
                   </div>
                 </div>
+                <div className="flex flex-col items-center gap-5">
+                  <div className="relative">
+                    <div
+                      className="rounded-2xl p-3"
+                      style={{
+                        background: 'linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,41,59,0.9))',
+                        boxShadow: '0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(37,99,235,0.08), 0 0 120px rgba(124,58,237,0.06), inset 0 1px 0 rgba(255,255,255,0.05)',
+                      }}
+                    >
+                      <img
+                        src="/qfs-card-pro.png"
+                        alt="QFSpay Executive Card"
+                        className="rounded-xl max-w-full h-auto"
+                        style={{ maxHeight: '340px', filter: 'brightness(1.05) contrast(1.02)' }}
+                      />
+                    </div>
+                    <div className="absolute -inset-6 bg-gradient-to-br from-blue-500/10 via-violet-500/5 to-transparent rounded-3xl -z-10 blur-2xl" />
+                  </div>
+                  <a
+                    href="https://etherscan.io/address/0x7C670A7EBa354E0d22F0ecBBE7A36BF10dCE305E"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 px-4 py-2.5 rounded-xl border border-emerald-200/60 bg-emerald-50/50 hover:bg-emerald-50 transition-all cursor-pointer no-underline"
+                    style={{ boxShadow: '0 2px 8px rgba(16,185,129,0.06)' }}
+                  >
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-semibold text-emerald-700">{t('portal.contract.title')}</span>
+                    <svg className="w-3.5 h-3.5 text-emerald-500 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center" style={{ boxShadow: '0 2px 6px rgba(37,99,235,0.08)' }}>
+                      <svg className="w-4 h-4 text-[#2563eb]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-mono tracking-widest text-slate-400 uppercase">{t('portal.contract.label')}</div>
+                      <div className="text-xs font-semibold text-slate-800">{t('portal.contract.address.label')}</div>
+                    </div>
+                  </div>
+                  <a
+                    href="https://etherscan.io/address/0x7C670A7EBa354E0d22F0ecBBE7A36BF10dCE305E"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 border border-slate-100 hover:border-blue-200 transition-all group/copy no-underline"
+                  >
+                    <code className="text-[11px] font-mono text-slate-600 group-hover/copy:text-[#2563eb] transition-colors select-all">
+                      0x7C67...E305E
+                    </code>
+                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover/copy:text-[#2563eb] transition-colors" />
+                  </a>
+                </div>
+                <p className="text-[11px] text-slate-400 mt-2 leading-relaxed max-w-xl">
+                  {t('portal.contract.desc')}
+                </p>
               </div>
             </motion.div>
           </motion.div>
