@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 import { Globe, Building2, Users, Handshake, Star, PieChart } from 'lucide-react';
 import { QFSCoin } from './qfs-coin';
 import { useThemeStore } from '@/store/theme-store';
@@ -75,6 +76,41 @@ export function HomePagePart2() {
             <motion.p variants={fadeUp} className={`${isDark ? 'text-slate-400' : 'text-slate-500'} max-w-2xl mx-auto`}>
               {t('all.desc')}
             </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className={`relative rounded-3xl overflow-hidden mb-12 ${isDark ? 'ring-1 ring-slate-700/50' : 'ring-1 ring-gray-200/60'}`}
+            style={{
+              boxShadow: isDark
+                ? '0 4px 40px rgba(37,99,235,0.1), 0 2px 12px rgba(212,175,55,0.08), 0 16px 48px -8px rgba(0,0,0,0.35)'
+                : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(212,175,55,0.04), 0 16px 48px -8px rgba(0,0,0,0.05)',
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 z-20" style={{ background: 'linear-gradient(90deg, #2563eb, #d4af37, #7c3aed)' }} />
+            <div className="relative w-full aspect-[16/7]">
+              <Image
+                src="/qfs-gcrm-alliance.png"
+                alt="QFS + GCRM Alliance"
+                fill
+                className="object-cover"
+                priority={false}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
+              />
+            </div>
+            <div className="absolute bottom-5 left-6 right-6 z-20 flex items-end justify-between gap-3">
+              <div>
+                <div className="text-white/50 text-[10px] font-mono tracking-widest uppercase">Strategic Alliance</div>
+                <div className="text-white text-base sm:text-lg font-bold">{t('alliance.visual.title')}</div>
+              </div>
+              <div className="px-3 py-1.5 rounded-lg text-[11px] font-medium backdrop-blur-md bg-white/10 text-white/80 border border-white/10">
+                {t('alliance.visual.tag')}
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
