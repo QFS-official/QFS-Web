@@ -115,7 +115,7 @@ export function HomePagePart2() {
                   <div className="flex items-center gap-2 mb-5">
                     <div className="w-1.5 h-8 rounded-full" style={{ background: 'linear-gradient(180deg, #2563eb, #d4af37)' }} />
                     <span className={`text-[10px] font-mono tracking-widest uppercase ${isDark ? 'text-blue-400/60' : 'text-[#2563eb]/50'}`}>
-                      Strategic Alliance
+                      {t('alliance.visual.subtitle')}
                     </span>
                   </div>
                   <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-5 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>

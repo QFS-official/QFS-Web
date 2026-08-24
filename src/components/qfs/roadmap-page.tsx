@@ -21,12 +21,11 @@ export function RoadmapPage() {
   const { theme } = useThemeStore();
   const isDark = theme === 'dark';
   const t = useT();
-  const diagnostic = typeof t('road.eco.title1');
 
   const phases = [
     {
       year: '2026',
-      phase: 'Phase 1',
+      phase: t('road.p1.phase'),
       title: t('road.p1.title'),
       color: '#2563eb',
       icon: <Rocket className="w-5 h-5" />,
@@ -45,7 +44,7 @@ export function RoadmapPage() {
     },
     {
       year: '2027-2028',
-      phase: 'Phase 2',
+      phase: t('road.p2.phase'),
       title: t('road.p2.title'),
       color: '#7c3aed',
       icon: <Globe className="w-5 h-5" />,
@@ -64,7 +63,7 @@ export function RoadmapPage() {
     },
     {
       year: '2029-2030',
-      phase: 'Phase 3',
+      phase: t('road.p3.phase'),
       title: t('road.p3.title'),
       color: '#0d9488',
       icon: <Cpu className="w-5 h-5" />,
@@ -82,7 +81,7 @@ export function RoadmapPage() {
     },
     {
       year: '2030+',
-      phase: 'Phase 4',
+      phase: t('road.p4.phase'),
       title: t('road.p4.title'),
       color: '#db2777',
       icon: <Sparkles className="w-5 h-5" />,
@@ -99,14 +98,14 @@ export function RoadmapPage() {
   ];
 
   const ecoNodes = [
-    { name: 'QFS Core', sub: t('road.node.infra'), color: '#2563eb' },
-    { name: 'QFS Wallet', sub: t('road.node.asset'), color: '#0d9488' },
-    { name: 'QFSPay', sub: t('road.node.payments'), color: '#7c3aed' },
-    { name: 'QFS Exchange DEX', sub: t('road.node.trading'), color: '#db2777' },
-    { name: 'QFS Quantum Cards', sub: t('road.node.d2p'), color: '#d97706' },
-    { name: 'QFS AI', sub: t('road.node.ai'), color: '#db2777' },
-    { name: 'QFS Multichain', sub: t('road.node.interop'), color: '#7c3aed' },
-    { name: 'QFS Financial Services', sub: t('road.node.economy'), color: '#2563eb' },
+    { name: t('road.node.core'), sub: t('road.node.infra'), color: '#2563eb' },
+    { name: t('road.node.wallet'), sub: t('road.node.asset'), color: '#0d9488' },
+    { name: t('road.node.pay'), sub: t('road.node.payments'), color: '#7c3aed' },
+    { name: t('road.node.dex'), sub: t('road.node.trading'), color: '#db2777' },
+    { name: t('road.node.cards'), sub: t('road.node.d2p'), color: '#d97706' },
+    { name: t('road.node.ai'), sub: t('road.node.ai'), color: '#db2777' },
+    { name: t('road.node.multi'), sub: t('road.node.interop'), color: '#7c3aed' },
+    { name: t('road.node.services'), sub: t('road.node.economy'), color: '#2563eb' },
   ];
 
   return (
@@ -153,7 +152,7 @@ export function RoadmapPage() {
               {t('road.eco.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mt-3">
-              {diagnostic === 'string' ? t('road.eco.title1') : <span style={{color:'red',fontSize:'9px'}}>DEBUG: key not found</span>} <span className="gradient-text">{t('road.eco.title2')}</span>
+              {t('road.eco.title1')} <span className="gradient-text">{t('road.eco.title2')}</span>
             </motion.h2>
           </motion.div>
 

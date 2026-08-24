@@ -414,6 +414,7 @@ function WhitePaperSection({
 }) {
   const { theme } = useThemeStore();
   const isDark = theme === 'dark';
+  const t = useT();
   return (
     <>
       <section className="py-16 px-4">

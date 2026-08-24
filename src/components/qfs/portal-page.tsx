@@ -268,10 +268,10 @@ export function PortalPage() {
                   </div>
                   <div className="space-y-4">
                     {[
-                      { icon: <Shield className="w-5 h-5" />, title: 'Quantum Security', desc: 'Military-grade quantum encryption protects every transaction from hacking and fraud.', color: '#2563eb' },
-                      { icon: <Globe className="w-5 h-5" />, title: 'Global Acceptance', desc: 'Accepted by all G20 nations and participating merchants worldwide.', color: '#7c3aed' },
-                      { icon: <Zap className="w-5 h-5" />, title: 'Instant Settlement', desc: 'Transactions complete in quantum time with no banking delays.', color: '#d97706' },
-                      { icon: <ArrowRight className="w-5 h-5" />, title: 'Multi-Currency', desc: 'Supports all QFS-backed currencies with automatic conversion.', color: '#0d9488' },
+                      { icon: <Shield className="w-5 h-5" />, title: t('portal.pay.feat1.title'), desc: t('portal.pay.feat1.desc'), color: '#2563eb' },
+                      { icon: <Globe className="w-5 h-5" />, title: t('portal.pay.feat2.title'), desc: t('portal.pay.feat2.desc'), color: '#7c3aed' },
+                      { icon: <Zap className="w-5 h-5" />, title: t('portal.pay.feat3.title'), desc: t('portal.pay.feat3.desc'), color: '#d97706' },
+                      { icon: <ArrowRight className="w-5 h-5" />, title: t('portal.pay.feat4.title'), desc: t('portal.pay.feat4.desc'), color: '#0d9488' },
                     ].map((feat) => (
                       <div key={feat.title} className="flex items-start gap-4">
                         <div className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center" style={{ background: `${feat.color}0d`, color: feat.color, boxShadow: `0 2px 6px ${feat.color}10` }}>
@@ -388,10 +388,10 @@ export function PortalPage() {
             className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
           >
             {[
-              { icon: <Lock className="w-6 h-6" />, title: 'Quantum Encryption', desc: 'Unbreakable quantum key distribution ensures complete security for all transactions', color: '#2563eb', btn: 'Technical Details' },
-              { icon: <GitBranch className="w-6 h-6" />, title: 'Decentralized Network', desc: 'Distributed across government nodes worldwide with no single point of failure', color: '#7c3aed', btn: 'Network Map' },
-              { icon: <Zap className="w-6 h-6" />, title: 'Instant Settlement', desc: 'Transactions settle in quantum time without traditional banking delays', color: '#d97706', btn: 'Performance Data' },
-              { icon: <Shield className="w-6 h-6" />, title: 'Sovereign Security', desc: 'Government-controlled access with military-grade protection', color: '#0d9488', btn: 'Security Protocols' },
+              { icon: <Lock className="w-6 h-6" />, title: t('portal.tech.card1.title'), desc: t('portal.tech.card1.desc'), color: '#2563eb', btn: '' },
+              { icon: <GitBranch className="w-6 h-6" />, title: t('portal.tech.card2.title'), desc: 'Distributed across government nodes worldwide with no single point of failure', color: '#7c3aed', btn: '' },
+              { icon: <Zap className="w-6 h-6" />, title: t('portal.tech.card3.title'), desc: 'Transactions settle in quantum time without traditional banking delays', color: '#d97706', btn: '' },
+              { icon: <Shield className="w-6 h-6" />, title: t('portal.tech.card4.title'), desc: 'Government-controlled access with military-grade protection', color: '#0d9488', btn: '' },
             ].map((tech, i) => (
               <motion.div
                 key={tech.title}
@@ -406,13 +406,7 @@ export function PortalPage() {
                   {tech.icon}
                 </div>
                 <h3 className="text-slate-900 font-semibold mb-2">{tech.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-4">{tech.desc}</p>
-                <button
-                  className="quantum-btn px-4 py-2 rounded-lg text-xs cursor-pointer"
-                  style={{ color: tech.color, borderColor: `${tech.color}25` }}
-                >
-                  {tech.btn}
-                </button>
+                <p className="text-sm text-slate-500 leading-relaxed">{tech.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -436,7 +430,7 @@ export function PortalPage() {
               </div>
               <div>
                 <span className="text-xs font-mono tracking-widest text-[#d97706]/50 sub-label-amber">
-                  {t('portal.currencies')}
+                  {t('portal.curr.label')}
                 </span>
                 <h2 className="text-xl font-bold text-slate-900">{t('portal.currencies')}</h2>
               </div>
@@ -551,7 +545,7 @@ export function PortalPage() {
               <Landmark className="w-7 h-7 text-[#2563eb]" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mb-4">
-              <span className="gradient-text">QFS & QFSpay</span>{' '}
+              <span className="gradient-text">{t('portal.cta.title1')}</span>{' '}
               <span className="text-slate-900">{t('portal.cta.title2')}</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-slate-500 max-w-xl mx-auto mb-8 leading-relaxed">
