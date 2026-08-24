@@ -90,25 +90,45 @@ export function HomePagePart2() {
                 : '0 4px 40px rgba(37,99,235,0.06), 0 2px 12px rgba(212,175,55,0.04), 0 16px 48px -8px rgba(0,0,0,0.05)',
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-1 z-20" style={{ background: 'linear-gradient(90deg, #2563eb, #d4af37, #7c3aed)' }} />
-            <div className="relative w-full aspect-[16/7]">
-              <Image
-                src="/qfs-gcrm-alliance.png"
-                alt="QFS + GCRM Alliance"
-                fill
-                className="object-cover"
-                priority={false}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
-              />
-            </div>
-            <div className="absolute bottom-5 left-6 right-6 z-20 flex items-end justify-between gap-3">
-              <div>
-                <div className="text-white/50 text-[10px] font-mono tracking-widest uppercase">Strategic Alliance</div>
-                <div className="text-white text-base sm:text-lg font-bold">{t('alliance.visual.title')}</div>
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="relative min-h-[400px] md:min-h-[520px]">
+                <Image
+                  src="/qfs-gcrm-alliance-vertical.png"
+                  alt="QFS + GCRM Alliance"
+                  fill
+                  className="object-cover object-center"
+                  priority={false}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 z-10 hidden md:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 md:hidden" />
+                <div className="absolute top-4 left-4 z-20">
+                  <div className="px-3 py-1.5 rounded-lg text-[11px] font-medium backdrop-blur-md bg-white/10 text-white/80 border border-white/10">
+                    {t('alliance.visual.tag')}
+                  </div>
+                </div>
               </div>
-              <div className="px-3 py-1.5 rounded-lg text-[11px] font-medium backdrop-blur-md bg-white/10 text-white/80 border border-white/10">
-                {t('alliance.visual.tag')}
+              <div className={`${isDark ? 'bg-slate-800/95' : 'bg-white/95'} p-8 md:p-12 flex flex-col justify-center relative`}>
+                <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl ${isDark ? 'bg-blue-500/10' : 'bg-blue-100/40'}`} />
+                <div className="relative">
+                  <div className="flex items-center gap-2 mb-5">
+                    <div className="w-1.5 h-8 rounded-full" style={{ background: 'linear-gradient(180deg, #2563eb, #d4af37)' }} />
+                    <span className={`text-[10px] font-mono tracking-widest uppercase ${isDark ? 'text-blue-400/60' : 'text-[#2563eb]/50'}`}>
+                      Strategic Alliance
+                    </span>
+                  </div>
+                  <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-5 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                    {t('alliance.msg.heading')}
+                  </h3>
+                  <p className={`text-sm leading-relaxed mb-8 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {t('alliance.msg.body')}
+                  </p>
+                  <div className={`${isDark ? 'bg-slate-700/50 border-slate-600/30' : 'bg-slate-50 border-slate-100'} rounded-2xl p-5 border`}>
+                    <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{t('alliance.msg.stat')}</div>
+                    <div className={`text-xs font-medium ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{t('alliance.msg.stat.label')}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
