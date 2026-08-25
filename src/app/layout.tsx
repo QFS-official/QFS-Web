@@ -18,7 +18,28 @@ export const metadata: Metadata = {
   description: "The Next Generation of Digital Finance. Blockchain, AI, Advanced Cryptography, Digital Payments & Decentralized Financial Services.",
   keywords: ["QFS", "Quantum Financial System", "blockchain", "DeFi", "digital finance", "crypto", "wallet", "DEX"],
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>\u269b\ufe0f</text></svg>",
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    og: '/opengraph-image.png',
+  },
+  openGraph: {
+    title: 'QFS Official \u269b\ufe0f Quantum Financial System',
+    description: 'The Next Generation of Digital Finance. Blockchain, AI, Advanced Cryptography, Digital Payments & Decentralized Financial Services.',
+    url: 'https://qfspay.org',
+    siteName: 'QFS Pay',
+    images: [{
+      url: '/opengraph-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'QFS Quantum Financial System',
+    }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'QFS Official \u269b\ufe0f Quantum Financial System',
+    description: 'The Next Generation of Digital Finance. Blockchain, AI, Advanced Cryptography, Digital Payments & Decentralized Financial Services.',
+    images: ['/opengraph-image.png'],
   },
 };
 
