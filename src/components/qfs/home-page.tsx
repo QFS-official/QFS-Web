@@ -105,13 +105,16 @@ export function HomePage() {
               >
                 {t('hero.explore_btn')} <ChevronRight className="w-4 h-4" />
               </motion.button>
-              <motion.button
+              <motion.a
+                href="https://qfswallet.qfspay.org/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
                 className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
               >
                 {t('hero.wallet')}
-              </motion.button>
+              </motion.a>
               <motion.button
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
