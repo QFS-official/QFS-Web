@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://qfspay.org'),
   title: "QFS Official \u269b\ufe0f Quantum Financial System",
   description: "The Next Generation of Digital Finance. Blockchain, AI, Advanced Cryptography, Digital Payments & Decentralized Financial Services.",
   keywords: ["QFS", "Quantum Financial System", "blockchain", "DeFi", "digital finance", "crypto", "wallet", "DEX"],

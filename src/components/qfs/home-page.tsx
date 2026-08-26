@@ -325,7 +325,7 @@ export function HomePage() {
               {t('pil.subtitle')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
-              {t('pil.title1')} <span className="gradient-text">{t('pil.title2')}</span> {t('pil.title3')}
+              <span className="gradient-text">{t('pil.fulltitle')}</span>
             </motion.h2>
             <motion.p variants={fadeUp} className={`max-w-2xl mx-auto ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
               {t('pil.desc')}
