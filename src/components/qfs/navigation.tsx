@@ -4,11 +4,11 @@ import { usePageStore } from '@/store/page-store';
 import { useThemeStore } from '@/store/theme-store';
 import { useLangStore, useT, type Lang } from '@/store/lang-store';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Link2, ExternalLink } from 'lucide-react';
+import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Server, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 
-type PageType = 'home' | 'whitepaper' | 'roadmap' | 'portal';
+type PageType = 'home' | 'whitepaper' | 'roadmap' | 'portal' | 'providers';
 
 export function Navigation() {
   const { currentPage, setCurrentPage } = usePageStore();
@@ -31,6 +31,7 @@ export function Navigation() {
     { id: 'portal', label: t('nav.portal'), icon: <Landmark className="w-4 h-4" /> },
     { id: 'whitepaper', label: t('nav.whitepaper'), icon: <FileText className="w-4 h-4" /> },
     { id: 'roadmap', label: t('nav.roadmap'), icon: <Map className="w-4 h-4" /> },
+    { id: 'providers', label: t('nav.providers'), icon: <Server className="w-4 h-4" /> },
   ];
 
   return (
@@ -136,22 +137,7 @@ export function Navigation() {
               </span>
             </motion.button>
           ))}
-          <motion.a
-            href="https://nesgswap.com/index.php/providers-qfs/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ y: -1 }}
-            whileTap={{ y: 0 }}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
-              theme === 'dark'
-                ? 'text-slate-400 hover:text-white'
-                : 'text-slate-500 hover:text-slate-900'
-            }`}
-          >
-            <Link2 className="w-4 h-4" />
-            {t('nav.providers')}
-            <ExternalLink className="w-3 h-3 opacity-50" />
-          </motion.a>
+
         </div>
 
         {/* Right side: Theme, Lang, CTA */}
@@ -415,20 +401,7 @@ export function Navigation() {
                   {item.label}
                 </motion.button>
               ))}
-              <a
-                href="https://nesgswap.com/index.php/providers-qfs/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  theme === 'dark'
-                    ? 'text-slate-400 hover:text-white hover:bg-slate-800'
-                    : 'text-slate-500 hover:text-slate-900 hover:bg-blue-50/80'
-                }`}
-              >
-                <Link2 className="w-4 h-4" />
-                {t('nav.providers')}
-                <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
-              </a>
+
               <div className={`pt-2 border-t flex flex-col gap-2 ${theme === 'dark' ? 'border-slate-700' : 'border-blue-50'}`}>
                 <button
                   onClick={() => handleNav('whitepaper')}
