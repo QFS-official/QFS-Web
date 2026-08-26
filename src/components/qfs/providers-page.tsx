@@ -6,7 +6,7 @@ import { useT } from '@/store/lang-store';
 import {
   Shield, Globe, Zap, AlertTriangle, Wallet,
   ArrowRight, ExternalLink, Copy, Check,
-  BarChart3, Building2
+  BarChart3, Building2, TrendingUp, Eye
 } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -23,52 +23,70 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.06 } },
 };
 
-const ETH_CONTRACT = '0x7C670A7EBa354E0d22F0ecBBE7A36BF10dCE305E';
+const ETH_CONTRACT = '0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e';
 const BSC_CONTRACT = '0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0';
 
 const wallets = [
   { name: 'NESGswap Wallet', descKey: 'prov.wallet.nesgswap.desc', url: 'https://exchange.nesgswap.org/', logo: 'https://nesgswap.com/wp-content/uploads/2024/04/grok-image-7699e9e9-94b6-47fe-8e36-bde997dc7bd5-removebg-preview-e1773258879156.png', color: '#2563eb' },
   { name: 'QFSMaster Wallet', descKey: 'prov.wallet.qfsmaster.desc', url: '#', logo: 'https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png', color: '#7c3aed' },
-  { name: 'Binance Web3 Wallet', descKey: 'prov.wallet.binance.desc', url: 'https://web3.binance.com/es/token/bsc/0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/270.png', color: '#f0b90b' },
-  { name: 'OKX Wallet', descKey: 'prov.wallet.okx.desc', url: 'https://web3.okx.com/es-la/dex-swap?chain=ethereum,ethereum&token=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee,0x7C670A7EBa354E0d22F0ecBBE7A36BF10dCE305E', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/89.png', color: '#000' },
+  { name: 'Binance Web3 Wallet', descKey: 'prov.wallet.binance.desc', url: 'https://web3.binance.com/es/token/eth/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/270.png', color: '#f0b90b' },
+  { name: 'OKX Wallet', descKey: 'prov.wallet.okx.desc', url: 'https://web3.okx.com/es-la/dex-swap?chain=ethereum,ethereum&token=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee,0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/89.png', color: '#000' },
   { name: 'Trust Wallet', descKey: 'prov.wallet.trust.desc', url: 'https://trustwallet.com/', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png', color: '#3375bb' },
-  { name: 'Bitget Wallet', descKey: 'prov.wallet.bitget.desc', url: 'https://web3.bitget.com/es/swap/eth/0x7C670A7EBa354E0d22F0ecBBE7A36BF10dCE305E', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6444.png', color: '#00f0ff' },
+  { name: 'Bitget Wallet', descKey: 'prov.wallet.bitget.desc', url: 'https://web3.bitget.com/es/swap/eth/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6444.png', color: '#00f0ff' },
   { name: 'MetaMask', descKey: 'prov.wallet.metamask.desc', url: 'https://metamask.io/', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png', color: '#f6851b' },
   { name: 'Coinbase Wallet', descKey: 'prov.wallet.coinbase.desc', url: 'https://cloud.coinbase.com/wallet', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6531.png', color: '#0052ff' },
 ];
 
 const dexEth = [
-  { name: 'Uniswap', descKey: 'prov.dex.uniswap.desc', url: 'https://app.uniswap.org/swap?chain=mainnet&inputCurrency=NATIVE&outputCurrency=0x7C670A7EBa354E0d22F0ecBBE7A36BF10dCE305E', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png', color: '#ff007a' },
-  { name: '1inch', descKey: 'prov.dex.1inch.desc', url: 'https://app.1inch.io/swap?src=1:USDT&dst=1:QFS', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6706.png', color: '#0ebbff' },
+  { name: 'Uniswap', descKey: 'prov.dex.uniswap.desc', url: 'https://app.uniswap.org/swap?chain=mainnet&inputCurrency=NATIVE&outputCurrency=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png', color: '#ff007a' },
+  { name: '1inch', descKey: 'prov.dex.1inch.desc', url: 'https://app.1inch.io/#/1/swap/ETH/QFS', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6706.png', color: '#0ebbff' },
   { name: 'SushiSwap', descKey: 'prov.dex.sushi.desc', url: 'https://www.sushi.com/ethereum/swap?token0=0xdac17f958d2ee523a2206206994597c13d831ec7&token1=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1337.png', color: '#fa52a0' },
-  { name: 'Balancer', descKey: 'prov.dex.balancer.desc', url: 'https://balancer.fi/', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1336.png', color: '#1e1e1e' },
-  { name: 'Curve Finance', descKey: 'prov.dex.curve.desc', url: 'https://curve.fi/', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5964.png', color: '#000' },
-  { name: 'KyberSwap', descKey: 'prov.dex.kyber.desc', url: 'https://kyberswap.com/swap/ethereum/0xdac17f958d2ee523a2206206994597c13d831ec7-to-0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://kyberswap.com/logo-dark.svg', color: '#6147ff' },
+  { name: 'Balancer', descKey: 'prov.dex.balancer.desc', url: 'https://balancer.fi/#/trade/swap?chain=ethereum&tokenIn=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&tokenOut=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1336.png', color: '#1e1e1e' },
+  { name: 'Curve Finance', descKey: 'prov.dex.curve.desc', url: 'https://curve.fi/factory/420', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5964.png', color: '#000' },
+  { name: 'KyberSwap', descKey: 'prov.dex.kyber.desc', url: 'https://kyberswap.com/swap/ethereum/eth-to-0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://kyberswap.com/logo-dark.svg', color: '#6147ff' },
 ];
 
 const dexBsc = [
-  { name: 'PancakeSwap', descKey: 'prov.dex.pancake.desc', url: 'https://pancakeswap.finance/swap?chain=bsc&inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/513.png', color: '#d1884f' },
-  { name: 'BiSwap', descKey: 'prov.dex.biswap.desc', url: 'https://biswap.org/es/swap?inputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0&outputCurrency=0x55d398326f99059fF775485246999027B3197955', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6444.png', color: '#00f0ff' },
-  { name: 'ApeSwap', descKey: 'prov.dex.apeswap.desc', url: 'https://apeswap.finance/', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14965.png', color: '#6fcf97' },
-  { name: 'MDEX', descKey: 'prov.dex.mdex.desc', url: 'https://mdex.com/', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21636.png', color: '#1e5eff' },
-  { name: 'BabySwap', descKey: 'prov.dex.babyswap.desc', url: 'https://babyswap.finance/', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/20396.png', color: '#ff6b6b' },
+  { name: 'PancakeSwap', descKey: 'prov.dex.pancake.desc', url: 'https://pancakeswap.finance/swap?chain=bsc&inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/513.png', color: '#d1884f' },
+  { name: 'BiSwap', descKey: 'prov.dex.biswap.desc', url: 'https://biswap.org/es/swap?inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6444.png', color: '#00f0ff' },
+  { name: 'ApeSwap', descKey: 'prov.dex.apeswap.desc', url: 'https://apeswap.finance/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0&chainId=56', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14965.png', color: '#6fcf97' },
+  { name: 'MDEX', descKey: 'prov.dex.mdex.desc', url: 'https://mdex.com/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21636.png', color: '#1e5eff' },
+  { name: 'BabySwap', descKey: 'prov.dex.babyswap.desc', url: 'https://babyswap.finance/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/20396.png', color: '#ff6b6b' },
 ];
 
 const cexList = [
-  { name: 'Binance', progress: 65, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/270.png', url: 'https://www.binance.com/' },
-  { name: 'Coinbase', progress: 45, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6531.png', url: 'https://www.coinbase.com/' },
+  { name: 'Binance', progress: 65, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/270.png', url: 'https://www.binance.com/en/price/qfs' },
+  { name: 'Coinbase', progress: 45, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6531.png', url: 'https://www.coinbase.com/price/quantum-financial-system' },
   { name: 'Kraken', progress: 40, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/24.png', url: 'https://www.kraken.com/' },
   { name: 'KuCoin', progress: 55, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/311.png', url: 'https://www.kucoin.com/' },
   { name: 'Bybit', progress: 35, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/4157.png', url: 'https://www.bybit.com/' },
   { name: 'Gate.io', progress: 50, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6985.png', url: 'https://www.gate.io/' },
 ];
 
+/* CoinMarketCap & CoinGecko - highlighted section */
+const marketTrackers = [
+  {
+    name: 'CoinMarketCap',
+    descKey: 'prov.cmc.desc',
+    url: 'https://coinmarketcap.com/currencies/quantum-financial-system/',
+    logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+    color: '#3b82f6',
+    badge: 'prov.cmc.badge',
+  },
+  {
+    name: 'CoinGecko',
+    descKey: 'prov.gecko.desc',
+    url: 'https://www.coingecko.com/en/coins/quantum-financial-system',
+    logo: 'https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png',
+    color: '#8dc63f',
+    badge: 'prov.gecko.badge',
+  },
+];
+
 const analyticsList = [
-  { name: 'CoinMarketCap', desc: 'prov.analytics.cmc.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png', url: 'https://coinmarketcap.com/' },
-  { name: 'CoinGecko', desc: 'prov.analytics.gecko.desc', logo: 'https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png', url: 'https://www.coingecko.com/' },
-  { name: 'DexTools', desc: 'prov.analytics.dextools.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/12233.png', url: 'https://www.dextools.io/' },
-  { name: 'DexScreener', desc: 'prov.analytics.dexscreener.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png', url: 'https://dexscreener.com/' },
-  { name: 'DeFiLlama', desc: 'prov.analytics.defillama.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png', url: 'https://defillama.com/' },
+  { name: 'DexTools', desc: 'prov.analytics.dextools.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/12233.png', url: 'https://www.dextools.io/app/en/ethereum/pair-explorer/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
+  { name: 'DexScreener', desc: 'prov.analytics.dexscreener.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png', url: 'https://dexscreener.com/ethereum/token/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
+  { name: 'DeFiLlama', desc: 'prov.analytics.defillama.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png', url: 'https://defillama.com/token/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
   { name: 'Coinpaprika', desc: 'prov.analytics.coinpaprika.desc', logo: 'https://static.wixstatic.com/media/1f3f2b_614e05b6d3e84630b377c85d7ed33137~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cm%20c.png', url: 'https://coinpaprika.com/' },
 ];
 
@@ -232,6 +250,77 @@ export function ProvidersPage() {
         </div>
       </section>
 
+      {/* CoinMarketCap & CoinGecko - Featured Section */}
+      <section className="px-4 py-10">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}
+          >
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: isDark ? 'rgba(59,130,246,0.15)' : 'rgba(59,130,246,0.08)', boxShadow: '0 2px 8px rgba(59,130,246,0.08)' }}>
+                <TrendingUp className="w-5 h-5" style={{ color: '#3b82f6' }} />
+              </div>
+              <div>
+                <span className="text-xs font-mono tracking-widest sub-label" style={{ color: 'rgba(59,130,246,0.5)' }}>TRACKING</span>
+                <h2 className={`text-xl sm:text-2xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('prov.tracking.title')}</h2>
+              </div>
+            </motion.div>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {marketTrackers.map((mt, i) => (
+                <motion.a
+                  key={mt.name}
+                  href={mt.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  custom={i}
+                  variants={fadeUp}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  className={`group relative rounded-2xl p-6 border-2 transition-all duration-300 block ${
+                    isDark
+                      ? 'bg-slate-800/80 border-slate-700/50 hover:border-blue-500/40'
+                      : 'bg-white border-gray-200 hover:border-blue-300'
+                  }`}
+                  style={{
+                    boxShadow: isDark
+                      ? `0 4px 24px ${mt.color}15, 0 2px 8px rgba(0,0,0,0.2)`
+                      : `0 4px 24px ${mt.color}10, 0 2px 8px rgba(37,99,235,0.04)`,
+                  }}
+                >
+                  <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl" style={{ background: `linear-gradient(90deg, ${mt.color}, ${mt.color}88)` }} />
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 overflow-hidden bg-white"
+                      style={{ boxShadow: `0 4px 16px ${mt.color}25` }}
+                    >
+                      <Image src={mt.logo} alt={mt.name} width={44} height={44} className="object-contain" unoptimized />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h3 className={`text-base font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{mt.name}</h3>
+                        <ExternalLink className={`w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity`} style={{ color: mt.color }} />
+                      </div>
+                      <div
+                        className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider"
+                        style={{ background: `${mt.color}15`, color: mt.color }}
+                      >
+                        <Eye className="w-3 h-3" />
+                        {t(mt.badge)}
+                      </div>
+                      <p className={`text-xs mt-2 leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                        {t(mt.descKey)}
+                      </p>
+                      <div className="mt-3 flex items-center gap-1.5 text-xs font-semibold transition-colors" style={{ color: mt.color }}>
+                        {t('prov.visit')} <ArrowRight className="w-3 h-3" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Web3 Wallets */}
       <section className="px-4 py-10">
         <div className="max-w-6xl mx-auto">
@@ -340,7 +429,7 @@ export function ProvidersPage() {
         </div>
       </section>
 
-      {/* Analytics */}
+      {/* Analytics & DeFi Tools */}
       <section className="px-4 py-10 pb-20">
         <div className="max-w-6xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}>
@@ -349,12 +438,12 @@ export function ProvidersPage() {
                 <BarChart3 className="w-5 h-5" style={{ color: '#10b981' }} />
               </div>
               <div>
-                <span className="text-xs font-mono tracking-widest sub-label" style={{ color: 'rgba(16,185,129,0.5)' }}>DATA</span>
-                <h2 className={`text-xl sm:text-2xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('prov.analytics.title')}</h2>
+                <span className="text-xs font-mono tracking-widest sub-label" style={{ color: 'rgba(16,185,129,0.5)' }}>DEFI</span>
+                <h2 className={`text-xl sm:text-2xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('prov.defi.title')}</h2>
               </div>
             </motion.div>
-            <motion.p variants={fadeUp} className={`text-sm mb-6 ml-[52px] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>{t('prov.analytics.desc')}</motion.p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <motion.p variants={fadeUp} className={`text-sm mb-6 ml-[52px] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>{t('prov.defi.desc')}</motion.p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {analyticsList.map((a, i) => (
                 <motion.a key={a.name} href={a.url} target="_blank" rel="noopener noreferrer" custom={i} variants={fadeUp} whileHover={{ y: -3 }}
                   className={`group rounded-2xl p-5 border transition-all duration-300 block ${isDark ? 'bg-slate-800/60 border-slate-700/50 hover:border-emerald-500/30 hover:bg-slate-800/80' : 'bg-white border-gray-100 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-500/5'}`}
