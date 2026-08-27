@@ -37,7 +37,7 @@ export function Footer() {
                 QFS
               </div>
               <div>
-                <div className={`text-sm font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>QFS OFFICIAL</div>
+                <div className={`text-sm font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>QFS Initiative</div>
                 <div className='text-[9px] text-[#2563eb]/40 font-mono tracking-wider'>QUANTUM FINANCIAL SYSTEM</div>
               </div>
             </div>

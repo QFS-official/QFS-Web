@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "qfspay.org\n\nQFS OFFICIAL\nQUANTUM FINANCIAL SYSTEM\nHome Portal White Paper Roadmap Providers\n\nQFS ECOSYSTEM\n\nprov.hero.title\n\nprov.hero.desc\n\nprov.feature.quantum prov.feature.nations prov.feature.int\n\nprov.contracts.title\nprov.contracts.warning",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1787872647,
+  "id": "20260828071725125c0a0645df43af",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20260828071725125c0a0645df43af",
+  "usage": {
+    "completion_tokens": 62,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 667,
+    "prompt_tokens_details": {
+      "cached_tokens": 2
+    },
+    "total_tokens": 729
+  }
+}

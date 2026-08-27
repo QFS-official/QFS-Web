@@ -99,7 +99,7 @@ export function Navigation() {
             </div>
           </motion.div>
           <div className="flex flex-col">
-            <span className={`text-sm font-bold leading-tight tracking-wide transition-colors ${theme === 'dark' ? 'text-white group-hover:text-blue-400' : 'text-slate-900 group-hover:text-[#2563eb]'}`}>QFS OFFICIAL</span>
+            <span className={`text-sm font-bold leading-tight tracking-wide transition-colors ${theme === 'dark' ? 'text-white group-hover:text-blue-400' : 'text-slate-900 group-hover:text-[#2563eb]'}`}>QFS Initiative</span>
             <span className={`text-[10px] font-mono tracking-widest ${theme === 'dark' ? 'text-blue-400/70' : 'text-[#2563eb]/70'}`}>QUANTUM FINANCIAL SYSTEM</span>
           </div>
         </button>
