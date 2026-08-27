@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://coinmarketcap.com/currencies/biswap",
+    "name": "Biswap price today, BSW to USD live price, marketcap",
+    "snippet": "Biswap is up 0.06% in the last 24 hours. The current CoinMarketCap ranking is #2567, with a live market cap of $275,784 USD. It has a circulating supply of ... Read more",
+    "host_name": "coinmarketcap.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/exchanges/biswap",
+    "name": "Biswap v2 trade volume and market listings",
+    "snippet": "Biswap is a decentralized exchange (DEX) enabling users to swap BEP-20 tokens on BNB Chain. The exchange launched in July 2021. Exchanges : 970 Market Cap : $2. ...",
+    "host_name": "coinmarketcap.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/api/documentation",
+    "name": "CoinMarketCap API Documentation",
+    "snippet": "The CoinMarketCap API is built for teams. Response format and IDs Understand response structure, stable IDs, timestamps, and how to bundle requests.",
+    "host_name": "coinmarketcap.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.biswap.org",
+    "name": "Biswap",
+    "snippet": "Buy, sell, earn crypto freely on BNB, Ethereum, Base, and Arbitrum chains. protocol with flexible trading tools and low fees. Market cap $3.77M+ legacy pools",
+    "host_name": "www.biswap.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/api/documentation/pro-api-reference/exchange",
+    "name": "Quotes Latest /v1/exchange/quotes/historical",
+    "snippet": "Returns a paginated list of all active cryptocurrency exchanges by ID . utilize our unique exchange id . The current query limit is 10000.",
+    "host_name": "coinmarketcap.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

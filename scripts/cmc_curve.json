@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://coinmarketcap.com/currencies/curve-dao-token",
+    "name": "Curve DAO Token price CRV #83 - CoinMarketCap",
+    "snippet": "The live Curve DAO Token price today is $0.3286 USD with a 24-hour trading volume of $49374530.12 USD. We update our CRV to USD price in real-time.",
+    "host_name": "coinmarketcap.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/api/documentation",
+    "name": "CoinMarketCap API Documentation",
+    "snippet": "Overview of the CoinMarketCap Pro API, including available data, common use cases, and where to start.",
+    "host_name": "coinmarketcap.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.coinmarketcap.com",
+    "name": "CoinMarketCap: Cryptocurrency Prices, Charts And Market",
+    "snippet": "Top cryptocurrency prices and charts, listed by market capitalization. Free access to current and historic data for Bitcoin and thousands of altcoins.",
+    "host_name": "www.coinmarketcap.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://curve.finance",
+    "name": "Curve.finance",
+    "snippet": "Curve-frontend is a user interface application designed to connect to Curve's deployment of smart contracts. Exchange rate - Trade route",
+    "host_name": "curve.finance",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/cmc-ai/curve-dao-token/latest-updates",
+    "name": "Latest Curve DAO Token (CRV) News Update - CoinMarketCap",
+    "snippet": "This major upgrade transforms Curve from a decentralized exchange into a more comprehensive DeFi stack by adding a native lending market.",
+    "host_name": "coinmarketcap.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

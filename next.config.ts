@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'static.wixstatic.com' },
       { protocol: 'https', hostname: 'kyberswap.com' },
       { protocol: 'https', hostname: 'encrypted-tbn.gstatic.com' },
+      { protocol: 'https', hostname: 'coinmarketcap.com' },
+      { protocol: 'https', hostname: 'static.coinpaprika.com' },
+      { protocol: 'https', hostname: 'cryptologos.cc' },
+      { protocol: 'https', hostname: 'defillama.com' },
     ],
   },
 };

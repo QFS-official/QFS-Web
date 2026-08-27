@@ -33,7 +33,7 @@ const wallets = [
   { name: 'OKX Wallet', descKey: 'prov.wallet.okx.desc', url: 'https://web3.okx.com/es-la/dex-swap?chain=ethereum,ethereum&token=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee,0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/89.png', color: '#000' },
   { name: 'Trust Wallet', descKey: 'prov.wallet.trust.desc', url: 'https://trustwallet.com/', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png', color: '#3375bb' },
   { name: 'Bitget Wallet', descKey: 'prov.wallet.bitget.desc', url: 'https://web3.bitget.com/es/swap/eth/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6444.png', color: '#00f0ff' },
-  { name: 'MetaMask', descKey: 'prov.wallet.metamask.desc', url: 'https://metamask.io/', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png', color: '#f6851b' },
+  { name: 'MetaMask', descKey: 'prov.wallet.metamask.desc', url: 'https://metamask.io/', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg', color: '#f6851b' },
   { name: 'Coinbase Wallet', descKey: 'prov.wallet.coinbase.desc', url: 'https://cloud.coinbase.com/wallet', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6531.png', color: '#0052ff' },
 ];
 
@@ -42,16 +42,16 @@ const dexEth = [
   { name: '1inch', descKey: 'prov.dex.1inch.desc', url: 'https://app.1inch.io/#/1/swap/ETH/QFS', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6706.png', color: '#0ebbff' },
   { name: 'SushiSwap', descKey: 'prov.dex.sushi.desc', url: 'https://www.sushi.com/ethereum/swap?token0=0xdac17f958d2ee523a2206206994597c13d831ec7&token1=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1337.png', color: '#fa52a0' },
   { name: 'Balancer', descKey: 'prov.dex.balancer.desc', url: 'https://balancer.fi/#/trade/swap?chain=ethereum&tokenIn=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&tokenOut=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1336.png', color: '#1e1e1e' },
-  { name: 'Curve Finance', descKey: 'prov.dex.curve.desc', url: 'https://curve.fi/factory/420', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5964.png', color: '#000' },
-  { name: 'KyberSwap', descKey: 'prov.dex.kyber.desc', url: 'https://kyberswap.com/swap/ethereum/eth-to-0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://kyberswap.com/logo-dark.svg', color: '#6147ff' },
+  { name: 'Curve Finance', descKey: 'prov.dex.curve.desc', url: 'https://curve.fi/factory/420', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1063.png', color: '#000' },
+  { name: 'KyberSwap', descKey: 'prov.dex.kyber.desc', url: 'https://kyberswap.com/swap/ethereum/eth-to-0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4008.png', color: '#6147ff' },
 ];
 
 const dexBsc = [
   { name: 'PancakeSwap', descKey: 'prov.dex.pancake.desc', url: 'https://pancakeswap.finance/swap?chain=bsc&inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/513.png', color: '#d1884f' },
-  { name: 'BiSwap', descKey: 'prov.dex.biswap.desc', url: 'https://biswap.org/es/swap?inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6444.png', color: '#00f0ff' },
-  { name: 'ApeSwap', descKey: 'prov.dex.apeswap.desc', url: 'https://apeswap.finance/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0&chainId=56', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14965.png', color: '#6fcf97' },
-  { name: 'MDEX', descKey: 'prov.dex.mdex.desc', url: 'https://mdex.com/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21636.png', color: '#1e5eff' },
-  { name: 'BabySwap', descKey: 'prov.dex.babyswap.desc', url: 'https://babyswap.finance/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/20396.png', color: '#ff6b6b' },
+  { name: 'BiSwap', descKey: 'prov.dex.biswap.desc', url: 'https://biswap.org/es/swap?inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1445.png', color: '#5b6cf7' },
+  { name: 'ApeSwap', descKey: 'prov.dex.apeswap.desc', url: 'https://apeswap.finance/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0&chainId=56', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1281.png', color: '#6fcf97' },
+  { name: 'MDEX', descKey: 'prov.dex.mdex.desc', url: 'https://mdex.com/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1279.png', color: '#1e5eff' },
+  { name: 'BabySwap', descKey: 'prov.dex.babyswap.desc', url: 'https://babyswap.finance/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1395.png', color: '#ff6b6b' },
 ];
 
 const cexList = [
@@ -69,7 +69,7 @@ const marketTrackers = [
     name: 'CoinMarketCap',
     descKey: 'prov.cmc.desc',
     url: 'https://coinmarketcap.com/currencies/quantum-financial-system/',
-    logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+    logo: 'https://coinmarketcap.com/apple-touch-icon.png',
     color: '#3b82f6',
     badge: 'prov.cmc.badge',
   },
@@ -84,10 +84,10 @@ const marketTrackers = [
 ];
 
 const analyticsList = [
-  { name: 'DexTools', desc: 'prov.analytics.dextools.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/12233.png', url: 'https://www.dextools.io/app/en/ethereum/pair-explorer/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
-  { name: 'DexScreener', desc: 'prov.analytics.dexscreener.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png', url: 'https://dexscreener.com/ethereum/token/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
-  { name: 'DeFiLlama', desc: 'prov.analytics.defillama.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png', url: 'https://defillama.com/token/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
-  { name: 'Coinpaprika', desc: 'prov.analytics.coinpaprika.desc', logo: 'https://static.wixstatic.com/media/1f3f2b_614e05b6d3e84630b377c85d7ed33137~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cm%20c.png', url: 'https://coinpaprika.com/' },
+  { name: 'DexTools', desc: 'prov.analytics.dextools.desc', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11901.png', url: 'https://www.dextools.io/app/en/ethereum/pair-explorer/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
+  { name: 'DexScreener', desc: 'prov.analytics.dexscreener.desc', logo: 'https://cryptologos.cc/logos/dexscreener-logo.png', url: 'https://dexscreener.com/ethereum/token/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
+  { name: 'DeFiLlama', desc: 'prov.analytics.defillama.desc', logo: 'https://defillama.com/favicon.ico', url: 'https://defillama.com/token/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e' },
+  { name: 'Coinpaprika', desc: 'prov.analytics.coinpaprika.desc', logo: 'https://static.coinpaprika.com/static/files/bfbdee4a.png', url: 'https://coinpaprika.com/' },
 ];
 
 function CopyButton({ text, isDark }: { text: string; isDark: boolean }) {

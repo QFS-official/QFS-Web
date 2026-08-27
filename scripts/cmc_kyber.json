@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://coinmarketcap.com/currencies/kyber-network-crystal-v2",
+    "name": "Kyber Network Crystal v2 price KNC #595 - CoinMarketCap",
+    "snippet": "The live Kyber Network Crystal v2 price today is $0.1137 USD with a 24-hour trading volume of $2734341.90 USD. We update our KNC to USD price in real-time.",
+    "host_name": "coinmarketcap.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/api/documentation",
+    "name": "CoinMarketCap API Documentation",
+    "snippet": "Find the right API family for prices, history, exchange data, DEX data, and more. Response format and IDs. Understand response structure, stable IDs ...",
+    "host_name": "coinmarketcap.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/exchanges/kyberswap-scroll",
+    "name": "KyberSwap (Scroll) trade volume and market listings | CoinMarketCap",
+    "snippet": "KyberSwap (Scroll) trade volume and market listings. Currency Symbol Price USD 1h Change 24h. Coin USDC/USDT $1. Token PUNK/USDT $15,829.80",
+    "host_name": "coinmarketcap.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/exchanges/kyber-network",
+    "name": "Kyber Network trade volume and market listings - CoinMarketCap",
+    "snippet": "KyberSwapis the best place to trade more than 23,000 tokens on networks at thebest rates, andearn morewith your token assets. Trade now athttps://kyberswap.com ...",
+    "host_name": "coinmarketcap.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://kyberswap.com",
+    "name": "KyberSwap - Swap, Trade & Earn Tokens on Ethereum at the Best Rate",
+    "snippet": "Swap any token at the best rate across chains. An advanced aggregator splits your trade across hundreds of DEXs and liquidity sources for minimal slippage.",
+    "host_name": "kyberswap.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

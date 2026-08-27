@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://coinmarketcap.com/currencies/1inch",
+    "name": "1inch to USD Chart",
+    "snippet": "1inch is up 1.20% in the last 24 hours . The current CoinMarketCap ranking is #158, with a live market cap of $128,056,484 USD. It has a circulating supply of ... Read more",
+    "host_name": "coinmarketcap.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://1inch.com",
+    "name": "1inch | Swap Crypto Tokens at the Best Rates in DeFi",
+    "snippet": "Swap crypto & tokens at the best rates across 13+ chains. The 1inch swap aggregator is your gateway to secure and efficient DeFi.",
+    "host_name": "1inch.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/cmc-ai/1inch/latest-updates",
+    "name": "Latest 1inch (1INCH) News Update",
+    "snippet": "1inch API Ranked Among Top for Businesses (24 August 2026). Overview: An industry analysis for 2026 ranked the best crypto exchange APIs for Web3 businesses. Read more",
+    "host_name": "coinmarketcap.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/academy/article/coinbase-integrates-1inch-api-for-enhanced-token-swaps",
+    "name": "Coinbase Integrates 1inch API for Enhanced Token Swaps",
+    "snippet": "Coinbase will integrate 1inch's Swap API into its mobile application, enabling non-custodial token swaps for approximately 120 million monthly users.",
+    "host_name": "coinmarketcap.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://coinmarketcap.com/api/documentation",
+    "name": "CoinMarketCap API Documentation",
+    "snippet": "Overview of the CoinMarketCap Pro API, including available data, common use cases, and where to start.",
+    "host_name": "coinmarketcap.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]
