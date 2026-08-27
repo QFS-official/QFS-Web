@@ -43,3 +43,24 @@ Stage Summary:
 - Textos corregidos: "Five Fundamental Pillars", "Global Alliances", "Quantum Protection + QFS Security"
 - Community dropdown (Telegram/X) y Smart Contract section ahora visibles en live
 - Todas las traducciones al español funcionando correctamente
+---
+Task ID: 1
+Agent: Main
+Task: Fix translation keys showing as raw text + change official to Initiative
+
+Work Log:
+- Analyzed lang-store.ts: found 4 duplicate keys corrupting the translation object (JS silently overwrites first with second)
+- Fixed road.node.ai duplicate: renamed second instance to road.node.qai (QFS AI node)
+- Updated roadmap-page.tsx to use road.node.qai for the AI node name
+- Removed portal.curr.qfs.name duplicate (line 396, exact copy of line 365)
+- Removed token.alloc.title1 duplicate (line 400, near-copy of line 130)
+- Removed prov.analytics.coinpaprika.desc duplicate (line 456, exact copy of line 444)
+- Changed Official → Initiative in all prov.* keys across 8 languages (prov.contracts.title, prov.wallets.desc, prov.wallet.nesgswap.desc, prov.wallet.qfsmaster.desc, prov.wallet.binance.desc)
+- Verified 0 duplicate keys remain (315 unique keys)
+- Built and deployed to Vercel production successfully
+
+Stage Summary:
+- Root cause: 4 duplicate keys in the t{} translation object caused silent overwrites
+- All duplicates eliminated, translations now resolve correctly
+- Official → Initiative change applied to 5 prov.* keys in all 8 languages
+- Deployed to https://qfspay.org

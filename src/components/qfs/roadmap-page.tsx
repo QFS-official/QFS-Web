@@ -103,7 +103,7 @@ export function RoadmapPage() {
     { name: t('road.node.pay'), sub: t('road.node.payments'), color: '#7c3aed' },
     { name: t('road.node.dex'), sub: t('road.node.trading'), color: '#db2777' },
     { name: t('road.node.cards'), sub: t('road.node.d2p'), color: '#d97706' },
-    { name: t('road.node.ai'), sub: t('road.node.ai'), color: '#db2777' },
+    { name: t('road.node.qai'), sub: t('road.node.ai'), color: '#db2777' },
     { name: t('road.node.multi'), sub: t('road.node.interop'), color: '#7c3aed' },
     { name: t('road.node.services'), sub: t('road.node.economy'), color: '#2563eb' },
   ];
