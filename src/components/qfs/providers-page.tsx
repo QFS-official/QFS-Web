@@ -68,7 +68,7 @@ const marketTrackers = [
   {
     name: 'CoinMarketCap',
     descKey: 'prov.cmc.desc',
-    url: 'https://coinmarketcap.com/currencies/quantum-financial-system/',
+    url: 'https://dex.coinmarketcap.com/es/token/ethereum/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e/',
     logo: 'https://coinmarketcap.com/apple-touch-icon.png',
     color: '#3b82f6',
     badge: 'prov.cmc.badge',
@@ -76,7 +76,7 @@ const marketTrackers = [
   {
     name: 'CoinGecko',
     descKey: 'prov.gecko.desc',
-    url: 'https://www.coingecko.com/en/coins/quantum-financial-system',
+    url: 'https://www.coingecko.com/en/coins/ethereum/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e',
     logo: 'https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png',
     color: '#8dc63f',
     badge: 'prov.gecko.badge',
