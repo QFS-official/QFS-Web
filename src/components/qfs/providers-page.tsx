@@ -28,7 +28,7 @@ const BSC_CONTRACT = '0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0';
 
 const wallets = [
   { name: 'NESGswap Wallet', descKey: 'prov.wallet.nesgswap.desc', url: 'https://exchange.nesgswap.org/', logo: 'https://nesgswap.com/wp-content/uploads/2024/04/grok-image-7699e9e9-94b6-47fe-8e36-bde997dc7bd5-removebg-preview-e1773258879156.png', color: '#2563eb' },
-  { name: 'QFSMaster Wallet', descKey: 'prov.wallet.qfsmaster.desc', url: '#', logo: '/qfs-wallet-logo.png', color: '#7c3aed' },
+  { name: 'QFS Wallet', descKey: 'prov.wallet.qfsmaster.desc', url: '#', logo: '/qfs-wallet-logo.png', color: '#7c3aed' },
   { name: 'Binance Web3 Wallet', descKey: 'prov.wallet.binance.desc', url: 'https://web3.binance.com/es/token/eth/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/270.png', color: '#f0b90b' },
   { name: 'OKX Wallet', descKey: 'prov.wallet.okx.desc', url: 'https://web3.okx.com/es-la/dex-swap?chain=ethereum,ethereum&token=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee,0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/454.png', color: '#000' },
   { name: 'Trust Wallet', descKey: 'prov.wallet.trust.desc', url: 'https://trustwallet.com/', logo: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5ec8df9572d8.png', color: '#3375bb' },
