@@ -222,7 +222,7 @@ export function ProvidersPage() {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-blue-500 to-purple-500" />
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: isDark ? 'rgba(245,158,11,0.15)' : 'rgba(245,158,11,0.1)' }}>
-                <AlertTriangle className="w-5 h-5 text-amber-500" />
+                <Shield className="w-5 h-5 text-amber-500" />
               </div>
               <div>
                 <h2 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{t('prov.contracts.title')}</h2>
