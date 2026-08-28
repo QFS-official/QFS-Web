@@ -295,7 +295,7 @@ export function Navigation() {
                     }`}
                   >
                     <a
-                      href="https://t.me/QFS_Oficial"
+                      href="https://t.me/QFspay_official"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
@@ -411,7 +411,7 @@ export function Navigation() {
                 </button>
                 <div className={`flex flex-col gap-1 rounded-xl overflow-hidden border ${theme === 'dark' ? 'border-slate-700' : 'border-gray-100'}`}>
                   <a
-                    href="https://t.me/QFS_Oficial"
+                    href="https://t.me/QFspay_official"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
