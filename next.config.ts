@@ -14,7 +14,8 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'static.coinpaprika.com' },
       { protocol: 'https', hostname: 'cryptologos.cc' },
       { protocol: 'https', hostname: 'defillama.com' },
-      { protocol: 'https', hostname: 'assets.trustwalletapp.com' },
+      { protocol: 'https', hostname: 'assets-cdn.trustwallet.com' },
+      { protocol: 'https', hostname: 'z-cdn.chatglm.cn' },
     ],
   },
 };
