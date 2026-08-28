@@ -31,10 +31,10 @@ const wallets = [
   { name: 'QFSMaster Wallet', descKey: 'prov.wallet.qfsmaster.desc', url: '#', logo: 'https://nesgswap.com/wp-content/uploads/2025/06/Big-Size-PNG.png', color: '#7c3aed' },
   { name: 'Binance Web3 Wallet', descKey: 'prov.wallet.binance.desc', url: 'https://web3.binance.com/es/token/eth/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/270.png', color: '#f0b90b' },
   { name: 'OKX Wallet', descKey: 'prov.wallet.okx.desc', url: 'https://web3.okx.com/es-la/dex-swap?chain=ethereum,ethereum&token=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee,0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/89.png', color: '#000' },
-  { name: 'Trust Wallet', descKey: 'prov.wallet.trust.desc', url: 'https://trustwallet.com/', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png', color: '#3375bb' },
+  { name: 'Trust Wallet', descKey: 'prov.wallet.trust.desc', url: 'https://trustwallet.com/', logo: 'https://assets.trustwalletapp.com/blockchains/ethereum/info/logo.png', color: '#3375bb' },
   { name: 'Bitget Wallet', descKey: 'prov.wallet.bitget.desc', url: 'https://web3.bitget.com/es/swap/eth/0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6444.png', color: '#00f0ff' },
   { name: 'MetaMask', descKey: 'prov.wallet.metamask.desc', url: 'https://metamask.io/', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg', color: '#f6851b' },
-  { name: 'Coinbase Wallet', descKey: 'prov.wallet.coinbase.desc', url: 'https://cloud.coinbase.com/wallet', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6531.png', color: '#0052ff' },
+  { name: 'Coinbase Wallet', descKey: 'prov.wallet.coinbase.desc', url: 'https://cloud.coinbase.com/wallet', logo: 'https://cryptologos.cc/logos/coinbase-cb-logo.png', color: '#0052ff' },
 ];
 
 const dexEth = [
