@@ -4,7 +4,7 @@ import { usePageStore } from '@/store/page-store';
 import { useThemeStore } from '@/store/theme-store';
 import { useLangStore, useT, type Lang } from '@/store/lang-store';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Server, ExternalLink, BookOpen } from 'lucide-react';
+import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Server, BookOpen } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -17,22 +17,24 @@ export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [communityOpen, setCommunityOpen] = useState(false);
+  const [docMenuOpen, setDocMenuOpen] = useState(false);
 
   const handleNav = (page: PageType) => {
     setCurrentPage(page);
     setMobileOpen(false);
+    setDocMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const t = useT();
+  const isDocActive = currentPage === 'whitepaper' || currentPage === 'documents';
 
+  // Flat nav items (no whitepaper — it has a submenu)
   const navItems: { id: PageType; label: string; icon: React.ReactNode }[] = [
     { id: 'home', label: t('nav.home'), icon: <Atom className="w-4 h-4" /> },
     { id: 'portal', label: t('nav.portal'), icon: <Landmark className="w-4 h-4" /> },
-    { id: 'whitepaper', label: t('nav.whitepaper'), icon: <FileText className="w-4 h-4" /> },
     { id: 'roadmap', label: t('nav.roadmap'), icon: <Map className="w-4 h-4" /> },
     { id: 'providers', label: t('nav.providers'), icon: <Server className="w-4 h-4" /> },
-    { id: 'documents', label: t('nav.documents'), icon: <BookOpen className="w-4 h-4" /> },
   ];
 
   return (
@@ -139,6 +141,103 @@ export function Navigation() {
             </motion.button>
           ))}
 
+          {/* Documentation Dropdown */}
+          <div className="relative">
+            <motion.button
+              onClick={() => setDocMenuOpen(!docMenuOpen)}
+              whileHover={{ y: -1 }}
+              whileTap={{ y: 0 }}
+              className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+                isDocActive
+                  ? 'text-white'
+                  : theme === 'dark'
+                    ? 'text-slate-400 hover:text-white'
+                    : 'text-slate-500 hover:text-slate-900'
+              }`}
+            >
+              {isDocActive && !docMenuOpen && (
+                <motion.div
+                  layoutId="activeNav"
+                  className="absolute inset-0 rounded-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, #2563eb 0%, #3b82f6 40%, #6366f1 100%)',
+                    boxShadow: '0 2px 8px rgba(37,99,235,0.3), 0 4px 16px rgba(37,99,235,0.2), 0 8px 24px rgba(124,58,237,0.15), inset 0 1px 0 rgba(255,255,255,0.2)',
+                  }}
+                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-2">
+                <FileText className="w-4 h-4" />
+                {t('nav.whitepaper')}
+                <motion.span
+                  animate={{ rotate: docMenuOpen ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </motion.span>
+              </span>
+            </motion.button>
+
+            <AnimatePresence>
+              {docMenuOpen && (
+                <>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 z-40"
+                    onClick={() => setDocMenuOpen(false)}
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 rounded-xl overflow-hidden z-50 border min-w-[200px] ${
+                      theme === 'dark'
+                        ? 'bg-slate-800 border-slate-700 shadow-2xl shadow-black/50'
+                        : 'bg-white border-gray-100 shadow-xl shadow-blue-500/5'
+                    }`}
+                  >
+                    <button
+                      onClick={() => handleNav('whitepaper')}
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors text-left cursor-pointer ${
+                        currentPage === 'whitepaper'
+                          ? theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-50 text-[#2563eb]'
+                          : theme === 'dark'
+                            ? 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                            : 'text-slate-600 hover:bg-gray-50 hover:text-slate-900'
+                      }`}
+                    >
+                      <FileText className="w-4 h-4" />
+                      <div>
+                        <div className="font-medium">{t('nav.whitepaper')}</div>
+                        <div className={`text-[10px] mt-0.5 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>{t('nav.wp.desc')}</div>
+                      </div>
+                    </button>
+                    <div className={`h-px ${theme === 'dark' ? 'bg-slate-700/60' : 'bg-gray-100'}`} />
+                    <button
+                      onClick={() => handleNav('documents')}
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors text-left cursor-pointer ${
+                        currentPage === 'documents'
+                          ? theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-50 text-[#2563eb]'
+                          : theme === 'dark'
+                            ? 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                            : 'text-slate-600 hover:bg-gray-50 hover:text-slate-900'
+                      }`}
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      <div>
+                        <div className="font-medium">{t('nav.documents')}</div>
+                        <div className={`text-[10px] mt-0.5 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>{t('nav.doc.desc')}</div>
+                      </div>
+                    </button>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+          </div>
+
         </div>
 
         {/* Right side: Theme, Lang, CTA */}
@@ -219,14 +318,14 @@ export function Navigation() {
                   >
                     {(
                       [
-                        { code: 'en', flag: '🇺🇸', label: 'English' },
-                        { code: 'es', flag: '🇪🇸', label: 'Español' },
-                        { code: 'fr', flag: '🇫🇷', label: 'Français' },
-                        { code: 'pt', flag: '🇵🇹', label: 'Português' },
-                        { code: 'de', flag: '🇩🇪', label: 'Deutsch' },
-                        { code: 'zh', flag: '🇨🇳', label: '中文' },
-                        { code: 'ar', flag: '🇸🇦', label: 'العربية' },
-                        { code: 'th', flag: '🇹🇭', label: 'ไทย' },
+                        { code: 'en', flag: '\u{1F1FA}\u{1F1F8}', label: 'English' },
+                        { code: 'es', flag: '\u{1F1EA}\u{1F1F8}', label: 'Espa\u00f1ol' },
+                        { code: 'fr', flag: '\u{1F1EB}\u{1F1F7}', label: 'Fran\u00e7ais' },
+                        { code: 'pt', flag: '\u{1F1F5}\u{1F1F9}', label: 'Portugu\u00eas' },
+                        { code: 'de', flag: '\u{1F1E9}\u{1F1EA}', label: 'Deutsch' },
+                        { code: 'zh', flag: '\u{1F1E8}\u{1F1F3}', label: '\u4e2d\u6587' },
+                        { code: 'ar', flag: '\u{1F1F8}\u{1F1E6}', label: '\u0627\u0644\u0639\u0631\u0628\u064a\u0629' },
+                        { code: 'th', flag: '\u{1F1F9}\u{1F1ED}', label: '\u0e44\u0e17\u0e22' },
                       ] as const
                     ).map((l) => (
                       <button
@@ -402,6 +501,36 @@ export function Navigation() {
                   {item.label}
                 </motion.button>
               ))}
+
+              {/* Mobile: Documentation Submenu */}
+              <div className={`flex flex-col gap-1 rounded-xl overflow-hidden border ${isDocActive ? (theme === 'dark' ? 'border-blue-500/30' : 'border-blue-200') : (theme === 'dark' ? 'border-slate-700' : 'border-gray-100')}`}>
+                <button
+                  onClick={() => handleNav('whitepaper')}
+                  className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all cursor-pointer ${
+                    currentPage === 'whitepaper'
+                      ? 'text-white bg-gradient-to-r from-[#2563eb] to-[#6366f1]'
+                      : theme === 'dark'
+                        ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+                        : 'text-slate-500 hover:text-slate-900 hover:bg-blue-50/80'
+                  }`}
+                >
+                  <FileText className="w-4 h-4" />
+                  {t('nav.whitepaper')}
+                </button>
+                <button
+                  onClick={() => handleNav('documents')}
+                  className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all cursor-pointer ${
+                    currentPage === 'documents'
+                      ? 'text-white bg-gradient-to-r from-[#2563eb] to-[#6366f1]'
+                      : theme === 'dark'
+                        ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+                        : 'text-slate-500 hover:text-slate-900 hover:bg-blue-50/80'
+                  }`}
+                >
+                  <BookOpen className="w-4 h-4" />
+                  {t('nav.documents')}
+                </button>
+              </div>
 
               <div className={`pt-2 border-t flex flex-col gap-2 ${theme === 'dark' ? 'border-slate-700' : 'border-blue-50'}`}>
                 <button

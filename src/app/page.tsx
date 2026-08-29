@@ -11,6 +11,7 @@ import { WhitePaperPage } from '@/components/qfs/whitepaper-page';
 import { RoadmapPage } from '@/components/qfs/roadmap-page';
 import { PortalPage } from '@/components/qfs/portal-page';
 import { ProvidersPage } from '@/components/qfs/providers-page';
+import { DocumentsPage } from '@/components/qfs/documents-page';
 import { Footer } from '@/components/qfs/footer';
 import { useEffect } from 'react';
 
@@ -96,6 +97,17 @@ export default function Home() {
               exit="exit"
             >
               <ProvidersPage />
+            </motion.div>
+          )}
+          {currentPage === 'documents' && (
+            <motion.div
+              key="documents"
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
+              <DocumentsPage />
             </motion.div>
           )}
         </AnimatePresence>
