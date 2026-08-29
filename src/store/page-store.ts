@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type PageType = "home" | "whitepaper" | "roadmap" | "portal" | "providers";
+type PageType = "home" | "whitepaper" | "roadmap" | "portal" | "providers" | "documents";
 
 interface PageStore {
   currentPage: PageType;
