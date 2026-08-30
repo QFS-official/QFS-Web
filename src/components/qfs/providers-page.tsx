@@ -59,8 +59,8 @@ const cexList = [
   { name: 'Coinbase', progress: 45, logo: '/coinbase-wallet-logo.png', url: 'https://www.coinbase.com/price/quantum-financial-system' },
   { name: 'Kraken', progress: 40, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/24.png', url: 'https://www.kraken.com/' },
   { name: 'KuCoin', progress: 55, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/311.png', url: 'https://www.kucoin.com/' },
-  { name: 'Bybit', progress: 35, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/4157.png', url: 'https://www.bybit.com/' },
-  { name: 'Gate.io', progress: 50, logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6985.png', url: 'https://www.gate.io/' },
+  { name: 'Bybit', progress: 35, logo: '/bybit-logo.png', url: 'https://www.bybit.com/' },
+  { name: 'Gate.io', progress: 50, logo: '/gateio-logo.png', url: 'https://www.gate.io/' },
 ];
 
 /* CoinMarketCap & CoinGecko - highlighted section */
