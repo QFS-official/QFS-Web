@@ -639,31 +639,58 @@ export function HomePage() {
                   visible: { opacity: 1, x: 0, rotateY: 0, transition: { duration: 0.7 } },
                 }}
                 whileHover={{ y: -4, transition: { duration: 0.3 } }}
-                className="glass-card-hover rounded-3xl p-8"
+                className="glass-card-hover rounded-3xl overflow-hidden"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme === 'dark' ? 'bg-amber-500/10' : 'bg-gradient-to-br from-amber-50 to-pink-50'}`}
-                    style={{ boxShadow: '0 4px 12px rgba(217,119,6,0.08)' }}
-                  >
-                    <CreditCard className="w-6 h-6 text-[#d97706]" />
+                <div className="p-8 pb-5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme === 'dark' ? 'bg-amber-500/10' : 'bg-gradient-to-br from-amber-50 to-pink-50'}`}
+                      style={{ boxShadow: '0 4px 12px rgba(217,119,6,0.08)' }}
+                    >
+                      <CreditCard className="w-6 h-6 text-[#d97706]" />
+                    </div>
+                    <div>
+                      <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.cards.title')}</h3>
+                      <p className="text-xs text-[#d97706]/50 sub-label-amber font-mono">{t('prod.cards.subtitle')}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('prod.cards.title')}</h3>
-                    <p className="text-xs text-[#d97706]/50 sub-label-amber font-mono">{t('prod.cards.subtitle')}</p>
+                  <p className={`text-sm mb-4 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {t('prod.cards.desc')}
+                  </p>
+                  <div className={`flex items-center gap-2 text-xs font-mono py-3 flex-wrap ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>
+                    <span className={`px-2.5 py-1 rounded-lg border text-[#2563eb] ${theme === 'dark' ? 'bg-blue-500/10 border-blue-800/50' : 'bg-blue-50 border-blue-100'}`}>{t('prod.cards.wallet')}</span>
+                    <ChevronRight className="w-3 h-3" />
+                    <span className={`px-2.5 py-1 rounded-lg border text-[#7c3aed] ${theme === 'dark' ? 'bg-violet-500/10 border-violet-800/50' : 'bg-violet-50 border-violet-100'}`}>{t('hero.qfspay')}</span>
+                    <ChevronRight className="w-3 h-3" />
+                    <span className={`px-2.5 py-1 rounded-lg border text-[#d97706] ${theme === 'dark' ? 'bg-amber-500/10 border-amber-800/50' : 'bg-amber-50 border-amber-100'}`}>{t('prod.cards.title')}</span>
+                    <ChevronRight className="w-3 h-3" />
+                    <span className={`px-2.5 py-1 rounded-lg border text-[#0d9488] ${theme === 'dark' ? 'bg-teal-500/10 border-teal-800/50' : 'bg-teal-50 border-teal-100'}`}>{t('prod.cards.payments')}</span>
                   </div>
                 </div>
-                <p className={`text-sm mb-4 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
-                  {t('prod.cards.desc')}
-                </p>
-                <div className={`flex items-center gap-2 text-xs font-mono py-3 flex-wrap ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#2563eb] ${theme === 'dark' ? 'bg-blue-500/10 border-blue-800/50' : 'bg-blue-50 border-blue-100'}`}>{t('prod.cards.wallet')}</span>
-                  <ChevronRight className="w-3 h-3" />
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#7c3aed] ${theme === 'dark' ? 'bg-violet-500/10 border-violet-800/50' : 'bg-violet-50 border-violet-100'}`}>{t('hero.qfspay')}</span>
-                  <ChevronRight className="w-3 h-3" />
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#d97706] ${theme === 'dark' ? 'bg-amber-500/10 border-amber-800/50' : 'bg-amber-50 border-amber-100'}`}>{t('prod.cards.title')}</span>
-                  <ChevronRight className="w-3 h-3" />
-                  <span className={`px-2.5 py-1 rounded-lg border text-[#0d9488] ${theme === 'dark' ? 'bg-teal-500/10 border-teal-800/50' : 'bg-teal-50 border-teal-100'}`}>{t('prod.cards.payments')}</span>
+                {/* Q Master Card Image */}
+                <div className="relative w-full px-6 pb-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="relative rounded-2xl overflow-hidden"
+                    style={{
+                      boxShadow: theme === 'dark'
+                        ? '0 8px 40px rgba(217,119,6,0.15), 0 2px 12px rgba(0,0,0,0.3)'
+                        : '0 8px 40px rgba(217,119,6,0.1), 0 2px 12px rgba(0,0,0,0.05)',
+                    }}
+                  >
+                    <Image
+                      src="/qfs-qmaster-card.jpg"
+                      alt="QFSpay Quántica Card - QMaster"
+                      width={800}
+                      height={450}
+                      className="w-full h-auto object-cover rounded-2xl"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
+                  </motion.div>
                 </div>
               </motion.div>
             </motion.div>
