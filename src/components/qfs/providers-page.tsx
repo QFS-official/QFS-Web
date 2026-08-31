@@ -39,15 +39,15 @@ const wallets = [
 
 const dexEth = [
   { name: 'Uniswap', descKey: 'prov.dex.uniswap.desc', url: 'https://app.uniswap.org/swap?chain=mainnet&inputCurrency=NATIVE&outputCurrency=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png', color: '#ff007a' },
-  { name: '1inch', descKey: 'prov.dex.1inch.desc', url: 'https://app.1inch.io/#/1/swap/ETH/QFS', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/6706.png', color: '#0ebbff' },
+  { name: '1inch', descKey: 'prov.dex.1inch.desc', url: 'https://app.1inch.io/#/1/swap/ETH/QFS', logo: '/1inch-logo.png', color: '#0ebbff' },
   { name: 'SushiSwap', descKey: 'prov.dex.sushi.desc', url: 'https://www.sushi.com/ethereum/swap?token0=0xdac17f958d2ee523a2206206994597c13d831ec7&token1=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1337.png', color: '#fa52a0' },
-  { name: 'Balancer', descKey: 'prov.dex.balancer.desc', url: 'https://balancer.fi/#/trade/swap?chain=ethereum&tokenIn=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&tokenOut=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1336.png', color: '#1e1e1e' },
+  { name: 'Balancer', descKey: 'prov.dex.balancer.desc', url: 'https://balancer.fi/#/trade/swap?chain=ethereum&tokenIn=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&tokenOut=0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: '/balancer-logo.png', color: '#1e1e1e' },
   { name: 'Curve Finance', descKey: 'prov.dex.curve.desc', url: 'https://curve.fi/factory/420', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1063.png', color: '#000' },
   { name: 'KyberSwap', descKey: 'prov.dex.kyber.desc', url: 'https://kyberswap.com/swap/ethereum/eth-to-0x7c670a7eba354e0d22f0ecbbe7a36bf10dce305e', logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4008.png', color: '#6147ff' },
 ];
 
 const dexBsc = [
-  { name: 'PancakeSwap', descKey: 'prov.dex.pancake.desc', url: 'https://pancakeswap.finance/swap?chain=bsc&inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/513.png', color: '#d1884f' },
+  { name: 'PancakeSwap', descKey: 'prov.dex.pancake.desc', url: 'https://pancakeswap.finance/swap?chain=bsc&inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: '/pancakeswap-logo.png', color: '#d1884f' },
   { name: 'BiSwap', descKey: 'prov.dex.biswap.desc', url: 'https://biswap.org/es/swap?inputCurrency=BNB&outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1445.png', color: '#5b6cf7' },
   { name: 'ApeSwap', descKey: 'prov.dex.apeswap.desc', url: 'https://apeswap.finance/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0&chainId=56', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1281.png', color: '#6fcf97' },
   { name: 'MDEX', descKey: 'prov.dex.mdex.desc', url: 'https://mdex.com/swap?outputCurrency=0x6aa6514d5cB9595Df69E081657B68eEFC0568Cc0', logo: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/1279.png', color: '#1e5eff' },
