@@ -4,11 +4,11 @@ import { usePageStore } from '@/store/page-store';
 import { useThemeStore } from '@/store/theme-store';
 import { useLangStore, useT, type Lang } from '@/store/lang-store';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Server, BookOpen } from 'lucide-react';
+import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Server, BookOpen, Award } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 
-type PageType = 'home' | 'whitepaper' | 'roadmap' | 'portal' | 'providers' | 'documents';
+type PageType = 'home' | 'whitepaper' | 'roadmap' | 'portal' | 'providers' | 'documents' | 'embajadores';
 
 export function Navigation() {
   const { currentPage, setCurrentPage } = usePageStore();
@@ -35,6 +35,7 @@ export function Navigation() {
     { id: 'portal', label: t('nav.portal'), icon: <Landmark className="w-4 h-4" /> },
     { id: 'roadmap', label: t('nav.roadmap'), icon: <Map className="w-4 h-4" /> },
     { id: 'providers', label: t('nav.providers'), icon: <Server className="w-4 h-4" /> },
+    { id: 'embajadores', label: t('nav.embajadores'), icon: <Award className="w-4 h-4" /> },
   ];
 
   return (
