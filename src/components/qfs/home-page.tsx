@@ -119,7 +119,6 @@ export function HomePage() {
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
                 className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
-                style={{ borderColor: 'rgba(124,58,237,0.2)', color: '#7c3aed' }}
               >
                 {t('hero.qfspay')}
               </motion.button>
