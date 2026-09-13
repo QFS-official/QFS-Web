@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import {
   Atom, Shield, Zap, Eye, Network, Cpu, CreditCard, Wallet,
-  ArrowRightLeft, Landmark, Globe, Bot, ChevronRight, Lock,
+  ArrowRightLeft, Landmark, Globe, Bot, ChevronRight, Lock, ArrowLeftRight,
 } from 'lucide-react';
 import { ecosystemCardStyles, pillarIcons } from './home-data';
 import { QFSCoin } from './qfs-coin';
@@ -114,6 +114,17 @@ export function HomePage() {
                 className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
               >
                 {t('hero.wallet')}
+              </motion.a>
+              <motion.a
+                href="https://dex.qfspay.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
+              >
+                <ArrowLeftRight className="w-4 h-4" />
+                {t('hero.qfsdex')}
               </motion.a>
               <motion.button
                 whileHover={{ y: -2 }}
