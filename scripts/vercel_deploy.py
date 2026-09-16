@@ -1,8 +1,8 @@
 import os, sys, json, hashlib, urllib.request, time, base64
 
-TOKEN = "REDACTED_TOKEN"
-TEAM_ID = "team_4jQJrPzpyVVB6Vmv8X6gJiWB"
-PROJECT_ID = "prj_YSYzgux2x99LdBDMXaCphVERbDn1"
+TOKEN = os.environ.get("VERCEL_TOKEN", "")
+TEAM_ID = os.environ.get("VERCEL_TEAM_ID", "team_4jQJrPzpyVVB6Vmv8X6gJiWB")
+PROJECT_ID = os.environ.get("VERCEL_PROJECT_ID", "prj_YSYzgux2x99LdBDMXaCphVERbDn1")
 BASE_URL = "https://api.vercel.com"
 
 def api_req(method, path, data=None, raw_data=None, content_type="application/json"):
