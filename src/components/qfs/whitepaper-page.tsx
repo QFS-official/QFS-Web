@@ -361,9 +361,9 @@ export function WhitePaperPage() {
               </div>
             </div>
             <div className="bg-white rounded-xl p-4 border-l-2 border-l-[#7c3aed] border border-gray-100" style={{ boxShadow: isDark ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.03)' }}>
-              <div className="text-sm font-semibold text-slate-800 mb-1">Government Currencies</div>
+              <div className="text-sm font-semibold text-slate-800 mb-1">Digital Currencies</div>
               <div className="text-xs text-slate-500 leading-relaxed">
-                Progressive integration with CBDCs and government digital assets to establish
+                Progressive integration with digital currencies and digital assets to establish
                 bridges between traditional finance and the decentralized ecosystem.
               </div>
             </div>

@@ -74,7 +74,7 @@ export function RoadmapPage() {
         'Real World Asset (RWA) tokenization',
         'Complete digital financial services',
         'Mature institutional infrastructure',
-        'CBDC and government currency integration',
+        'Digital currency and asset integration',
         'QFS ecosystem expansion',
         'Operational decentralized governance',
       ],
