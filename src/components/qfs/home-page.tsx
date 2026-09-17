@@ -99,13 +99,16 @@ export function HomePage() {
               transition={{ delay: 0.45, duration: 0.8 }}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12"
             >
-              <motion.button
+              <motion.a
+                href="https://explorer.qfspay.org/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -2, boxShadow: '0 8px 32px rgba(37,99,235,0.3), 0 4px 8px rgba(124,58,237,0.2)' }}
                 whileTap={{ y: 0 }}
                 className="quantum-btn-solid px-8 py-3.5 rounded-2xl text-sm font-semibold flex items-center gap-2 cursor-pointer"
               >
                 {t('hero.explore_btn')} <ChevronRight className="w-4 h-4" />
-              </motion.button>
+              </motion.a>
               <motion.a
                 href="https://qfswallet.qfspay.org/"
                 target="_blank"
@@ -127,24 +130,6 @@ export function HomePage() {
                 <ArrowLeftRight className="w-4 h-4" />
                 {t('hero.qfsdex')}
               </motion.a>
-              <motion.a
-                href="https://explorer.qfspay.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
-              >
-                <Search className="w-4 h-4" />
-                {t('hero.explorer')}
-              </motion.a>
-              <motion.button
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                className="quantum-btn px-8 py-3.5 rounded-2xl text-sm font-medium flex items-center gap-2 cursor-pointer"
-              >
-                {t('hero.qfspay')}
-              </motion.button>
             </motion.div>
 
             <motion.div
