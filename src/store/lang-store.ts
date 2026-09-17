@@ -548,14 +548,14 @@ const td: Record<string, Record<Lang, string[]>> = {
     th: ["สร้างและจัดการวอลเล็ต", "ส่งและรับสินทรัพย์", "ดูยอดคงเหลือ", "จัดการหลายเครือข่าย", "เชื่อมต่อกับ QFSPay", "ผสานรวม QFS Cards", "ประวัติธุรกรรม", "การจัดการความปลอดภัย"],
   },
   "amb.ambassadors": {
-    en: ["Dr. Zelaya – Global Ambassador", "Rungrawee – Asia Ambassador", "Colombia Ambassador", "Thailand Regional Advisor", "Thailand Ambassador", "United States Ambassador", "Switzerland Ambassador", "México Ambassador"],
-    es: ["Dr. Zelaya – Embajador Global", "Rungrawee – Embajadora Asia", "Embajadora de Colombia", "Asesora Regional Tailandia", "Embajador de Tailandia", "Embajador de Estados Unidos", "Embajadora de Suiza", "Embajadora de México"],
-    fr: ["Dr. Zelaya – Ambassadeur Global", "Rungrawee – Ambassadrice Asie", "Ambassadrice de Colombie", "Conseillère Régionale Thaïlande", "Ambassadeur de Thaïlande", "Ambassadeur des États-Unis", "Ambassadrice de Suisse", "Ambassadrice du Mexique"],
-    pt: ["Dr. Zelaya – Embaixador Global", "Rungrawee – Embaixadora Ásia", "Embaixadora da Colômbia", "Assessora Regional Tailândia", "Embaixador da Tailândia", "Embaixador dos Estados Unidos", "Embaixadora da Suíça", "Embaixadora do México"],
-    de: ["Dr. Zelaya – Globaler Botschafter", "Rungrawee – Asien-Botschafterin", "Kolumbien-Botschafterin", "Thailand Regionalberater", "Thailand-Botschafter", "USA-Botschafter", "Schweiz-Botschafterin", "Mexiko-Botschafterin"],
-    zh: ["Dr. Zelaya – 全球大使", "Rungrawee – 亚洲大使", "哥伦比亚大使", "泰国区域顾问", "泰国大使", "美国大使", "瑞士大使", "墨西哥大使"],
-    ar: ["د. زيلايا – سفير عالمي", "رنغراوي – سفيرة آسيا", "سفيرة كولومبيا", "مستشار إقليمي تايلاند", "سفير تايلاند", "سفير الولايات المتحدة", "سفيرة سويسرا", "سفيرة المكسيك"],
-    th: ["Dr. Zelaya – ทูตโลก", "Rungrawee – ทูตเอเชีย", "ทูตโคลอมเบีย", "ที่ปรึกษาภูมิภาคไทย", "ทูตไทย", "ทูตสหรัฐอเมริกา", "ทูตสวิตเซอร์แลนด์", "ทูตเม็กซิโก"],
+    en: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
+    es: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
+    fr: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
+    pt: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
+    de: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
+    zh: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
+    ar: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
+    th: ["Dr. Nilo Zelaya", "H.E. Rungrawee", "H.E. Gloria Amanda", "H.E. Pedro Riera", "Liliana Echeverry", "Thanachot Sawasdee", "Busayaporn Rungruang", "Monthiwa Krasang", "Kraisorn Prompitak"],
   },
 };
 

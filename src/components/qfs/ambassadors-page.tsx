@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useThemeStore } from '@/store/theme-store';
 import { useT, useTD } from '@/store/lang-store';
-import { ExternalLink, Calendar, Clock, MapPin, Users, Sparkles, Star, Shield } from 'lucide-react';
+import { ExternalLink, Sparkles, Star, Shield, Crown, Globe2 } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -18,10 +18,67 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
+const ambassadors = [
+  {
+    name: 'Dr. Nilo Zelaya',
+    role: 'Chief Ambassador',
+    region: 'Global',
+    photo: '/ambassadors/nilo-zelaya.png',
+    isChief: true,
+  },
+  {
+    name: 'H.E. Rungrawee',
+    role: 'Senior Diplomatic Representative',
+    region: 'Thailand · Southeast Asia',
+    photo: '/ambassadors/he-rungrawee.jpg',
+  },
+  {
+    name: 'H.E. Gloria Amanda',
+    role: 'Diplomatic Envoy',
+    region: 'Latin America',
+    photo: '/ambassadors/he-gloria-amanda.png',
+  },
+  {
+    name: 'H.E. Pedro Riera',
+    role: 'European Liaison',
+    region: 'Europe · Spain',
+    photo: '/ambassadors/he-pedro-riera.png',
+  },
+  {
+    name: 'Liliana Echeverry',
+    role: 'Regional Coordinator',
+    region: 'South America · Colombia',
+    photo: '/ambassadors/liliana-echeverry.png',
+  },
+  {
+    name: 'Thanachot Sawasdee',
+    role: 'Technology Specialist',
+    region: 'Thailand · ASEAN',
+    photo: '/ambassadors/thanachot-sawasdee.png',
+  },
+  {
+    name: 'Busayaporn Rungruang',
+    role: 'Community Development Lead',
+    region: 'Thailand · Southeast Asia',
+    photo: '/ambassadors/busayaporn-rungruang.png',
+  },
+  {
+    name: 'Monthiwa Krasang',
+    role: 'Public Relations',
+    region: 'Thailand',
+    photo: '/ambassadors/monthiwa-krasang.jpg',
+  },
+  {
+    name: 'Kraisorn Prompitak',
+    role: 'Operations Coordinator',
+    region: 'Thailand',
+    photo: '/ambassadors/kraisorn-prompitak.png',
+  },
+];
+
 export function AmbassadorsPage() {
   const { theme } = useThemeStore();
   const t = useT();
-  const td = useTD();
 
   const goldGradient = 'linear-gradient(135deg, #f59e0b, #d97706, #b45309, #f59e0b)';
   const goldText = 'linear-gradient(90deg, #fcd34d, #f59e0b, #d97706, #fbbf24)';
@@ -38,7 +95,6 @@ export function AmbassadorsPage() {
           transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-12"
         >
-          {/* Decorative top line */}
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px flex-1 max-w-[120px]" style={{ background: goldGradient }} />
             <motion.div
@@ -50,7 +106,6 @@ export function AmbassadorsPage() {
             <div className="h-px flex-1 max-w-[120px]" style={{ background: goldGradient }} />
           </div>
 
-          {/* Main Title */}
           <h1
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 leading-none"
             style={{
@@ -60,7 +115,7 @@ export function AmbassadorsPage() {
               filter: 'drop-shadow(0 2px 8px rgba(245,158,11,0.3))',
             }}
           >
-            {t('amb.title').split(' ').map((word, i) => (
+            {t('amb.sectionTitle').split(' ').map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -73,17 +128,15 @@ export function AmbassadorsPage() {
             ))}
           </h1>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
             className={`text-lg sm:text-xl md:text-2xl font-light tracking-wide max-w-3xl mx-auto ${isDark ? 'text-slate-300' : 'text-slate-600'}`}
           >
-            {t('amb.subtitle')}
+            {t('amb.sectionDesc')}
           </motion.p>
 
-          {/* Decorative bottom line */}
           <div className="flex items-center justify-center gap-3 mt-6">
             <div className="h-px w-8" style={{ background: goldGradient }} />
             <Star className="w-3 h-3 text-amber-500" />
@@ -91,13 +144,13 @@ export function AmbassadorsPage() {
           </div>
         </motion.div>
 
-        {/* === INVITATION CARD === */}
+        {/* === CHIEF AMBASSADOR (Featured) === */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={stagger}
-          className="mb-16"
+          className="mb-12"
         >
           <motion.div
             variants={fadeUp}
@@ -105,78 +158,62 @@ export function AmbassadorsPage() {
             className="relative rounded-3xl overflow-hidden"
             style={{
               boxShadow: isDark
-                ? '0 0 60px rgba(245,158,11,0.12), 0 0 120px rgba(245,158,11,0.06), 0 25px 60px -12px rgba(0,0,0,0.5)'
+                ? '0 0 60px rgba(245,158,11,0.12), 0 25px 60px -12px rgba(0,0,0,0.5)'
                 : '0 0 60px rgba(245,158,11,0.08), 0 25px 60px -12px rgba(0,0,0,0.1)',
             }}
           >
-            {/* Gold border frame */}
-            <div
-              className="absolute inset-0 rounded-3xl pointer-events-none z-20"
-              style={{
-                border: '2px solid transparent',
-                borderImage: goldGradient + ' 1',
-                borderRadius: '1.5rem',
-              }}
+            <div className="absolute inset-0 rounded-3xl pointer-events-none z-20"
+              style={{ boxShadow: 'inset 0 0 0 2px rgba(245,158,11,0.4), inset 0 0 20px rgba(245,158,11,0.05)' }}
             />
-            {/* Fallback border with box-shadow approach */}
             <div
-              className="absolute inset-0 rounded-3xl pointer-events-none z-20"
-              style={{
-                boxShadow: 'inset 0 0 0 2px rgba(245,158,11,0.4), inset 0 0 20px rgba(245,158,11,0.05)',
-              }}
-            />
-
-            <div
-              className={`relative p-1 sm:p-2 ${isDark ? 'bg-slate-900/80' : 'bg-white/90'}`}
-              style={{
-                background: isDark
-                  ? 'linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,41,59,0.9))'
-                  : 'linear-gradient(145deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95))',
-              }}
+              className={`relative p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-8 ${isDark ? 'bg-slate-900' : 'bg-white'}`}
             >
-              {/* Inner content with padding for border effect */}
-              <div
-                className={`rounded-2xl overflow-hidden ${isDark ? 'bg-slate-900' : 'bg-white'}`}
-              >
-                {/* Invitation Image */}
-                <div className="relative w-full">
-                  <Image
-                    src="/qfs-global-invitation.png"
-                    alt="QFS Global Invitation"
-                    width={1200}
-                    height={1800}
-                    className="w-full h-auto object-contain"
-                    sizes="(max-width: 768px) 100vw, 800px"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                </div>
-
-                {/* Event Info Bar */}
-                <div
-                  className={`px-6 py-5 border-t ${isDark ? 'border-amber-900/30 bg-slate-800/50' : 'border-amber-200 bg-amber-50/50'}`}
+              {/* Photo */}
+              <div className="relative flex-shrink-0">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-amber-500/50"
+                  style={{ boxShadow: '0 0 30px rgba(245,158,11,0.3)' }}
                 >
-                  <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm">
-                    <div className={`flex items-center gap-2 ${isDark ? 'text-amber-300' : 'text-amber-700'}`}>
-                      <Calendar className="w-4 h-4" />
-                      <span className="font-semibold">{t('amb.date')}</span>
-                    </div>
-                    <div className={`flex items-center gap-2 ${isDark ? 'text-amber-300' : 'text-amber-700'}`}>
-                      <Clock className="w-4 h-4" />
-                      <span className="font-semibold">{t('amb.time')}</span>
-                    </div>
-                    <div className={`flex items-center gap-2 ${isDark ? 'text-amber-300' : 'text-amber-700'}`}>
-                      <MapPin className="w-4 h-4" />
-                      <span className="font-semibold">{t('amb.venue')}</span>
-                    </div>
-                  </div>
+                  <Image
+                    src={ambassadors[0].photo}
+                    alt={ambassadors[0].name}
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover"
+                    unoptimized
+                  />
                 </div>
+                <div className="absolute -bottom-1 -right-1 w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center shadow-lg">
+                  <Crown className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              {/* Info */}
+              <div className="text-center sm:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono tracking-widest uppercase mb-3 bg-amber-500/15 text-amber-400 border border-amber-800/50">
+                  <Crown className="w-3.5 h-3.5" />
+                  CHIEF AMBASSADOR
+                </div>
+                <h2
+                  className="text-3xl sm:text-4xl font-bold mb-2"
+                  style={{
+                    background: goldText,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  {ambassadors[0].name}
+                </h2>
+                <p className={`text-sm font-medium mb-1 ${isDark ? 'text-amber-300' : 'text-amber-600'}`}>
+                  GCRM Foundation · Global Chief Ambassador
+                </p>
+                <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  Leading the global deployment and expansion of GCRM across international markets. Overseeing strategic partnerships, government relations, and the establishment of GCRM&apos;s presence in sovereign financial systems worldwide.
+                </p>
               </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* === AMBASSADOR HIGHLIGHT SECTION === */}
+        {/* === AMBASSADOR CARDS GRID === */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -189,30 +226,16 @@ export function AmbassadorsPage() {
               <Shield className="w-3.5 h-3.5" />
               {t('amb.badge')}
             </div>
-            <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3"
-              style={{
-                background: goldText,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
-              {t('amb.sectionTitle')}
-            </h2>
-            <p className={`text-base max-w-2xl mx-auto ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-              {t('amb.sectionDesc')}
-            </p>
           </motion.div>
 
-          {/* Ambassador Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {td('amb.ambassadors').map((amb: string, i: number) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+            {ambassadors.slice(1).map((amb, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
                 custom={i}
-                whileHover={{ y: -4, transition: { duration: 0.3 } }}
-                className={`rounded-2xl p-4 text-center border transition-all ${isDark
+                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                className={`rounded-2xl overflow-hidden text-center border transition-all ${isDark
                     ? 'bg-slate-800/60 border-amber-900/30 hover:border-amber-700/50 hover:bg-slate-800/90'
                     : 'bg-white border-amber-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-500/5'
                   }`}
@@ -220,14 +243,31 @@ export function AmbassadorsPage() {
                   boxShadow: isDark ? '0 2px 12px rgba(0,0,0,0.2)' : '0 2px 12px rgba(0,0,0,0.04)',
                 }}
               >
-                <div
-                  className={`w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center text-lg font-bold ${isDark ? 'bg-amber-500/15 text-amber-400' : 'bg-amber-50 text-amber-600'}`}
-                  style={{ boxShadow: '0 2px 8px rgba(245,158,11,0.15)' }}
-                >
-                  <Users className="w-6 h-6" />
+                {/* Photo */}
+                <div className="relative w-full pt-[100%]">
+                  <div className="absolute inset-0">
+                    <Image
+                      src={amb.photo}
+                      alt={amb.name}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                    <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-t from-slate-800 via-transparent to-transparent' : 'bg-gradient-to-t from-white/80 via-transparent to-transparent'}`} />
+                  </div>
                 </div>
-                <div className={`text-sm font-semibold mb-1 ${isDark ? 'text-white' : 'text-slate-800'}`}>
-                  {amb}
+                {/* Info */}
+                <div className="px-4 pb-4 -mt-8 relative z-10">
+                  <div className={`text-sm font-bold mb-0.5 ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                    {amb.name}
+                  </div>
+                  <div className={`text-xs font-medium mb-1 ${isDark ? 'text-amber-400' : 'text-amber-600'}`}>
+                    {amb.role}
+                  </div>
+                  <div className={`inline-flex items-center gap-1 text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                    <Globe2 className="w-3 h-3" />
+                    {amb.region}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -246,7 +286,6 @@ export function AmbassadorsPage() {
             custom={0}
             className="text-center"
           >
-            {/* Decorative line */}
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px flex-1 max-w-[80px]" style={{ background: goldGradient }} />
               <Star className="w-4 h-4 text-amber-500" />
@@ -257,7 +296,6 @@ export function AmbassadorsPage() {
               {t('amb.cta.desc')}
             </p>
 
-            {/* Main CTA Button */}
             <motion.a
               href={t('amb.cta.link')}
               target="_blank"
@@ -278,7 +316,6 @@ export function AmbassadorsPage() {
               {t('amb.cta.note')}
             </p>
 
-            {/* Bottom decorative line */}
             <div className="flex items-center justify-center gap-4 mt-10">
               <div className="h-px flex-1 max-w-[80px]" style={{ background: goldGradient }} />
               <Star className="w-4 h-4 text-amber-500" />
