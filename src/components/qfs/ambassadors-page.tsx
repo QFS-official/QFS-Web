@@ -21,58 +21,67 @@ const stagger = {
 const ambassadors = [
   {
     name: 'Dr. Nilo Zelaya',
-    role: 'Chief Ambassador',
+    role: 'Global Chief Ambassador · GCRM Foundation',
     region: 'Global',
     photo: '/ambassadors/nilo-zelaya.png',
     isChief: true,
+    desc: 'Leading the global deployment and expansion of GCRM across international markets. Overseeing strategic partnerships, government relations, and the establishment of GCRM\u2019s presence in sovereign financial systems worldwide.',
   },
   {
     name: 'H.E. Rungrawee',
     role: 'Senior Diplomatic Representative',
     region: 'Thailand · Southeast Asia',
     photo: '/ambassadors/he-rungrawee.jpg',
+    desc: 'Senior diplomatic representative for GCRM in the ASEAN region.',
   },
   {
     name: 'H.E. Gloria Amanda',
     role: 'Diplomatic Envoy',
     region: 'Latin America',
     photo: '/ambassadors/he-gloria-amanda.png',
+    desc: 'Diplomatic envoy advancing GCRM adoption across Latin American markets.',
   },
   {
     name: 'H.E. Pedro Riera',
     role: 'European Liaison',
     region: 'Europe · Spain',
     photo: '/ambassadors/he-pedro-riera.png',
+    desc: 'European liaison for GCRM regulatory compliance and institutional partnerships.',
   },
   {
     name: 'Liliana Echeverry',
     role: 'Regional Coordinator',
     region: 'South America · Colombia',
     photo: '/ambassadors/liliana-echeverry.png',
+    desc: 'Regional coordinator for GCRM community building and strategic outreach.',
   },
   {
     name: 'Thanachot Sawasdee',
     role: 'Technology Specialist',
     region: 'Thailand · ASEAN',
     photo: '/ambassadors/thanachot-sawasdee.png',
+    desc: 'Technology and blockchain integration specialist for the Thai market.',
   },
   {
     name: 'Busayaporn Rungruang',
     role: 'Community Development Lead',
     region: 'Thailand · Southeast Asia',
     photo: '/ambassadors/busayaporn-rungruang.png',
+    desc: 'Community development and education lead for GCRM in Southeast Asia.',
   },
   {
     name: 'Monthiwa Krasang',
     role: 'Public Relations',
     region: 'Thailand',
     photo: '/ambassadors/monthiwa-krasang.jpg',
+    desc: 'Public relations and brand ambassador for GCRM in the Thai market.',
   },
   {
     name: 'Kraisorn Prompitak',
     role: 'Operations Coordinator',
     region: 'Thailand',
     photo: '/ambassadors/kraisorn-prompitak.png',
+    desc: 'Operations and logistics coordinator for GCRM deployment in Thailand.',
   },
 ];
 
@@ -203,10 +212,10 @@ export function AmbassadorsPage() {
                   {ambassadors[0].name}
                 </h2>
                 <p className={`text-sm font-medium mb-1 ${isDark ? 'text-amber-300' : 'text-amber-600'}`}>
-                  GCRM Foundation · Global Chief Ambassador
+                  {ambassadors[0].role}
                 </p>
                 <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                  Leading the global deployment and expansion of GCRM across international markets. Overseeing strategic partnerships, government relations, and the establishment of GCRM&apos;s presence in sovereign financial systems worldwide.
+                  {ambassadors[0].desc}
                 </p>
               </div>
             </div>
@@ -268,6 +277,11 @@ export function AmbassadorsPage() {
                     <Globe2 className="w-3 h-3" />
                     {amb.region}
                   </div>
+                  {amb.desc && (
+                    <p className={`text-[11px] leading-relaxed mt-1.5 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                      {amb.desc}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
