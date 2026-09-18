@@ -21,65 +21,74 @@ const stagger = {
 const ambassadors = [
   {
     name: 'Dr. Nilo Zelaya',
-    role: 'Global Chief Ambassador · GCRM Foundation',
-    region: 'Global',
+    role: 'Global Ambassador',
+    region: 'USA',
+    country: '\uD83C\uDDFA\uD83C\uDDF8',
     photo: '/ambassadors/nilo-zelaya.png',
     isChief: true,
     desc: 'Leading the global deployment and expansion of GCRM across international markets. Overseeing strategic partnerships, government relations, and the establishment of GCRM\u2019s presence in sovereign financial systems worldwide.',
   },
   {
     name: 'H.E. Rungrawee',
-    role: 'Senior Diplomatic Representative',
-    region: 'Thailand · Southeast Asia',
+    role: 'Global Envoy Ambassador',
+    region: 'Thailand',
+    country: '\uD83C\uDDF9\uD83C\uDDED',
     photo: '/ambassadors/he-rungrawee.jpg',
     desc: 'Senior diplomatic representative for GCRM in the ASEAN region.',
   },
   {
     name: 'H.E. Gloria Amanda',
-    role: 'Diplomatic Envoy',
-    region: 'Latin America',
+    role: 'QFS Ambassador',
+    region: 'Mexico',
+    country: '\uD83C\uDDF2\uD83C\uDDFD',
     photo: '/ambassadors/he-gloria-amanda.png',
     desc: 'Diplomatic envoy advancing GCRM adoption across Latin American markets.',
   },
   {
     name: 'H.E. Pedro Riera',
-    role: 'European Liaison',
-    region: 'Europe · Spain',
+    role: 'QFS Ambassador',
+    region: 'Spain',
+    country: '\uD83C\uDDEA\uD83C\uDDF8',
     photo: '/ambassadors/he-pedro-riera.png',
     desc: 'European liaison for GCRM regulatory compliance and institutional partnerships.',
   },
   {
     name: 'Liliana Echeverry',
-    role: 'Regional Coordinator',
-    region: 'South America · Colombia',
+    role: 'QFS Ambassador',
+    region: 'Colombia',
+    country: '\uD83C\uDDE8\uD83C\uDDE4',
     photo: '/ambassadors/liliana-echeverry.png',
     desc: 'Regional coordinator for GCRM community building and strategic outreach.',
   },
   {
     name: 'Thanachot Sawasdee',
-    role: 'Technology Specialist',
-    region: 'Thailand · ASEAN',
+    role: 'QFS Ambassador',
+    region: 'Thailand',
+    country: '\uD83C\uDDF9\uD83C\uDDED',
     photo: '/ambassadors/thanachot-sawasdee.png',
     desc: 'Technology and blockchain integration specialist for the Thai market.',
   },
   {
     name: 'Busayaporn Rungruang',
-    role: 'Community Development Lead',
-    region: 'Thailand · Southeast Asia',
+    role: 'QFS Ambassador',
+    region: 'Thailand',
+    country: '\uD83C\uDDF9\uD83C\uDDED',
     photo: '/ambassadors/busayaporn-rungruang.png',
     desc: 'Community development and education lead for GCRM in Southeast Asia.',
   },
   {
     name: 'Monthiwa Krasang',
-    role: 'Public Relations',
+    role: 'QFS Ambassador',
     region: 'Thailand',
+    country: '\uD83C\uDDF9\uD83C\uDDED',
     photo: '/ambassadors/monthiwa-krasang.jpg',
     desc: 'Public relations and brand ambassador for GCRM in the Thai market.',
   },
   {
     name: 'Kraisorn Prompitak',
-    role: 'Operations Coordinator',
+    role: 'QFS Ambassador',
     region: 'Thailand',
+    country: '\uD83C\uDDF9\uD83C\uDDED',
     photo: '/ambassadors/kraisorn-prompitak.png',
     desc: 'Operations and logistics coordinator for GCRM deployment in Thailand.',
   },
@@ -153,6 +162,36 @@ export function AmbassadorsPage() {
           </div>
         </motion.div>
 
+        {/* === GROUP BANNER IMAGE === */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mb-12 -mx-4 sm:-mx-8 md:-mx-16 lg:-mx-24"
+        >
+          <div className="relative rounded-2xl overflow-hidden"
+            style={{
+              boxShadow: isDark
+                ? '0 0 60px rgba(245,158,11,0.15), 0 25px 60px -12px rgba(0,0,0,0.6)'
+                : '0 0 60px rgba(245,158,11,0.1), 0 25px 60px -12px rgba(0,0,0,0.15)',
+            }}
+          >
+            <Image
+              src="/ambassadors/ambassadors-banner.jpg"
+              alt="QFS Global Ambassadors"
+              width={1600}
+              height={900}
+              className="w-full h-auto"
+              unoptimized
+              priority
+            />
+            <div className="absolute inset-0 pointer-events-none"
+              style={{ boxShadow: 'inset 0 0 0 1px rgba(245,158,11,0.3)' }}
+            />
+          </div>
+        </motion.div>
+
         {/* === CHIEF AMBASSADOR (Featured) === */}
         <motion.div
           initial="hidden"
@@ -214,6 +253,11 @@ export function AmbassadorsPage() {
                 <p className={`text-sm font-medium mb-1 ${isDark ? 'text-amber-300' : 'text-amber-600'}`}>
                   {ambassadors[0].role}
                 </p>
+                <div className={`inline-flex items-center gap-1.5 text-sm mb-2 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  <Globe2 className="w-3.5 h-3.5" />
+                  <span>{ambassadors[0].country}</span>
+                  <span>{ambassadors[0].region}</span>
+                </div>
                 <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                   {ambassadors[0].desc}
                 </p>
@@ -275,7 +319,8 @@ export function AmbassadorsPage() {
                   </div>
                   <div className={`inline-flex items-center gap-1 text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                     <Globe2 className="w-3 h-3" />
-                    {amb.region}
+                    <span>{amb.country}</span>
+                    <span>{amb.region}</span>
                   </div>
                   {amb.desc && (
                     <p className={`text-[11px] leading-relaxed mt-1.5 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
