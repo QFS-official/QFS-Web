@@ -371,6 +371,36 @@ export function AmbassadorsPage() {
               {t('amb.cta.button')}
             </motion.a>
 
+            {/* === HOTCOIN LINK WITH LOGO === */}
+            <motion.a
+              href="https://www.hotcoins1.com/es_ES/spot/qfs-usdt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ y: 0, scale: 0.98 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-bold cursor-pointer transition-all mt-6"
+              style={{
+                background: isDark ? 'linear-gradient(135deg, #1e293b, #0f172a)' : 'linear-gradient(135deg, #f8fafc, #e2e8f0)',
+                boxShadow: isDark ? '0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)' : '0 4px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.5)',
+                border: `1px solid ${isDark ? 'rgba(245,158,11,0.3)' : 'rgba(245,158,11,0.2)'}`,
+              }}
+            >
+              {/* Hotcoin Logo */}
+              <div className="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden bg-white/10 flex items-center justify-center">
+                <Image
+                  src="/hotcoin-logo.svg"
+                  alt="Hotcoin"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                  unoptimized
+                />
+              </div>
+              <span className={isDark ? 'text-amber-400' : 'text-amber-700'}>Hotcoin</span>
+              <span className={`text-sm font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>QFS/USDT</span>
+              <ExternalLink className={`w-4 h-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`} />
+            </motion.a>
+
             <p className={`mt-4 text-xs font-mono ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>
               {t('amb.cta.note')}
             </p>
