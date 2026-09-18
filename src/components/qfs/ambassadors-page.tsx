@@ -6,6 +6,17 @@ import { useThemeStore } from '@/store/theme-store';
 import { useT, useTD } from '@/store/lang-store';
 import { ExternalLink, Sparkles, Star, Shield, Crown, Globe2 } from 'lucide-react';
 
+/** Render text with **bold** markers as <b> tags */
+function renderBold(text: string, baseClass: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <b key={i} className={`${baseClass} font-bold`}>{part.slice(2, -2)}</b>;
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
@@ -20,13 +31,12 @@ const stagger = {
 
 const ambassadors = [
   {
-    name: 'Dr. Nilo Zelaya',
-    role: 'Global Ambassador',
+    name: 'Dr. Zelaya',
+    role: 'Global Strategic Leadership',
     region: 'USA',
     country: '\uD83C\uDDFA\uD83C\uDDF8',
     photo: '/ambassadors/nilo-zelaya.png',
     isChief: true,
-    desc: 'Leading the global deployment and expansion of GCRM across international markets. Overseeing strategic partnerships, government relations, and the establishment of GCRM\u2019s presence in sovereign financial systems worldwide.',
   },
   {
     name: 'H.E. Rungrawee',
@@ -250,17 +260,24 @@ export function AmbassadorsPage() {
                 >
                   {ambassadors[0].name}
                 </h2>
-                <p className={`text-sm font-medium mb-1 ${isDark ? 'text-amber-300' : 'text-amber-600'}`}>
-                  {ambassadors[0].role}
+                <p className={`text-sm font-bold mb-1 ${isDark ? 'text-amber-300' : 'text-amber-600'}`}>
+                  {t('amb.chief.title')}
                 </p>
-                <div className={`inline-flex items-center gap-1.5 text-sm mb-2 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                <p className={`text-xs font-medium mb-3 tracking-wide ${isDark ? 'text-amber-400/70' : 'text-amber-600/80'}`}>
+                  {t('amb.chief.tags')}
+                </p>
+                <div className={`inline-flex items-center gap-1.5 text-xs mb-3 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                   <Globe2 className="w-3.5 h-3.5" />
                   <span>{ambassadors[0].country}</span>
                   <span>{ambassadors[0].region}</span>
                 </div>
-                <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                  {ambassadors[0].desc}
-                </p>
+                <div className={`space-y-3 text-sm leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  <p>{renderBold(t('amb.chief.p1'), isDark ? 'text-amber-300' : 'text-amber-600')}</p>
+                  <p>{renderBold(t('amb.chief.p2'), isDark ? 'text-amber-300' : 'text-amber-600')}</p>
+                  <p>{renderBold(t('amb.chief.p3'), isDark ? 'text-amber-300' : 'text-amber-600')}</p>
+                  <p>{renderBold(t('amb.chief.p4'), isDark ? 'text-amber-300' : 'text-amber-600')}</p>
+                  <p>{renderBold(t('amb.chief.p5'), isDark ? 'text-amber-300' : 'text-amber-600')}</p>
+                </div>
               </div>
             </div>
           </motion.div>
