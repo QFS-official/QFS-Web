@@ -188,10 +188,10 @@ export function AmbassadorsPage() {
             }}
           >
             <Image
-              src="/ambassadors/ambassadors-banner.jpg"
+              src="/ambassadors/ambassadors-banner.png"
               alt="QFS Global Ambassadors"
-              width={1600}
-              height={900}
+              width={1280}
+              height={853}
               className="w-full h-auto"
               unoptimized
               priority
