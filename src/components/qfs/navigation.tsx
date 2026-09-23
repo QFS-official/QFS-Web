@@ -4,7 +4,7 @@ import { usePageStore } from '@/store/page-store';
 import { useThemeStore } from '@/store/theme-store';
 import { useLangStore, useT, type Lang } from '@/store/lang-store';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Server, BookOpen, Award } from 'lucide-react';
+import { Atom, FileText, Map, Menu, X, Landmark, Sun, Moon, Globe, ChevronDown, Server, BookOpen, Award, Network } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -141,6 +141,23 @@ export function Navigation() {
               </span>
             </motion.button>
           ))}
+
+          {/* Ecosystem Link */}
+          <motion.a
+            href="https://ecosystem.qfspay.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -1 }}
+            whileTap={{ y: 0 }}
+            className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+              theme === 'dark'
+                ? 'text-slate-400 hover:text-white'
+                : 'text-slate-500 hover:text-slate-900'
+            }`}
+          >
+            <Network className="w-4 h-4" />
+            {t('nav.ecosystem')}
+          </motion.a>
 
           {/* Documentation Dropdown */}
           <div className="relative">
@@ -502,6 +519,25 @@ export function Navigation() {
                   {item.label}
                 </motion.button>
               ))}
+
+              {/* Mobile: Ecosystem Link */}
+              <motion.a
+                href="https://ecosystem.qfspay.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.05 }}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all cursor-pointer ${
+                  theme === 'dark'
+                    ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+                    : 'text-slate-500 hover:text-slate-900 hover:bg-blue-50/80'
+                }`}
+              >
+                <Network className="w-4 h-4" />
+                {t('nav.ecosystem')}
+                <svg className="w-3.5 h-3.5 ml-auto opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </motion.a>
 
               {/* Mobile: Documentation Submenu */}
               <div className={`flex flex-col gap-1 rounded-xl overflow-hidden border ${isDocActive ? (theme === 'dark' ? 'border-blue-500/30' : 'border-blue-200') : (theme === 'dark' ? 'border-slate-700' : 'border-gray-100')}`}>
