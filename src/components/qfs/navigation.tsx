@@ -27,13 +27,12 @@ export function Navigation() {
   };
 
   const t = useT();
-  const isDocActive = currentPage === 'whitepaper' || currentPage === 'documents';
+  const isDocActive = currentPage === 'whitepaper' || currentPage === 'documents' || currentPage === 'roadmap';
 
   // Flat nav items (no whitepaper — it has a submenu)
   const navItems: { id: PageType; label: string; icon: React.ReactNode }[] = [
     { id: 'home', label: t('nav.home'), icon: <Atom className="w-4 h-4" /> },
     { id: 'portal', label: t('nav.portal'), icon: <Landmark className="w-4 h-4" /> },
-    { id: 'roadmap', label: t('nav.roadmap'), icon: <Map className="w-4 h-4" /> },
     { id: 'providers', label: t('nav.providers'), icon: <Server className="w-4 h-4" /> },
     { id: 'embajadores', label: t('nav.embajadores'), icon: <Award className="w-4 h-4" /> },
   ];
@@ -231,6 +230,23 @@ export function Navigation() {
                       <div>
                         <div className="font-medium">{t('nav.whitepaper')}</div>
                         <div className={`text-[10px] mt-0.5 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>{t('nav.wp.desc')}</div>
+                      </div>
+                    </button>
+                    <div className={`h-px ${theme === 'dark' ? 'bg-slate-700/60' : 'bg-gray-100'}`} />
+                    <button
+                      onClick={() => handleNav('roadmap')}
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors text-left cursor-pointer ${
+                        currentPage === 'roadmap'
+                          ? theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-50 text-[#2563eb]'
+                          : theme === 'dark'
+                            ? 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                            : 'text-slate-600 hover:bg-gray-50 hover:text-slate-900'
+                      }`}
+                    >
+                      <Map className="w-4 h-4" />
+                      <div>
+                        <div className="font-medium">{t('nav.roadmap')}</div>
+                        <div className={`text-[10px] mt-0.5 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>{t('nav.roadmap.desc')}</div>
                       </div>
                     </button>
                     <div className={`h-px ${theme === 'dark' ? 'bg-slate-700/60' : 'bg-gray-100'}`} />
@@ -553,6 +569,19 @@ export function Navigation() {
                 >
                   <FileText className="w-4 h-4" />
                   {t('nav.whitepaper')}
+                </button>
+                <button
+                  onClick={() => handleNav('roadmap')}
+                  className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all cursor-pointer ${
+                    currentPage === 'roadmap'
+                      ? 'text-white bg-gradient-to-r from-[#2563eb] to-[#6366f1]'
+                      : theme === 'dark'
+                        ? 'text-slate-400 hover:text-white hover:bg-slate-800'
+                        : 'text-slate-500 hover:text-slate-900 hover:bg-blue-50/80'
+                  }`}
+                >
+                  <Map className="w-4 h-4" />
+                  {t('nav.roadmap')}
                 </button>
                 <button
                   onClick={() => handleNav('documents')}
